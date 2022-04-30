@@ -1,0 +1,66 @@
+.pinguigny-front{
+    background-image: url("../assets/pinguiny/pinguiny-v2-front.png");
+}
+.pinguigny-back{
+    background-image: url("../assets/pinguiny/pinguiny-v2-back.png");
+}
+.pinguigny-right{
+    background-image: url("../assets/pinguiny/pinguigny-v2-lateral.png");
+    transform: scaleX(-1);
+}
+.pinguigny-left{
+    background-image: url("../assets/pinguiny/pinguigny-v2-lateral.png");
+   
+}
+.rabbit-front{
+    background-image: url("../assets/pinguiny/rabbit.png");
+}
+.rabbit-back{
+    background-image: url("../assets/pinguiny/rabbit-back.png");
+}
+.rabbit-left{
+    background-image: url("../assets/pinguiny/rabbit-lateral.png");
+    transform:scaleX(-1);
+}
+.rabbit-right{
+    background-image: url("../assets/pinguiny/rabbit-lateral.png");
+}
+.mouse-front{
+    background-image: url("../assets/pinguiny/mouse-front.png");
+}
+.mouse-back{
+    background-image: url("../assets/pinguiny/mouse-back.png");
+}
+.mouse-left{
+    background-image: url("../assets/pinguiny/mouse-lateral.png");
+    transform:scaleX(-1);
+}
+.mouse-right{
+    background-image: url("../assets/pinguiny/mouse-lateral.png");
+}
+.cow-front{ 
+    background-image: url("../assets/pinguiny/cow-front.png");
+}
+.cow-back{ 
+    background-image: url("../assets/pinguiny/cow-back.png");
+}
+.cow-right{ 
+    background-image: url("../assets/pinguiny/cow-lateral.png");
+}
+.cow-left{ 
+    background-image: url("../assets/pinguiny/cow-lateral.png");
+    transform:scaleX(-1);
+}
+.bat-front{
+    background-image: url("../assets/pinguiny/bat-front.png");
+}
+.bat-back{
+    background-image: url("../assets/pinguiny/bat-back.png");
+}
+.bat-left{
+    background-image: url("../assets/pinguiny/bat-lateral.png");
+    transform:scaleX(-1);
+}
+.bat-right{
+    background-image: url("../assets/pinguiny/bat-lateral.png");
+}

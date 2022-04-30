@@ -7,15 +7,15 @@ import Terrain from './Terrain'
 import Enemies from './Enemies/Enemies';
 import Hero from './Hero'
 import Weapons from './Weapons/Weapons'
-import { StartData ,startData} from '../Core/StartData/StartData'
+import { GameData ,startData} from '../Core/StartData/StartData'
 
 
 let intervale: NodeJS.Timer 
 const timeInterval  = 16
-let newValue: StartData = JSON.parse(JSON.stringify(startData)) 
+let newValue: GameData = JSON.parse(JSON.stringify(startData)) 
 export default function Game() {
  
-  const [gameData, setGameData] = useState({})
+  const [gameData, setGameData] = useState<GameData>(newValue)
   
   const mainLoop =  () => {
     setGameData((gameData) => ({

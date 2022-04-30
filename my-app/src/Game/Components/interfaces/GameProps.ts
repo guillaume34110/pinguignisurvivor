@@ -1,3 +1,5 @@
+import { GameData } from "../../Core/StartData/StartData";
+
 export interface GameProps { 
-    gameData:{} , setGameData : React.Dispatch<React.SetStateAction<{}>>
+    gameData:GameData , setGameData : React.Dispatch<React.SetStateAction<GameData>>
 }
