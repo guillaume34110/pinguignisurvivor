@@ -37,6 +37,7 @@ export interface Enemy {
     level: number,
     life: number,
     damages: number,
+    speed: number,
     sprite: string,
     x: number,
     y: number,

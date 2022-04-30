@@ -1,6 +1,6 @@
 import React from 'react'
 import { GameProps } from '../interfaces/GameProps'
-import '../Style/components/Enemies.css'
+import '../../Style/components/Enemies.css'
 import EnemyComp from './Enemy/EnemyComp';
 
 export default function Enemies({gameData , setGameData } :GameProps) {
