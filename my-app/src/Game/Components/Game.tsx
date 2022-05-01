@@ -33,27 +33,29 @@ const keyup = (e:React.KeyboardEvent) => {
  keyupController(newValue.keys,e.key)
 }
   /*Scaling*/
-const scaling = (e:React.res) => {
+const scaling = () => {
 
 }
   /*Listeners*/
 
   const eventListeners = () => {
-    document.addEventListener("keydown", keydown);
-    document.addEventListener("keyup", keyup);
+    document.addEventListener("keydown", keydown.bind);
+    document.addEventListener("keyup", keyup.bind);
     window.addEventListener("resize", scaling);
   };
   const removeEventListeners = () => {
-    document.removeEventListener("keydown", keydown);
-    document.removeEventListener("keyup", keyup);
+    document.removeEventListener("keydown", keydown.bind);
+    document.removeEventListener("keyup", keyup.bind);
     window.removeEventListener("resize", scaling);
   };
 
   /*Initialisation*/  
   useEffect(() => { 
+    eventListeners()
     newValue = JSON.parse(JSON.stringify(startData)) 
    intervale = setInterval(mainLoop, timeInterval);
 return () => { 
+  removeEventListeners()
   clearInterval(intervale)
 }
   }, [])
