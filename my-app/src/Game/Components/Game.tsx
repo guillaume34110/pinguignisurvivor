@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { EventHandler, useEffect, useState } from 'react'
 import '../Style/components/Game.css'
 import Controls from './Controls/Controls'
 import Hud from './Hud/Hud'
@@ -8,6 +8,7 @@ import Enemies from './Enemies/Enemies';
 import Hero from './Hero'
 import Weapons from './Weapons/Weapons'
 import { GameData ,startData} from '../Core/StartData/StartData'
+import { keydownController, keyupController } from '../Core/KeysInputs/keys'
 
 
 let intervale: NodeJS.Timer 
@@ -23,7 +24,32 @@ export default function Game() {
       ...newValue,
     }));
   }
+  /*keyControl*/
+const keydown = (e:React.KeyboardEvent) => { 
+  keydownController(newValue.keys,e.key)
+}
 
+const keyup = (e:React.KeyboardEvent) => { 
+ keyupController(newValue.keys,e.key)
+}
+  /*Scaling*/
+const scaling = (e:React.res) => {
+
+}
+  /*Listeners*/
+
+  const eventListeners = () => {
+    document.addEventListener("keydown", keydown);
+    document.addEventListener("keyup", keyup);
+    window.addEventListener("resize", scaling);
+  };
+  const removeEventListeners = () => {
+    document.removeEventListener("keydown", keydown);
+    document.removeEventListener("keyup", keyup);
+    window.removeEventListener("resize", scaling);
+  };
+
+  /*Initialisation*/  
   useEffect(() => { 
     newValue = JSON.parse(JSON.stringify(startData)) 
    intervale = setInterval(mainLoop, timeInterval);

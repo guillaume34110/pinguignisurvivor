@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Enemy } from '../../../Core/StartData/StartData'
-
-interface EnemyProps {
-  key: number,
-  enemy: Enemy,
-}
+import { EnemyProps } from '../../interfaces/EnemiProps'
 
 
-export default function EnemyComp({key, enemy} : EnemyProps) {
+
+export default function EnemyComp({ key, enemyData }: EnemyProps) {
+  const enemyRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (enemyRef && enemyRef.current) {
+      enemyRef.current.style.top = enemyData.x + 'px'
+      enemyRef.current.style.left = enemyData.y + 'px'
+    }
+  }, [enemyData])
+
   return (
-    <div>Enemy</div>
+    <div ref={enemyRef} className={"enemy enemy-" + enemyData.sprite + " animation"}></div>
   )
 }

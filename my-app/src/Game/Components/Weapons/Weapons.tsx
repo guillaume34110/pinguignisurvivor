@@ -4,6 +4,10 @@ import '../../Style/components/Weapons.css'
 import Projectile from './Projectile/Projectile'
 export default function Weapons({gameData , setGameData } :GameProps) {
   return (
-    <div className="weapons"><Projectile/></div>
+    <div className="weapons">
+      {gameData && gameData.heroProjectiles.map((projectile , index)=> (
+        <Projectile key = {index} projectileData = {projectile}/>
+      ))}
+      </div>
   )
 }

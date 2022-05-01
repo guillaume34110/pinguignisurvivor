@@ -8,7 +8,7 @@ export default function Enemies({gameData , setGameData } :GameProps) {
     <div className="enemies">
       
       {gameData && gameData.enemies.map((enemy,index) => (
-        <EnemyComp  key = {index} enemy = {enemy}/>
+        <EnemyComp  key = {index} enemyData = {enemy}/>
 ))}
       
       

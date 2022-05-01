@@ -3,6 +3,8 @@ export interface GameData {
     hero: Hero,
     heroProjectiles: HeroProjectile[],
     enemies: Enemy[],
+    items: Item[],
+    keys: Keys
 
 }
 
@@ -31,6 +33,7 @@ export interface HeroProjectile {
     level: number,
     x: number,
     y: number,
+    sprite: string,
 }
 export interface Enemy {
     type: string,
@@ -41,6 +44,30 @@ export interface Enemy {
     sprite: string,
     x: number,
     y: number,
+}
+
+export interface Item {
+    type: "string"
+    sprite: "string"
+    x: number,
+    y: number,
+    value: number | null
+}
+
+export interface Keys {
+    keysInstant: {
+        left: boolean,
+        right: boolean,
+        up: boolean,
+        down: boolean,
+    },
+    keyState: {
+        left: boolean,
+        right: boolean,
+        up: boolean,
+        down: boolean,
+    }
+
 }
 
 export const startData: GameData = {
@@ -56,6 +83,21 @@ export const startData: GameData = {
     },
     heroProjectiles: [],
     enemies: [],
+    items: [],
+    keys: {
+        keysInstant: {
+            left: false,
+            right: false,
+            up: false,
+            down: false,
+        },
+        keyState: {
+            left: false,
+            right: false,
+            up: false,
+            down: false,
+        }
+    }
 }
 
 
