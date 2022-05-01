@@ -1,8 +1,9 @@
 import React from 'react'
+import { TimeProps } from '../../interfaces/HudPorps'
 
-export default function Time() {
+export default function Time({time}:TimeProps) {
   return (
-    <div>Time</div>
+    <div className="time">{time}</div>
   )
 }
 
