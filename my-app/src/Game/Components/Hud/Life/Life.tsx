@@ -1,7 +1,8 @@
 import React from 'react'
+import { LifeProps } from '../../interfaces/HudPorps';
 
-export default function Life() {
+export default function Life({life}:LifeProps) {
   return (
-    <div>Life</div>
+    <div className="life">{life}</div>
   )
 }

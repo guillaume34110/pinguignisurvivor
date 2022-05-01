@@ -14,17 +14,19 @@ export interface Hero {
     speed: number,
     invulnerability: boolean,
     weapons: HeroWeapon[],
-    items: HeroItems[]
+    items: HeroItem[]
     x: number,
     y: number,
 }
 
 export interface HeroWeapon {
-    type: string
+    sprite: string,
+    type: string,
     level: number,
 }
 
-export interface HeroItems {
+export interface HeroItem {
+    sprite: string,
     type: string,
     level: number,
 }

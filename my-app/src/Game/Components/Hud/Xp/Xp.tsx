@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { XpProps } from '../../interfaces/HudPorps'
 
-export default function Xp() {
+export default function Xp({xp}:XpProps) {
+  const progressRef = useRef(null)
+ useEffect(() => {
+  
+ }, [xp])
+ 
+ 
   return (
-    <div>Xp</div>
+    <div className="xp-bar">
+      <div className = "xp-progress" ref={progressRef}>
+        <div className = "xp-number">
+          {xp}
+        </div>
+      </div>
+    </div>
   )
 }
