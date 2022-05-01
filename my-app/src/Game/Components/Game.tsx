@@ -18,6 +18,7 @@ let newValue: GameData = JSON.parse(JSON.stringify(startData))
 export default function Game() {
 
   const [gameData, setGameData] = useState<GameData>(newValue)
+  
 
   const mainLoop = () => {
     setGameData((gameData) => ({
@@ -25,41 +26,47 @@ export default function Game() {
       ...newValue,
     }));
   }
-  
+
   /*keyControl*/
 
-  const keydown = (e: React.KeyboardEvent) => {
+  const keydown = (e: KeyboardEvent) => {
     keydownController(newValue.keys, e.key)
   }
 
-  const keyup = (e: React.KeyboardEvent) => {
+  const keyup = (e: KeyboardEvent) => {
     keyupController(newValue.keys, e.key)
   }
 
   /*Listeners*/
 
   const eventListeners = () => {
-    document.addEventListener("keydown", keydown.bind);
-    document.addEventListener("keyup", keyup.bind);
+    document.addEventListener("keydown", keydown);
+    document.addEventListener("keyup",  keyup);
     window.addEventListener("resize", scaling);
   };
+  
   const removeEventListeners = () => {
-    document.removeEventListener("keydown", keydown.bind);
-    document.removeEventListener("keyup", keyup.bind);
+    document.removeEventListener("keydown", keydown);
+    document.removeEventListener("keyup", keyup);
     window.removeEventListener("resize", scaling);
   };
 
   /*Initialization*/
 
   useEffect(() => {
+   
+    
     eventListeners()
+    scaling()
     newValue = JSON.parse(JSON.stringify(startData))
     intervale = setInterval(mainLoop, timeInterval);
+    
     return () => {
       removeEventListeners()
       clearInterval(intervale)
     }
-  }, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[] )
 
   return (
     <div className="game">
