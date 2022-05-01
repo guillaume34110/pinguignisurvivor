@@ -4,7 +4,7 @@ let newValue: GameData = JSON.parse(JSON.stringify(startData))
 // a definir l'init state
 
 const testLoop = () => {
-    newValue.hero.x++
+    newValue.hero.x ++
 }
 
 const xLoop = (x: number) => {
