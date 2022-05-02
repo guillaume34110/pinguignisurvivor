@@ -1,10 +1,12 @@
 import { Enemy, Hero } from "../../StartData/StartData"
+import { hitBoxMatch } from "../../Utilities/HitBoxMatch"
 
 function collision(){}
 
-const collisionEnemyWithHero = (enemy: Enemy, hero: Hero): boolean => {
-    if (true) {
-        return true
-    }
-    else { return false }
+export const collisionEnemiesWithHero = (enemies: Enemy[], hero: Hero) => {
+    enemies.forEach(enemy => {
+        if(hitBoxMatch(enemy.spriteBox, hero.spriteBox)){
+            hero.life -= enemy.damage
+        }
+    });
 }

@@ -1,8 +1,8 @@
-import { Enemy } from "../StartData/StartData"
+import { Enemy, enemyGeneric } from "../StartData/StartData"
 
 interface Enemies {
     medusa: Enemy,
-    flozer: Enemy,
+    flower: Enemy,
 }
 
 export const enemies: Enemies = {
@@ -11,22 +11,30 @@ export const enemies: Enemies = {
         type: "",
         level: 1,
         life: 1,
-        damages: 1,
+        damage: 1,
         speed: 1,
         sprite: "",
-        x: 1,
-        y: 1,
+        spriteBox: {
+            x: 1,
+            y: 1,
+            w: 32,
+            h: 32,
+        }
     },
 
-    flozer: {
+    flower: {
         type: "",
         level: 1,
         life: 1,
-        damages: 1,
+        damage: 1,
         speed: 1,
         sprite: "",
-        x: 1,
-        y: 1,
+        spriteBox: {
+            x: 1,
+            y: 1,
+            w: 32,
+            h: 32,
+        }
     }
 
 }

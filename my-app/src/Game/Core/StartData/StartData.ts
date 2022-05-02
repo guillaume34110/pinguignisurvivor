@@ -5,8 +5,15 @@ export interface GameData {
     heroProjectiles: HeroProjectile[],
     enemies: Enemy[],
     items: Item[],
-    keys: Keys, 
+    keys: Keys,
     time: number,
+}
+
+export interface SpriteBox {
+    x: number,
+    y: number,
+    w: number,
+    h: number,
 }
 
 export interface Hero {
@@ -16,9 +23,8 @@ export interface Hero {
     invulnerability: boolean,
     weapons: HeroWeapon[],
     items: HeroItem[],
-    xp:number,
-    x: number,
-    y: number,
+    xp: number,
+    spriteBox: SpriteBox,
 }
 
 export interface HeroWeapon {
@@ -35,27 +41,39 @@ export interface HeroItem {
 export interface HeroProjectile {
     type: string,
     level: number,
-    x: number,
-    y: number,
     sprite: string,
+    spriteBox: SpriteBox,
 }
 export interface Enemy {
+    sprite: string,
     type: string,
     level: number,
     life: number,
-    damages: number,
+    damage: number,
     speed: number,
-    sprite: string,
-    x: number,
-    y: number,
+    spriteBox: SpriteBox
+}
+
+export const enemyGeneric: Enemy = {
+    sprite: "",
+    type: "",
+    level: 0,
+    life: 0,
+    damage: 0,
+    speed: 0,
+    spriteBox: {
+        x: 0,
+        y: 0,
+        w: 0,
+        h: 0,
+    }
 }
 
 export interface Item {
-    type: "string"
-    sprite: "string"
-    x: number,
-    y: number,
-    value: number | null
+    type: "string",
+    sprite: "string",
+    value: number,
+    spriteBox: SpriteBox,
 }
 
 export interface Keys {
@@ -77,14 +95,18 @@ export interface Keys {
 export const startData: GameData = {
     hero: {
         sprite: "pinguigny",
-        life: 3,
-        speed: 2,
+        life: 0,
+        speed: 0,
         invulnerability: false,
         weapons: [],
         items: [],
-        xp:0,
-        x: 0,
-        y: 0,
+        xp: 0,
+        spriteBox: {
+            x: 0,
+            y: 0,
+            w: 0,
+            h: 0,
+        }
     },
     heroProjectiles: [],
     enemies: [],
@@ -103,7 +125,7 @@ export const startData: GameData = {
             down: false,
         }
     },
-    time:0
+    time: 0
 }
 
 
