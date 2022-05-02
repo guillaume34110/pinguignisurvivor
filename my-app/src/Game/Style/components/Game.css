@@ -1,3 +1,9 @@
 .game{
-    position: relative;
+    display:flex;
+    position: absolute;
+    height: 720px;
+    width: 1280px;
+    transform: scale(1);
+    user-select: none;
+    background: black;
 }

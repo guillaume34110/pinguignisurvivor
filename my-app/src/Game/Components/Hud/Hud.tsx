@@ -9,9 +9,9 @@ export default function Hud({gameData , setGameData } :GameProps) {
   return (
     <div className="hud">
       <Inventory items={gameData.hero.items} />
-      <Life/>
-      <Time/>
-      <Xp/>
+      <Life life={gameData.hero.life}/>
+      <Time time = {gameData.time}/>
+      <Xp xp={gameData.hero.xp}/>
     </div>
   )
 }
