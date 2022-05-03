@@ -1,3 +1,4 @@
+* { transform-style: preserve-3d }
 .game{
     display:flex;
     position: absolute;
@@ -5,6 +6,16 @@
     width: 1280px;
     transform: scale(1);
     user-select: none;
-    background: gray;
+    background: cadetblue;
     overflow: hidden;
+   perspective: 800px;
+}
+
+.camera{
+    width: 0px; height: 0px; position: relative; left: 0px; top: 0px;
+}
+
+.scene{
+    width: 2500px; height: 1800px; transform-origin: 0 0;
+    transform: rotateX(50deg) translateZ(-170px) ;
 }
