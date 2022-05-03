@@ -4,7 +4,7 @@ let newValue: GameData = JSON.parse(JSON.stringify(startData))
 // a definir l'init state
 
 const testLoop = () => {
-    newValue.hero.x++
+    newValue.hero.spriteBox.x ++
 }
 
 const xLoop = (x: number) => {
@@ -15,5 +15,7 @@ const xLoop = (x: number) => {
 
 test("5 frames se passent", () => {
     xLoop(5)
-    expect(newValue.hero.x).toBe(105)
+
+    expect(newValue.hero.spriteBox.x).toBe(5)
+
 })

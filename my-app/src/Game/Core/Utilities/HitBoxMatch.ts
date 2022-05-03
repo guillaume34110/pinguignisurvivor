@@ -1,10 +1,12 @@
+import { SpriteBox } from "../StartData/StartData"
 
-//refaire avec deux objets 
+export const hitBoxMatch = (sprite1: SpriteBox, sprite2: SpriteBox) => {
 
-export const hitBoxMatch = (x1:number, x2:number, y1:number, y2:number, w1:number, w2:number, h1:number, h2:number) => {
- 
-    if (x1 < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 && y1 + h1 > y2) {
-       return true //hit
+    if (sprite1.x < sprite2.x + sprite2.w 
+        && sprite1.x + sprite1.w > sprite2.x 
+        && sprite1.y < sprite2.y + sprite2.h 
+        && sprite1.y + sprite1.h > sprite2.y) {
+        return true // hit ca touche !
     }
     return false
 }

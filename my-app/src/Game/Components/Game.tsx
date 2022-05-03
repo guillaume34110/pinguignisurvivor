@@ -65,8 +65,7 @@ export default function Game() {
     eventListeners()
     scaling()
     newValue =  JSON.parse(JSON.stringify(startData))
-    intervale = setInterval(mainLoop, timeInterval);
-    
+    intervale = setInterval(mainLoop, timeInterval);  
     return () => {
       removeEventListeners()
       clearInterval(intervale)
