@@ -8,7 +8,7 @@ const then = it
 const hero: Hero = Object.create(startData.hero)
 const enemy: Enemy = Object.create(enemyGeneric)
 const init = () => {
-    hero.life = 100
+    hero.health = 100
     hero.spriteBox = {
         x: 100,
         y: 100,
@@ -27,48 +27,48 @@ given('hero and enemy are on the map', () => {
     beforeAll(() => init())
 
     when('they have the same position', () => {
-        then('hero should left 10 life points', () => {
+        then('hero should left 10 health points', () => {
             collisionEnemiesWithHero([enemy], hero)
-            expect(hero.life).toBe(90)
+            expect(hero.health).toBe(90)
         })
     })
 
     when('enemy touch hero at corner UpLeft', () => {
-        then('hero should left 10 life points', () => {
+        then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 51
             enemy.spriteBox.y = 51
             collisionEnemiesWithHero([enemy], hero)
-            expect(hero.life).toBe(80)
+            expect(hero.health).toBe(80)
         })
 
     })
 
     when('enemy touch hero at corner UpRight', () => {
-        then('hero should left 10 life points', () => {
+        then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 149
             enemy.spriteBox.y = 51
             collisionEnemiesWithHero([enemy], hero)
-            expect(hero.life).toBe(70)
+            expect(hero.health).toBe(70)
         })
 
     })
 
     when('enemy touch hero at corner DownLeft', () => {
-        then('hero should left 10 life points', () => {
+        then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 51
             enemy.spriteBox.y = 149
             collisionEnemiesWithHero([enemy], hero)
-            expect(hero.life).toBe(60)
+            expect(hero.health).toBe(60)
         })
 
     })
 
     when('enemy touch hero at corner DownRight', () => {
-        then('hero should left 10 life points', () => {
+        then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 149
             enemy.spriteBox.y = 149
             collisionEnemiesWithHero([enemy], hero)
-            expect(hero.life).toBe(50)
+            expect(hero.health).toBe(50)
         })
 
     })
@@ -78,7 +78,7 @@ given('hero and enemy are on the map', () => {
             enemy.spriteBox.x = 150
             enemy.spriteBox.y = 150
             collisionEnemiesWithHero([enemy], hero)
-            expect(hero.life).toBe(50)
+            expect(hero.health).toBe(50)
         })
 
     })

@@ -19,12 +19,19 @@ export interface SpriteBox {
 
 export interface Hero {
     sprite: string,
-    life: number,
-    speed: number,
-    invulnerability: boolean,
-    inventory: HeroItem[],
-    xp: number,
     spriteBox: SpriteBox,
+    maxHealth: number,
+    health: number,
+    recovery: number,
+    armor: number,
+    speed: number,
+    inventory: HeroItem[],
+    luck: number,
+    growth: number,                 // se renseigner
+    greed: number,                  // se renseigner
+    magnetRadius: number,
+    xp: number,
+    invulnerability: boolean,
 
 }
 
@@ -41,27 +48,28 @@ export interface HeroProjectile {
 }
 export interface Enemy {
     sprite: string,
+    spriteBox: SpriteBox,
     type: string,
-    level: number,
-    life: number,
+    maxHealth: number,
+    health: number,
     damage: number,
     speed: number,
-    spriteBox: SpriteBox
 }
 
 export const enemyGeneric: Enemy = {
     sprite: "",
-    type: "",
-    level: 0,
-    life: 0,
-    damage: 0,
-    speed: 0,
     spriteBox: {
         x: 0,
         y: 0,
         w: 0,
         h: 0,
-    }
+    },
+    type: "",
+    maxHealth: 100,
+    health: 100,
+    damage: 1,
+    speed: 1,
+
 }
 
 export interface Item {
@@ -89,19 +97,25 @@ export interface Keys {
 
 export const startData: GameData = {
     hero: {
-
-        sprite: "pinguigny-front",    
-        inventory: [],
-        life: 0,
-        speed: 0,
-        invulnerability: false,
-        xp: 0,
+        sprite: "pinguigny-front",
         spriteBox: {
             x: 0,
             y: 0,
             w: 0,
             h: 0,
-        }
+        },
+        maxHealth: 100,
+        health: 100,
+        recovery: 0,
+        armor: 0,
+        speed: 1,
+        inventory: [],
+        luck: 0,
+        growth: 0,
+        greed: 0,
+        magnetRadius: 1,
+        xp: 0,
+        invulnerability: false,
     },
     heroProjectiles: [],
     enemies: [],
@@ -120,7 +134,7 @@ export const startData: GameData = {
             down: false,
         }
     },
-    time:0
+    time: 0
 
 }
 
