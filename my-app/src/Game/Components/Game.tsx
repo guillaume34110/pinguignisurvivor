@@ -36,7 +36,6 @@ export default function Game() {
 
   const keydown = (e: KeyboardEvent) => {
     keydownController(newValue.keys, e.key)
-
   }
 
   const keyup = (e: KeyboardEvent) => {
@@ -65,7 +64,6 @@ export default function Game() {
     eventListeners()
     scaling()
     newValue =  JSON.parse(JSON.stringify(startData))
-    newValue.hero.speed=2
     intervale = setInterval(mainLoop, timeInterval);  
     return () => {
       removeEventListeners()

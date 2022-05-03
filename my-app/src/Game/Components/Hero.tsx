@@ -12,6 +12,7 @@ export default function Hero({gameData , setGameData } :GameProps) {
       heroRef.current.style.left = gameData.hero.spriteBox.y + 'px'
     }
   }, [gameData.hero.spriteBox.x,gameData.hero.spriteBox.y])
+
   return (
     <div className={"hero " + gameData.hero.sprite + " animation"} ref ={heroRef}></div>
   )
