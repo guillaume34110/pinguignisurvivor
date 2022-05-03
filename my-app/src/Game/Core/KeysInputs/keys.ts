@@ -20,7 +20,6 @@ export const keyupController = (keys: Keys, inputKey: string)  => {
 
 
 export const keydownController = (keys: Keys, inputKey: string) => {
- 
     const Key = modularKey(inputKey)
 
     if (Key === 'right') keys.keysInstant.right = true

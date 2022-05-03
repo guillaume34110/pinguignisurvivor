@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import '../Style/components/Game.css'
 import '../Style/Sprites/Sprites.css'
 import '../Style/animations/SpriteFrameAnim.css'
@@ -13,23 +13,25 @@ import { GameData, startData } from '../Core/StartData/StartData'
 import { keydownController, keyupController } from '../Core/KeysInputs/keys'
 import { scaling } from '../Core/Scaling/scaling'
 import { heroMove } from '../Core/Hero/heroMove'
+import { camera } from '../Core/Camera/camera'
 
 
 let intervale: NodeJS.Timer
 const timeInterval = 16
-let newValue: GameData =  JSON.parse(JSON.stringify(startData))
+let newValue: GameData = JSON.parse(JSON.stringify(startData))
 export default function Game() {
 
   const [gameData, setGameData] = useState<GameData>(newValue)
-  
+  const cameraRef = useRef<HTMLDivElement | null>(null)
 
   const mainLoop = () => {
     heroMove(newValue)
+    camera(newValue)
     setGameData((gameData) => ({
       ...gameData,
       ...newValue,
     }));
- 
+
   }
 
   /*keyControl*/
@@ -46,10 +48,10 @@ export default function Game() {
 
   const eventListeners = () => {
     document.addEventListener("keydown", keydown);
-    document.addEventListener("keyup",  keyup);
+    document.addEventListener("keyup", keyup);
     window.addEventListener("resize", scaling);
   };
-  
+
   const removeEventListeners = () => {
     document.removeEventListener("keydown", keydown);
     document.removeEventListener("keyup", keyup);
@@ -59,28 +61,45 @@ export default function Game() {
   /*Initialization*/
 
   useEffect(() => {
-   
-    
+
+
     eventListeners()
     scaling()
-    newValue =  JSON.parse(JSON.stringify(startData))
-    intervale = setInterval(mainLoop, timeInterval);  
+    newValue = JSON.parse(JSON.stringify(startData))
+    newValue.hero.speed = 2
+    intervale = setInterval(mainLoop, timeInterval);
     return () => {
       removeEventListeners()
       clearInterval(intervale)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[] )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (cameraRef && cameraRef.current) {
+    cameraRef.current.style.transform  = "translateX("+ -gameData.camera.y + "px) translateY("+ -gameData.camera.x + "px)";
+   
+    
+    }
+  }, [gameData.camera.x,gameData.camera.y])
 
   return (
     <div className="game">
-      <Terrain gameData={gameData} setGameData={setGameData} />
-      <Hud gameData={gameData} setGameData={setGameData} />
-      <Controls gameData={gameData} setGameData={setGameData} />
-      <Items gameData={gameData} setGameData={setGameData} />
-      <Enemies gameData={gameData} setGameData={setGameData} />
-      <Hero gameData={gameData} setGameData={setGameData} />
-      <Weapons gameData={gameData} setGameData={setGameData} />
+      <div className="camera" >
+        <div className="scene"ref = {cameraRef}>
+          <Terrain gameData={gameData} setGameData={setGameData} />
+          <Hud gameData={gameData} setGameData={setGameData} />
+          <Controls gameData={gameData} setGameData={setGameData} />
+          <Items gameData={gameData} setGameData={setGameData} />
+          <Enemies gameData={gameData} setGameData={setGameData} />
+          <Hero gameData={gameData} setGameData={setGameData} />
+          <Weapons gameData={gameData} setGameData={setGameData} />
+        </div>
+      </div>
     </div>
   )
 }
+function userRef(arg0: null) {
+  throw new Error('Function not implemented.')
+}
+
