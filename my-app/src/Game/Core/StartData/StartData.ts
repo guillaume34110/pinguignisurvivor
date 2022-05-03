@@ -1,4 +1,4 @@
-import { time } from "console"
+
 
 export interface GameData {
     hero: Hero,
@@ -14,17 +14,10 @@ export interface Hero {
     life: number,
     speed: number,
     invulnerability: boolean,
-    weapons: HeroWeapon[],
-    items: HeroItem[],
+    inventory: HeroItem[],
     xp:number,
     x: number,
     y: number,
-}
-
-export interface HeroWeapon {
-    sprite: string,
-    type: string,
-    level: number,
 }
 
 export interface HeroItem {
@@ -76,15 +69,14 @@ export interface Keys {
 
 export const startData: GameData = {
     hero: {
-        sprite: "pinguigny",
+        sprite: "pinguigny-front",
         life: 3,
         speed: 2,
         invulnerability: false,
-        weapons: [],
-        items: [],
+        inventory: [],
         xp:0,
-        x: 0,
-        y: 0,
+        x: 100,
+        y: 100,
     },
     heroProjectiles: [],
     enemies: [],

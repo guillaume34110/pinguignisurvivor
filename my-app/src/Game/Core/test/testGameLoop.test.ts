@@ -15,5 +15,5 @@ const xLoop = (x: number) => {
 
 test("5 frames se passent", () => {
     xLoop(5)
-    expect(newValue.hero.x).toBe(5)
+    expect(newValue.hero.x).toBe(105)
 })

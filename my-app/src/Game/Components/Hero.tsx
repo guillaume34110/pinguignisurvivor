@@ -6,12 +6,13 @@ export default function Hero({gameData , setGameData } :GameProps) {
   const heroRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
+
     if (heroRef && heroRef.current) {
       heroRef.current.style.top = gameData.hero.x + 'px'
       heroRef.current.style.left = gameData.hero.y + 'px'
     }
-  }, [gameData.hero])
+  }, [gameData.hero.x,gameData.hero.y])
   return (
-    <div className={"hero hero-" + gameData.hero.sprite + " animation"} ref ={heroRef}></div>
+    <div className={"hero " + gameData.hero.sprite + " animation"} ref ={heroRef}></div>
   )
 }
