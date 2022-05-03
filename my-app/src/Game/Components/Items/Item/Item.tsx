@@ -6,10 +6,10 @@ export default function Item({key,itemData}:ItemProps) {
   
   useEffect(() => {
     if (itemRef && itemRef.current) {
-      itemRef.current.style.top = itemData.x + 'px'
-      itemRef.current.style.left = itemData.y + 'px'
+      itemRef.current.style.top = itemData.spriteBox.x + 'px'
+      itemRef.current.style.left = itemData.spriteBox.y + 'px'
     }
-  }, [itemData])
+  }, [itemData.spriteBox.x,itemData.spriteBox.y])
   
   return (
     <div ref = {itemRef}  className={"item item-" + itemData.sprite + " animation" }></div>

@@ -36,7 +36,6 @@ export default function Game() {
 
   const keydown = (e: KeyboardEvent) => {
     keydownController(newValue.keys, e.key)
-    
   }
 
   const keyup = (e: KeyboardEvent) => {

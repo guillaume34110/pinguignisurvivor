@@ -9,10 +9,10 @@ export default function EnemyComp({ key, enemyData }: EnemyProps) {
 
   useEffect(() => {
     if (enemyRef && enemyRef.current) {
-      enemyRef.current.style.top = enemyData.x + 'px'
-      enemyRef.current.style.left = enemyData.y + 'px'
+      enemyRef.current.style.top = enemyData.spriteBox.x + 'px'
+      enemyRef.current.style.left = enemyData.spriteBox.y + 'px'
     }
-  }, [enemyData])
+  }, [enemyData.spriteBox.x,enemyData.spriteBox.y])
 
   return (
     <div ref={enemyRef} className={"enemy enemy-" + enemyData.sprite + " animation"}></div>

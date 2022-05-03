@@ -8,10 +8,11 @@ export default function Hero({gameData , setGameData } :GameProps) {
   useEffect(() => {
 
     if (heroRef && heroRef.current) {
-      heroRef.current.style.top = gameData.hero.x + 'px'
-      heroRef.current.style.left = gameData.hero.y + 'px'
+      heroRef.current.style.top = gameData.hero.spriteBox.x + 'px'
+      heroRef.current.style.left = gameData.hero.spriteBox.y + 'px'
     }
-  }, [gameData.hero.x,gameData.hero.y])
+  }, [gameData.hero.spriteBox.x,gameData.hero.spriteBox.y])
+
   return (
     <div className={"hero " + gameData.hero.sprite + " animation"} ref ={heroRef}></div>
   )

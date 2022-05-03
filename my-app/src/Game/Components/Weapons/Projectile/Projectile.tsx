@@ -6,10 +6,10 @@ export default function Projectile({key,projectileData}:ProjectileProps) {
   
   useEffect(() => {
     if (projectileRef && projectileRef.current) {
-      projectileRef.current.style.top = projectileData.x + 'px'
-      projectileRef.current.style.left = projectileData.y + 'px'
+      projectileRef.current.style.top = projectileData.spriteBox.x + 'px'
+      projectileRef.current.style.left = projectileData.spriteBox.y + 'px'
     }
-  }, [projectileData])
+  }, [projectileData.spriteBox.x,projectileData.spriteBox.y])
   
   return (
     <div ref={projectileRef} className={"projectile projectile" + projectileData.sprite + " animation"} ></div>

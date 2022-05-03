@@ -7,11 +7,12 @@ const given = describe
 const when = describe
 const then = it
 
-const gameData:GameData = Object.create(startData)
+
+const gameData:GameData = JSON.parse(JSON.stringify(startData))
 
 const heroInit = () => { 
-    gameData.hero.x = 100
-    gameData.hero.y = 100
+    gameData.hero.spriteBox.x = 100
+    gameData.hero.spriteBox.y = 100
     gameData.hero.speed = 5
     gameData.keys = {
         keysInstant: {
@@ -34,9 +35,11 @@ given('hero is on map and key input is send', () => {
 
     when('keydown input right is received', () => {
         then('Hero should go right', () => {
+
             keydownController(gameData.keys, "ArrowRight")
             heroMove(gameData)
-            expect(gameData.hero.x).toBe(105)
+            expect(gameData.hero.spriteBox.y).toBe(105)
+
         })
     })
 })
