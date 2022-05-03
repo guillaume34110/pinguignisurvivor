@@ -77,7 +77,7 @@ export default function Game() {
 
   useEffect(() => {
     if (cameraRef && cameraRef.current) {
-    cameraRef.current.style.transform  = "translateX("+ -gameData.camera.y + "px) translateY("+ -gameData.camera.x + "px)";
+     cameraRef.current.style.transform  = "rotateX(50deg) translateZ(-300px)  translateX("+ -gameData.camera.y + "px) translateY("+ -gameData.camera.x + "px)";
    
     
     }

@@ -5,10 +5,22 @@ export const heroMove = (gameData:GameData) => {
 let speedX =0
 let speedY = 0
 
-if (gameData.keys.keyState.right) speedY += gameData.hero.speed
-if (gameData.keys.keyState.left) speedY -= gameData.hero.speed
-if (gameData.keys.keyState.down) speedX += gameData.hero.speed
-if (gameData.keys.keyState.up) speedX -= gameData.hero.speed
+if (gameData.keys.keyState.right) {
+    speedY += gameData.hero.speed
+    gameData.hero.sprite = "pinguigny-right"
+}
+if (gameData.keys.keyState.left) {
+    speedY -= gameData.hero.speed
+    gameData.hero.sprite = "pinguigny-left"
+}
+if (gameData.keys.keyState.down) {
+    speedX += gameData.hero.speed
+    gameData.hero.sprite = "pinguigny-front"
+}
+if (gameData.keys.keyState.up) {
+    speedX -= gameData.hero.speed
+    gameData.hero.sprite = "pinguigny-back"
+}
 
 
 if( speedX !== 0 && speedY  === 0 ) gameData.hero.spriteBox.x += speedX

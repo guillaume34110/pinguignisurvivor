@@ -6,7 +6,7 @@
 }
 .pinguigny-right{
     background-image: url("../../Assets/pinguiny/pinguigny-v2-lateral.png");
-    transform: scaleX(-1);
+    transform:scaleX(-1);
 }
 .pinguigny-left{
     background-image: url("../../Assets/pinguiny/pinguigny-v2-lateral.png");

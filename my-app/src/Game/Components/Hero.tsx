@@ -10,6 +10,7 @@ export default function Hero({gameData , setGameData } :GameProps) {
     if (heroRef && heroRef.current) {
       heroRef.current.style.top = gameData.hero.spriteBox.x + 'px'
       heroRef.current.style.left = gameData.hero.spriteBox.y + 'px'
+      heroRef.current.style.transform = "scaleX(-1);"
     }
   }, [gameData.hero.spriteBox.x,gameData.hero.spriteBox.y])
 
