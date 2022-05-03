@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { InventoryItemProps } from '../../../interfaces/HudPorps';
+import { InventoryItemProps } from '../../../interfaces/HudProps';
 
 export default function InventoryItem({key,item}:InventoryItemProps) {
   return (

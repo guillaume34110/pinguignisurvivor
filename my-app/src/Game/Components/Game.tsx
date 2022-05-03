@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Style/components/Game.css'
+import '../Style/Sprites/Sprites.css'
+import '../Style/animations/SpriteFrameAnim.css'
 import Controls from './Controls/Controls'
 import Hud from './Hud/Hud'
 import Items from './Items/Items'
@@ -10,27 +12,31 @@ import Weapons from './Weapons/Weapons'
 import { GameData, startData } from '../Core/StartData/StartData'
 import { keydownController, keyupController } from '../Core/KeysInputs/keys'
 import { scaling } from '../Core/Scaling/scaling'
+import { heroMove } from '../Core/Hero/heroMove'
 
 
 let intervale: NodeJS.Timer
 const timeInterval = 16
-let newValue: GameData = JSON.parse(JSON.stringify(startData))
+let newValue: GameData =  JSON.parse(JSON.stringify(startData))
 export default function Game() {
 
   const [gameData, setGameData] = useState<GameData>(newValue)
   
 
   const mainLoop = () => {
+    heroMove(newValue)
     setGameData((gameData) => ({
       ...gameData,
       ...newValue,
     }));
+ 
   }
 
   /*keyControl*/
 
   const keydown = (e: KeyboardEvent) => {
     keydownController(newValue.keys, e.key)
+    
   }
 
   const keyup = (e: KeyboardEvent) => {
@@ -58,9 +64,8 @@ export default function Game() {
     
     eventListeners()
     scaling()
-    newValue = JSON.parse(JSON.stringify(startData))
-    intervale = setInterval(mainLoop, timeInterval);
-    
+    newValue =  JSON.parse(JSON.stringify(startData))
+    intervale = setInterval(mainLoop, timeInterval);  
     return () => {
       removeEventListeners()
       clearInterval(intervale)

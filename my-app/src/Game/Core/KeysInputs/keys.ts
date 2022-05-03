@@ -1,7 +1,7 @@
 import { Keys } from "../StartData/StartData"
 
 
-export const keyupController = (keys: Keys, inputKey: string): Keys  => {
+export const keyupController = (keys: Keys, inputKey: string)  => {
    
     const Key = modularKey(inputKey)
 
@@ -10,10 +10,9 @@ export const keyupController = (keys: Keys, inputKey: string): Keys  => {
     else if (Key === "down" && keys.keyState.down) keys.keyState.down = false
     else if (Key === "up" && keys.keyState.up) keys.keyState.up = false
     
-    return keys
 }
 
-export const keydownController = (keys: Keys, inputKey: string): Keys => {
+export const keydownController = (keys: Keys, inputKey: string) => {
 
     const Key = modularKey(inputKey)
 
@@ -27,7 +26,8 @@ export const keydownController = (keys: Keys, inputKey: string): Keys => {
     else if (Key === 'down'&& !keys.keysInstant.up) keys.keyState.down = true
     else if (Key === 'up'&& !keys.keysInstant.down) keys.keyState.up = true
 
-    return keys
+
+    
 }
 
 const modularKey = (inputKey:string) => {

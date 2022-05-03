@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { XpProps } from '../../interfaces/HudPorps'
+import { XpProps } from '../../interfaces/HudProps'
 
 export default function Xp({xp}:XpProps) {
   const progressRef = useRef(null)

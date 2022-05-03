@@ -42,14 +42,14 @@ given('input keydown is send on controller to move hero', () => {
 
     when('keydown input right is received', () => {
         then('Hero should go right', () => {
-            heroKeys = keydownController(heroKeys, "ArrowRight")
+             keydownController(heroKeys, "ArrowRight")
             expect(heroKeys.keyState.right).toBe(true)
         })
     })
 
     when('keydown input left is received', () => {
         then('Hero should go left', () => {
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.left).toBe(true)
         })
     })
@@ -57,29 +57,29 @@ given('input keydown is send on controller to move hero', () => {
     when('keydown input down is received', () => {
 
         then('Hero should go down', () => {
-            heroKeys = keydownController(heroKeys, "ArrowDown")
+             keydownController(heroKeys, "ArrowDown")
             expect(heroKeys.keyState.down).toBe(true)
         })
     })
 
     when('keydown input up is received', () => {
         then('Hero should go up', () => {
-            heroKeys = keydownController(heroKeys, "ArrowUp")
+             keydownController(heroKeys, "ArrowUp")
             expect(heroKeys.keyState.up).toBe(true)
         })
     })
 
     when('keydown input z is received', () => {
         then('Hero should go up', () => {
-            heroKeys = keydownController(heroKeys, "z")
+             keydownController(heroKeys, "z")
             expect(heroKeys.keyState.up).toBe(true)
         })
     })
     
     when('keydown input right is received first and keydown input left in second', () => {
         then('Hero should go right', () => {
-            heroKeys = keydownController(heroKeys, "ArrowRight")
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowRight")
+             keydownController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.right).toBe(true)
             expect(heroKeys.keyState.left).toBe(false)
         })
@@ -87,8 +87,8 @@ given('input keydown is send on controller to move hero', () => {
 
     when('keydown input left is received first and keydown input right in second', () => {
         then('Hero should go left', () => {
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
-            heroKeys = keydownController(heroKeys, "ArrowRight")
+             keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowRight")
             expect(heroKeys.keyState.left).toBe(true)
             expect(heroKeys.keyState.right).toBe(false)
         })
@@ -96,8 +96,8 @@ given('input keydown is send on controller to move hero', () => {
 
     when('keydown input down is received first and keydown input up in second', () => {
         then('Hero should go down', () => {
-            heroKeys = keydownController(heroKeys, "ArrowDown")
-            heroKeys = keydownController(heroKeys, "ArrowUp")
+             keydownController(heroKeys, "ArrowDown")
+             keydownController(heroKeys, "ArrowUp")
             expect(heroKeys.keyState.down).toBe(true)
             expect(heroKeys.keyState.up).toBe(false)
         })
@@ -105,8 +105,8 @@ given('input keydown is send on controller to move hero', () => {
 
     when('keydown input up is received first and keydown input down in second', () => {
         then('Hero should go up', () => {
-            heroKeys = keydownController(heroKeys, "ArrowUp")
-            heroKeys = keydownController(heroKeys, "ArrowDown")
+             keydownController(heroKeys, "ArrowUp")
+             keydownController(heroKeys, "ArrowDown")
             expect(heroKeys.keyState.up).toBe(true)
             expect(heroKeys.keyState.down).toBe(false)
         })
@@ -114,8 +114,8 @@ given('input keydown is send on controller to move hero', () => {
 
     when('keydown input up is received first and keydown input down in second', () => {
         then('Hero should go up', () => {
-            heroKeys = keydownController(heroKeys, "ArrowUp")
-            heroKeys = keydownController(heroKeys, "ArrowDown")
+             keydownController(heroKeys, "ArrowUp")
+             keydownController(heroKeys, "ArrowDown")
             expect(heroKeys.keyState.up).toBe(true)
             expect(heroKeys.keyState.down).toBe(false)
         })
@@ -126,15 +126,15 @@ given('composed input keydown is send on controller to move the hero ', () => {
     beforeAll(() => resetKeys())
     when('keydown input up is received first and keydown input left in second', () => {
         then('Hero should go up and left', () => {
-            heroKeys = keydownController(heroKeys, "ArrowUp")
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowUp")
+             keydownController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.up).toBe(true)
             expect(heroKeys.keyState.left).toBe(true)
         })
     })
     when('keydown input right is received ', () => {
         then('Hero should go up and left', () => {
-            heroKeys = keydownController(heroKeys, "ArrowRight")
+             keydownController(heroKeys, "ArrowRight")
             expect(heroKeys.keyState.right).toBe(false)
         })
     })
@@ -144,15 +144,15 @@ given('composed input keydown is send on controller to move the hero', () => {
     beforeAll(() => resetKeys())
     when('keydown input down is received first and keydown input right in second', () => {
         then('Hero should go down and right', () => {
-            heroKeys = keydownController(heroKeys, "ArrowDown")
-            heroKeys = keydownController(heroKeys, "ArrowRight")
+             keydownController(heroKeys, "ArrowDown")
+             keydownController(heroKeys, "ArrowRight")
             expect(heroKeys.keyState.down).toBe(true)
             expect(heroKeys.keyState.right).toBe(true)
         })
     })
     when('keydown input right is received ', () => {
         then('Hero should go down and right', () => {
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.left).toBe(false)
         })
     })
@@ -162,13 +162,13 @@ given('composed input keydown and keyup is send on controller to move the hero',
     beforeAll(() => resetKeys())
     when('keydown input right is received', () => {
         then('Hero should go right', () => {
-            heroKeys = keydownController(heroKeys, "ArrowRight")
+             keydownController(heroKeys, "ArrowRight")
             expect(heroKeys.keyState.right).toBe(true)
         })
     })
     when('keyup input right is received ', () => {
         then('Hero should not go right', () => {
-            heroKeys = keyupController(heroKeys, "ArrowRight")
+             keyupController(heroKeys, "ArrowRight")
             expect(heroKeys.keyState.right).toBe(false)
         })
     })
@@ -178,13 +178,13 @@ given('composed input keydown and keyup is send on controller to move the hero',
     beforeAll(() => resetKeys())
     when('keydown input left is received', () => {
         then('Hero should go left', () => {
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.left).toBe(true)
         })
     })
     when('keyup input left is received ', () => {
         then('Hero should not go left', () => {
-            heroKeys = keyupController(heroKeys, "ArrowLeft")
+             keyupController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.left).toBe(false)
         })
     })
@@ -195,22 +195,22 @@ given('composed input keydown and keyup is send on controller to move the hero',
     beforeAll(() => resetKeys())
     when('keydown input left & up is received', () => {
         then('Hero should go left', () => {
-            heroKeys = keydownController(heroKeys, "ArrowLeft")
-            heroKeys = keydownController(heroKeys, "ArrowUp")
+             keydownController(heroKeys, "ArrowLeft")
+             keydownController(heroKeys, "ArrowUp")
             expect(heroKeys.keyState.left).toBe(true)
             expect(heroKeys.keyState.up).toBe(true)
         })
     })
     when('keyup input left is received ', () => {
         then('Hero should not go left but go up', () => {
-            heroKeys = keyupController(heroKeys, "ArrowLeft")
+             keyupController(heroKeys, "ArrowLeft")
             expect(heroKeys.keyState.left).toBe(false)
             expect(heroKeys.keyState.up).toBe(true)
         })
     })
     when('keyup input up is received ', () => {
         then('Hero should not go up', () => {
-            heroKeys = keyupController(heroKeys, "ArrowUp")
+             keyupController(heroKeys, "ArrowUp")
             expect(heroKeys.keyState.up).toBe(false)
         })
     })

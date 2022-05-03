@@ -1,6 +1,6 @@
 import { HeroItem } from "../../Core/StartData/StartData";
 
-export interface ItemPops { items:HeroItem[] }
+export interface ItemPops { inventory: HeroItem[] }
 
 export interface LifeProps{life:number}
 

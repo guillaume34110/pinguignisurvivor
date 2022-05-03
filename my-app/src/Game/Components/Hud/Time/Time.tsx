@@ -1,5 +1,5 @@
 import React from 'react'
-import { TimeProps } from '../../interfaces/HudPorps'
+import { TimeProps } from '../../interfaces/HudProps'
 
 export default function Time({time}:TimeProps) {
   return (

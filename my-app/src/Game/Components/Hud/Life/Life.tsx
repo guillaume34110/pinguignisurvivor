@@ -1,5 +1,5 @@
 import React from 'react'
-import { LifeProps } from '../../interfaces/HudPorps';
+import { LifeProps } from '../../interfaces/HudProps';
 
 export default function Life({life}:LifeProps) {
   return (
