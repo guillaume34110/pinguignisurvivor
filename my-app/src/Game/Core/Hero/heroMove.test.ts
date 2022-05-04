@@ -40,7 +40,6 @@ given('hero is on map and key input is send', () => {
             heroMove(gameData)
             expect(gameData.hero.spriteBox.y).toBe(105)
 
-
         })
     })
 
@@ -74,10 +73,8 @@ given('hero is on map and key input is send', () => {
             keydownController(gameData.keys, "ArrowRight")
             keydownController(gameData.keys, "ArrowDown")
             heroMove(gameData)
-
             expect(gameData.hero.spriteBox.y).toBe(104)
             expect(gameData.hero.spriteBox.y).toBe(104)
-
         })
     })
 })
