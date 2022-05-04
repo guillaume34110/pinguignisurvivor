@@ -1,4 +1,13 @@
-import { HeroProjectile } from "../HeroProjectile/heroProjectile";
+import { HeroProjectile } from "../HeroProjectile/HeroProjectile";
+
+export interface HeroItem {
+    sprite: string,
+    type: string,
+    level: number,
+    rarity: number,
+    projectile: HeroProjectile | null,
+    supply: HeroSupply | null,
+}
 
 export interface HeroSupply {
     extralife: number,
@@ -16,13 +25,4 @@ export interface HeroSupply {
     bonusProjectileDuration: number,
     bonusProjectileAmount: number,
     bonusProjectileCooldown: number,
-}
-
-export interface HeroItem {
-    sprite: string,
-    type: string,
-    level: number,
-    rarity: number,
-    projectile: HeroProjectile | null,
-    supply: HeroSupply | null,
 }

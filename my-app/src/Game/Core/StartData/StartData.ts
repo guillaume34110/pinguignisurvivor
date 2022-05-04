@@ -1,6 +1,6 @@
 import { Enemy } from "../Enemies/Enemy"
 import { Hero, heroGeneric } from "../Hero/Hero"
-import { HeroProjectile } from "../HeroProjectile/heroProjectile"
+import { HeroProjectile } from "../HeroProjectile/HeroProjectile"
 import { Item } from "../Items/Item"
 
 export interface GameData {
