@@ -11,7 +11,7 @@ export default function Hud({gameData , setGameData } :GameProps) {
       <Inventory inventory={gameData.hero.inventory} />
       <Life life={gameData.hero.life}/>
       <Time time = {gameData.time}/>
-      <Xp xp={gameData.hero.xp}/>
+      <Xp xp={gameData.hero.xpActual}/>
     </div>
   )
 }
