@@ -16,11 +16,16 @@ export const keyupController = (keys: Keys, inputKey: string)  => {
     else if (Key === 'down') keys.keysInstant.down = false
     else if (Key === 'up') keys.keysInstant.up = false
 
+    
+    if (Key === 'right' && keys.keysInstant.left) keys.keyState.left = true
+    else if (Key === 'left' && keys.keysInstant.right) keys.keyState.right = true
+    else if (Key === 'down'&& keys.keysInstant.up) keys.keyState.up = true
+    else if (Key === 'up'&& keys.keysInstant.down) keys.keyState.down = true
 }
 
 
 export const keydownController = (keys: Keys, inputKey: string) => {
- 
+
     const Key = modularKey(inputKey)
 
     if (Key === 'right') keys.keysInstant.right = true

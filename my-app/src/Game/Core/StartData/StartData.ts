@@ -8,6 +8,7 @@ export interface GameData {
     items: Item[],
     keys: Keys,
     time: number,
+    camera:Camera,
 }
 
 export interface SpriteBox {
@@ -198,6 +199,10 @@ export interface Keys {
 
 }
 
+export interface Camera { 
+    x: number,
+    y:number
+}
 export const startData: GameData = {
     hero: heroGeneric,
     heroProjectiles: [],
@@ -217,7 +222,11 @@ export const startData: GameData = {
             down: false,
         }
     },
-    time: 0
+    time:0,
+    camera:{
+        x:0,
+        y:0,
+    }
 
 }
 
