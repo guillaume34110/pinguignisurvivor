@@ -9,8 +9,8 @@ export const enemies: Enemies = {
 
     medusa: {
         type: "",
-        level: 1,
-        life: 1,
+        maxHealth: 1,
+        health: 1,
         damage: 1,
         speed: 1,
         sprite: "",
@@ -24,8 +24,8 @@ export const enemies: Enemies = {
 
     flower: {
         type: "",
-        level: 1,
-        life: 1,
+        maxHealth: 1,
+        health: 1,
         damage: 1,
         speed: 1,
         sprite: "",

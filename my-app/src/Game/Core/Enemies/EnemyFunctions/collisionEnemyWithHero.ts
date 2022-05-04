@@ -6,7 +6,7 @@ function collision(){}
 export const collisionEnemiesWithHero = (enemies: Enemy[], hero: Hero) => {
     enemies.forEach(enemy => {
         if(hitBoxMatch(enemy.spriteBox, hero.spriteBox)){
-            hero.life -= enemy.damage
+            hero.health -= enemy.damage
         }
     });
 }
