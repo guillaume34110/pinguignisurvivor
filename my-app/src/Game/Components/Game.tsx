@@ -67,7 +67,9 @@ export default function Game() {
     eventListeners()
     scaling()
     newValue = JSON.parse(JSON.stringify(startData))
+
     newValue.hero.speed = 10
+
     intervale = setInterval(mainLoop, timeInterval);
     return () => {
       removeEventListeners()
