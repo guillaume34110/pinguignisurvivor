@@ -1,12 +1,12 @@
-import { Enemy, enemyGeneric } from "../StartData/StartData"
+import { Enemy } from "./Enemy";
 
 interface Enemies {
-    rabit: Enemy,
+    rabbit: Enemy,
 }
 
 export const enemies: Enemies = {
 
-    rabit: {
+    rabbit: {
         type: "",
         maxHealth: 1,
         health: 1,

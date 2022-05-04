@@ -1,5 +1,6 @@
-import { Enemy, Hero } from "../../StartData/StartData"
+import { Hero } from "../../Hero/Hero";
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch"
+import { Enemy } from "../Enemy";
 
 function collision(){}
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import { Enemy } from '../../../Core/StartData/StartData'
 import { EnemyProps } from '../../interfaces/EnemiProps'
 
 

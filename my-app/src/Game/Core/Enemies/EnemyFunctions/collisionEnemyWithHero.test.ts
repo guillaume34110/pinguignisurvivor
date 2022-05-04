@@ -1,4 +1,6 @@
-import { Enemy, enemyGeneric, Hero, startData } from "../../StartData/StartData"
+import { Hero } from "../../Hero/Hero"
+import { startData } from "../../StartData/StartData"
+import { Enemy, enemyGeneric } from "../Enemy"
 import { collisionEnemiesWithHero } from "./collisionEnemyWithHero"
 
 const given = describe
