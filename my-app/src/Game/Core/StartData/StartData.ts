@@ -1,6 +1,5 @@
 import { time } from "console"
 
-
 export interface GameData {
     hero: Hero,
     heroProjectiles: HeroProjectile[],
@@ -173,7 +172,6 @@ export const enemyGeneric: Enemy = {
     health: 100,
     damage: 1,
     speed: 1,
-
 }
 
 export interface Item {
@@ -196,13 +194,13 @@ export interface Keys {
         up: boolean,
         down: boolean,
     }
-
 }
 
 export interface Camera { 
     x: number,
     y:number
 }
+
 export const startData: GameData = {
     hero: heroGeneric,
     heroProjectiles: [],
@@ -227,7 +225,4 @@ export const startData: GameData = {
         x:0,
         y:0,
     }
-
 }
-
-
