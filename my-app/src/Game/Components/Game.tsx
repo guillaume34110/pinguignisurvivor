@@ -99,7 +99,5 @@ export default function Game() {
     </div>
   )
 }
-function userRef(arg0: null) {
-  throw new Error('Function not implemented.')
-}
+
 
