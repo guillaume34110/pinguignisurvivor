@@ -29,5 +29,5 @@ if (speedY !== 0 && speedX  !== 0){
     gameData.hero.spriteBox.x += speedX*0.8
     gameData.hero.spriteBox.y += speedY*0.8
 }
-
+}
 
