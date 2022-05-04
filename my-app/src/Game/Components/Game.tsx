@@ -68,7 +68,7 @@ export default function Game() {
     scaling()
     newValue = JSON.parse(JSON.stringify(startData))
 
-    newValue.hero.moveSpeed = 2
+    newValue.hero.moveSpeed = 10
 
     intervale = setInterval(mainLoop, timeInterval);
     return () => {
