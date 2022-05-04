@@ -8,21 +8,21 @@ let speedY = 0
 
 
 if (gameData.keys.keyState.down) {
-    speedX += gameData.hero.speed
-    gameData.hero.sprite = "pinguigny-front"
+    speedX += gameData.hero.moveSpeed
+    gameData.hero.sprite.sprite = "pinguigny-front"
 }
 if (gameData.keys.keyState.up) {
-    speedX -= gameData.hero.speed
-    gameData.hero.sprite = "pinguigny-back"
+    speedX -= gameData.hero.moveSpeed
+    gameData.hero.sprite.sprite = "pinguigny-back"
 }
 
 if (gameData.keys.keyState.right) {
-    speedY += gameData.hero.speed
-    gameData.hero.sprite = "pinguigny-right"
+    speedY += gameData.hero.moveSpeed
+    gameData.hero.sprite.sprite = "pinguigny-right"
 }
 if (gameData.keys.keyState.left) {
-    speedY -= gameData.hero.speed
-    gameData.hero.sprite = "pinguigny-left"
+    speedY -= gameData.hero.moveSpeed
+    gameData.hero.sprite.sprite = "pinguigny-left"
 }
 
 
