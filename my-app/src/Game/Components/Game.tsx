@@ -14,6 +14,7 @@ import { keydownController, keyupController } from '../Core/KeysInputs/keys'
 import { scaling } from '../Core/Scaling/scaling'
 import { heroMove } from '../Core/Hero/heroMove'
 import { camera } from '../Core/Camera/camera'
+import Buildings from './buildings/Buildings'
 
 
 let intervale: NodeJS.Timer
@@ -66,7 +67,9 @@ export default function Game() {
     eventListeners()
     scaling()
     newValue = JSON.parse(JSON.stringify(startData))
+
     newValue.hero.moveSpeed = 2
+
     intervale = setInterval(mainLoop, timeInterval);
     return () => {
       removeEventListeners()
@@ -92,8 +95,10 @@ export default function Game() {
           <Controls gameData={gameData} setGameData={setGameData} />
           <Items gameData={gameData} setGameData={setGameData} />
           <Enemies gameData={gameData} setGameData={setGameData} />
+          <Buildings gameData={gameData} setGameData={setGameData} />
           <Hero gameData={gameData} setGameData={setGameData} />
           <Weapons gameData={gameData} setGameData={setGameData} />
+         
         </div>
       </div>
     </div>
