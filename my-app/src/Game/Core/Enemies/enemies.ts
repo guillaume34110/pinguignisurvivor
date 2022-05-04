@@ -1,19 +1,24 @@
 import { Enemy, enemyGeneric } from "../StartData/StartData"
 
 interface Enemies {
-    medusa: Enemy,
-    flower: Enemy,
+    rabit: Enemy,
 }
 
 export const enemies: Enemies = {
 
-    medusa: {
+    rabit: {
         type: "",
-        level: 1,
-        life: 1,
+        maxHealth: 1,
+        health: 1,
         damage: 1,
         speed: 1,
-        sprite: "",
+        sprite: {
+            front: "rabbit-front",
+            back: "rabbit-back",
+            left: "rabbit-left",
+            right: "rabbit-right",
+            sprite:"rabbit-front"
+        },
         spriteBox: {
             x: 1,
             y: 1,
@@ -21,21 +26,6 @@ export const enemies: Enemies = {
             h: 32,
         }
     },
-
-    flower: {
-        type: "",
-        level: 1,
-        life: 1,
-        damage: 1,
-        speed: 1,
-        sprite: "",
-        spriteBox: {
-            x: 1,
-            y: 1,
-            w: 32,
-            h: 32,
-        }
-    }
-
+    
 }
 

@@ -13,7 +13,7 @@ const gameData:GameData = JSON.parse(JSON.stringify(startData))
 const heroInit = () => { 
     gameData.hero.spriteBox.x = 100
     gameData.hero.spriteBox.y = 100
-    gameData.hero.speed = 5
+    gameData.hero.moveSpeed = 5
     gameData.keys = {
         keysInstant: {
             left: false,
@@ -39,7 +39,6 @@ given('hero is on map and key input is send', () => {
             keydownController(gameData.keys, "ArrowRight")
             heroMove(gameData)
             expect(gameData.hero.spriteBox.y).toBe(105)
-
 
         })
     })
@@ -77,7 +76,6 @@ given('hero is on map and key input is send', () => {
 
             expect(gameData.hero.spriteBox.y).toBe(104)
             expect(gameData.hero.spriteBox.y).toBe(104)
-
 
         })
     })
