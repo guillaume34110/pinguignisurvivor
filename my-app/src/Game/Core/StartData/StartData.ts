@@ -8,7 +8,8 @@ export interface GameData {
     items: Item[],
     keys: Keys,
     time: number,
-    camera:Camera,
+    camera: Camera,
+    building: Building[],
 }
 
 export interface SpriteBox {
@@ -88,14 +89,22 @@ export interface Keys {
 
 }
 
-export interface Camera { 
+export interface Camera {
     x: number,
-    y:number
+    y: number
+}
+
+export interface Building {
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+    sprite: string,
 }
 export const startData: GameData = {
     hero: {
 
-        sprite: "pinguigny-front",    
+        sprite: "pinguigny-front",
         inventory: [],
         life: 0,
         speed: 0,
@@ -125,12 +134,12 @@ export const startData: GameData = {
             down: false,
         }
     },
-    time:0,
-    camera:{
-        x:0,
-        y:0,
-    }
-
+    time: 0,
+    camera: {
+        x: 0,
+        y: 0,
+    },
+    building: [{ x: 500, y: 500,h:128,w:128, sprite :"grey128"}]
 }
 
 
