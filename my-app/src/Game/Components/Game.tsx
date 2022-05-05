@@ -15,6 +15,7 @@ import { scaling } from '../Core/Scaling/scaling'
 import { heroMove } from '../Core/Hero/heroMove'
 import { camera } from '../Core/Camera/camera'
 import Buildings from './buildings/Buildings'
+import { buildingColisionWithHero } from '../Core/Building/BuildingColisions'
 
 
 let intervale: NodeJS.Timer
@@ -27,6 +28,7 @@ export default function Game() {
 
   const mainLoop = () => {
     heroMove(newValue)
+    buildingColisionWithHero(newValue)
     camera(newValue)
     setGameData((gameData) => ({
       ...gameData,
