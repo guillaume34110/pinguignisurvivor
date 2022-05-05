@@ -208,6 +208,9 @@ export interface Building {
     y: number,
     w: number,
     h: number,
+    rotationX:number,
+    rotationY:number,
+    translateY:number,
     sprite: string,
 }
 
@@ -239,6 +242,9 @@ export const startData: GameData = {
         x: 0,
         y: 0,
     },
-    building: [{ x: 500, y: 500,h:128,w:128, sprite :"grey128"}]
-
+    building: [
+        { x: 1000, y: 1000,h:102,w:102, sprite :"grey128", rotationY:0,rotationX:90,translateY:50,},
+    
+    
+    ]
 }
