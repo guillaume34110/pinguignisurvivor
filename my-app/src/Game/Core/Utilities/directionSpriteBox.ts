@@ -4,8 +4,6 @@ export enum DirectionEnum {
     Up, Left, Down, Right, DownRight, DownLeft, UpLeft, UpRight, Random
 }
 
-let test = "un test de commit"
-
 export const spriteBoxSetDirection = (
     spriteBox: SpriteBox, directionToSet: DirectionEnum
 ) => {
