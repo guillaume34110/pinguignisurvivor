@@ -14,7 +14,6 @@ export interface Hero {
     health: number,
     recoveryHealth: number,
     armor: number,
-    moveSpeed: number,
     luck: number,
     growth: number,                                 // affect quantity of xp earned %
     greed: number,                                  // affect quantity of gold earned %
@@ -56,6 +55,11 @@ export const heroGeneric: Hero = {
         y: 0,
         w: 32,
         h: 32,
+        direction:{
+            x:0,
+            y:0,
+        },
+        speed: 1,
     },
     life: 1,
     invulnerabilityCoolDown: 1,
@@ -63,7 +67,6 @@ export const heroGeneric: Hero = {
     health: 100,
     recoveryHealth: 0,
     armor: 0,
-    moveSpeed: 1,
     luck: 0,
     growth: 0,
     greed: 0,

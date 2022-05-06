@@ -11,7 +11,6 @@ export const enemies: Enemies = {
         maxHealth: 1,
         health: 1,
         damage: 1,
-        speed: 1,
         sprite: {
             front: "rabbit-front",
             back: "rabbit-back",
@@ -24,6 +23,11 @@ export const enemies: Enemies = {
             y: 1,
             w: 32,
             h: 32,
+            direction:{
+                x:0,
+                y:0,
+            },
+            speed: 1,
         }
     },
     

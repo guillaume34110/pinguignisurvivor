@@ -1,14 +1,5 @@
 import { SpriteBox } from "../StartData/StartData";
 
-export enum DirectionProjectile {
-    Up, Left, Down, Right, DownRight, DownLeft, UpLeft, UpRight, Random
-}
-
-interface Direction {
-    x: number,
-    y: number,
-}
-
 export interface HeroProjectile {
 
     // GRAPHICAL AND POSITION :
@@ -20,8 +11,6 @@ export interface HeroProjectile {
     level: number,
     damage: number,                             // damage => hero.might
     criticalMultipliar: number,
-    direction: Direction,
-    speed: number,                                  // projectile speed
     amountProjectile: number,                // amount of projectile fired by each shot  
     penetration: number,                        // number of enemies penetrate by projectile
     durationEffect: number,                    // weapon effect duration
@@ -41,16 +30,16 @@ export const heroProjectileGeneric: HeroProjectile = {
         y: 0,
         w: 4,
         h: 4,
+        direction:{
+            x:0,
+            y:0,
+        },
+        speed: 1,
     },
     type: "",
     level: 0,
     damage: 0,
     criticalMultipliar: 0,
-    direction: {
-        x: 0,
-        y: 0,
-    },
-    speed: 1,
     amountProjectile: 1,
     penetration: 0,
     durationEffect: 0,

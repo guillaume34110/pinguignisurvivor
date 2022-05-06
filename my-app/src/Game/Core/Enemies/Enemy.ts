@@ -11,7 +11,6 @@ export interface Enemy {
     maxHealth: number,
     health: number,
     damage: number,
-    speed: number,
 }
 
 export const enemyGeneric: Enemy = {
@@ -27,10 +26,14 @@ export const enemyGeneric: Enemy = {
         y: 0,
         w: 32,
         h: 32,
+        direction:{
+            x:0,
+            y:0,
+        },
+        speed: 1,
     },
     type: "",
     maxHealth: 100,
     health: 100,
     damage: 1,
-    speed: 1,
 }

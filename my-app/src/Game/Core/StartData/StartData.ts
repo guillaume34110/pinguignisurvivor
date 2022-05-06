@@ -10,7 +10,12 @@ export interface GameData {
     items: Item[],
     keys: Keys,
     time: number,
-    camera:Camera,
+    camera: Camera,
+}
+
+export interface Direction {
+    x: number,
+    y: number,
 }
 
 export interface SpriteBox {
@@ -18,6 +23,8 @@ export interface SpriteBox {
     y: number,
     w: number,
     h: number,
+    direction: Direction,
+    speed: number,
 }
 
 export interface Sprite {
@@ -43,9 +50,9 @@ export interface Keys {
     }
 }
 
-export interface Camera { 
+export interface Camera {
     x: number,
-    y:number
+    y: number
 }
 
 export const startData: GameData = {
@@ -67,9 +74,9 @@ export const startData: GameData = {
             down: false,
         }
     },
-    time:0,
-    camera:{
-        x:0,
-        y:0,
+    time: 0,
+    camera: {
+        x: 0,
+        y: 0,
     }
 }
