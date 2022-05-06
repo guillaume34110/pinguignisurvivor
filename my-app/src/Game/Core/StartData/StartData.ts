@@ -1,4 +1,4 @@
-import { time } from "console"
+import {time} from "console"
 
 export interface GameData {
     hero: Hero,
@@ -31,6 +31,7 @@ export interface Hero {
     // GRAPHICAL AND POSITION :
     sprite: Sprite
     spriteBox: SpriteBox,
+    hitBox:SpriteBox,
 
     // HERO STATS :
     life: number,                                          // Determines the amount of Extra Lives the player has
@@ -74,13 +75,19 @@ export const heroGeneric: Hero = {
         back: "rabbit-back",
         left: "rabbit-left",
         right: "rabbit-right",
-        sprite:"rabbit-front"
+        sprite: "rabbit-front"
     },
     spriteBox: {
         x: 0,
         y: 0,
-        w: 0,
-        h: 0,
+        w: 64,
+        h: 128,
+    },
+    hitBox: {
+        x: 0,
+        y: 0,
+        w: 64,
+        h: 128,
     },
     life: 1,
     invulnerabilityCoolDown: 1,
@@ -160,7 +167,7 @@ export const enemyGeneric: Enemy = {
         back: "rabbit-back",
         left: "rabbit-left",
         right: "rabbit-right",
-        sprite:"rabbit-front"
+        sprite: "rabbit-front"
     },
     spriteBox: {
         x: 0,
@@ -204,13 +211,11 @@ export interface Camera {
 
 
 export interface Building {
-    x: number,
-    y: number,
-    w: number,
-    h: number,
-    rotationX:number,
-    rotationY:number,
-    translateY:number,
+    spriteBox: SpriteBox,
+    hitBox: SpriteBox,
+    rotationX: number,
+    rotationY: number,
+    translateY: number,
     sprite: string,
 }
 
@@ -243,8 +248,15 @@ export const startData: GameData = {
         y: 0,
     },
     building: [
-        { x: 1000, y: 1000,h:102,w:102, sprite :"grey128", rotationY:0,rotationX:90,translateY:50,},
-    
-    
+        {
+            spriteBox: {x: 1000, y: 1000, h: 102, w: 102},
+            hitBox: {x: 1000, y: 1000, h: 102, w: 102},
+            sprite: "grey128",
+            rotationY: 0,
+            rotationX: 90,
+            translateY: 50,
+        },
+
+
     ]
 }

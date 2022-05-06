@@ -16,6 +16,7 @@ import { heroMove } from '../Core/Hero/heroMove'
 import { camera } from '../Core/Camera/camera'
 import Buildings from './buildings/Buildings'
 import { buildingColisionWithHero } from '../Core/Building/BuildingColisions'
+import Hitbox from "./Hitboxs/Hitbox";
 
 
 let intervale: NodeJS.Timer
@@ -100,7 +101,7 @@ export default function Game() {
           <Buildings gameData={gameData} setGameData={setGameData} />
           <Hero gameData={gameData} setGameData={setGameData} />
           <Weapons gameData={gameData} setGameData={setGameData} />
-         
+         <Hitbox gameData={gameData} setGameData={setGameData} />
         </div>
       </div>
     </div>
