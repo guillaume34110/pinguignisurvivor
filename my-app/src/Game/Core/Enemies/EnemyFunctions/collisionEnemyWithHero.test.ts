@@ -1,7 +1,7 @@
-import { Hero } from "../../Hero/Hero"
-import { startData } from "../../StartData/StartData"
-import { Enemy, enemyGeneric } from "../Enemy"
-import { collisionEnemiesWithHero } from "./collisionEnemyWithHero"
+import {Hero} from "../../Hero/Hero"
+import {startData} from "../../StartData/StartData"
+import {Enemy, enemyGeneric} from "../Enemy"
+import {collisionEnemiesWithHero} from "./collisionEnemyWithHero"
 
 const given = describe
 const when = describe
@@ -15,7 +15,12 @@ const init = () => {
         x: 100,
         y: 100,
         w: 50,
-        h: 50
+        h: 50,
+        direction: {
+            x: 0,
+            y: 0,
+        },
+        speed: 5
     }
     enemy.damage = 10
     enemy.spriteBox.x = 100

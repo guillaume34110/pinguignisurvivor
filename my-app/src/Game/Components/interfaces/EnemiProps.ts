@@ -1,4 +1,4 @@
-import { Enemy } from "../../Core/StartData/StartData";
+import {Enemy} from "../../Core/Enemies/Enemy";
 
 export interface EnemyProps {
     key: number,

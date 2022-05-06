@@ -1,4 +1,4 @@
-import { HeroItem } from "../../Core/StartData/StartData";
+import {HeroItem} from "../../Core/HeroItem/HeroItem";
 
 export interface ItemPops { inventory: HeroItem[] }
 
