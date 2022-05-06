@@ -82,3 +82,25 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
     }
 
 }
+
+export const spriteBoxSetDirectionAccordingPoint = (
+    spriteBoxA: SpriteBox, pointX: number, pointY: number
+) => {
+
+    if(spriteBoxA.speed !== 0){
+        const deltaX = pointX - spriteBoxA.x
+        const deltaY = pointY - spriteBoxA.y
+        const deltaDistance = Math.sqrt((Math.pow(deltaX, 2)) + (Math.pow(deltaY, 2)))
+    
+        if (deltaDistance > spriteBoxA.speed) {
+            const step = deltaDistance / spriteBoxA.speed
+            spriteBoxA.direction.x = deltaX / step
+            spriteBoxA.direction.y = deltaY / step
+        }
+        else {
+            spriteBoxA.direction.x = deltaX
+            spriteBoxA.direction.y = deltaY
+        }
+    }
+
+}
