@@ -211,6 +211,7 @@ export interface Camera {
 
 
 export interface Building {
+
     spriteBox: SpriteBox,
     hitBox: SpriteBox,
     rotationX: number,
@@ -248,6 +249,7 @@ export const startData: GameData = {
         y: 0,
     },
     building: [
+
         {
             spriteBox: {x: 1000, y: 1000, h: 102, w: 102},
             hitBox: {x: 1000, y: 1000, h: 102, w: 102},
@@ -256,6 +258,7 @@ export const startData: GameData = {
             rotationX: 90,
             translateY: 50,
         },
+
 
 
     ]

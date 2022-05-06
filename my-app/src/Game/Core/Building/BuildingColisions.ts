@@ -1,4 +1,5 @@
 import { GameData, SpriteBox } from "../StartData/StartData";
+
 import { HitBox } from "../Utilities/HitBoxMatch";
 
 export const buildingColisionWithHero = (gameData: GameData) => {
@@ -16,7 +17,8 @@ export const buildingColisionWithHero = (gameData: GameData) => {
         h: gameData.hero.spriteBox.h*0.6
     }
     if (HitBox.hitBoxMatch( gameData.building[0].hitBox, gameData.hero.hitBox)) {
-        console.log("colision")
+       
+
         if (gameData.keys.keyState.left) gameData.hero.spriteBox.y += gameData.hero.moveSpeed
         if (gameData.keys.keyState.right) gameData.hero.spriteBox.y -= gameData.hero.moveSpeed
         if (gameData.keys.keyState.down) gameData.hero.spriteBox.x -= gameData.hero.moveSpeed
