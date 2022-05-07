@@ -1,8 +1,8 @@
+
 import {Hero, heroGeneric} from "../Hero/Hero";
 import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
 import {Item} from "../Items/Item";
 import {Enemy} from "../Enemies/Enemy";
-
 export interface GameData {
     hero: Hero,
     heroProjectiles: HeroProjectile[],
@@ -70,8 +70,11 @@ export interface Building {
     rotationY: number,
     translateY: number,
     sprite: string,
+    type:BuildingType,
 }
-
+export enum BuildingType {
+    xWall,yWall,tree,
+}
 
 export const startData: GameData = {
 
@@ -106,11 +109,30 @@ export const startData: GameData = {
             spriteBox: {x: 1000, y: 1000, h: 102, w: 102, direction: {x: 0, y: 0}, speed: 0},
             hitBox: {x: 1000, y: 1000, h: 102, w: 102},
             sprite: "grey128",
+            rotationY: 90,
+            rotationX: 90,
+            translateY: 50,
+            type:BuildingType.xWall
+        },
+        {
+            spriteBox: {x: 1050, y: 1050, h: 102, w: 102},
+            hitBox: {x: 1050, y: 1050, h: 102, w: 102},
+            sprite: "grey128",
             rotationY: 0,
             rotationX: 90,
             translateY: 50,
+            type:BuildingType.yWall
         },
 
+        {
+            spriteBox: {x: 550, y: 550, h: 400, w: 40},
+            hitBox: {x: 1050, y: 1050, h: 102, w: 102},
+            sprite: "grey128",
+            rotationY: 0,
+            rotationX: 90,
+            translateY: 50,
+            type:BuildingType.tree
+        },
 
     ]
 }

@@ -12,7 +12,7 @@ export default function HitBoxComp({hitBox}: HitBoxProps) {
             boxRef.current.style.width = hitBox.w + 'px'
             boxRef.current.style.height = hitBox.h + 'px'
         }
-    }, [hitBox.x, hitBox.y])
+    }, [hitBox.x,hitBox.y,hitBox.h,hitBox.w])
 
     return (
         <div className="hitbox" ref={boxRef}>

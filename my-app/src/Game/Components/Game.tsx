@@ -12,12 +12,11 @@ import Weapons from './Weapons/Weapons'
 import {GameData, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
-import {heroMove} from '../Core/Hero/heroMove'
 import {camera} from '../Core/Camera/camera'
 import Buildings from './buildings/Buildings'
-import {buildingColisionWithHero} from '../Core/Building/BuildingColisions'
-
-import Hitbox from "./Hitboxs/Hitbox";
+import HitBox from "./Hitboxs/Hitbox";
+import {heroUpdate} from "../Core/Hero/HeroUpdate";
+import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 
 
 let intervale: NodeJS.Timer
@@ -29,14 +28,13 @@ export default function Game() {
     const cameraRef = useRef<HTMLDivElement | null>(null)
 
     const mainLoop = () => {
-        heroMove(newValue)
-        buildingColisionWithHero(newValue)
+        heroUpdate(newValue)
+        buildingUpdate(newValue)
         camera(newValue)
         setGameData((gameData) => ({
             ...gameData,
             ...newValue,
         }));
-
     }
 
     /*keyControl*/
@@ -72,21 +70,18 @@ export default function Game() {
         scaling()
         newValue = JSON.parse(JSON.stringify(startData))
 
-        newValue.hero.spriteBox.speed = 10
+        newValue.hero.moveSpeed = 10
 
         intervale = setInterval(mainLoop, timeInterval);
         return () => {
             removeEventListeners()
             clearInterval(intervale)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
         if (cameraRef && cameraRef.current) {
             cameraRef.current.style.transform = "rotateX(50deg) translateZ(-300px)  translateX(" + -gameData.camera.y + "px) translateY(" + -gameData.camera.x + "px)";
-
-
         }
     }, [gameData.camera.x, gameData.camera.y])
 
@@ -102,7 +97,7 @@ export default function Game() {
                     <Buildings gameData={gameData} setGameData={setGameData}/>
                     <Hero gameData={gameData} setGameData={setGameData}/>
                     <Weapons gameData={gameData} setGameData={setGameData}/>
-                    <Hitbox gameData={gameData} setGameData={setGameData}/>
+                    <HitBox gameData={gameData} setGameData={setGameData}/>
                 </div>
             </div>
         </div>
