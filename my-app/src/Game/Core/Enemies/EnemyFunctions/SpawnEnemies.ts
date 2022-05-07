@@ -9,5 +9,6 @@ export const spawnEnemies = (gameData:GameData) => {
         const lastRabbit = gameData.enemies[gameData.enemies.length-1]
         lastRabbit.spriteBox.x = (gameData.hero.spriteBox.x * Math.random()*2)
         lastRabbit.spriteBox.y = (gameData.hero.spriteBox.y * Math.random()*2)
+        lastRabbit.spriteBox.speed +=  Math.random()*0.5
     }
 }
