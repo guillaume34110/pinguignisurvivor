@@ -36,5 +36,3 @@ export const heroMove = ({hero, keys: {keyState}}: GameData) => {
 
 }
 
-
-
