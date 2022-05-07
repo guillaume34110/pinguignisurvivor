@@ -12,6 +12,9 @@ export default function Hitbox({gameData, setGameData}: GameProps) {
             {gameData && gameData.building.map((building, index) => (
                 <HitBoxComp key={index} hitBox={building.hitBox}/>
             ))}
+            {gameData && gameData.enemies.map((enemy, index) => (
+                <HitBoxComp key={index} hitBox={enemy.hitBox}/>
+            ))}
         </div>
     )
 }

@@ -28,8 +28,13 @@ export const enemies: Enemies = {
                 y: 0,
             },
             speed: 1,
+        },
+        hitBox: {
+            x: 1,
+            y: 1,
+            w: 64,
+            h: 128,
         }
-    },
-
+    }
 }
 

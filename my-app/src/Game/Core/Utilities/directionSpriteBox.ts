@@ -74,9 +74,13 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
             const step = deltaDistance / spriteBoxToMove.speed
             spriteBoxToMove.x += deltaX / step
             spriteBoxToMove.y += deltaY / step
+            spriteBoxToMove.direction.x = deltaX / step
+            spriteBoxToMove.direction.y = deltaY / step
         } else {
             spriteBoxToMove.x += deltaX
             spriteBoxToMove.y += deltaY
+            spriteBoxToMove.direction.x = deltaX
+            spriteBoxToMove.direction.y = deltaY
         }
 
     }

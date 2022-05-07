@@ -3,7 +3,7 @@ import {Building, BuildingType} from "../Building";
 
 
 export const buildingHitBox = (gameData:GameData) => {
-    gameData.building.map(building => {
+    gameData.building.forEach(building => {
         building.hitBox = buildingHitBoxDetermination(building)
     })
 }
