@@ -14,6 +14,11 @@ import { keydownController, keyupController } from '../Core/KeysInputs/keys'
 import { scaling } from '../Core/Scaling/scaling'
 import { heroMove } from '../Core/Hero/heroMove'
 import { camera } from '../Core/Camera/camera'
+import Buildings from './buildings/Buildings'
+import { buildingColisionWithHero } from '../Core/Building/BuildingColisions'
+
+import Hitbox from "./Hitboxs/Hitbox";
+
 
 
 let intervale: NodeJS.Timer
@@ -26,6 +31,7 @@ export default function Game() {
 
   const mainLoop = () => {
     heroMove(newValue)
+    buildingColisionWithHero(newValue)
     camera(newValue)
     setGameData((gameData) => ({
       ...gameData,
@@ -66,7 +72,9 @@ export default function Game() {
     eventListeners()
     scaling()
     newValue = JSON.parse(JSON.stringify(startData))
-    newValue.hero.spriteBox.speed = 2
+
+    newValue.hero.moveSpeed = 10
+
     intervale = setInterval(mainLoop, timeInterval);
     return () => {
       removeEventListeners()
@@ -92,14 +100,14 @@ export default function Game() {
           <Controls gameData={gameData} setGameData={setGameData} />
           <Items gameData={gameData} setGameData={setGameData} />
           <Enemies gameData={gameData} setGameData={setGameData} />
+          <Buildings gameData={gameData} setGameData={setGameData} />
           <Hero gameData={gameData} setGameData={setGameData} />
           <Weapons gameData={gameData} setGameData={setGameData} />
+         <Hitbox gameData={gameData} setGameData={setGameData} />
         </div>
       </div>
     </div>
   )
 }
-function userRef(arg0: null) {
-  throw new Error('Function not implemented.')
-}
+
 

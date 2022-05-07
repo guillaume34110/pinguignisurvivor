@@ -4,5 +4,6 @@ import '../Style/components/Terrain.css'
 export default function Terrain({gameData , setGameData } :GameProps) {
   return (
     <div className="terrain "></div>
+    
   )
 }

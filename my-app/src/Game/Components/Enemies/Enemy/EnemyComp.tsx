@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import { EnemyProps } from '../../interfaces/EnemiProps'
-
+import React, {useEffect, useRef} from 'react'
+import {EnemyProps} from '../../interfaces/EnemiProps'
 
 
 export default function EnemyComp({ key, enemyData }: EnemyProps) {
