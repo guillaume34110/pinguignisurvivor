@@ -3,7 +3,7 @@ import {enemies} from "../enemies";
 let spawnCounter  = 0
 export const spawnEnemies = (gameData:GameData) => {
     spawnCounter++
-    if (spawnCounter === 300) {
+    if (spawnCounter === 100) {
         spawnCounter = 0
         gameData.enemies.push(JSON.parse(JSON.stringify(enemies.rabbit)))
         const lastRabbit = gameData.enemies[gameData.enemies.length-1]

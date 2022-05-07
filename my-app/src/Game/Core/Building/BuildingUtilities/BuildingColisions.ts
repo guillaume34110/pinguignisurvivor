@@ -1,7 +1,7 @@
 import {GameData} from "../../StartData/StartData";
 import {heroCollisionMove} from "../../Hero/HeroUtilities/HeroColisionMove";
 import {HitBoxCls} from "../../Utilities/HitBoxMatch";
-import {enemyCollisionMove} from "../../Enemies/EnemyFunctions/MoveEnemies";
+import {enemyCollisionWithBuildingMove} from "../../Enemies/EnemyFunctions/MoveEnemies";
 
 export const buildingCollisionWithHero = (gameData: GameData) => {
 
@@ -15,7 +15,7 @@ export const buildingCollisionWithHero = (gameData: GameData) => {
 export const buildingCollisionWithEnemies = (gameData : GameData) => {
      gameData.building.forEach(building => {
         gameData.enemies.forEach(enemy => {
-         if (HitBoxCls.hitBoxMatch(building.hitBox, enemy.hitBox)) enemyCollisionMove(enemy)
+         if (HitBoxCls.hitBoxMatch(building.hitBox, enemy.hitBox)) enemyCollisionWithBuildingMove(enemy)
      } )
     })
 }

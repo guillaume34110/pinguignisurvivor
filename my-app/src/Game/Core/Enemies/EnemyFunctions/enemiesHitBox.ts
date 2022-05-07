@@ -1,6 +1,6 @@
 import {GameData} from "../../StartData/StartData";
 
-export const enemiesHtiBox = (gameData:GameData) => {
+export const enemiesHitBox = (gameData:GameData) => {
     gameData.enemies.forEach(enemy => {
         enemy.hitBox = {
             x: enemy.spriteBox.x ,
