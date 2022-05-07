@@ -1,5 +1,5 @@
-import {GameData} from "../StartData/StartData";
-import {Hero} from "./Hero";
+import {GameData} from "../../StartData/StartData";
+import {Hero} from "../Hero";
 
 export const heroMove = (gameData: GameData) => {
 

@@ -1,8 +1,12 @@
-
-import {Hero, heroGeneric} from "../Hero/Hero";
+import {Hero} from "../Hero/Hero";
 import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
 import {Item} from "../Items/Item";
 import {Enemy} from "../Enemies/Enemy";
+import {Building, BuildingType} from "../Building/Building";
+import Buildings from "../../Components/buildings/Buildings";
+import {buildingsGeneric} from "../Building/Buildings";
+import {heroesGeneric} from "../Hero/Heroes";
+
 export interface GameData {
     hero: Hero,
     heroProjectiles: HeroProjectile[],
@@ -62,23 +66,9 @@ export interface Camera {
 }
 
 
-export interface Building {
-
-    spriteBox: HitBox,
-    hitBox: HitBox,
-    rotationX: number,
-    rotationY: number,
-    translateY: number,
-    sprite: string,
-    type:BuildingType,
-}
-export enum BuildingType {
-    xWall,yWall,tree,
-}
-
 export const startData: GameData = {
 
-    hero: heroGeneric,
+    hero: heroesGeneric.pinguigny,
 
     heroProjectiles: [],
     enemies: [],
@@ -104,35 +94,6 @@ export const startData: GameData = {
         y: 0,
     },
     building: [
-
-        {
-            spriteBox: {x: 1000, y: 1000, h: 102, w: 102},
-            hitBox: {x: 1000, y: 1000, h: 102, w: 102},
-            sprite: "grey128",
-            rotationY: 90,
-            rotationX: 90,
-            translateY: 50,
-            type:BuildingType.xWall
-        },
-        {
-            spriteBox: {x: 1050, y: 1050, h: 102, w: 102},
-            hitBox: {x: 1050, y: 1050, h: 102, w: 102},
-            sprite: "grey128",
-            rotationY: 0,
-            rotationX: 90,
-            translateY: 50,
-            type:BuildingType.yWall
-        },
-
-        {
-            spriteBox: {x: 550, y: 550, h: 400, w: 40},
-            hitBox: {x: 1050, y: 1050, h: 102, w: 102},
-            sprite: "grey128",
-            rotationY: 0,
-            rotationX: 90,
-            translateY: 50,
-            type:BuildingType.tree
-        },
-
+    buildingsGeneric.horizontalWall,buildingsGeneric.verticalWall,buildingsGeneric.tree
     ]
 }

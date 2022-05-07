@@ -7,7 +7,7 @@ interface Enemies {
 export const enemies: Enemies = {
 
     rabbit: {
-        type: "",
+        type: "rabbit",
         maxHealth: 1,
         health: 1,
         damage: 1,
