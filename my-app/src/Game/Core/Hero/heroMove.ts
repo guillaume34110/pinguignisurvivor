@@ -1,4 +1,4 @@
-import {GameData} from "../StartData/StartData";
+import { GameData } from "../StartData/StartData";
 
 export const heroMove = ({hero, keys: {keyState}}: GameData) => {
 
@@ -35,3 +35,4 @@ export const heroMove = ({hero, keys: {keyState}}: GameData) => {
 
 
 }
+
