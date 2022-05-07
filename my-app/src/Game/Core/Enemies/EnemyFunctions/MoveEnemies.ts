@@ -1,11 +1,14 @@
 import {GameData} from "../../StartData/StartData";
-import {spriteBoxSetDirectionAccordingOtherSpriteBox} from "../../Utilities/directionSpriteBox";
+import {
+    spriteBoxSetDirectionAccordingOtherSpriteBox,
+    spriteBoxSetDirectionAccordingOtherSpriteBoxLite
+} from "../../Utilities/directionSpriteBox";
 import {Enemy} from "../Enemy";
 
 export const moveEnemies = (gameData: GameData) => {
     gameData.enemies.forEach(enemy => {
 
-        spriteBoxSetDirectionAccordingOtherSpriteBox(enemy.spriteBox, gameData.hero.spriteBox)
+        spriteBoxSetDirectionAccordingOtherSpriteBoxLite(enemy.spriteBox, gameData.hero.spriteBox)
 
     })
 }
