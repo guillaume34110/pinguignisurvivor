@@ -1,36 +1,43 @@
-import { GameData } from "../StartData/StartData";
+import {GameData} from "../StartData/StartData";
+import {Hero} from "./Hero";
 
-export const heroMove = ({hero, keys: {keyState}}: GameData) => {
+export const heroMove = (gameData: GameData) => {
 
+    const speed: { x: number, y: number } = HeroMoveDetermination(gameData)
+    applyHeroMove(speed, gameData.hero)
 
-    let speedX = 0
-    let speedY = 0
+}
 
+export const HeroMoveDetermination = (gameData: GameData): { x: number, y: number } => {
 
-    if (keyState.down) {
-        speedX += hero.spriteBox.speed
-        hero.sprite.sprite = hero.sprite.front
+    const speed: { x: number, y: number }  = {x: 0, y: 0}
+
+    if (gameData.keys.keyState.down) {
+        speed.x += gameData.hero.spriteBox.speed
+        gameData.hero.sprite.sprite = gameData.hero.sprite.front
     }
-    if (keyState.up) {
-        speedX -= hero.spriteBox.speed
-        hero.sprite.sprite = hero.sprite.back
-    }
-
-    if (keyState.right) {
-        speedY += hero.spriteBox.speed
-        hero.sprite.sprite =hero.sprite.right
-    }
-    if (keyState.left) {
-        speedY -= hero.spriteBox.speed
-        hero.sprite.sprite =  hero.sprite.left
+    if (gameData.keys.keyState.up) {
+        speed.x -= gameData.hero.spriteBox.speed
+        gameData.hero.sprite.sprite = gameData.hero.sprite.back
     }
 
-    if (speedX !== 0 && speedY === 0) hero.spriteBox.x += speedX
-    if (speedY !== 0 && speedX === 0) hero.spriteBox.y += speedY
-    if (speedY !== 0 && speedX !== 0) {
-
-        hero.spriteBox.x += speedX * 0.8
-        hero.spriteBox.y += speedY * 0.8
+    if (gameData.keys.keyState.right) {
+        speed.y += gameData.hero.spriteBox.speed
+        gameData.hero.sprite.sprite = gameData.hero.sprite.right
     }
+    if (gameData.keys.keyState.left) {
+        speed.y -= gameData.hero.spriteBox.speed
+        gameData.hero.sprite.sprite = gameData.hero.sprite.left
+    }
+    return speed
+}
 
+export const applyHeroMove = (speed: { x: number, y: number }, hero: Hero) => {
+    if (speed.x !== 0 && speed.y === 0) hero.spriteBox.x += speed.x
+    if (speed.y !== 0 && speed.x === 0) hero.spriteBox.y += speed.y
+    if (speed.y !== 0 && speed.x !== 0) {
+
+        hero.spriteBox.x += speed.x * 0.8
+        hero.spriteBox.y += speed.y * 0.8
+    }
 }
