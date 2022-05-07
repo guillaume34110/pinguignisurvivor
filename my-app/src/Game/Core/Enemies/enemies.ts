@@ -1,31 +1,35 @@
-import { Enemy, enemyGeneric } from "../StartData/StartData"
+import {Enemy} from "./Enemy";
 
 interface Enemies {
-    rabit: Enemy,
+    rabbit: Enemy,
 }
 
 export const enemies: Enemies = {
 
-    rabit: {
+    rabbit: {
         type: "",
         maxHealth: 1,
         health: 1,
         damage: 1,
-        speed: 1,
         sprite: {
             front: "rabbit-front",
             back: "rabbit-back",
             left: "rabbit-left",
             right: "rabbit-right",
-            sprite:"rabbit-front"
+            sprite: "rabbit-front"
         },
         spriteBox: {
             x: 1,
             y: 1,
             w: 32,
             h: 32,
+            direction: {
+                x: 0,
+                y: 0,
+            },
+            speed: 1,
         }
     },
-    
+
 }
 

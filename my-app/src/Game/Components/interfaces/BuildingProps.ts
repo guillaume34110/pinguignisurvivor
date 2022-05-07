@@ -1,6 +1,6 @@
-import { Building } from "../../Core/StartData/StartData";
+import {Building} from "../../Core/StartData/StartData";
 
 
 export interface BuildingProps {
-    buildingData:Building,
+    buildingData: Building,
 }

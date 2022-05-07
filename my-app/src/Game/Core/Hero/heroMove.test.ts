@@ -1,19 +1,17 @@
-import { keydownController } from "../KeysInputs/keys"
-import { GameData,  startData } from "../StartData/StartData"
-import { heroMove } from "./HeroMove"
-
+import {keydownController} from "../KeysInputs/keys"
+import {GameData, startData} from "../StartData/StartData"
+import {heroMove} from "./HeroMove";
 
 const given = describe
 const when = describe
 const then = it
 
+const gameData: GameData = JSON.parse(JSON.stringify(startData))
 
-const gameData:GameData = JSON.parse(JSON.stringify(startData))
-
-const heroInit = () => { 
+const heroInit = () => {
     gameData.hero.spriteBox.x = 100
     gameData.hero.spriteBox.y = 100
-    gameData.hero.moveSpeed = 5
+    gameData.hero.spriteBox.speed = 5
     gameData.keys = {
         keysInstant: {
             left: false,

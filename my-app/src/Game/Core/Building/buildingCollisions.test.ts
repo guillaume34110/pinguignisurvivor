@@ -1,7 +1,7 @@
 import {BuildingType, GameData, startData} from "../StartData/StartData"
-import {buildingCollisionWithHero} from "./BuildingColisions&HitBoxUpdate"
 import {heroSpriteBoxUpdate} from "../Hero/HeroSpriteBox";
 import {heroMove} from "../Hero/HeroMove";
+import {buildingCollisionWithHero} from "./BuildingColisions&HitBoxUpdate";
 import {keyupController} from "../KeysInputs/keys";
 
 const given = describe
@@ -9,7 +9,7 @@ const when = describe
 const then = it
 
 
-let gameData:GameData = JSON.parse(JSON.stringify(startData))
+let gameData: GameData = JSON.parse(JSON.stringify(startData))
 
 const resetData = () => {
     gameData = JSON.parse(JSON.stringify(startData))

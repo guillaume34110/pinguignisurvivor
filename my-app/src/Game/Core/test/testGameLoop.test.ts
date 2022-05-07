@@ -1,10 +1,10 @@
-import { GameData, startData } from "../StartData/StartData"
+import {GameData, startData} from "../StartData/StartData"
 
 let newValue: GameData = JSON.parse(JSON.stringify(startData))
 // a definir l'init state
 
 const testLoop = () => {
-    newValue.hero.spriteBox.x ++
+    newValue.hero.spriteBox.x++
 }
 
 const xLoop = (x: number) => {

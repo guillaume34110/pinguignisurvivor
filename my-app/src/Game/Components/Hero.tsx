@@ -1,22 +1,22 @@
-import React, { useEffect, useRef } from 'react'
-import { GameProps } from './interfaces/GameProps'
+import React, {useEffect, useRef} from 'react'
+import {GameProps} from './interfaces/GameProps'
 import '../Style/components/Hero.css'
 
-export default function Hero({gameData , setGameData } :GameProps) {
-  const heroRef = useRef<HTMLDivElement | null>(null)
+export default function Hero({gameData, setGameData}: GameProps) {
+    const heroRef = useRef<HTMLDivElement | null>(null)
 
-  useEffect(() => {
+    useEffect(() => {
 
-    if (heroRef && heroRef.current) {
-      heroRef.current.style.top = gameData.hero.spriteBox.x + 'px'
-      heroRef.current.style.left = gameData.hero.spriteBox.y + 'px'
-      if (heroRef.current.classList.contains("pinguigny-right"))  {
-        heroRef.current.style.transform = "scaleX(-1) rotateX(270deg) translateY(-80px) "
-      }else heroRef.current.style.transform = "rotateX(270deg) translateY(-80px) "
-    }
-  }, [gameData.hero.spriteBox.x,gameData.hero.spriteBox.y])
+        if (heroRef && heroRef.current) {
+            heroRef.current.style.top = gameData.hero.spriteBox.x + 'px'
+            heroRef.current.style.left = gameData.hero.spriteBox.y + 'px'
+            if (heroRef.current.classList.contains("pinguigny-right")) {
+                heroRef.current.style.transform = "scaleX(-1) rotateX(270deg) translateY(-80px) "
+            } else heroRef.current.style.transform = "rotateX(270deg) translateY(-80px) "
+        }
+    }, [gameData.hero.spriteBox.x, gameData.hero.spriteBox.y])
 
-  return (
-    <div className={"hero " + gameData.hero.sprite.sprite + " animation"} ref ={heroRef}></div>
-  )
+    return (
+        <div className={"hero " + gameData.hero.sprite.sprite + " animation"} ref={heroRef}></div>
+    )
 }

@@ -8,9 +8,9 @@ export default function Hitbox({gameData, setGameData}: GameProps) {
     return (
         <div className="hitboxs">
 
-            <HitBoxComp spriteBox={gameData.hero.hitBox}/>
-            {gameData && gameData.building.map((building,index) => (
-                <HitBoxComp  key = {index} spriteBox = {building.hitBox}/>
+            <HitBoxComp hitBox={gameData.hero.hitBox}/>
+            {gameData && gameData.building.map((building, index) => (
+                <HitBoxComp key={index} hitBox={building.hitBox}/>
             ))}
         </div>
     )
