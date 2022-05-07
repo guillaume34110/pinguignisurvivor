@@ -14,7 +14,7 @@ import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
 import {camera} from '../Core/Camera/camera'
 import Buildings from './buildings/Buildings'
-import Hitbox from "./Hitboxs/Hitbox";
+import HitBox from "./Hitboxs/Hitbox";
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
 import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 
@@ -77,14 +77,11 @@ export default function Game() {
             removeEventListeners()
             clearInterval(intervale)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
         if (cameraRef && cameraRef.current) {
             cameraRef.current.style.transform = "rotateX(50deg) translateZ(-300px)  translateX(" + -gameData.camera.y + "px) translateY(" + -gameData.camera.x + "px)";
-
-
         }
     }, [gameData.camera.x, gameData.camera.y])
 
@@ -100,7 +97,7 @@ export default function Game() {
                     <Buildings gameData={gameData} setGameData={setGameData}/>
                     <Hero gameData={gameData} setGameData={setGameData}/>
                     <Weapons gameData={gameData} setGameData={setGameData}/>
-                    <Hitbox gameData={gameData} setGameData={setGameData}/>
+                    <HitBox gameData={gameData} setGameData={setGameData}/>
                 </div>
             </div>
         </div>
