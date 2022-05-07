@@ -1,38 +1,37 @@
 import {GameData} from "../StartData/StartData";
 
-export const heroMove = (gameData: GameData) => {
+export const heroMove = ({hero, keys: {keyState}}: GameData) => {
 
 
     let speedX = 0
     let speedY = 0
 
 
-    if (gameData.keys.keyState.down) {
-        speedX += gameData.hero.spriteBox.speed
-        gameData.hero.sprite.sprite = "pinguigny-front"
+    if (keyState.down) {
+        speedX += hero.spriteBox.speed
+        hero.sprite.sprite = hero.sprite.front
     }
-    if (gameData.keys.keyState.up) {
-        speedX -= gameData.hero.spriteBox.speed
-        gameData.hero.sprite.sprite = "pinguigny-back"
-    }
-
-    if (gameData.keys.keyState.right) {
-        speedY += gameData.hero.spriteBox.speed
-        gameData.hero.sprite.sprite = "pinguigny-right"
-    }
-    if (gameData.keys.keyState.left) {
-        speedY -= gameData.hero.spriteBox.speed
-        gameData.hero.sprite.sprite = "pinguigny-left"
+    if (keyState.up) {
+        speedX -= hero.spriteBox.speed
+        hero.sprite.sprite = hero.sprite.back
     }
 
-    if (speedX !== 0 && speedY === 0) gameData.hero.spriteBox.x += speedX
-    if (speedY !== 0 && speedX === 0) gameData.hero.spriteBox.y += speedY
+    if (keyState.right) {
+        speedY += hero.spriteBox.speed
+        hero.sprite.sprite =hero.sprite.right
+    }
+    if (keyState.left) {
+        speedY -= hero.spriteBox.speed
+        hero.sprite.sprite =  hero.sprite.left
+    }
+
+    if (speedX !== 0 && speedY === 0) hero.spriteBox.x += speedX
+    if (speedY !== 0 && speedX === 0) hero.spriteBox.y += speedY
     if (speedY !== 0 && speedX !== 0) {
 
-        gameData.hero.spriteBox.x += speedX * 0.8
-        gameData.hero.spriteBox.y += speedY * 0.8
+        hero.spriteBox.x += speedX * 0.8
+        hero.spriteBox.y += speedY * 0.8
     }
 
 
 }
-
