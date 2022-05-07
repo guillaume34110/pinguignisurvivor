@@ -1,14 +1,14 @@
-import {Building, BuildingType, GameData, SpriteBox} from "../StartData/StartData";
-import {HitBox} from "../Utilities/HitBoxMatch";
+import {Building, BuildingType, GameData, HitBox} from "../StartData/StartData";
 import {heroCollisionMove} from "../Hero/HeroColisionMove";
+import {HitBoxCls} from "../Utilities/HitBoxMatch";
 
 export const buildingCollisionWithHero = (gameData: GameData) =>
     gameData.building.map(building => {
         building.hitBox = buildingHitBoxDetermination(building)
-        if (HitBox.hitBoxMatch(building.hitBox, gameData.hero.hitBox)) heroCollisionMove(gameData)
+        if (HitBoxCls.hitBoxMatch(building.hitBox, gameData.hero.hitBox)) heroCollisionMove(gameData)
     })
 
-const buildingHitBoxDetermination = ({spriteBox, type}: Building): SpriteBox => {
+const buildingHitBoxDetermination = ({spriteBox, type}: Building): HitBox => {
 
     if (type === BuildingType.xWall) {
         return {

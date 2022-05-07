@@ -5,6 +5,7 @@ export const heroSpriteBoxUpdate = ({hero}: GameData) => {
         x: hero.spriteBox.x - hero.spriteBox.h / 4,
         y: hero.spriteBox.y - hero.spriteBox.w / 16,
         w: hero.spriteBox.w,
-        h: hero.spriteBox.h * 0.6
+        h: hero.spriteBox.h * 0.6,
+        direction: {x: 0, y: 0}, speed: 0,
     }
 }

@@ -1,5 +1,8 @@
-import {GameData, startData} from "../StartData/StartData"
-import {buildingColisionWithHero} from "./BuildingColisions"
+import {BuildingType, GameData, startData} from "../StartData/StartData"
+import {heroSpriteBoxUpdate} from "../Hero/HeroSpriteBox";
+import {heroMove} from "../Hero/HeroMove";
+import {buildingCollisionWithHero} from "./BuildingColisions&HitBoxUpdate";
+import {keyupController} from "../KeysInputs/keys";
 
 const given = describe
 const when = describe

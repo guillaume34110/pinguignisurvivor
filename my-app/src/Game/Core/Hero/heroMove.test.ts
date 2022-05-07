@@ -1,12 +1,10 @@
 import {keydownController} from "../KeysInputs/keys"
 import {GameData, startData} from "../StartData/StartData"
-import {heroMove} from "./heroMove"
-
+import {heroMove} from "./HeroMove";
 
 const given = describe
 const when = describe
 const then = it
-
 
 const gameData: GameData = JSON.parse(JSON.stringify(startData))
 
