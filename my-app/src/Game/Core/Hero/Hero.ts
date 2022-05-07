@@ -1,12 +1,12 @@
 import {HeroItem} from "../HeroItem/HeroItem";
-import {Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
 
 export interface Hero {
 
     // GRAPHICAL AND POSITION :
     sprite: Sprite
     spriteBox: SpriteBox,
-    hitBox: SpriteBox,
+    hitBox: HitBox,
 
     // HERO STATS :
     life: number,                                          // Determines the amount of Extra Lives the player has
@@ -54,8 +54,8 @@ export const heroGeneric: Hero = {
     spriteBox: {
         x: 0,
         y: 0,
-        w: 32,
-        h: 32,
+        w: 64,
+        h: 128,
         direction: {
             x: 0,
             y: 0,
@@ -67,11 +67,6 @@ export const heroGeneric: Hero = {
         y: 0,
         w: 32,
         h: 32,
-        direction: {
-            x: 0,
-            y: 0,
-        },
-        speed: 0,
     },
     life: 1,
     invulnerabilityCoolDown: 1,
