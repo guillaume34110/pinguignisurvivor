@@ -62,24 +62,24 @@ export const spriteBoxSetDirectionByAngle = (
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
-    spriteBoxA: SpriteBox, spriteBoxB: SpriteBox
+    spriteBoxToMove: SpriteBox, spriteBoxTarget: SpriteBox
 ) => {
 
-    if (spriteBoxA.speed !== 0) {
-        const deltaX = spriteBoxB.x - spriteBoxA.x
-        const deltaY = spriteBoxB.y - spriteBoxA.y
+    if (spriteBoxToMove.speed !== 0) {
+        const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
+        const deltaY = spriteBoxTarget.y - spriteBoxToMove.y
         const deltaDistance = Math.sqrt((Math.pow(deltaX, 2)) + (Math.pow(deltaY, 2)))
 
-        if (deltaDistance > spriteBoxA.speed) {
-            const step = deltaDistance / spriteBoxA.speed
-            spriteBoxA.direction.x = deltaX / step
-            spriteBoxA.direction.y = deltaY / step
+        if (deltaDistance > spriteBoxToMove.speed) {
+            const step = deltaDistance / spriteBoxToMove.speed
+            spriteBoxToMove.x += deltaX / step
+            spriteBoxToMove.y += deltaY / step
         } else {
-            spriteBoxA.direction.x = deltaX
-            spriteBoxA.direction.y = deltaY
+            spriteBoxToMove.x += deltaX
+            spriteBoxToMove.y += deltaY
         }
-    }
 
+    }
 }
 
 export const spriteBoxSetDirectionAccordingPoint = (
