@@ -15,7 +15,7 @@ export default function Building({ buildingData }: BuildingProps) {
 
       buildingRef.current.style.transform = `rotateX(${buildingData.rotationX}deg) translateY(${buildingData.translateY}px) rotateY(${buildingData.rotationY}deg) `
     }
-  }, [buildingData.spriteBox.x,buildingData.spriteBox.y])
+  }, [buildingData.spriteBox.x,buildingData.spriteBox.y , buildingData.rotationX])
   
   return (
     <div ref={buildingRef} className={"building building-" + buildingData.sprite + " animation"}></div>
