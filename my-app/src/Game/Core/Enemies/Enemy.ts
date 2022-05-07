@@ -1,4 +1,4 @@
-import { Sprite, SpriteBox } from "../StartData/StartData";
+import {Sprite, SpriteBox} from "../StartData/StartData";
 
 export interface Enemy {
 
@@ -19,16 +19,16 @@ export const enemyGeneric: Enemy = {
         back: "rabbit-back",
         left: "rabbit-left",
         right: "rabbit-right",
-        sprite:"rabbit-front"
+        sprite: "rabbit-front"
     },
     spriteBox: {
         x: 0,
         y: 0,
         w: 32,
         h: 32,
-        direction:{
-            x:0,
-            y:0,
+        direction: {
+            x: 0,
+            y: 0,
         },
         speed: 1,
     },

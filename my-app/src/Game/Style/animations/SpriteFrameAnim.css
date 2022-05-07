@@ -1,36 +1,46 @@
-.animation{
+.animation {
     image-rendering: pixelated;
-    background-size:400% 100% ;
+    background-size: 400% 100%;
     background-repeat: no-repeat;
     background-position: 0% 0;
-    animation :sprite;
+    animation: sprite;
     animation-duration: 1.5s;
     animation-timing-function: steps(4);
     animation-iteration-count: infinite;
 }
-.animation-slow{
+
+.animation-slow {
     animation-duration: 6s;
 }
-.animation-slow-slow{
-    animation-duration:12s;
+
+.animation-slow-slow {
+    animation-duration: 12s;
 }
-.animation-fast{
+
+.animation-fast {
     animation-duration: 0.75s;
 }
-.fixed{
+
+.fixed {
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 @keyframes sprite {
-    from { background-position: 0 0 ; }
-    to { background-position:  133.3333333333333% 0; }
-  }
-  @keyframes gradient-animation {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 133.3333333333333% 0;
+    }
+}
+
+@keyframes gradient-animation {
     0% {
-      background-position: 200% 0%;
+        background-position: 200% 0%;
     }
     100% {
-      background-position: 0% 0%;
+        background-position: 0% 0%;
     }
-  }
+}

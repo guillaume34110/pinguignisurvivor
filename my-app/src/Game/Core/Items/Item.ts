@@ -1,4 +1,4 @@
-import { SpriteBox } from "../StartData/StartData";
+import {SpriteBox} from "../StartData/StartData";
 
 export interface Item {
     type: "string",

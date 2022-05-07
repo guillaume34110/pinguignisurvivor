@@ -1,7 +1,7 @@
-import { Hero, heroGeneric } from "../Hero/Hero"
-import { DirectionEnum, spriteBoxSetDirection } from "../Utilities/directionSpriteBox"
-import { HeroProjectile, heroProjectileGeneric } from "./HeroProjectile"
-import { heroProjectileMove } from "./HeroProjectileMove"
+import {Hero, heroGeneric} from "../Hero/Hero"
+import {DirectionEnum, spriteBoxSetDirection} from "../Utilities/directionSpriteBox"
+import {HeroProjectile, heroProjectileGeneric} from "./HeroProjectile"
+import {heroProjectileMove} from "./HeroProjectileMove"
 
 const given = describe
 const when = describe
@@ -10,17 +10,17 @@ const then = it
 const hero: Hero = Object.create(heroGeneric)
 const heroProjectile: HeroProjectile = Object.create(heroProjectileGeneric)
 
-const testInit = () => { 
+const testInit = () => {
     hero.spriteBox = {
-        x:100,
-        y:100,
-        w:32,
-        h:32,
-        direction:{
-            x:0,
-            y:0,
+        x: 100,
+        y: 100,
+        w: 32,
+        h: 32,
+        direction: {
+            x: 0,
+            y: 0,
         },
-        speed:5
+        speed: 5
     }
     heroProjectile.spriteBox.speed = 5
     heroProjectile.spriteBox.x = hero.spriteBox.x + (hero.spriteBox.w / 2)

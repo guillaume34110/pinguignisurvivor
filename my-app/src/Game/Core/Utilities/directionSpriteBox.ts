@@ -1,4 +1,4 @@
-import { SpriteBox } from "../StartData/StartData";
+import {SpriteBox} from "../StartData/StartData";
 
 export enum DirectionEnum {
     Up, Left, Down, Right, DownRight, DownLeft, UpLeft, UpRight, Random
@@ -65,17 +65,16 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
     spriteBoxA: SpriteBox, spriteBoxB: SpriteBox
 ) => {
 
-    if(spriteBoxA.speed !== 0){
+    if (spriteBoxA.speed !== 0) {
         const deltaX = spriteBoxB.x - spriteBoxA.x
         const deltaY = spriteBoxB.y - spriteBoxA.y
         const deltaDistance = Math.sqrt((Math.pow(deltaX, 2)) + (Math.pow(deltaY, 2)))
-    
+
         if (deltaDistance > spriteBoxA.speed) {
             const step = deltaDistance / spriteBoxA.speed
             spriteBoxA.direction.x = deltaX / step
             spriteBoxA.direction.y = deltaY / step
-        }
-        else {
+        } else {
             spriteBoxA.direction.x = deltaX
             spriteBoxA.direction.y = deltaY
         }
@@ -87,17 +86,16 @@ export const spriteBoxSetDirectionAccordingPoint = (
     spriteBoxA: SpriteBox, pointX: number, pointY: number
 ) => {
 
-    if(spriteBoxA.speed !== 0){
+    if (spriteBoxA.speed !== 0) {
         const deltaX = pointX - spriteBoxA.x
         const deltaY = pointY - spriteBoxA.y
         const deltaDistance = Math.sqrt((Math.pow(deltaX, 2)) + (Math.pow(deltaY, 2)))
-    
+
         if (deltaDistance > spriteBoxA.speed) {
             const step = deltaDistance / spriteBoxA.speed
             spriteBoxA.direction.x = deltaX / step
             spriteBoxA.direction.y = deltaY / step
-        }
-        else {
+        } else {
             spriteBoxA.direction.x = deltaX
             spriteBoxA.direction.y = deltaY
         }

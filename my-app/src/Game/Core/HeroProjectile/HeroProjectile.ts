@@ -1,4 +1,4 @@
-import { SpriteBox } from "../StartData/StartData";
+import {SpriteBox} from "../StartData/StartData";
 
 export interface HeroProjectile {
 
@@ -30,9 +30,9 @@ export const heroProjectileGeneric: HeroProjectile = {
         y: 0,
         w: 4,
         h: 4,
-        direction:{
-            x:0,
-            y:0,
+        direction: {
+            x: 0,
+            y: 0,
         },
         speed: 1,
     },

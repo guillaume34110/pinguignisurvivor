@@ -1,18 +1,18 @@
-import { HeroItem } from "./HeroItem";
+import {HeroItem} from "./HeroItem";
 
 interface HeroItems {
     leath: HeroItem,
 }
 
 export const supplies: HeroItems = {
-    
-    leath:{
-        sprite:"leath image to link with css",
+
+    leath: {
+        sprite: "leath image to link with css",
         type: "protection",
         level: 0,
         rarity: 1,
-        projectile:null,
-        supply:{
+        projectile: null,
+        supply: {
             extralife: 0,
             bonusMaxHealth: 0,
             bonusRecoveryHealth: 0,

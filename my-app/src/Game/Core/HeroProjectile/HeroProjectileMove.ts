@@ -1,4 +1,4 @@
-import { HeroProjectile } from "./HeroProjectile";
+import {HeroProjectile} from "./HeroProjectile";
 
 export const heroProjectileMove = (
     projectile: HeroProjectile

@@ -1,7 +1,7 @@
-.hitbox{
+.hitbox {
     position: absolute;
     background: chartreuse;
     opacity: 0.2;
-    border:1px solid black;
+    border: 1px solid black;
     transform: translateZ(1px);
 }

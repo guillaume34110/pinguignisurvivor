@@ -1,4 +1,4 @@
-import { HeroProjectile } from "../HeroProjectile/HeroProjectile";
+import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
 
 export interface HeroItem {
     sprite: string,

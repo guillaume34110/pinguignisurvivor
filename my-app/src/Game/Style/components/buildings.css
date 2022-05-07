@@ -1,7 +1,7 @@
-.building{
+.building {
     position: absolute;
     height: 100px;
     width: 100px;
-    background-color:palevioletred;
-    transform:rotateX(90deg) translateY(64px);
+    background-color: palevioletred;
+    transform: rotateX(90deg) translateY(64px);
 }

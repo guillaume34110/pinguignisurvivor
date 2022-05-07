@@ -1,6 +1,6 @@
-.hero{
+.hero {
     position: absolute;
     height: 128px;
     width: 64px;
-    transform:rotateX(270deg) translateY(-80px);
+    transform: rotateX(270deg) translateY(-80px);
 }
