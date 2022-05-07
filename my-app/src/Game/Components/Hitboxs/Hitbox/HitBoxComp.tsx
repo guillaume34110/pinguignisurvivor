@@ -12,7 +12,7 @@ export default function HitBoxComp({spriteBox}: HitBoxProps) {
             boxRef.current.style.width = spriteBox.w + 'px'
             boxRef.current.style.height = spriteBox.h + 'px'
         }
-    }, [spriteBox.x,spriteBox.y])
+    }, [spriteBox.x,spriteBox.y,spriteBox.h,spriteBox.w])
 
     return (
         <div className="hitbox" ref={boxRef}>

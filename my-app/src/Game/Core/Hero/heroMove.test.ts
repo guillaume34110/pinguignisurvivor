@@ -1,6 +1,6 @@
 import { keydownController } from "../KeysInputs/keys"
 import { GameData,  startData } from "../StartData/StartData"
-import { heroMove } from "./heroMove"
+import { heroMove } from "./HeroMove"
 
 
 const given = describe
