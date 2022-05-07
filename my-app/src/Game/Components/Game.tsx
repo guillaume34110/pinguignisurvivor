@@ -18,6 +18,7 @@ import HitBox from "./Hitboxs/Hitbox";
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
 import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 import {buildingInit} from "../Core/Building/BuildingInit";
+import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
 
 
 let intervale: NodeJS.Timer
@@ -30,6 +31,7 @@ export default function Game() {
 
     const mainLoop = () => {
         heroUpdate(newValue)
+        enemiesUpdate(newValue)
         buildingUpdate(newValue)
         camera(newValue)
         setGameData((gameData) => ({
