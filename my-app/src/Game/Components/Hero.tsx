@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import {GameProps} from './interfaces/GameProps'
 import '../Style/components/Hero.css'
+import Life from "./Hud/Life/Life";
 
 export default function Hero({gameData, setGameData}: GameProps) {
     const heroRef = useRef<HTMLDivElement | null>(null)
@@ -17,6 +18,7 @@ export default function Hero({gameData, setGameData}: GameProps) {
     }, [gameData.hero.spriteBox.x, gameData.hero.spriteBox.y])
 
     return (
-        <div className={"hero " + gameData.hero.sprite.sprite + " animation"} ref={heroRef}></div>
+        <div className={"hero " + gameData.hero.sprite.sprite + " animation"} ref={heroRef}><Life life={gameData.hero.life}/></div>
+
     )
 }
