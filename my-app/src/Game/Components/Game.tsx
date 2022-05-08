@@ -8,7 +8,7 @@ import Items from './Items/Items'
 import Terrain from './Terrain'
 import Enemies from './Enemies/Enemies';
 import Hero from './Hero'
-import Projectiles from './Prijectiles/Projectiles'
+import Projectiles from './Projectiles/Projectiles'
 import {GameData, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
@@ -19,6 +19,7 @@ import {heroUpdate} from "../Core/Hero/HeroUpdate";
 import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 import {buildingInit} from "../Core/Building/BuildingInit";
 import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
+import {heroProjectileUpdate} from "../Core/HeroProjectile/HeroProjectileUpdate";
 
 
 let intervale: NodeJS.Timer
@@ -32,6 +33,7 @@ export default function Game() {
     const mainLoop = () => {
         heroUpdate(newValue)
         enemiesUpdate(newValue)
+        heroProjectileUpdate(newValue)
         buildingUpdate(newValue)
         camera(newValue)
         setGameData((gameData) => ({
