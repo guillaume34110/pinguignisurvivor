@@ -92,10 +92,11 @@ export default function Game() {
 
     return (
         <div className="game">
+            <Hud gameData={gameData} setGameData={setGameData}/>
             <div className="camera">
                 <div className="scene" ref={cameraRef}>
                     <Terrain gameData={gameData} setGameData={setGameData}/>
-                    <Hud gameData={gameData} setGameData={setGameData}/>
+
                     <Controls gameData={gameData} setGameData={setGameData}/>
                     <Items gameData={gameData} setGameData={setGameData}/>
                     <Enemies gameData={gameData} setGameData={setGameData}/>

@@ -13,7 +13,9 @@ export interface TimeProps {
 }
 
 export interface XpProps {
-    xp: number
+    xpActual: number
+    xpToReach :number
+    xpTotal:number
 }
 
 export interface InventoryItemProps {

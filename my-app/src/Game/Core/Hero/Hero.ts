@@ -35,6 +35,7 @@ export interface Hero {
     // EXPERIENCE :
     xpActual: number,
     xpToReach: number,
+    xpTotal:number
     level: number,
 
     // LEVELUP :
