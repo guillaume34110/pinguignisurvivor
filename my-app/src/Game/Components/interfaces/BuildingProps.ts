@@ -1,4 +1,4 @@
-import {Building} from "../../Core/StartData/StartData";
+import {Building} from "../../Core/Building/Building";
 
 
 export interface BuildingProps {

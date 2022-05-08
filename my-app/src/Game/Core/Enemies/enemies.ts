@@ -7,7 +7,7 @@ interface Enemies {
 export const enemies: Enemies = {
 
     rabbit: {
-        type: "",
+        type: "rabbit",
         maxHealth: 1,
         health: 1,
         damage: 1,
@@ -21,15 +21,20 @@ export const enemies: Enemies = {
         spriteBox: {
             x: 1,
             y: 1,
-            w: 32,
-            h: 32,
+            w: 64,
+            h: 128,
             direction: {
                 x: 0,
                 y: 0,
             },
             speed: 1,
+        },
+        hitBox: {
+            x: 1,
+            y: 1,
+            w: 64,
+            h: 128,
         }
-    },
-
+    }
 }
 

@@ -1,5 +1,5 @@
-import {keydownController} from "../KeysInputs/keys"
-import {GameData, startData} from "../StartData/StartData"
+import {keydownController} from "../../KeysInputs/keys"
+import {GameData, startData} from "../../StartData/StartData"
 import {heroMove} from "./HeroMove";
 
 const given = describe

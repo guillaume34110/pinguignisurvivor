@@ -1,11 +1,11 @@
-import {Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
 
 export interface Enemy {
 
     // GRAPHICAL AND POSITION :
     sprite: Sprite,
     spriteBox: SpriteBox,
-
+    hitBox :HitBox,
     // STATS :
     type: string,
     maxHealth: number,
@@ -31,6 +31,12 @@ export const enemyGeneric: Enemy = {
             y: 0,
         },
         speed: 1,
+    },
+    hitBox: {
+        x: 0,
+        y: 0,
+        w: 32,
+        h: 32,
     },
     type: "",
     maxHealth: 100,

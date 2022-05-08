@@ -1,4 +1,4 @@
-import {GameData} from "../StartData/StartData";
+import {GameData} from "../../StartData/StartData";
 
 export const heroSpriteBoxUpdate = ({hero}: GameData) => {
     hero.hitBox = {

@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react'
 import {EnemyProps} from '../../interfaces/EnemiProps'
 
 
-export default function EnemyComp({key, enemyData}: EnemyProps) {
+export default function EnemyComp({ enemyData}: EnemyProps) {
     const enemyRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
@@ -13,6 +13,6 @@ export default function EnemyComp({key, enemyData}: EnemyProps) {
     }, [enemyData.spriteBox.x, enemyData.spriteBox.y])
 
     return (
-        <div ref={enemyRef} className={"enemy enemy-" + enemyData.sprite + " animation"}></div>
+        <div ref={enemyRef} className={"enemy enemy- " + enemyData.sprite.sprite + " animation"}></div>
     )
 }

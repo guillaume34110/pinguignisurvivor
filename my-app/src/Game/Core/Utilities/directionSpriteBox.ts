@@ -62,25 +62,47 @@ export const spriteBoxSetDirectionByAngle = (
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
-    spriteBoxA: SpriteBox, spriteBoxB: SpriteBox
+    spriteBoxToMove: SpriteBox, spriteBoxTarget: SpriteBox
 ) => {
 
-    if (spriteBoxA.speed !== 0) {
-        const deltaX = spriteBoxB.x - spriteBoxA.x
-        const deltaY = spriteBoxB.y - spriteBoxA.y
+    if (spriteBoxToMove.speed !== 0) {
+        const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
+        const deltaY = spriteBoxTarget.y - spriteBoxToMove.y
         const deltaDistance = Math.sqrt((Math.pow(deltaX, 2)) + (Math.pow(deltaY, 2)))
 
-        if (deltaDistance > spriteBoxA.speed) {
-            const step = deltaDistance / spriteBoxA.speed
-            spriteBoxA.direction.x = deltaX / step
-            spriteBoxA.direction.y = deltaY / step
+        if (deltaDistance > spriteBoxToMove.speed) {
+            const step = deltaDistance / spriteBoxToMove.speed
+            spriteBoxToMove.x += deltaX / step
+            spriteBoxToMove.y += deltaY / step
+            spriteBoxToMove.direction.x = deltaX / step
+            spriteBoxToMove.direction.y = deltaY / step
         } else {
-            spriteBoxA.direction.x = deltaX
-            spriteBoxA.direction.y = deltaY
+            spriteBoxToMove.x += deltaX
+            spriteBoxToMove.y += deltaY
+            spriteBoxToMove.direction.x = deltaX
+            spriteBoxToMove.direction.y = deltaY
         }
-    }
 
+    }
 }
+export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
+    spriteBoxToMove: SpriteBox, spriteBoxTarget: SpriteBox
+) => {
+    if (spriteBoxToMove.speed !== 0) {
+        const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
+        const deltaY = spriteBoxTarget.y - spriteBoxToMove.y
+
+        const stepX = Math.abs(deltaX / spriteBoxToMove.speed)
+        spriteBoxToMove.x += deltaX / stepX
+        spriteBoxToMove.direction.x = deltaX / stepX
+
+        const stepY = Math.abs(deltaY / spriteBoxToMove.speed)
+        spriteBoxToMove.y += deltaY / stepY
+        spriteBoxToMove.direction.y = deltaY / stepY
+
+    }
+}
+
 
 export const spriteBoxSetDirectionAccordingPoint = (
     spriteBoxA: SpriteBox, pointX: number, pointY: number

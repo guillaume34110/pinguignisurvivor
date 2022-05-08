@@ -1,13 +1,14 @@
-import {Hero, heroGeneric} from "../Hero/Hero"
+import {Hero} from "../Hero/Hero"
 import {DirectionEnum, spriteBoxSetDirection} from "../Utilities/directionSpriteBox"
 import {HeroProjectile, heroProjectileGeneric} from "./HeroProjectile"
 import {heroProjectileMove} from "./HeroProjectileMove"
+import {heroesGeneric} from "../Hero/Heroes";
 
 const given = describe
 const when = describe
 const then = it
 
-const hero: Hero = Object.create(heroGeneric)
+const hero: Hero = Object.create(heroesGeneric.pinguigny)
 const heroProjectile: HeroProjectile = Object.create(heroProjectileGeneric)
 
 const testInit = () => {
