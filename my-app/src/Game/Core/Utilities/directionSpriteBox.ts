@@ -48,19 +48,19 @@ export const spriteBoxSetDirection = (
             break
         }
         case DirectionEnum.DownRight: {
-            spriteBoxSetDirectionWithRadian(spriteBox, Math.PI / 4)
+            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.DownRight)
             break
         }
         case DirectionEnum.DownLeft: {
-            spriteBoxSetDirectionWithRadian(spriteBox, 3 * (Math.PI / 4))
+            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.DownLeft)
             break
         }
         case DirectionEnum.UpLeft: {
-            spriteBoxSetDirectionWithRadian(spriteBox, 5 * (Math.PI / 4))
+            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.UpLeft)
             break
         }
         case DirectionEnum.UpRight: {
-            spriteBoxSetDirectionWithRadian(spriteBox, 7 * (Math.PI / 4))
+            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.UpRight)
             break
         }
         case DirectionEnum.Random: {

@@ -8,7 +8,7 @@ export const heroProjectiles: HeroProjectiles = {
 
     snowBall: {
         sprite: "snowBall",
-        type: "ice",
+        type: "lineShot",
         damage: 1,
         spriteBox: {
             x: 0,
