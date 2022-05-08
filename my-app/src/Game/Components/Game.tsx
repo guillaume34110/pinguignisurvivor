@@ -8,7 +8,7 @@ import Items from './Items/Items'
 import Terrain from './Terrain'
 import Enemies from './Enemies/Enemies';
 import Hero from './Hero'
-import Weapons from './Weapons/Weapons'
+import Projectiles from './Prijectiles/Projectiles'
 import {GameData, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
@@ -18,7 +18,7 @@ import HitBox from "./Hitboxs/Hitbox";
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
 import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 import {buildingInit} from "../Core/Building/BuildingInit";
-import {enemiesUpdate} from "../Core/Enemies/EnemyFunctions/EnemiesUpdate";
+import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
 
 
 let intervale: NodeJS.Timer
@@ -99,7 +99,7 @@ export default function Game() {
                     <Enemies gameData={gameData} setGameData={setGameData}/>
                     <Buildings gameData={gameData} setGameData={setGameData}/>
                     <Hero gameData={gameData} setGameData={setGameData}/>
-                    <Weapons gameData={gameData} setGameData={setGameData}/>
+                    <Projectiles gameData={gameData} setGameData={setGameData}/>
                     <HitBox gameData={gameData} setGameData={setGameData}/>
                 </div>
             </div>
