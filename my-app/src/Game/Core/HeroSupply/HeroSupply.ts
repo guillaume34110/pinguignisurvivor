@@ -1,0 +1,35 @@
+export interface HeroSupply {
+    bonusArmor: number,
+    bonusGreed: number,
+    bonusGrowth: number,
+    bonusLuck: number,
+    bonusMagnetRadius: number,
+    bonusMaxHealth: number,
+    bonusMoveSpeed: number,
+    bonusProjectileAmount: number,
+    bonusProjectileArea: number,
+    bonusProjectileCooldown: number,
+    bonusProjectileDuration: number,
+    bonusProjectileMight: number,
+    bonusProjectileSpeed: number,
+    bonusRecoveryHealth: number,
+    extralife: number,
+}
+
+export const heroSupplyGeneric: HeroSupply = {
+    bonusArmor: 0,
+    bonusGreed: 0,
+    bonusGrowth: 0,
+    bonusLuck: 0,
+    bonusMagnetRadius: 0,
+    bonusMaxHealth: 0,
+    bonusMoveSpeed: 0,
+    bonusProjectileAmount: 0,
+    bonusProjectileArea: 0,
+    bonusProjectileCooldown: 0,
+    bonusProjectileDuration: 0,
+    bonusProjectileMight: 0,
+    bonusProjectileSpeed: 0,
+    bonusRecoveryHealth: 0,
+    extralife: 0
+}

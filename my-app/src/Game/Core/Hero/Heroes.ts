@@ -19,8 +19,9 @@ export const heroesGeneric: Heroes = {
             w: 64,
             h: 128,
             direction: {
+                radian: 0,
                 x: 0,
-                y: 0,
+                y: 0
             },
             speed: 2,
         },

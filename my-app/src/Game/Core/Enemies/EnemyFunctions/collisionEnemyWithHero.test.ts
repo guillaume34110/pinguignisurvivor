@@ -17,8 +17,9 @@ const init = () => {
         w: 50,
         h: 50,
         direction: {
+            radian: 0,
             x: 0,
-            y: 0,
+            y: 0
         },
         speed: 5
     }

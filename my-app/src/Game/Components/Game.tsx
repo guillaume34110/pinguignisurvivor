@@ -18,7 +18,7 @@ import HitBox from "./Hitboxs/Hitbox";
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
 import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 import {buildingInit} from "../Core/Building/BuildingInit";
-import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
+import {enemiesUpdate} from "../Core/Enemies/EnemyFunctions/EnemiesUpdate";
 
 
 let intervale: NodeJS.Timer
