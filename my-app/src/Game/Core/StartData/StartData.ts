@@ -2,8 +2,7 @@ import {Hero} from "../Hero/Hero";
 import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
 import {Item} from "../Items/Item";
 import {Enemy} from "../Enemies/Enemy";
-import {Building, BuildingType} from "../Building/Building";
-import Buildings from "../../Components/buildings/Buildings";
+import {Building} from "../Building/Building";
 import {buildingsGeneric} from "../Building/Buildings";
 import {heroesGeneric} from "../Hero/Heroes";
 
@@ -24,6 +23,7 @@ export interface SpriteBox {
     w: number,
     h: number,
     direction: {
+        radian: number,
         x: number,
         y: number,
     },
@@ -94,6 +94,8 @@ export const startData: GameData = {
         y: 0,
     },
     building: [
-    buildingsGeneric.horizontalWall,buildingsGeneric.verticalWall,buildingsGeneric.tree
+        buildingsGeneric.horizontalWall,
+        buildingsGeneric.verticalWall,
+        buildingsGeneric.tree
     ]
 }

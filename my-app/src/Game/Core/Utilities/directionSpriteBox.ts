@@ -1,7 +1,26 @@
 import {SpriteBox} from "../StartData/StartData";
 
 export enum DirectionEnum {
-    Up, Left, Down, Right, DownRight, DownLeft, UpLeft, UpRight, Random
+    Right,
+    Down,
+    Left,
+    Up,
+    DownRight,
+    DownLeft,
+    UpLeft,
+    UpRight,
+    Random
+}
+
+export const DirectionInRadian = {
+    Right: 0,
+    Down: Math.PI / 2,
+    Left: Math.PI,
+    Up: 3 * (Math.PI / 2),
+    DownRight: Math.PI / 4,
+    DownLeft: 3 * (Math.PI / 4),
+    UpLeft: 5 * (Math.PI / 4),
+    UpRight: 7 * (Math.PI / 4)
 }
 
 export const spriteBoxSetDirection = (
@@ -29,23 +48,23 @@ export const spriteBoxSetDirection = (
             break
         }
         case DirectionEnum.DownRight: {
-            spriteBoxSetDirectionByAngle(spriteBox, Math.PI / 4)
+            spriteBoxSetDirectionWithRadian(spriteBox, Math.PI / 4)
             break
         }
         case DirectionEnum.DownLeft: {
-            spriteBoxSetDirectionByAngle(spriteBox, 3 * (Math.PI / 4))
+            spriteBoxSetDirectionWithRadian(spriteBox, 3 * (Math.PI / 4))
             break
         }
         case DirectionEnum.UpLeft: {
-            spriteBoxSetDirectionByAngle(spriteBox, 5 * (Math.PI / 4))
+            spriteBoxSetDirectionWithRadian(spriteBox, 5 * (Math.PI / 4))
             break
         }
         case DirectionEnum.UpRight: {
-            spriteBoxSetDirectionByAngle(spriteBox, 7 * (Math.PI / 4))
+            spriteBoxSetDirectionWithRadian(spriteBox, 7 * (Math.PI / 4))
             break
         }
         case DirectionEnum.Random: {
-            spriteBoxSetDirectionByAngle(spriteBox, Math.random() * Math.PI * 2)
+            spriteBoxSetDirectionWithRadian(spriteBox, Math.random() * Math.PI * 2)
             break
         }
         default: {
@@ -54,7 +73,7 @@ export const spriteBoxSetDirection = (
     }
 }
 
-export const spriteBoxSetDirectionByAngle = (
+export const spriteBoxSetDirectionWithRadian = (
     spriteBox: SpriteBox, radAngle: number
 ) => {
     spriteBox.direction.x = Math.cos(radAngle) * spriteBox.speed

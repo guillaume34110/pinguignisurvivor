@@ -1,4 +1,5 @@
 import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
+import {HeroSupply} from "../HeroSupply/HeroSupply";
 
 export interface HeroItem {
     sprite: string,
@@ -9,20 +10,11 @@ export interface HeroItem {
     supply: HeroSupply | null,
 }
 
-export interface HeroSupply {
-    extralife: number,
-    bonusMaxHealth: number,
-    bonusRecoveryHealth: number,
-    bonusArmor: number,
-    bonusMoveSpeed: number,
-    bonusLuck: number,
-    bonusGrowth: number,
-    bonusGreed: number,
-    bonusMagnetRadius: number,
-    bonusProjectileMight: number,
-    bonusProjectileArea: number,
-    bonusProjectileSpeed: number,
-    bonusProjectileDuration: number,
-    bonusProjectileAmount: number,
-    bonusProjectileCooldown: number,
+export const heroItemGeneric: HeroItem = {
+    sprite: "heroItemGeneric",
+    type: "generic",
+    level: 0,
+    rarity: 0,
+    projectile: null,
+    supply: null,
 }

@@ -25,12 +25,12 @@ export interface Hero {
     inventory: HeroItem[],
 
     // HERO PROJECTILE STATS :
-    projectileMight: number,                       // affect weapons projectile damage %
-    projectileArea: number,                         // affect weapons projectile area effect ( je pense a la hitbox pour nous ) %
-    projectileSpeed: number,                      // affect weapons projectile speed %
-    projectileDuration: number,                  // affect  weapons projectile effect (a creuser) duration %
+    projectileMight: number,                       // affect heroItems projectile damage %
+    projectileArea: number,                         // affect heroItems projectile area effect ( je pense a la hitbox pour nous ) %
+    projectileSpeed: number,                      // affect heroItems projectile speed %
+    projectileDuration: number,                  // affect  heroItems projectile effect (a creuser) duration %
     projectileAmount: number,                   // affect  amount of projectile(s) by shot %
-    projectileCoolDown: number,               // affect  weapons projectile cooldown before shot again %
+    projectileCoolDown: number,               // affect  heroItems projectile cooldown before shot again %
 
     // EXPERIENCE :
     xpActual: number,

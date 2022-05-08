@@ -5,7 +5,8 @@ export interface Enemy {
     // GRAPHICAL AND POSITION :
     sprite: Sprite,
     spriteBox: SpriteBox,
-    hitBox :HitBox,
+    hitBox: HitBox,
+
     // STATS :
     type: string,
     maxHealth: number,
@@ -27,8 +28,9 @@ export const enemyGeneric: Enemy = {
         w: 32,
         h: 32,
         direction: {
+            radian: 0,
             x: 0,
-            y: 0,
+            y: 0
         },
         speed: 1,
     },

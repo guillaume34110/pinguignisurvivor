@@ -1,8 +1,8 @@
-import {Hero} from "../Hero/Hero"
-import {DirectionEnum, spriteBoxSetDirection} from "../Utilities/directionSpriteBox"
-import {HeroProjectile, heroProjectileGeneric} from "./HeroProjectile"
+import {Hero} from "../../Hero/Hero"
+import {DirectionEnum, spriteBoxSetDirection} from "../../Utilities/directionSpriteBox"
+import {HeroProjectile, heroProjectileGeneric} from "../HeroProjectile"
 import {heroProjectileMove} from "./HeroProjectileMove"
-import {heroesGeneric} from "../Hero/Heroes";
+import {heroesGeneric} from "../../Hero/Heroes";
 
 const given = describe
 const when = describe
@@ -18,8 +18,9 @@ const testInit = () => {
         w: 32,
         h: 32,
         direction: {
+            radian: 0,
             x: 0,
-            y: 0,
+            y: 0
         },
         speed: 5
     }
