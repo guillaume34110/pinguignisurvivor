@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      /* Specify ECMAScript target version: 'ES3' (default). Here ES5 to be compatible with all web browsers */
+      "target": "ES6",
+      /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */
+      "module": "ES2015",
+      /* Specify library files to be included in the compilation:  */
+      "lib": [
+        "esnext",
+        "dom"
+      ],
+      "baseUrl": "./",
+      "moduleResolution": "node",
+      /* We want to generate a sourcemap  */
+      "sourceMap": true,
+      "strict" :true,
+      /* All files will be compiled in build directory  */
+      "outDir": "./build"
+    },
+    "include": [
+        "src/**/**/**/*",
+    ],
+    "exclude": [
+      "node_modules",
+    ]
+  }
