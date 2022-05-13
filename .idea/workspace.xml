@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="no react" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="guillaume" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="71db60d3-c1ab-4e31-8317-0100940f23e2" />
+        <option name="url" value="https://github.com/guillaume34110/pinguignisurvivor.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Components/Enemies/Enemy/EnemyComp.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroHitBox.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Style/components/Enemies.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Style/components/Game.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Game/Style/components/Hero.css" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28pOUDefVEtnW4GJwF6M5v5tcvJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/rebaze/projetvoltaire/projet-voltaire&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\piguignysurvivor\\node_modules\\typescript\\lib&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Enemies" />
+      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Hero\HeroUtilities" />
+      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Building" />
+      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Building\BuildingUtilities" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="" />
+      <created>1651910078717</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651910078717</updated>
+      <workItem from="1651910080905" duration="23998000" />
+      <workItem from="1651944588554" duration="741000" />
+      <workItem from="1651945374038" duration="11881000" />
+      <workItem from="1652005335431" duration="19504000" />
+      <workItem from="1652161874491" duration="2113000" />
+      <workItem from="1652206715211" duration="1749000" />
+      <workItem from="1652251019253" duration="1689000" />
+      <workItem from="1652283909024" duration="16577000" />
+      <workItem from="1652370482773" duration="16722000" />
+      <workItem from="1652425218902" duration="46000" />
+      <workItem from="1652425318214" duration="712000" />
+      <workItem from="1652436852576" duration="32000" />
+      <workItem from="1652456690329" duration="1392000" />
+    </task>
+    <task id="LOCAL-00001" summary="jj">
+      <created>1651924100083</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651924100083</updated>
+    </task>
+    <task id="LOCAL-00002" summary="jj">
+      <created>1651924273296</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651924273296</updated>
+    </task>
+    <task id="LOCAL-00003" summary="jj">
+      <created>1651924505033</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651924505033</updated>
+    </task>
+    <task id="LOCAL-00004" summary="colisions hero building">
+      <created>1651941940207</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651941940207</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refacto and utilities">
+      <created>1651946075419</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651946075419</updated>
+    </task>
+    <task id="LOCAL-00006" summary="spawn enemies">
+      <created>1651947377655</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651947377655</updated>
+    </task>
+    <task id="LOCAL-00007" summary="enemies follow">
+      <created>1651949077415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651949077415</updated>
+    </task>
+    <task id="LOCAL-00008" summary="enemies collide with wall">
+      <created>1651950767890</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651950767890</updated>
+    </task>
+    <task id="LOCAL-00009" summary="collision enemies">
+      <created>1651953565397</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651953565397</updated>
+    </task>
+    <task id="LOCAL-00010" summary="collision enemies">
+      <created>1651953908395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651953908395</updated>
+    </task>
+    <task id="LOCAL-00011" summary="collision enemies">
+      <created>1651955185782</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651955185782</updated>
+    </task>
+    <task id="LOCAL-00012" summary="collision enemies">
+      <created>1651957036158</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651957036158</updated>
+    </task>
+    <task id="LOCAL-00013" summary="collision enemies">
+      <created>1652008322816</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652008322816</updated>
+    </task>
+    <task id="LOCAL-00014" summary="collision enemies">
+      <created>1652015826269</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652015826269</updated>
+    </task>
+    <task id="LOCAL-00015" summary="collision enemies">
+      <created>1652018543304</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652018543304</updated>
+    </task>
+    <task id="LOCAL-00016" summary="no react">
+      <created>1652424870802</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652424870802</updated>
+    </task>
+    <task id="LOCAL-00017" summary="no react">
+      <created>1652424991539</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1652424991539</updated>
+    </task>
+    <task id="LOCAL-00018" summary="no react">
+      <created>1652461425497</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1652461425497</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="jj" />
+    <MESSAGE value="colisions hero building" />
+    <MESSAGE value="refacto and utilities" />
+    <MESSAGE value="spawn enemies" />
+    <MESSAGE value="enemies follow" />
+    <MESSAGE value="enemies collide with wall" />
+    <MESSAGE value="collision enemies" />
+    <MESSAGE value="no react" />
+    <option name="LAST_COMMIT_MESSAGE" value="no react" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox/HitBoxComp.ts</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
