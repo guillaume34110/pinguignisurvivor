@@ -1,57 +1,48 @@
+import {Hero} from "../Hero/Hero";
+import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
+import {Item} from "../Items/Item";
+import {Enemy} from "../Enemies/Enemy";
+import {Building} from "../Building/Building";
+import {buildingsGeneric} from "../Building/Buildings";
+import {heroesGeneric} from "../Hero/Heroes";
 
 export interface GameData {
     hero: Hero,
     heroProjectiles: HeroProjectile[],
     enemies: Enemy[],
     items: Item[],
-    keys: Keys
-
+    keys: Keys,
+    time: number,
+    camera: Camera,
+    building: Building[],
 }
 
-export interface Hero {
-    sprite: string,
-    life: number,
+export interface SpriteBox {
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+    direction: {
+        radian: number,
+        x: number,
+        y: number,
+    },
     speed: number,
-    invulnerability: boolean,
-    weapons: HeroWeapon[],
-    items: HeroItems[]
-    x: number,
-    y: number,
 }
 
-export interface HeroWeapon {
-    type: string
-    level: number,
-}
-
-export interface HeroItems {
-    type: string,
-    level: number,
-}
-export interface HeroProjectile {
-    type: string,
-    level: number,
+export interface HitBox {
     x: number,
     y: number,
+    w: number,
+    h: number,
+}
+
+export interface Sprite {
+    front: string,
+    back: string,
+    left: string,
+    right: string,
     sprite: string,
-}
-export interface Enemy {
-    type: string,
-    level: number,
-    life: number,
-    damages: number,
-    speed: number,
-    sprite: string,
-    x: number,
-    y: number,
-}
-
-export interface Item {
-    type: "string"
-    sprite: "string"
-    x: number,
-    y: number,
-    value: number | null
 }
 
 export interface Keys {
@@ -67,20 +58,18 @@ export interface Keys {
         up: boolean,
         down: boolean,
     }
-
 }
 
+export interface Camera {
+    x: number,
+    y: number
+}
+
+
 export const startData: GameData = {
-    hero: {
-        sprite: "pinguigny",
-        life: 3,
-        speed: 2,
-        invulnerability: false,
-        weapons: [],
-        items: [],
-        x: 0,
-        y: 0,
-    },
+
+    hero: heroesGeneric.pinguigny,
+
     heroProjectiles: [],
     enemies: [],
     items: [],
@@ -97,7 +86,16 @@ export const startData: GameData = {
             up: false,
             down: false,
         }
-    }
+    },
+
+    time: 0,
+    camera: {
+        x: 0,
+        y: 0,
+    },
+    building: [
+        buildingsGeneric.horizontalWall,
+        buildingsGeneric.verticalWall,
+        buildingsGeneric.tree
+    ]
 }
-
-

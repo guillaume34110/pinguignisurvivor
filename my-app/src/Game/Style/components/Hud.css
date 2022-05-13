@@ -1,0 +1,30 @@
+.hud {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.xp-bar{
+   width : 1274px;
+    height: 30px;
+    border: solid 3px burlywood;
+    border-radius: 5px;
+}
+.xp-progress{
+    height: 30px;
+    background: cornflowerblue;
+    border-radius: 5px;
+}
+.xp-total{
+    position : relative;
+    top : 10px;
+    left : 20px;
+    color: lightblue;
+}
+.time{
+    position :absolute;
+    left:550px;
+    top:45px;
+    color : antiquewhite;
+    font-size: 20px;
+}
