@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="canvas">
-      <change afterPath="$PROJECT_DIR$/src/Game/Components/Items/ItemsSprites.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Core/Items/ItemSprite.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/EnemiesSprites.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/EnemiesSprites.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Items/Items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Items/Items.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingHitBox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesSprite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesSprite.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroHitBox.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

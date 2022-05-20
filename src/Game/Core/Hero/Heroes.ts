@@ -5,8 +5,7 @@ import {HeroSprite} from "./HeroSprite";
 export interface Heroes {
     pinguigny: Hero
 }
-const image = new Image()
-image.src = heroImg
+
 export const heroesGeneric: Heroes = {
     pinguigny: {
         sprite: {
@@ -31,8 +30,8 @@ export const heroesGeneric: Heroes = {
         hitBox: {
             x: 0,
             y: 0,
-            w: 32,
-            h: 32,
+            w: 64,
+            h: 128,
         },
         life: 1,
         invulnerabilityCoolDown: 1,
