@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
-* {
-    transform-style: preserve-3d;
+canvas {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 
 }
 
@@ -38,22 +41,4 @@ code {
     user-select: none;
     background: cadetblue;
     overflow: hidden;
-    perspective: 800px;
-    will-change:scale;
-}
-
-.camera {
-    width: 0px;
-    height: 0px;
-    position: relative;
-    left: 0px;
-    top: 0px;
-}
-
-.scene {
-    width: 2500px;
-    height: 1800px;
-    transform-origin: 0 0;
-    transform: rotateX(50deg) translateZ(-170px);
-    will-change: transform;
 }

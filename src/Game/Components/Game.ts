@@ -1,55 +1,39 @@
 import '../Style/components/Game.css'
-import '../Style/Sprites/Sprites.css'
-import '../Style/animations/SpriteFrameAnim.css'
-import {GameData, startData} from '../Core/StartData/StartData'
+import {GameData, HitBox, SpriteBox, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
-import {camera} from '../Core/Camera/camera'
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
-import {buildingUpdate} from "../Core/Building/BuildingUpdate";
 import {buildingInit} from "../Core/Building/BuildingInit";
 import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
-import {heroProjectileUpdate} from "../Core/HeroProjectile/HeroProjectileUpdate";
-import Terrain from "./Terrain";
 import Hud from "./Hud/Hud";
-import Controls from "./Controls/Controls";
-import Items from "./Items/Items";
-import Enemies from "./Enemies/Enemies";
-import Buildings from "./buildings/Buildings";
-import Hero, {heroRefresh} from "./Hero";
-import Projectiles from "./Projectiles/Projectiles";
-import Hitbox from "./Hitboxs/Hitbox";
-import {projectileRefresh} from "./Projectiles/Projectile/Projectile";
-import {itemRefresh} from "./Items/Item/Item";
-import {enemyRefresh} from "./Enemies/Enemy/EnemyComp";
-import {buildingsDrawInit} from "./buildings/building/Building";
+import {heroRefresh} from "./Hero";
+import {enemiesRefresh} from "./Enemies/Enemies";
+import {Hero} from "../Core/Hero/Hero";
+import {buildingUpdate} from "../Core/Building/BuildingUpdate";
+import {heroProjectileUpdate} from "../Core/HeroProjectile/HeroProjectileUpdate";
+import {Enemy} from "../Core/Enemies/Enemy";
+import {buildingsRefresh} from "./buildings/Buildings";
+import {hitBoxRefresh} from "./Hitboxs/Hitbox";
+import {projectileRefresh} from "./Projectiles/Projectiles";
+import {itemsRefresh} from "./Items/Items";
+import {terrainRefresh} from "./Terrain";
 
 
 let coreInterval: NodeJS.Timer
-let drawInterval: NodeJS.Timer
-const timeInterval =16
+const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
 let componentInitState = true
+let frame = 0
 export const Game = () => {
 
-
-
     const gameHtml = `
-        <canva class="game">
+        <div class="game">
             ${Hud()}  
             <div class="camera">
-                <div class="scene" >
-                ${Terrain()}
-                ${Controls()}
-                ${Items()}
-                ${Enemies()}
-                ${Buildings(gameData)}
-                ${Hero(gameData)}
-                ${Projectiles()}
-                ${Hitbox()}  
-                </div>
+                <canvas  width="1280" height="720" class="scene" >
+                </canvas>
             </div>
-        </canva>
+        </div>
    `
     const mainLoop = () => {
 
@@ -57,17 +41,22 @@ export const Game = () => {
         enemiesUpdate(gameData)
         heroProjectileUpdate(gameData)
         buildingUpdate(gameData)
-        camera(gameData)
-
 
     }
 
     const drawLoop = () => {
-        projectileRefresh(gameData)
-        componentCameraRefresh()
-        heroRefresh(gameData)
-        itemRefresh(gameData)
-        enemyRefresh(gameData)
+        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
+        const targetGl = targetEnemy?.getContext('2d')
+        if (targetGl !== null && targetGl !== undefined) {
+            frameInit(gameData, targetGl)
+            terrainRefresh(gameData, targetGl)
+            hitBoxRefresh(gameData, targetGl)
+            projectileRefresh(gameData, targetGl)
+            buildingsRefresh(gameData, targetGl)
+            itemsRefresh(gameData, targetGl)
+            enemiesRefresh(gameData, targetGl)
+            heroRefresh(gameData, targetGl)
+        }
         window.requestAnimationFrame(drawLoop)
     }
 
@@ -76,7 +65,6 @@ export const Game = () => {
         const html = document.querySelector('#root')
         if (html !== null)
             html.innerHTML = gameHtml
-            buildingsDrawInit(gameData)
     }
 
     /*keyControl*/
@@ -119,12 +107,65 @@ export const Game = () => {
         // }
     }
     if (componentInitState) componentInit()
-
-    const componentCameraRefresh = () => {
-        const scene: HTMLDivElement | null = document.querySelector(".scene")
-        if (scene) {
-            scene.style.transform = "rotateX(50deg) translateZ(-300px)  translateX(" + -gameData.camera.y + "px) translateY(" + -gameData.camera.x + "px)";
-        }
+    const frameInit = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
+        if (frame < 60) frame++
+        else frame = 0
+        targetGl.imageSmoothingEnabled = false
+        targetGl.clearRect(0, 0, 1280, 720)
     }
 }
 
+export const isOnScreen = (hero: Hero, spriteBox: SpriteBox | HitBox): Boolean => {
+    if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 680)
+        && spriteBox.y < (hero.spriteBox.y + 400) && spriteBox.y > (hero.spriteBox.y - 400)) {
+        return true
+    } else return false
+}
+
+export const animation4Frames = (w: number): number => {
+    if (frame <= 15) {
+        return w
+    } else if (frame <= 30) {
+        return 2 * w
+    } else if (frame <= 45) {
+        return 3 * w
+    } else if (frame <= 60) {
+        return 0
+    } else return 0
+}
+
+
+export const animationEnemies = (w: number, enemy: Enemy): number => {
+
+    if (enemy.id % 2 === 0) {
+        if (frame <= Math.random() * 10) {
+            return w
+        } else if (frame <= 10 + Math.random() * 10) {
+            return 2 * w
+        } else if (frame <= 30 + Math.random() * 10) {
+            return 3 * w
+        } else if (frame <= 50 + Math.random() * 10) {
+            return 0
+        } else return 0
+    } else if (enemy.id % 3 === 0) {
+        if (frame <= Math.random() * 10) {
+            return 2 * w
+        } else if (frame <= 10 + Math.random() * 10) {
+            return 3 * w
+        } else if (frame <= 30 + Math.random() * 10) {
+            return 0
+        } else if (frame <= 50 + Math.random() * 10) {
+            return w
+        } else return w
+    } else {
+        if (frame <= Math.random() * 10) {
+            return 0
+        } else if (frame <= 10 + Math.random() * 10) {
+            return w
+        } else if (frame <= 30 + Math.random() * 10) {
+            return 2 * w
+        } else if (frame <= 50 + Math.random() * 10) {
+            return 3 * w
+        } else return 3 * w
+    }
+}

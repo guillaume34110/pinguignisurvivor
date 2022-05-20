@@ -1,8 +1,10 @@
 import {Enemy} from "./Enemy";
+import {EnemiesSprite} from "./EnemiesSprite";
 
 interface Enemies {
     rabbit: Enemy,
 }
+
 
 export const enemies: Enemies = {
 
@@ -17,7 +19,7 @@ export const enemies: Enemies = {
             back: "rabbit-back",
             left: "rabbit-left",
             right: "rabbit-right",
-            sprite: "rabbit-front"
+            sprite: EnemiesSprite.rabbitFront
         },
         spriteBox: {
             x: 1,

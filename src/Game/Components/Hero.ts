@@ -1,21 +1,12 @@
-import '../Style/components/Hero.css'
 import {GameData} from "../Core/StartData/StartData";
-import Life from "./Hud/Life/Life";
+import heroImg from "../Assets/pinguiny/pinguiny-v2-front.png";
+import {animation4Frames} from "./Game";
 
-export default function Hero(gameData: GameData) {
-    return ` <div id = "hero" class="${`hero animation ${gameData.hero.sprite.sprite}`}"> ${Life()}
-            </div>`
-}
+const image = new Image()
+image.src = heroImg
+export const heroRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
 
-export const heroRefresh = (gameData: GameData) => {
+    targetGl.drawImage(image, animation4Frames(16), 0, 16, 16, 600, 320, 64, 128)
 
-    const hero: HTMLDivElement | null = document.querySelector(`#hero`)
-    if (hero) {
-        hero.style.left = gameData.hero.spriteBox.x + 'px'
-        hero.style.top = gameData.hero.spriteBox.y + 'px'
-        if (hero.classList.contains("pinguigny-right")) {
-            hero.style.transform = "scaleX(-1) rotateX(270deg) translateY(-80px) "
-        } else hero.style.transform = "rotateX(270deg) translateY(-80px) "
-    }
 }
 
