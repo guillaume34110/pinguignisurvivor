@@ -36,7 +36,7 @@ given('hero is on map and key input is send', () => {
 
             keydownController(gameData.keys, "ArrowRight")
             heroMove(gameData)
-            expect(gameData.hero.spriteBox.y).toBe(105)
+            expect(gameData.hero.spriteBox.x).toBe(105)
 
 
         })
@@ -46,7 +46,7 @@ given('hero is on map and key input is send', () => {
         then('Hero should go left', () => {
             keydownController(gameData.keys, "ArrowLeft")
             heroMove(gameData)
-            expect(gameData.hero.spriteBox.y).toBe(95)
+            expect(gameData.hero.spriteBox.x).toBe(95)
 
         })
     })
@@ -55,7 +55,7 @@ given('hero is on map and key input is send', () => {
         then('Hero should go down', () => {
             keydownController(gameData.keys, "ArrowDown")
             heroMove(gameData)
-            expect(gameData.hero.spriteBox.x).toBe(105)
+            expect(gameData.hero.spriteBox.y).toBe(105)
         })
     })
 
@@ -63,7 +63,7 @@ given('hero is on map and key input is send', () => {
         then('Hero should go up', () => {
             keydownController(gameData.keys, "ArrowUp")
             heroMove(gameData)
-            expect(gameData.hero.spriteBox.x).toBe(95)
+            expect(gameData.hero.spriteBox.y).toBe(95)
         })
     })
 
@@ -73,8 +73,8 @@ given('hero is on map and key input is send', () => {
             keydownController(gameData.keys, "ArrowDown")
             heroMove(gameData)
 
-            expect(gameData.hero.spriteBox.y).toBe(104)
-            expect(gameData.hero.spriteBox.y).toBe(104)
+            expect(gameData.hero.spriteBox.y).toBe(103.53553390593274)
+            expect(gameData.hero.spriteBox.y).toBe(103.53553390593274)
 
 
         })
