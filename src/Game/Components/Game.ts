@@ -6,7 +6,7 @@ import {heroUpdate} from "../Core/Hero/HeroUpdate";
 import {buildingInit} from "../Core/Building/BuildingInit";
 import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
 import Hud from "./Hud/Hud";
-import {heroRefresh} from "./Hero";
+import {heroRefresh} from "./Hero/Hero";
 import {enemiesRefresh} from "./Enemies/Enemies";
 import {Hero} from "../Core/Hero/Hero";
 import {buildingUpdate} from "../Core/Building/BuildingUpdate";

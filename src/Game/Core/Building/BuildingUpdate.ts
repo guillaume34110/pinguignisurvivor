@@ -5,5 +5,5 @@ import {buildingHitBox} from "./BuildingUtilities/BuildingHitBox";
 export const buildingUpdate = (gameData:GameData) => {
     buildingHitBox(gameData)
     buildingCollisionWithHero(gameData)
-   // buildingCollisionWithEnemies(gameData)
+    buildingCollisionWithEnemies(gameData)
 }
