@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="no react" />
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="no react">
+      <change afterPath="$PROJECT_DIR$/src/Game/Assets/items/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Assets/projectile/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/EnemiesSprites.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesSprite.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroSprite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemy/EnemyComp.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox/HitBoxComp.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Items/Item/Item.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Items/Items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Items/Items.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Projectiles/Projectile/Projectile.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Projectiles/Projectiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Projectiles/Projectiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Terrain.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Terrain.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/buildings/building/Building.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Camera/camera.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/Sprites/Sprites.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/Sprites/buildings/buildings.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/animations/SpriteFrameAnim.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Enemies.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Style/components/Game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Hero.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Hitboxs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Items.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Projectiles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Terrain.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/buildings.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +58,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,14 +74,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Game/Components/Enemies/Enemy/EnemyComp.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroHitBox.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Game/Style/components/Enemies.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Game/Style/components/Game.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Game/Style/components/Hero.css" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,15 +94,18 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/rebaze/projetvoltaire/projet-voltaire&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/items&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\piguignysurvivor\\node_modules\\typescript\\lib&quot;
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\piguignysurvivor\\pinguigny\\pinguignisurvivor\\node_modules\\typescript\\lib&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\items" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Enemies" />
       <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Hero\HeroUtilities" />
@@ -109,6 +147,12 @@
       <workItem from="1652425318214" duration="712000" />
       <workItem from="1652436852576" duration="32000" />
       <workItem from="1652456690329" duration="1392000" />
+      <workItem from="1652723828620" duration="6509000" />
+      <workItem from="1652807278209" duration="7160000" />
+      <workItem from="1652869507920" duration="1410000" />
+      <workItem from="1652894437814" duration="9778000" />
+      <workItem from="1652960241113" duration="1276000" />
+      <workItem from="1652974849621" duration="12159000" />
     </task>
     <task id="LOCAL-00001" summary="jj">
       <created>1651924100083</created>
@@ -263,16 +307,5 @@
     <MESSAGE value="collision enemies" />
     <MESSAGE value="no react" />
     <option name="LAST_COMMIT_MESSAGE" value="no react" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox/HitBoxComp.ts</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

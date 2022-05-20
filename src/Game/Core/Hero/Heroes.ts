@@ -1,9 +1,12 @@
 import {Hero} from "./Hero";
+import heroImg from "../../Assets/pinguiny/pinguiny-v2-front.png";
+import {HeroSprite} from "./HeroSprite";
 
 export interface Heroes {
     pinguigny: Hero
 }
-
+const image = new Image()
+image.src = heroImg
 export const heroesGeneric: Heroes = {
     pinguigny: {
         sprite: {
@@ -11,7 +14,7 @@ export const heroesGeneric: Heroes = {
             back: "pinguigny-back",
             left: "pinguigny-left",
             right: "pinguigny-right",
-            sprite: "pinguigny-front"
+            sprite: HeroSprite.heroFront
         },
         spriteBox: {
             x: 0,

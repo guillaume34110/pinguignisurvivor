@@ -5,6 +5,8 @@ import {Enemy} from "../Enemies/Enemy";
 import {Building} from "../Building/Building";
 import {buildingsGeneric} from "../Building/Buildings";
 import {heroesGeneric} from "../Hero/Heroes";
+import {EnemiesSprite} from "../Enemies/EnemiesSprite";
+import {HeroSprite} from "../Hero/HeroSprite";
 
 export interface GameData {
     hero: Hero,
@@ -42,7 +44,7 @@ export interface Sprite {
     back: string,
     left: string,
     right: string,
-    sprite: string,
+    sprite: EnemiesSprite|HeroSprite,
 }
 
 export interface Keys {
