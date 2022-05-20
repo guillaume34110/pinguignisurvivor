@@ -40,10 +40,10 @@ export interface HitBox {
 }
 
 export interface Sprite {
-    front: string,
-    back: string,
-    left: string,
-    right: string,
+    front:  EnemiesSprite|HeroSprite,
+    back:  EnemiesSprite|HeroSprite,
+    left:  EnemiesSprite|HeroSprite,
+    right:  EnemiesSprite|HeroSprite,
     sprite: EnemiesSprite|HeroSprite,
 }
 

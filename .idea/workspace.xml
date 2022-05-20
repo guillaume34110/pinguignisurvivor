@@ -1,43 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="no react">
-      <change afterPath="$PROJECT_DIR$/src/Game/Assets/items/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Assets/projectile/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/EnemiesSprites.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesSprite.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroSprite.ts" afterDir="false" />
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="canvas">
+      <change afterPath="$PROJECT_DIR$/src/Game/Components/Items/ItemsSprites.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/Items/ItemSprite.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemy/EnemyComp.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/EnemiesSprites.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/EnemiesSprites.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox/HitBoxComp.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Items/Item/Item.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Components/Items/Items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Items/Items.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Projectiles/Projectile/Projectile.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Projectiles/Projectiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Projectiles/Projectiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Terrain.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Terrain.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/buildings/Buildings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/buildings/building/Building.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Camera/camera.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingHitBox.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesSprite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesSprite.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/Sprites/Sprites.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/Sprites/buildings/buildings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/animations/SpriteFrameAnim.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Enemies.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Style/components/Game.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Hero.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Hitboxs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Items.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Projectiles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/Terrain.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Style/components/buildings.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +73,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/items&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -104,13 +83,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\pinguiny" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\items" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components\Hero" />
+      <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components\Projectiles" />
+      <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components" />
       <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Enemies" />
       <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Hero\HeroUtilities" />
-      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Building" />
-      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Building\BuildingUtilities" />
     </key>
   </component>
   <component name="RunManager">
@@ -153,6 +134,7 @@
       <workItem from="1652894437814" duration="9778000" />
       <workItem from="1652960241113" duration="1276000" />
       <workItem from="1652974849621" duration="12159000" />
+      <workItem from="1653046040287" duration="1753000" />
     </task>
     <task id="LOCAL-00001" summary="jj">
       <created>1651924100083</created>
@@ -280,7 +262,35 @@
       <option name="project" value="LOCAL" />
       <updated>1652461425497</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="canvas">
+      <created>1653027079440</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1653027079440</updated>
+    </task>
+    <task id="LOCAL-00020" summary="canvas">
+      <created>1653027463642</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1653027463642</updated>
+    </task>
+    <task id="LOCAL-00021" summary="canvas">
+      <created>1653029653922</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1653029653922</updated>
+    </task>
+    <task id="LOCAL-00022" summary="canvas">
+      <created>1653030771036</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1653030771036</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +316,7 @@
     <MESSAGE value="enemies collide with wall" />
     <MESSAGE value="collision enemies" />
     <MESSAGE value="no react" />
-    <option name="LAST_COMMIT_MESSAGE" value="no react" />
+    <MESSAGE value="canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="canvas" />
   </component>
 </project>

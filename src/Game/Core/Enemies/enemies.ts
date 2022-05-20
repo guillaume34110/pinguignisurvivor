@@ -15,10 +15,10 @@ export const enemies: Enemies = {
         health: 1,
         damage: 1,
         sprite: {
-            front: "rabbit-front",
-            back: "rabbit-back",
-            left: "rabbit-left",
-            right: "rabbit-right",
+            front: EnemiesSprite.rabbitFront,
+            back: EnemiesSprite.rabbitBack,
+            left: EnemiesSprite.rabbitLeft,
+            right: EnemiesSprite.rabbitRight,
             sprite: EnemiesSprite.rabbitFront
         },
         spriteBox: {

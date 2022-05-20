@@ -12,7 +12,17 @@ export const buildingsRefresh = (gameData: GameData, targetGl: CanvasRenderingCo
 
     gameData.building.forEach((building, index) => {
         if (isOnScreen(hero, building.spriteBox)) {
-            targetGl.drawImage(image, 0, 0, 128, 128, building.spriteBox.x - hero.spriteBox.x + 600, building.spriteBox.y - hero.spriteBox.y + 300, 128, 128)
+            targetGl.drawImage(
+                image,
+                0,
+                0,
+                128,
+                128,
+                building.spriteBox.x - hero.spriteBox.x + 600,
+                building.spriteBox.y - hero.spriteBox.y + 300,
+                building.spriteBox.w,
+                building.spriteBox.h
+            )
         }
     })
 

@@ -36,12 +36,16 @@ mouseLatImage.src = mouseLat
 export const selectImg = (sprite: EnemiesSprite | HeroSprite): HTMLImageElement => {
     if (sprite === EnemiesSprite.rabbitFront) return rabbitFrontImage
     else if (sprite === EnemiesSprite.rabbitBack) return rabbitBackImage
-    else if (sprite === EnemiesSprite.rabbitLateral) return rabbitLatImage
+    else if (sprite === EnemiesSprite.rabbitLeft) return rabbitLatImage
+    else if (sprite === EnemiesSprite.rabbitRight) return rabbitLatImage
     else if (sprite === EnemiesSprite.batFront) return batFrontImage
     else if (sprite === EnemiesSprite.batBack) return batBackImage
-    else if (sprite === EnemiesSprite.batLateral) return batLatImage
+    else if (sprite === EnemiesSprite.batLeft) return batLatImage
+    else if (sprite === EnemiesSprite.batRight) return batLatImage
     else if (sprite === EnemiesSprite.mouseFront) return mouseFrontImage
     else if (sprite === EnemiesSprite.mouseBack) return mouseBackImage
-    else if (sprite === EnemiesSprite.mouseLateral) return mouseLatImage
+    else if (sprite === EnemiesSprite.mouseLeft) return mouseLatImage
+    else if (sprite === EnemiesSprite.mouseRight) return mouseLatImage
+
     else return image
 }

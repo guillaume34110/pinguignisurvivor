@@ -10,10 +10,10 @@ image.src = heroImg
 export const heroesGeneric: Heroes = {
     pinguigny: {
         sprite: {
-            front: "pinguigny-front",
-            back: "pinguigny-back",
-            left: "pinguigny-left",
-            right: "pinguigny-right",
+            front: HeroSprite.heroFront,
+            back: HeroSprite.heroBack,
+            left: HeroSprite.heroLeft,
+            right: HeroSprite.heroRight,
             sprite: HeroSprite.heroFront
         },
         spriteBox: {
