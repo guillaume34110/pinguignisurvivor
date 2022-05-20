@@ -76,8 +76,8 @@ export const spriteBoxSetDirection = (
 export const spriteBoxSetDirectionWithRadian = (
     spriteBox: SpriteBox, radAngle: number
 ) => {
-    spriteBox.direction.y = Math.cos(radAngle) * spriteBox.speed
-    spriteBox.direction.x = Math.sin(radAngle) * spriteBox.speed
+    spriteBox.direction.x = Math.cos(radAngle) * spriteBox.speed
+    spriteBox.direction.y = Math.sin(radAngle) * spriteBox.speed
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
