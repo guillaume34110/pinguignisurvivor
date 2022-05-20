@@ -23,6 +23,12 @@ export const heroProjectiles: HeroProjectiles = {
             },
             speed: 1,
         },
+        hitBox: {
+            x: 0,
+            y: 0,
+            w: 32,
+            h: 32,
+        },
         amountProjectile: 1,
         blockByWall: true,
         chance: 0,

@@ -1,11 +1,11 @@
-import {SpriteBox} from "../StartData/StartData";
+import {HitBox, SpriteBox} from "../StartData/StartData";
 
 export interface HeroProjectile {
     id:number
     // GRAPHICAL AND POSITION :
     sprite: string,
     spriteBox: SpriteBox,
-
+    hitBox:HitBox,
     // STATS :
     type: string,
     level: number,
@@ -38,6 +38,12 @@ export const heroProjectileGeneric: HeroProjectile = {
             y: 0,
         },
         speed: 1,
+    },
+    hitBox: {
+        x: 0,
+        y: 0,
+        w: 32,
+        h: 32,
     },
     type: "projectileGeneric",
     level: 0,

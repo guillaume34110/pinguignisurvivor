@@ -50,9 +50,9 @@ export const Game = () => {
         if (targetGl !== null && targetGl !== undefined) {
             frameInit(gameData, targetGl)
             terrainRefresh(gameData, targetGl)
+            buildingsRefresh(gameData, targetGl)
             hitBoxRefresh(gameData, targetGl)
             projectileRefresh(gameData, targetGl)
-            buildingsRefresh(gameData, targetGl)
             itemsRefresh(gameData, targetGl)
             enemiesRefresh(gameData, targetGl)
             heroRefresh(gameData, targetGl)
