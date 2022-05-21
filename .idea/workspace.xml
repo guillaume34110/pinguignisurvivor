@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="canvas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroHitBox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653030771036</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="data class style">
+      <created>1653073624842</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1653073624842</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +316,7 @@
     <MESSAGE value="collision enemies" />
     <MESSAGE value="no react" />
     <MESSAGE value="canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="canvas" />
+    <MESSAGE value="data class style" />
+    <option name="LAST_COMMIT_MESSAGE" value="data class style" />
   </component>
 </project>

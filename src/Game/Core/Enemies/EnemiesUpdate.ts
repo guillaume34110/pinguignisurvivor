@@ -7,6 +7,6 @@ import {enemiesCollisionWithEnemies} from "./EnemyFunctions/EnemiesCollision";
 export const enemiesUpdate = (gameData:GameData) => {
     spawnEnemies(gameData)
     enemiesHitBox(gameData)
-    enemiesCollisionWithEnemies(gameData)
+
     moveEnemies(gameData)
 }
