@@ -1,8 +1,9 @@
-import {Enemy} from "./Enemy";
+import {Enemy, EnemyClass} from "./Enemy";
 import {EnemiesSprite} from "./EnemiesSprite";
 
 interface Enemies {
     rabbit: Enemy,
+    mouse: EnemyClass,
 }
 
 
@@ -39,6 +40,39 @@ export const enemies: Enemies = {
             w: 64,
             h: 128,
         }
-    }
+    },
+
+    mouse: new EnemyClass(
+        0,
+        {
+            front: EnemiesSprite.mouseFront,
+            back: EnemiesSprite.mouseBack,
+            left: EnemiesSprite.mouseLeft,
+            right: EnemiesSprite.mouseRight,
+            sprite: EnemiesSprite.mouseFront
+        },
+        {
+            x: 1,
+            y: 1,
+            w: 64,
+            h: 128,
+            direction: {
+                radian: 0,
+                x: 0,
+                y: 0
+            },
+            speed: 0.75,
+        },
+        {
+            x: 1,
+            y: 1,
+            w: 64,
+            h: 128,
+        },
+        "mouse",
+        1,
+        1,
+        1,
+    )
 }
 

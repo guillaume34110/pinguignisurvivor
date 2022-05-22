@@ -1,12 +1,12 @@
-import {GameData, HitBox, SpriteBox} from "../StartData/StartData";
+import {GameData, HitBoxClass, SpriteBox} from "../StartData/StartData";
 import {spriteBoxSetDirectionWithRadian} from "../Utilities/directionSpriteBox";
 
 export interface HeroProjectile {
-    id:number
+    id: number
     // GRAPHICAL AND POSITION :
     sprite: string,
     spriteBox: SpriteBox,
-    hitBox:HitBox,
+    hitBox: HitBoxClass,
     // STATS :
     type: string,
     level: number,
@@ -27,7 +27,7 @@ export interface HeroProjectile {
 
 export const heroProjectileGeneric: HeroProjectile = {
     // un sprite "projectileGeneric" => carre unicolore rouge par exemple
-    id:0,
+    id: 0,
     sprite: "projectileGeneric",
     spriteBox: {
         x: 0,
@@ -65,10 +65,10 @@ export const heroProjectileGeneric: HeroProjectile = {
 
 export class HeroProjectileClass {
     constructor(
-        public id:number,
+        public id: number,
         public sprite: string,
         public spriteBox: SpriteBox,
-        public hitBox: HitBox,
+        public hitBox: HitBoxClass,
         public type: String,
         public level: number,
         public damage: number,
@@ -86,17 +86,20 @@ export class HeroProjectileClass {
     ) {
         spriteBoxSetDirectionWithRadian(this.spriteBox, this.spriteBox.direction.radian)
     }
+
     private posXSpriteBoxInit = this.spriteBox.x
     private posYSpriteBoxInit = this.spriteBox.y
     private posXHitBoxInit = this.hitBox.x
     private posYHitBoxInit = this.hitBox.y
-    resetPosition(gameData:GameData){
+
+    resetPosition(gameData: GameData) {
         this.spriteBox.x = this.posXSpriteBoxInit + gameData.hero.spriteBox.x
         this.spriteBox.y = this.posYSpriteBoxInit + gameData.hero.spriteBox.y
         this.hitBox.x = this.posXHitBoxInit + gameData.hero.spriteBox.x
         this.hitBox.y = this.posYHitBoxInit + gameData.hero.spriteBox.y
     }
-    sleepPosition(){
+
+    sleepPosition() {
         this.spriteBox.x = -999_999
         this.spriteBox.y = -999_999
         this.hitBox.x = -999_999

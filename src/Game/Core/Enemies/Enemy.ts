@@ -1,4 +1,4 @@
-import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, HitBoxClass, Sprite, SpriteBox} from "../StartData/StartData";
 import {EnemiesSprite} from "./EnemiesSprite";
 
 export interface Enemy {
@@ -6,7 +6,7 @@ export interface Enemy {
     // GRAPHICAL AND POSITION :
     sprite: Sprite,
     spriteBox: SpriteBox,
-    hitBox: HitBox,
+    hitBox: HitBoxClass,
 
     // STATS :
     type: string,
@@ -48,22 +48,77 @@ export const enemyGeneric: Enemy = {
     damage: 1,
 }
 
-class GenericEnemies {
+export class EnemyClass {
     constructor(
         public id: number,
         // GRAPHICAL AND POSITION :
         public sprite: Sprite,
         public spriteBox: SpriteBox,
-        public hitBox: HitBox,
+        public hitBox: HitBoxClass,
         // STATS :
         public type: string,
         public maxHealth: number,
         public health: number,
         public damage: number,
-    ){}}
+    ) {
+    }
+
+    static createEnemy(enemy:EnemyClass): EnemyClass{
+        const sprite: Sprite = {
+            front: enemy.sprite.front,
+            back: enemy.sprite.back,
+            left: enemy.sprite.left,
+            right: enemy.sprite.right,
+            sprite: enemy.sprite.sprite,
+        }
+        const spriteBox:SpriteBox = {
+            x: enemy.spriteBox.x,
+            y: enemy.spriteBox.y,
+            w: enemy.spriteBox.w,
+            h: enemy.spriteBox.h,
+            direction: {
+                radian: enemy.spriteBox.direction.radian,
+                x: enemy.spriteBox.direction.x,
+                y: enemy.spriteBox.direction.y,
+            },
+            speed: enemy.spriteBox.speed,
+        }
+        const hitBox:HitBoxClass = new HitBoxClass(
+            enemy.hitBox.x,
+            enemy.hitBox.y,
+            enemy.hitBox.w,
+            enemy.hitBox.h,
+        )
+        return new EnemyClass(
+            enemy.id,
+            sprite,
+            spriteBox,
+            hitBox,
+            enemy.type,
+            enemy.maxHealth,
+            enemy.health,
+            enemy.damage,
+        )
+    }
+
+    public getCenterSpriteBox ():{ x: number, y: number }{
+        return {
+            x: this.spriteBox.x + this.spriteBox.w / 2,
+            y: this.spriteBox.y + this.spriteBox.h / 2,
+        }
+    }
+
+    public sleepPosition(){
+        this.spriteBox.x = 999_999
+        this.spriteBox.y = 999_999
+        this.hitBox.x = 999_999
+        this.hitBox.y = 999_999
+    }
+
+}
 
 
-const newEnemies = new GenericEnemies(
+const newEnemies = new EnemyClass(
     0,
     {
         front: EnemiesSprite.rabbitFront,

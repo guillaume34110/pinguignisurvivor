@@ -37,7 +37,7 @@ export const heroProjectiles: HeroProjectiles = {
         0,
         0,
         0,
-        90, // en frame (60 = 1s)
+        60, // en frame (60 = 1s)
         0,
         1000,
         true,

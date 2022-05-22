@@ -1,9 +1,9 @@
-import {HitBox} from "../StartData/StartData";
+import {HitBoxClass} from "../StartData/StartData";
 
 export interface Building {
     id: number,
-    spriteBox: HitBox,
-    hitBox: HitBox,
+    spriteBox: HitBoxClass,
+    hitBox: HitBoxClass,
     rotationX: number,
     rotationY: number,
     translateY: number,

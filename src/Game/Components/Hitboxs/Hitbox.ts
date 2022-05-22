@@ -1,11 +1,10 @@
 import {isOnScreen} from "../Game";
-import {GameData, HitBox} from "../../Core/StartData/StartData";
-import {Hero} from "../../Core/Hero/Hero";
+import {GameData, HitBoxClass} from "../../Core/StartData/StartData";
 
 
 export const hitBoxRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
     const hero = gameData.hero
-    const drawHitBox = (hitBox :HitBox , fillColor : string , strokeColor:string) =>{
+    const drawHitBox = (hitBox :HitBoxClass , fillColor : string , strokeColor:string) =>{
         if (isOnScreen(hero, hitBox)) {
             targetGl.fillStyle = fillColor
             targetGl.strokeStyle = strokeColor;

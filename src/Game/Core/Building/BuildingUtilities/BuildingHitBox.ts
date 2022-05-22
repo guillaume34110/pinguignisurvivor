@@ -1,5 +1,5 @@
-import { GameData, HitBox} from "../../StartData/StartData";
-import {Building, BuildingType} from "../Building";
+import {GameData, HitBoxClass} from "../../StartData/StartData";
+import {Building} from "../Building";
 
 
 export const buildingHitBox = (gameData:GameData) => {
@@ -7,6 +7,6 @@ export const buildingHitBox = (gameData:GameData) => {
         building.hitBox = buildingHitBoxDetermination(building)
     })
 }
-const buildingHitBoxDetermination = ({spriteBox, type}: Building): HitBox => {
+const buildingHitBoxDetermination = ({spriteBox, type}: Building): HitBoxClass => {
     return spriteBox
 }
