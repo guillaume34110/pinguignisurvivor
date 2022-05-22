@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="canvas">
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroInit.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileInit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/SpawnEnemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Heroes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroItem/HeroItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroItem/HeroItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileInit.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileInit.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,19 +74,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\piguignysurvivor\\pinguigny\\pinguignisurvivor\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "D:\\PROGRAMMATION\\008_guimax\\versionA\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\pinguiny" />

@@ -1,4 +1,5 @@
-import {HitBox, SpriteBox} from "../StartData/StartData";
+import {GameData, HitBox, SpriteBox} from "../StartData/StartData";
+import {spriteBoxSetDirectionWithRadian} from "../Utilities/directionSpriteBox";
 
 export interface HeroProjectile {
     id:number
@@ -16,6 +17,7 @@ export interface HeroProjectile {
     durationEffect: number,                    // weapon effect duration
     coolDown: number,                           // The time required for the weapon to be used again. There is a trigger for the cooldown to start after a weapon's duration ends. Modified by Cooldown stat.
     interval: number,                                // The time required for an additional projectile to be fired
+    intervalActual: number,
     distance: number,                              // distance max before projectile destruction
     blockByWall: boolean,                       // is projectile blocked by walls
     chance: number,                                 // special effect happening 
@@ -42,8 +44,8 @@ export const heroProjectileGeneric: HeroProjectile = {
     hitBox: {
         x: 0,
         y: 0,
-        w: 32,
-        h: 32,
+        w: 4,
+        h: 4,
     },
     type: "projectileGeneric",
     level: 0,
@@ -54,8 +56,52 @@ export const heroProjectileGeneric: HeroProjectile = {
     durationEffect: 0,
     coolDown: 0,
     interval: 1,
+    intervalActual: 0,
     distance: 0,
     blockByWall: true,
     chance: 0,
     poolLimit: 100
 }
+
+export class HeroProjectileClass {
+    constructor(
+        public id:number,
+        public sprite: string,
+        public spriteBox: SpriteBox,
+        public hitBox: HitBox,
+        public type: String,
+        public level: number,
+        public damage: number,
+        public criticMultiply: number,
+        public amountProjectile: number,
+        public penetration: number,
+        public durationEffect: number,
+        public coolDown: number,
+        public interval: number,
+        public intervalActual: number,
+        public distance: number,
+        public blockByWall: boolean,
+        public chance: number,
+        public poolLimit: number
+    ) {
+        spriteBoxSetDirectionWithRadian(this.spriteBox, this.spriteBox.direction.radian)
+    }
+    private posXSpriteBoxInit = this.spriteBox.x
+    private posYSpriteBoxInit = this.spriteBox.y
+    private posXHitBoxInit = this.hitBox.x
+    private posYHitBoxInit = this.hitBox.y
+    resetPosition(gameData:GameData){
+        this.spriteBox.x = this.posXSpriteBoxInit + gameData.hero.spriteBox.x
+        this.spriteBox.y = this.posYSpriteBoxInit + gameData.hero.spriteBox.y
+        this.hitBox.x = this.posXHitBoxInit + gameData.hero.spriteBox.x
+        this.hitBox.y = this.posYHitBoxInit + gameData.hero.spriteBox.y
+    }
+    sleepPosition(){
+        this.spriteBox.x = -999_999
+        this.spriteBox.y = -999_999
+        this.hitBox.x = -999_999
+        this.hitBox.y = -999_999
+    }
+
+}
+

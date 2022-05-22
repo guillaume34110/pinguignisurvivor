@@ -31,7 +31,7 @@ export const enemies: Enemies = {
                 x: 0,
                 y: 0
             },
-            speed: 1,
+            speed: 0.75,
         },
         hitBox: {
             x: 1,

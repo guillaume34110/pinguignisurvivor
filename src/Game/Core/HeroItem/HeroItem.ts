@@ -1,4 +1,4 @@
-import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
+import {HeroProjectileClass} from "../HeroProjectile/HeroProjectile";
 import {HeroSupply} from "../HeroSupply/HeroSupply";
 
 export interface HeroItem {
@@ -6,7 +6,7 @@ export interface HeroItem {
     type: string,
     level: number,
     rarity: number,
-    projectile: HeroProjectile | null,
+    projectile: HeroProjectileClass | null,
     supply: HeroSupply | null,
 }
 

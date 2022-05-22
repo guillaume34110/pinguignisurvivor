@@ -1,5 +1,5 @@
 import {Hero} from "../Hero/Hero";
-import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
+import {HeroProjectileClass} from "../HeroProjectile/HeroProjectile";
 import {Item} from "../Items/Item";
 import {Enemy} from "../Enemies/Enemy";
 import {Building} from "../Building/Building";
@@ -10,7 +10,7 @@ import {HeroSprite} from "../Hero/HeroSprite";
 
 export interface GameData {
     hero: Hero,
-    heroProjectiles: HeroProjectile[],
+    heroProjectiles: HeroProjectileClass[],
     enemies: Enemy[],
     items: Item[],
     keys: Keys,

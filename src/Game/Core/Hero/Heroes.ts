@@ -1,5 +1,4 @@
 import {Hero} from "./Hero";
-import heroImg from "../../Assets/pinguiny/pinguiny-v2-front.png";
 import {HeroSprite} from "./HeroSprite";
 
 export interface Heroes {
@@ -25,7 +24,7 @@ export const heroesGeneric: Heroes = {
                 x: 0,
                 y: 0
             },
-            speed: 2,
+            speed: 5,
         },
         hitBox: {
             x: 0,

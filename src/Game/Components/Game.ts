@@ -17,6 +17,8 @@ import {hitBoxRefresh} from "./Hitboxs/Hitbox";
 import {projectileRefresh} from "./Projectiles/Projectiles";
 import {itemsRefresh} from "./Items/Items";
 import {terrainRefresh} from "./Terrain";
+import {heroProjectileInit} from "../Core/HeroProjectile/HeroProjectileInit";
+import {heroInit} from "../Core/Hero/HeroInit";
 
 
 let coreInterval: NodeJS.Timer
@@ -96,7 +98,8 @@ export const Game = () => {
         eventListeners()
         gameData = JSON.parse(JSON.stringify(startData))
         buildingInit(gameData)
-        gameData.hero.spriteBox.speed = 10
+        heroInit(gameData)
+        heroProjectileInit(gameData)
         drawInit()
         coreInterval = setInterval(mainLoop, timeInterval);
         window.requestAnimationFrame(drawLoop)

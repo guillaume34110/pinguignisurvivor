@@ -1,15 +1,16 @@
 import {Hero} from "../../Hero/Hero"
 import {DirectionEnum, spriteBoxSetDirection} from "../../Utilities/directionSpriteBox"
-import {HeroProjectile, heroProjectileGeneric} from "../HeroProjectile"
+import {HeroProjectileClass, heroProjectileGeneric} from "../HeroProjectile"
 import {heroProjectileMove} from "./HeroProjectileMove"
-import {heroesGeneric} from "../../Hero/Heroes";
+import {GameData, startData} from "../../StartData/StartData";
 
 const given = describe
 const when = describe
 const then = it
 
-const hero: Hero = Object.create(heroesGeneric.pinguigny)
-const heroProjectile: HeroProjectile = Object.create(heroProjectileGeneric)
+const gameData: GameData = Object.create(startData)
+const hero: Hero = gameData.hero
+const heroProjectile: HeroProjectileClass = Object.create(heroProjectileGeneric)
 
 const testInit = () => {
     hero.spriteBox = {
@@ -40,7 +41,7 @@ given('hero will shot a projectile from his position', () => {
             spriteBoxSetDirection(heroProjectile.spriteBox, DirectionEnum.Up)
             expect(heroProjectile.spriteBox.direction.x).toBe(0)
             expect(heroProjectile.spriteBox.direction.y).toBe(-5)
-            heroProjectileMove(heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
             expect(heroProjectile.spriteBox.x).toBe(116)
             expect(heroProjectile.spriteBox.y).toBe(111)
 
@@ -55,7 +56,7 @@ given('hero will shot a projectile from his position', () => {
             spriteBoxSetDirection(heroProjectile.spriteBox, DirectionEnum.Down)
             expect(heroProjectile.spriteBox.direction.x).toBe(0)
             expect(heroProjectile.spriteBox.direction.y).toBe(5)
-            heroProjectileMove(heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
             expect(heroProjectile.spriteBox.x).toBe(116)
             expect(heroProjectile.spriteBox.y).toBe(121)
 
@@ -70,7 +71,7 @@ given('hero will shot a projectile from his position', () => {
             spriteBoxSetDirection(heroProjectile.spriteBox, DirectionEnum.Left)
             expect(heroProjectile.spriteBox.direction.x).toBe(-5)
             expect(heroProjectile.spriteBox.direction.y).toBe(0)
-            heroProjectileMove(heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
             expect(heroProjectile.spriteBox.x).toBe(111)
             expect(heroProjectile.spriteBox.y).toBe(116)
 
@@ -85,7 +86,7 @@ given('hero will shot a projectile from his position', () => {
             spriteBoxSetDirection(heroProjectile.spriteBox, DirectionEnum.Right)
             expect(heroProjectile.spriteBox.direction.x).toBe(5)
             expect(heroProjectile.spriteBox.direction.y).toBe(0)
-            heroProjectileMove(heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
             expect(heroProjectile.spriteBox.x).toBe(121)
             expect(heroProjectile.spriteBox.y).toBe(116)
 
@@ -98,9 +99,9 @@ given('hero will shot a projectile from his position', () => {
             expect(heroProjectile.spriteBox.x).toBe(116)
             expect(heroProjectile.spriteBox.y).toBe(116)
             spriteBoxSetDirection(heroProjectile.spriteBox, DirectionEnum.Random)
-            heroProjectileMove(heroProjectile)
-            heroProjectileMove(heroProjectile)
-            heroProjectileMove(heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
+            heroProjectileMove(gameData, heroProjectile)
             expect(Math.round(heroProjectile.spriteBox.x)).toBe(Math.round(116 + heroProjectile.spriteBox.direction.x * 3))
             expect(Math.round(heroProjectile.spriteBox.y)).toBe(Math.round(116 + heroProjectile.spriteBox.direction.y * 3))
 
