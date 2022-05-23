@@ -1,4 +1,4 @@
-import {HitBox, HitBoxClass, Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
 import {EnemiesSprite} from "./EnemiesSprite";
 
 export interface Enemy {
@@ -6,7 +6,7 @@ export interface Enemy {
     // GRAPHICAL AND POSITION :
     sprite: Sprite,
     spriteBox: SpriteBox,
-    hitBox: HitBoxClass,
+    hitBox: HitBox,
 
     // STATS :
     type: string,
@@ -54,7 +54,7 @@ export class EnemyClass {
         // GRAPHICAL AND POSITION :
         public sprite: Sprite,
         public spriteBox: SpriteBox,
-        public hitBox: HitBoxClass,
+        public hitBox: HitBox,
         // STATS :
         public type: string,
         public maxHealth: number,
@@ -83,7 +83,7 @@ export class EnemyClass {
             },
             speed: enemy.spriteBox.speed,
         }
-        const hitBox:HitBoxClass = new HitBoxClass(
+        const hitBox:HitBox = new HitBox(
             enemy.hitBox.x,
             enemy.hitBox.y,
             enemy.hitBox.w,

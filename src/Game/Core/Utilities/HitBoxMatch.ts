@@ -1,7 +1,7 @@
-import {HitBoxClass} from "../StartData/StartData"
+import {HitBox} from "../StartData/StartData"
 
 
-export const hitBoxMatch = (sprite1: HitBoxClass, sprite2: HitBoxClass) => {
+export const hitBoxMatch = (sprite1: HitBox, sprite2: HitBox) => {
 
     if (sprite1.x < sprite2.x + sprite2.w
         && sprite1.x + sprite1.w > sprite2.x

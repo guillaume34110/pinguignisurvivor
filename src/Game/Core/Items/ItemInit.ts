@@ -1,4 +1,4 @@
-import {GameData, HitBoxClass} from "../StartData/StartData";
+import {GameData, HitBox} from "../StartData/StartData";
 import {ItemClass} from "./Item";
 import {ItemSprite} from "./ItemSprite";
 
@@ -6,7 +6,7 @@ export const itemInit = (gameData: GameData) => {
     for (let i = 0; i < 200; i++) {
         gameData.items.push(
             new ItemClass(
-                new HitBoxClass(
+                new HitBox(
                     -999_999,
                     -999_999,
                     16,
@@ -18,3 +18,4 @@ export const itemInit = (gameData: GameData) => {
         )
     }
 }
+

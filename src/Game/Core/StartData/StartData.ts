@@ -53,14 +53,14 @@ export class SpriteBoxClass {
     }
 }
 
-export interface HitBox {
+export interface HitBoxInterface {
     x: number,
     y: number,
     w: number,
     h: number,
 }
 
-export class HitBoxClass {
+export class HitBox {
     constructor(
         public x: number,
         public y: number,

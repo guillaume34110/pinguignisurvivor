@@ -1,4 +1,4 @@
-import {GameData, HitBoxClass, SpriteBox} from "../StartData/StartData";
+import {GameData, HitBox, SpriteBox} from "../StartData/StartData";
 import {spriteBoxSetDirectionWithRadian} from "../Utilities/directionSpriteBox";
 
 export interface HeroProjectile {
@@ -6,7 +6,7 @@ export interface HeroProjectile {
     // GRAPHICAL AND POSITION :
     sprite: string,
     spriteBox: SpriteBox,
-    hitBox: HitBoxClass,
+    hitBox: HitBox,
     // STATS :
     type: string,
     level: number,
@@ -68,7 +68,7 @@ export class HeroProjectileClass {
         public id: number,
         public sprite: string,
         public spriteBox: SpriteBox,
-        public hitBox: HitBoxClass,
+        public hitBox: HitBox,
         public type: String,
         public level: number,
         public damage: number,

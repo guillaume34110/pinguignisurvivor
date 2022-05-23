@@ -11,7 +11,7 @@ export const collisionEnemiesWithHero = (gameData: GameData) => {
             if (hero.invulnerabilityCoolDown === 0){
                 if (hero.armor < enemy.damage){
                     hero.health -= (enemy.damage - hero.armor)
-                    // console.log("aie => " + hero.health + "/" + hero.maxHealth)
+                    console.log("aie => " + hero.health + "/" + hero.maxHealth)
                     hero.invulnerabilityCoolDown ++
                 }
             }

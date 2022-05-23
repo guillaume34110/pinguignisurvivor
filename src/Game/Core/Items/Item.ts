@@ -1,4 +1,4 @@
-import {DirectionClass, HitBoxClass, SpriteBox, SpriteBoxClass} from "../StartData/StartData";
+import {DirectionClass, HitBox, SpriteBox, SpriteBoxClass} from "../StartData/StartData";
 import {ItemSprite} from "./ItemSprite";
 
 export interface Item {
@@ -7,13 +7,13 @@ export interface Item {
     sprite: ItemSprite,
     value: number,
     spriteBox: SpriteBox,
-    hitBox: HitBoxClass,
+    hitBox: HitBox,
 }
 
 export class ItemClass implements Item {
 
     constructor(
-        public hitBox: HitBoxClass,
+        public hitBox: HitBox,
         public sprite: ItemSprite,
         public value: number,
     ) {

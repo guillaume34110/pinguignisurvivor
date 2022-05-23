@@ -1,5 +1,5 @@
 import '../Style/components/Game.css'
-import {GameData, HitBoxClass, SpriteBox, startData} from '../Core/StartData/StartData'
+import {GameData, HitBox, SpriteBox, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
@@ -122,7 +122,7 @@ export const Game = () => {
     }
 }
 
-export const isOnScreen = (hero: Hero, spriteBox: SpriteBox | HitBoxClass): Boolean => {
+export const isOnScreen = (hero: Hero, spriteBox: SpriteBox | HitBox): Boolean => {
     if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 680)
         && spriteBox.y < (hero.spriteBox.y + 400) && spriteBox.y > (hero.spriteBox.y - 400)) {
         return true

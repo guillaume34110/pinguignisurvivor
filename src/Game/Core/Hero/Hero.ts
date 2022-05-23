@@ -1,12 +1,12 @@
 import {HeroItem} from "../HeroItem/HeroItem";
-import {HitBoxClass, Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
 
 export interface Hero {
 
     // GRAPHICAL AND POSITION :
     sprite: Sprite
     spriteBox: SpriteBox,
-    hitBox: HitBoxClass,
+    hitBox: HitBox,
 
     // HERO STATS :
     life: number,                                          // Determines the amount of Extra Lives the player has
