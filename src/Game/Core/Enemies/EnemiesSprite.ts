@@ -1,11 +1,14 @@
 export enum EnemiesSprite{
     rabbitFront,
     rabbitBack,
-    rabbitLateral,
+    rabbitLeft,
+    rabbitRight,
     batFront,
     batBack,
-    batLateral,
+    batLeft,
+    batRight,
     mouseFront,
     mouseBack,
-    mouseLateral,
+    mouseLeft,
+    mouseRight,
 }

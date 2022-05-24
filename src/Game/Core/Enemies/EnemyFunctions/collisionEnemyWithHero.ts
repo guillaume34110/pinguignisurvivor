@@ -1,12 +1,27 @@
-import {HitBoxCls} from "../../Utilities/HitBoxMatch"
-import {Enemy} from "../Enemy";
-import {Hero} from "../../Hero/Hero";
+import {hitBoxMatch} from "../../Utilities/HitBoxMatch"
+import {GameData} from "../../StartData/StartData";
 
 
-export const collisionEnemiesWithHero = (enemies: Enemy[], hero: Hero) => {
-    enemies.forEach(enemy => {
-        if (HitBoxCls.hitBoxMatch(enemy.spriteBox, hero.spriteBox)) {
-            hero.health -= enemy.damage
+export const collisionEnemiesWithHero = (gameData: GameData) => {
+    gameData.enemies.forEach(enemy => {
+        if (hitBoxMatch(enemy.spriteBox, gameData.hero.spriteBox)) {
+
+            // todo create HeroClass with function damagedByEnemy(enemy:EnemyClass)
+            const hero = gameData.hero
+            if (hero.invulnerabilityCoolDown === 0){
+                if (hero.armor < enemy.damage){
+                    hero.health -= (enemy.damage - hero.armor)
+                    console.log("aie => " + hero.health + "/" + hero.maxHealth)
+                    hero.invulnerabilityCoolDown ++
+                }
+            }
+            else if (hero.invulnerabilityCoolDown > 10){
+                hero.invulnerabilityCoolDown = 0
+            }
+            else {
+                hero.invulnerabilityCoolDown ++
+            }
+
         }
     });
 }
