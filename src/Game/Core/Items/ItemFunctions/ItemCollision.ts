@@ -1,11 +1,12 @@
 import {GameData} from "../../StartData/StartData";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
+import {setPositionSpriteBoxHitBox} from "../../Utilities/spriteBox/positionSpriteBox";
 
 export const itemCollisions = (gameData: GameData) => {
     gameData.items.forEach((item) => {
         if (hitBoxMatch(gameData.hero.hitBox, item.hitBox)) {
 
-            item.sleepPosition() // en -999_999 pour l'instant
+            setPositionSpriteBoxHitBox(item, -999_999,-999_999)
 
             // todo create hero class with function IncreaseExperience() and levelUp()
             gameData.hero.xpActual += item.value

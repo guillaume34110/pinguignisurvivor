@@ -1,5 +1,5 @@
 import {Hero} from "../../Hero/Hero"
-import {DirectionEnum, spriteBoxSetDirection} from "../../Utilities/directionSpriteBox"
+import {DirectionEnum, spriteBoxSetDirection} from "../../Utilities/spriteBox/directionSpriteBox"
 import {HeroProjectileClass, heroProjectileGeneric} from "../HeroProjectile"
 import {heroProjectileMove} from "./HeroProjectileMove"
 import {GameData, startData} from "../../StartData/StartData";

@@ -1,6 +1,6 @@
 import {GameData} from "../../StartData/StartData";
 import {HeroProjectileClass} from "../HeroProjectile";
-import {spriteBoxSetDirectionWithRadian} from "../../Utilities/directionSpriteBox";
+import {spriteBoxSetDirectionWithRadian} from "../../Utilities/spriteBox/directionSpriteBox";
 
 export const heroProjectileMove = (
     gameData: GameData,

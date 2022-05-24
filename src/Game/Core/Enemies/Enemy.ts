@@ -1,11 +1,11 @@
-import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, Sprite, SpriteBoxInterface} from "../StartData/StartData";
 import {EnemiesSprite} from "./EnemiesSprite";
 
 export interface Enemy {
     id: number
     // GRAPHICAL AND POSITION :
     sprite: Sprite,
-    spriteBox: SpriteBox,
+    spriteBox: SpriteBoxInterface,
     hitBox: HitBox,
 
     // STATS :
@@ -53,7 +53,7 @@ export class EnemyClass {
         public id: number,
         // GRAPHICAL AND POSITION :
         public sprite: Sprite,
-        public spriteBox: SpriteBox,
+        public spriteBox: SpriteBoxInterface,
         public hitBox: HitBox,
         // STATS :
         public type: string,
@@ -71,7 +71,7 @@ export class EnemyClass {
             right: enemy.sprite.right,
             sprite: enemy.sprite.sprite,
         }
-        const spriteBox:SpriteBox = {
+        const spriteBox:SpriteBoxInterface = {
             x: enemy.spriteBox.x,
             y: enemy.spriteBox.y,
             w: enemy.spriteBox.w,
@@ -99,20 +99,6 @@ export class EnemyClass {
             enemy.health,
             enemy.damage,
         )
-    }
-
-    public getCenterSpriteBox ():{ x: number, y: number }{
-        return {
-            x: this.spriteBox.x + this.spriteBox.w / 2,
-            y: this.spriteBox.y + this.spriteBox.h / 2,
-        }
-    }
-
-    public sleepPosition(){
-        this.spriteBox.x = 999_999
-        this.spriteBox.y = 999_999
-        this.hitBox.x = 999_999
-        this.hitBox.y = 999_999
     }
 
 }

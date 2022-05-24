@@ -28,7 +28,7 @@ export class DirectionClass {
     }
 }
 
-export interface SpriteBox {
+export interface SpriteBoxInterface {
     x: number,
     y: number,
     w: number,
@@ -41,7 +41,7 @@ export interface SpriteBox {
     speed: number,
 }
 
-export class SpriteBoxClass {
+export class SpriteBox {
     constructor(
         public x: number,
         public y: number,
@@ -70,6 +70,10 @@ export class HitBox {
     }
 }
 
+export interface SpriteAndHitBox {
+    spriteBox : SpriteBox
+    hitBox : HitBox
+}
 
 export interface Sprite {
     front: EnemiesSprite | HeroSprite,

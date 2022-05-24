@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="heroProjectiles + itemsXP">
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="mob">
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/spriteBox/positionSpriteBox.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hitboxs/Hitbox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/Building.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/Building.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingHitBox.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroMove.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/ItemInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/ItemInit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/ItemFunctions/ItemCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/ItemFunctions/ItemCollision.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/directionSpriteBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/spriteBox/directionSpriteBox.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +98,11 @@
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\items" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROGRAMMATION\008_guimax\versionA\src\Game\Core\Utilities\spriteBox" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components\Hero" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components\Projectiles" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components" />
       <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Enemies" />
-      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Hero\HeroUtilities" />
     </key>
   </component>
   <component name="RunManager">
@@ -144,7 +147,8 @@
       <workItem from="1652974849621" duration="12159000" />
       <workItem from="1653046040287" duration="1753000" />
       <workItem from="1653234594141" duration="6656000" />
-      <workItem from="1653328842236" duration="1770000" />
+      <workItem from="1653328842236" duration="2032000" />
+      <workItem from="1653419003571" duration="1774000" />
     </task>
     <task id="LOCAL-00001" summary="jj">
       <created>1651924100083</created>
@@ -321,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653241197331</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="mob">
+      <created>1653330832844</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1653330832844</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +362,7 @@
     <MESSAGE value="data class style" />
     <MESSAGE value="heroProjectiles basement" />
     <MESSAGE value="heroProjectiles + itemsXP" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroProjectiles + itemsXP" />
+    <MESSAGE value="mob" />
+    <option name="LAST_COMMIT_MESSAGE" value="mob" />
   </component>
 </project>

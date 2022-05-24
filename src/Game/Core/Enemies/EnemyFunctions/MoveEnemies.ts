@@ -1,10 +1,10 @@
-import {GameData, SpriteBox} from "../../StartData/StartData";
+import {GameData, SpriteBoxInterface} from "../../StartData/StartData";
 import {Enemy} from "../Enemy";
 import {enemiesCollisionWithEnemies} from "./EnemiesCollision";
 
 export const moveEnemies = (gameData: GameData) => {
     const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
-        enemyToMove: Enemy, spriteBoxTarget: SpriteBox
+        enemyToMove: Enemy, spriteBoxTarget: SpriteBoxInterface
     ) => {
         if (enemyToMove.spriteBox.speed !== 0) {
             const deltaX = spriteBoxTarget.x - enemyToMove.spriteBox.x

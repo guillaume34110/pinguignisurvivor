@@ -1,5 +1,5 @@
 import {HeroProjectileClass} from "./HeroProjectile";
-import {DirectionInRadian} from "../Utilities/directionSpriteBox";
+import {DirectionInRadian} from "../Utilities/spriteBox/directionSpriteBox";
 import {heroesGeneric} from "../Hero/Heroes";
 
 interface HeroProjectiles {

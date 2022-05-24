@@ -1,4 +1,4 @@
-import {DirectionClass, HitBox, SpriteBox, SpriteBoxClass} from "../StartData/StartData";
+import {DirectionClass, HitBox, SpriteBoxInterface, SpriteBox} from "../StartData/StartData";
 import {ItemSprite} from "./ItemSprite";
 
 export interface Item {
@@ -6,7 +6,7 @@ export interface Item {
     type: string,
     sprite: ItemSprite,
     value: number,
-    spriteBox: SpriteBox,
+    spriteBox: SpriteBoxInterface,
     hitBox: HitBox,
 }
 
@@ -21,7 +21,7 @@ export class ItemClass implements Item {
 
     public id: number = 0
     public type: string = "type"
-    public spriteBox: SpriteBox = new SpriteBoxClass(
+    public spriteBox: SpriteBoxInterface = new SpriteBox(
         this.hitBox.x,
         this.hitBox.y,
         this.hitBox.w,
@@ -29,12 +29,5 @@ export class ItemClass implements Item {
         new DirectionClass(0, 0, 0),
         0,
     )
-
-    sleepPosition() {
-        this.spriteBox.x = -999_999
-        this.spriteBox.y = -999_999
-        this.hitBox.x = -999_999
-        this.hitBox.y = -999_999
-    }
 
 }

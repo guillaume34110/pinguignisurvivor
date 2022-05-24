@@ -1,30 +1,29 @@
 import {GameData} from "../../StartData/StartData";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
+import {getCenterSpriteBox, setPositionSpriteBoxHitBox} from "../../Utilities/spriteBox/positionSpriteBox";
 
 export const heroProjectileCollisions = (gameData: GameData) => {
     gameData.heroProjectiles.forEach((projectile) => {
         gameData.enemies.forEach((enemy) => {
             if (hitBoxMatch(enemy.hitBox, projectile.hitBox)){
 
-                projectile.sleepPosition() // en -999_999 pour l'instant
+                setPositionSpriteBoxHitBox(projectile,-999_999,-999_999)
                 enemy.health -= projectile.damage
 
                 if (enemy.health <= 0){
-
                     for (let i =0 ; i < gameData.items.length ; i++){
                         const item = gameData.items[i]
-                        // todo create function in ItemClass
+                        // todo create function in ItemClass folder
                         if (item.spriteBox.x < -999_000 && item.spriteBox.y < -999_000){
-                            item.spriteBox.x = enemy.getCenterSpriteBox().x
-                            item.spriteBox.y = enemy.getCenterSpriteBox().y
-                            item.hitBox.x = enemy.getCenterSpriteBox().x
-                            item.hitBox.y = enemy.getCenterSpriteBox().y
+                            item.spriteBox.x = getCenterSpriteBox(enemy.spriteBox).x
+                            item.spriteBox.y = getCenterSpriteBox(enemy.spriteBox).y
+                            item.hitBox.x = getCenterSpriteBox(enemy.spriteBox).x
+                            item.hitBox.y = getCenterSpriteBox(enemy.spriteBox).y
                             break
                         }
                     }
 
-                    enemy.sleepPosition()
-                    // todo reinitialiser ici ou au moment du spawn ?
+                    setPositionSpriteBoxHitBox(enemy,999_999,999_999)
 
                 }
             }
