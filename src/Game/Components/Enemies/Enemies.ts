@@ -8,7 +8,7 @@ export const enemiesRefresh = (gameData: GameData, targetGl: CanvasRenderingCont
     const hero = gameData.hero
     gameData.enemies.forEach((enemy, index) => {
         if (isOnScreen(hero, enemy.spriteBox)) {
-            targetGl.drawImage(selectImg(enemy.sprite.sprite), animationEnemies(16, enemy), 0, 16, 16, enemy.spriteBox.x - hero.spriteBox.x + 600, enemy.spriteBox.y - hero.spriteBox.y + 300, 64, 128)
+            targetGl.drawImage(selectImg(enemy.sprite.sprite), animationEnemies(16, enemy), 0, 16, 16, enemy.spriteBox.x - hero.spriteBox.x + 600, enemy.spriteBox.y - hero.spriteBox.y + 300, enemy.spriteBox.w, enemy.spriteBox.h)
         }
     })
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="canvas">
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="enemies collisions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Enemies/Enemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Hero/Hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Hero/Hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

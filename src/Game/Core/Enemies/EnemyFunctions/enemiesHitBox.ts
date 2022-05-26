@@ -1,9 +1,9 @@
 import {GameData} from "../../StartData/StartData";
 
-export const enemiesHitBox = (gameData:GameData) => {
+export const enemiesHitBox = (gameData: GameData) => {
     gameData.enemies.forEach(enemy => {
-            enemy.hitBox.x= enemy.spriteBox.x
-        enemy.hitBox.y= enemy.spriteBox.y
+        enemy.hitBox.x = enemy.spriteBox.x
+        enemy.hitBox.y = enemy.spriteBox.y + enemy.spriteBox.h / 2
     })
 }
 //  w: enemy.spriteBox.w,

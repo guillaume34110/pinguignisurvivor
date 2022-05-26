@@ -51,11 +51,11 @@ export const Game = () => {
             frameInit(gameData, targetGl)
             terrainRefresh(gameData, targetGl)
             buildingsRefresh(gameData, targetGl)
-            hitBoxRefresh(gameData, targetGl)
             projectileRefresh(gameData, targetGl)
             itemsRefresh(gameData, targetGl)
             enemiesRefresh(gameData, targetGl)
             heroRefresh(gameData, targetGl)
+            hitBoxRefresh(gameData, targetGl)
         }
         window.requestAnimationFrame(drawLoop)
     }

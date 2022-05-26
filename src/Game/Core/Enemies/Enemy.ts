@@ -48,7 +48,7 @@ export const enemyGeneric: Enemy = {
     damage: 1,
 }
 
-class GenericEnemies {
+export class GenericEnemies implements Enemy {
     constructor(
         public id: number,
         // GRAPHICAL AND POSITION :
