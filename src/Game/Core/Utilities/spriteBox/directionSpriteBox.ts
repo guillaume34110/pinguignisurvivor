@@ -1,4 +1,4 @@
-import {SpriteBox} from "../StartData/StartData";
+import {SpriteBoxInterface} from "../../StartData/StartData";
 
 export enum DirectionEnum {
     Right,
@@ -24,7 +24,7 @@ export const DirectionInRadian = {
 }
 
 export const spriteBoxSetDirection = (
-    spriteBox: SpriteBox, directionToSet: DirectionEnum
+    spriteBox: SpriteBoxInterface, directionToSet: DirectionEnum
 ) => {
     switch (directionToSet) {
         case DirectionEnum.Up: {
@@ -74,14 +74,14 @@ export const spriteBoxSetDirection = (
 }
 
 export const spriteBoxSetDirectionWithRadian = (
-    spriteBox: SpriteBox, radAngle: number
+    spriteBox: SpriteBoxInterface, radAngle: number
 ) => {
     spriteBox.direction.x = Math.cos(radAngle) * spriteBox.speed
     spriteBox.direction.y = Math.sin(radAngle) * spriteBox.speed
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
-    spriteBoxToMove: SpriteBox, spriteBoxTarget: SpriteBox
+    spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface
 ) => {
 
     if (spriteBoxToMove.speed !== 0) {
@@ -105,7 +105,7 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
     }
 }
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
-    spriteBoxToMove: SpriteBox, spriteBoxTarget: SpriteBox
+    spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface
 ) => {
     if (spriteBoxToMove.speed !== 0) {
         const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
@@ -124,7 +124,7 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
 
 
 export const spriteBoxSetDirectionAccordingPoint = (
-    spriteBoxA: SpriteBox, pointX: number, pointY: number
+    spriteBoxA: SpriteBoxInterface, pointX: number, pointY: number
 ) => {
 
     if (spriteBoxA.speed !== 0) {

@@ -1,5 +1,4 @@
 import {Hero} from "./Hero";
-import heroImg from "../../Assets/pinguiny/pinguiny-v2-front.png";
 import {HeroSprite} from "./HeroSprite";
 
 export interface Heroes {
@@ -25,7 +24,7 @@ export const heroesGeneric: Heroes = {
                 x: 0,
                 y: 0
             },
-            speed: 2,
+            speed: 5,
         },
         hitBox: {
             x: 0,
@@ -34,7 +33,7 @@ export const heroesGeneric: Heroes = {
             h: 128,
         },
         life: 1,
-        invulnerabilityCoolDown: 1,
+        invulnerabilityCoolDown: 0,
         maxHealth: 100,
         health: 100,
         recoveryHealth: 0,
@@ -51,9 +50,9 @@ export const heroesGeneric: Heroes = {
         projectileDuration: 0,
         projectileAmount: 0,
         projectileCoolDown: 0,
-        xpActual: 25,
-        xpToReach: 100,
-        xpTotal:25,
+        xpActual: 0,
+        xpToReach: 10,
+        xpTotal: 0,
         level: 1,
         rerollRewardsLevelUp: 0,
         skipRewardLevelUp: 0,

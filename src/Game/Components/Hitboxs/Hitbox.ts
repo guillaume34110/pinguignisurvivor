@@ -1,6 +1,5 @@
 import {isOnScreen} from "../Game";
 import {GameData, HitBox} from "../../Core/StartData/StartData";
-import {Hero} from "../../Core/Hero/Hero";
 
 
 export const hitBoxRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {

@@ -1,5 +1,5 @@
 import '../Style/components/Game.css'
-import {GameData, HitBox, SpriteBox, startData} from '../Core/StartData/StartData'
+import {GameData, HitBox, SpriteBoxInterface, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
 import {heroUpdate} from "../Core/Hero/HeroUpdate";
@@ -17,6 +17,10 @@ import {hitBoxRefresh} from "./Hitboxs/Hitbox";
 import {projectileRefresh} from "./Projectiles/Projectiles";
 import {itemsRefresh} from "./Items/Items";
 import {terrainRefresh} from "./Terrain";
+import {heroProjectileInit} from "../Core/HeroProjectile/HeroProjectileInit";
+import {heroInit} from "../Core/Hero/HeroInit";
+import {itemInit} from "../Core/Items/ItemInit";
+import {itemUpdate} from "../Core/Items/ItemUpdate";
 
 
 let coreInterval: NodeJS.Timer
@@ -40,6 +44,7 @@ export const Game = () => {
         heroUpdate(gameData)
         enemiesUpdate(gameData)
         heroProjectileUpdate(gameData)
+        itemUpdate(gameData)
         buildingUpdate(gameData)
 
     }
@@ -96,7 +101,9 @@ export const Game = () => {
         eventListeners()
         gameData = JSON.parse(JSON.stringify(startData))
         buildingInit(gameData)
-        gameData.hero.spriteBox.speed = 10
+        heroInit(gameData)
+        heroProjectileInit(gameData)
+        itemInit(gameData)
         drawInit()
         coreInterval = setInterval(mainLoop, timeInterval);
         window.requestAnimationFrame(drawLoop)
@@ -115,7 +122,7 @@ export const Game = () => {
     }
 }
 
-export const isOnScreen = (hero: Hero, spriteBox: SpriteBox | HitBox): Boolean => {
+export const isOnScreen = (hero: Hero, spriteBox: SpriteBoxInterface | HitBox): Boolean => {
     if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 680)
         && spriteBox.y < (hero.spriteBox.y + 400) && spriteBox.y > (hero.spriteBox.y - 400)) {
         return true

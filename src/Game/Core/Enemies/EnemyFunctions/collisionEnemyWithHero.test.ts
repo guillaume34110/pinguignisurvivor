@@ -1,5 +1,5 @@
 import {Hero} from "../../Hero/Hero"
-import {startData} from "../../StartData/StartData"
+import {GameData, startData} from "../../StartData/StartData"
 import {Enemy, enemyGeneric} from "../Enemy"
 import {collisionEnemiesWithHero} from "./collisionEnemyWithHero"
 
@@ -7,7 +7,8 @@ const given = describe
 const when = describe
 const then = it
 
-const hero: Hero = Object.create(startData.hero)
+const gameData:GameData = Object.create(startData)
+const hero: Hero = gameData.hero
 const enemy: Enemy = Object.create(enemyGeneric)
 const init = () => {
     hero.health = 100
@@ -36,7 +37,7 @@ given('hero and enemy are on the map', () => {
 
     when('they have the same position', () => {
         then('hero should left 10 health points', () => {
-            collisionEnemiesWithHero([enemy], hero)
+            collisionEnemiesWithHero(gameData)
             expect(hero.health).toBe(90)
         })
     })
@@ -45,7 +46,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 51
             enemy.spriteBox.y = 51
-            collisionEnemiesWithHero([enemy], hero)
+            collisionEnemiesWithHero(gameData)
             expect(hero.health).toBe(80)
         })
 
@@ -55,7 +56,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 149
             enemy.spriteBox.y = 51
-            collisionEnemiesWithHero([enemy], hero)
+            collisionEnemiesWithHero(gameData)
             expect(hero.health).toBe(70)
         })
 
@@ -65,7 +66,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 51
             enemy.spriteBox.y = 149
-            collisionEnemiesWithHero([enemy], hero)
+            collisionEnemiesWithHero(gameData)
             expect(hero.health).toBe(60)
         })
 
@@ -75,7 +76,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 149
             enemy.spriteBox.y = 149
-            collisionEnemiesWithHero([enemy], hero)
+            collisionEnemiesWithHero(gameData)
             expect(hero.health).toBe(50)
         })
 
@@ -85,7 +86,7 @@ given('hero and enemy are on the map', () => {
         then('nothing happen', () => {
             enemy.spriteBox.x = 150
             enemy.spriteBox.y = 150
-            collisionEnemiesWithHero([enemy], hero)
+            collisionEnemiesWithHero(gameData)
             expect(hero.health).toBe(50)
         })
 
