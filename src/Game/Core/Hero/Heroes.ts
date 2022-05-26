@@ -30,7 +30,7 @@ export const heroesGeneric: Heroes = {
             x: 0,
             y: 0,
             w: 64,
-            h: 128,
+            h: 64,
         },
         life: 1,
         invulnerabilityCoolDown: 0,

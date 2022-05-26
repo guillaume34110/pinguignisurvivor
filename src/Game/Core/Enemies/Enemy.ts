@@ -39,7 +39,7 @@ export const enemyGeneric: Enemy = {
     hitBox: {
         x: 0,
         y: 0,
-        w: 32,
+        w: 64,
         h: 32,
     },
     type: "",
@@ -63,7 +63,7 @@ export class EnemyClass {
     ) {
     }
 
-    static createEnemy(enemy:EnemyClass): EnemyClass{
+    static createEnemy(enemy: EnemyClass): EnemyClass {
         const sprite: Sprite = {
             front: enemy.sprite.front,
             back: enemy.sprite.back,
@@ -71,7 +71,7 @@ export class EnemyClass {
             right: enemy.sprite.right,
             sprite: enemy.sprite.sprite,
         }
-        const spriteBox:SpriteBoxInterface = {
+        const spriteBox: SpriteBoxInterface = {
             x: enemy.spriteBox.x,
             y: enemy.spriteBox.y,
             w: enemy.spriteBox.w,
@@ -83,7 +83,7 @@ export class EnemyClass {
             },
             speed: enemy.spriteBox.speed,
         }
-        const hitBox:HitBox = new HitBox(
+        const hitBox: HitBox = new HitBox(
             enemy.hitBox.x,
             enemy.hitBox.y,
             enemy.hitBox.w,
@@ -100,8 +100,7 @@ export class EnemyClass {
             enemy.damage,
         )
     }
-
-
+}
 
 const newEnemies = new EnemyClass(
     0,
@@ -127,7 +126,7 @@ const newEnemies = new EnemyClass(
     {
         x: 0,
         y: 0,
-        w: 32,
+        w: 64,
         h: 32,
     },
     "",

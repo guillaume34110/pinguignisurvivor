@@ -38,7 +38,7 @@ export const enemies: Enemies = {
             x: 1,
             y: 1,
             w: 64,
-            h: 128,
+            h: 64,
         }
     },
 
@@ -67,7 +67,7 @@ export const enemies: Enemies = {
             x: 1,
             y: 1,
             w: 64,
-            h: 128,
+            h: 64,
         },
         "mouse",
         1,

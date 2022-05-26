@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="mob">
-      <change afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/spriteBox/positionSpriteBox.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Hero.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroMove.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/ItemFunctions/ItemCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/ItemFunctions/ItemCollision.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/directionSpriteBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/spriteBox/directionSpriteBox.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="guillaume" />
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -78,20 +66,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\PROGRAMMATION\\008_guimax\\versionA\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "D:\\Documents\\piguignysurvivor\\pinguigny\\pinguignisurvivor\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\pinguiny" />
