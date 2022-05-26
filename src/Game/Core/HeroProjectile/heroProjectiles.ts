@@ -1,45 +1,48 @@
-import {HeroProjectile} from "./HeroProjectile";
+import {HeroProjectileClass} from "./HeroProjectile";
+import {DirectionInRadian} from "../Utilities/spriteBox/directionSpriteBox";
+import {heroesGeneric} from "../Hero/Heroes";
 
 interface HeroProjectiles {
-    snowBall: HeroProjectile,
+    snowBall: HeroProjectileClass,
 }
 
 export const heroProjectiles: HeroProjectiles = {
 
-    snowBall: {
-        id: 0,
-        sprite: "snowBall",
-        type: "lineShot",
-        damage: 1,
-        spriteBox: {
-            x: 0,
-            y: 0,
-            w: 8,
-            h: 8,
+    snowBall: new HeroProjectileClass(
+        0,
+        "snowBall",
+         {
+            x: heroesGeneric.pinguigny.spriteBox.x + heroesGeneric.pinguigny.spriteBox.w / 2,
+            y: heroesGeneric.pinguigny.spriteBox.y + heroesGeneric.pinguigny.spriteBox.h / 2,
+            w: 16,
+            h: 16,
             direction: {
-                radian: 0,
-                x: 0,
+                radian: DirectionInRadian.Right,
+                x: 1,
                 y: 0
             },
-            speed: 1,
+            speed: heroesGeneric.pinguigny.spriteBox.speed + 2, // en (pixel/frame)
         },
-        hitBox: {
-            x: 0,
-            y: 0,
-            w: 32,
-            h: 32,
+         {
+            x: heroesGeneric.pinguigny.spriteBox.x + heroesGeneric.pinguigny.spriteBox.w / 2,
+            y: heroesGeneric.pinguigny.spriteBox.y + heroesGeneric.pinguigny.spriteBox.h / 2,
+            w: 16,
+            h: 16,
         },
-        amountProjectile: 1,
-        blockByWall: true,
-        chance: 0,
-        coolDown: 0,
-        criticMultiply: 0,
-        distance: 128,
-        durationEffect: 0,
-        interval: 60,
-        level: 0,
-        penetration: 0,
-        poolLimit: 100,
-    }
+        "lineShot",
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        60, // en frame (60 = 1s)
+        0,
+        1000,
+        true,
+        0,
+        64,
+    )
 }
 

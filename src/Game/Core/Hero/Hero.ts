@@ -1,11 +1,11 @@
 import {HeroItem} from "../HeroItem/HeroItem";
-import {HitBox, Sprite, SpriteBox} from "../StartData/StartData";
+import {HitBox, Sprite, SpriteBoxInterface} from "../StartData/StartData";
 
 export interface Hero {
 
     // GRAPHICAL AND POSITION :
     sprite: Sprite
-    spriteBox: SpriteBox,
+    spriteBox: SpriteBoxInterface,
     hitBox: HitBox,
 
     // HERO STATS :

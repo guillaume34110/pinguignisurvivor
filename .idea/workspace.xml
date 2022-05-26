@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="canvas">
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="mob">
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/spriteBox/positionSpriteBox.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Building/BuildingUtilities/BuildingColisions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemiesUpdate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/EnemiesCollision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Components/Game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Components/Game.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/MoveEnemies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/collisionEnemyWithHero.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/HitBoxMatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/Hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/Hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroUtilities/HeroMove.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/heroProjectiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/Item.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Items/ItemFunctions/ItemCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Items/ItemFunctions/ItemCollision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Utilities/directionSpriteBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Utilities/spriteBox/directionSpriteBox.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +47,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="guillaume34110" />
+        <option name="repository" value="pinguignisurvivor" />
+      </RepoCoordinatesHolder>
+    </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="71db60d3-c1ab-4e31-8317-0100940f23e2" />
@@ -68,9 +86,10 @@
     &quot;last_opened_file_path&quot;: &quot;D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\piguignysurvivor\\pinguigny\\pinguignisurvivor\\node_modules\\typescript\\lib&quot;
+    &quot;ts.external.directory.path&quot;: &quot;D:\\PROGRAMMATION\\008_guimax\\versionA\\node_modules\\typescript\\lib&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -79,11 +98,11 @@
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Assets\items" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROGRAMMATION\008_guimax\versionA\src\Game\Core\Utilities\spriteBox" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components\Hero" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components\Projectiles" />
       <recent name="D:\Documents\piguignysurvivor\pinguigny\pinguignisurvivor\src\Game\Components" />
       <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Enemies" />
-      <recent name="D:\Documents\piguignysurvivor\pinguignisurvivor\my-app\src\Game\Core\Hero\HeroUtilities" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,6 +146,9 @@
       <workItem from="1652960241113" duration="1276000" />
       <workItem from="1652974849621" duration="12159000" />
       <workItem from="1653046040287" duration="1753000" />
+      <workItem from="1653234594141" duration="6656000" />
+      <workItem from="1653328842236" duration="2032000" />
+      <workItem from="1653419003571" duration="1774000" />
     </task>
     <task id="LOCAL-00001" summary="jj">
       <created>1651924100083</created>
@@ -289,7 +311,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653073624842</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="heroProjectiles basement">
+      <created>1653220273714</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1653220273714</updated>
+    </task>
+    <task id="LOCAL-00025" summary="heroProjectiles + itemsXP">
+      <created>1653241197330</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1653241197331</updated>
+    </task>
+    <task id="LOCAL-00026" summary="mob">
+      <created>1653330832844</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1653330832844</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +360,9 @@
     <MESSAGE value="no react" />
     <MESSAGE value="canvas" />
     <MESSAGE value="data class style" />
-    <option name="LAST_COMMIT_MESSAGE" value="data class style" />
+    <MESSAGE value="heroProjectiles basement" />
+    <MESSAGE value="heroProjectiles + itemsXP" />
+    <MESSAGE value="mob" />
+    <option name="LAST_COMMIT_MESSAGE" value="mob" />
   </component>
 </project>

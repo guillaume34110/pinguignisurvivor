@@ -1,7 +1,7 @@
 import {Hero} from "../Hero/Hero";
-import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
-import {Item} from "../Items/Item";
-import {Enemy} from "../Enemies/Enemy";
+import {HeroProjectileClass} from "../HeroProjectile/HeroProjectile";
+import {ItemClass} from "../Items/Item";
+import {EnemyClass} from "../Enemies/Enemy";
 import {Building} from "../Building/Building";
 import {buildingsGeneric} from "../Building/Buildings";
 import {heroesGeneric} from "../Hero/Heroes";
@@ -10,16 +10,25 @@ import {HeroSprite} from "../Hero/HeroSprite";
 
 export interface GameData {
     hero: Hero,
-    heroProjectiles: HeroProjectile[],
-    enemies: Enemy[],
-    items: Item[],
+    heroProjectiles: HeroProjectileClass[],
+    enemies: EnemyClass[],
+    items: ItemClass[],
     keys: Keys,
     time: number,
     camera: Camera,
     building: Building[],
 }
 
-export interface SpriteBox {
+export class DirectionClass {
+    constructor(
+        public radian: number,
+        public x: number,
+        public y: number,
+    ) {
+    }
+}
+
+export interface SpriteBoxInterface {
     x: number,
     y: number,
     w: number,
@@ -32,19 +41,46 @@ export interface SpriteBox {
     speed: number,
 }
 
-export interface HitBox {
+export class SpriteBox {
+    constructor(
+        public x: number,
+        public y: number,
+        public w: number,
+        public h: number,
+        public direction: DirectionClass,
+        public speed: number,
+    ) {
+    }
+}
+
+export interface HitBoxInterface {
     x: number,
     y: number,
     w: number,
     h: number,
 }
 
+export class HitBox {
+    constructor(
+        public x: number,
+        public y: number,
+        public w: number,
+        public h: number,
+    ) {
+    }
+}
+
+export interface SpriteAndHitBox {
+    spriteBox : SpriteBox
+    hitBox : HitBox
+}
+
 export interface Sprite {
-    front:  EnemiesSprite|HeroSprite,
-    back:  EnemiesSprite|HeroSprite,
-    left:  EnemiesSprite|HeroSprite,
-    right:  EnemiesSprite|HeroSprite,
-    sprite: EnemiesSprite|HeroSprite,
+    front: EnemiesSprite | HeroSprite,
+    back: EnemiesSprite | HeroSprite,
+    left: EnemiesSprite | HeroSprite,
+    right: EnemiesSprite | HeroSprite,
+    sprite: EnemiesSprite | HeroSprite,
 }
 
 export interface Keys {

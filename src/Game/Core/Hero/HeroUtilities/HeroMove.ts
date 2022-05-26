@@ -1,5 +1,5 @@
 import {GameData} from "../../StartData/StartData";
-import {DirectionInRadian, spriteBoxSetDirectionWithRadian} from "../../Utilities/directionSpriteBox";
+import {DirectionInRadian, spriteBoxSetDirectionWithRadian} from "../../Utilities/spriteBox/directionSpriteBox";
 
 export const heroMove = (gameData: GameData) => {
     HeroMoveDetermination(gameData)
