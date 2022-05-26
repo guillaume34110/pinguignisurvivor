@@ -1,6 +1,10 @@
 import {GameData, SpriteBoxInterface} from "../../StartData/StartData";
 import {Enemy} from "../Enemy";
 import {enemiesCollisionWithEnemies} from "./EnemiesCollision";
+import {
+    spriteBoxSetDirectionWithXY,
+    spriteBoxUpdateSpriteByRadianDirection
+} from "../../Utilities/spriteBox/directionSpriteBox";
 
 export const moveEnemies = (gameData: GameData) => {
     const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
@@ -10,20 +14,30 @@ export const moveEnemies = (gameData: GameData) => {
             const deltaX = spriteBoxTarget.x - enemyToMove.spriteBox.x
             const deltaY = spriteBoxTarget.y - enemyToMove.spriteBox.y
 
-            const stepX = Math.abs(deltaX / enemyToMove.spriteBox.speed)
-            enemyToMove.spriteBox.x += deltaX / stepX
-            enemyToMove.spriteBox.direction.x = deltaX / stepX
+            const hypotenuse = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY))
+            const steepH = hypotenuse / enemyToMove.spriteBox.speed
+            enemyToMove.spriteBox.x += (deltaX / steepH)
+            enemyToMove.spriteBox.y += (deltaY / steepH)
 
-            const stepY = Math.abs(deltaY / enemyToMove.spriteBox.speed)
-            enemyToMove.spriteBox.y += deltaY / stepY
+            // const stepX = Math.abs(deltaX / enemyToMove.spriteBox.speed)
+            // enemyToMove.spriteBox.x += deltaX / stepX
+            // enemyToMove.spriteBox.direction.x = (deltaX / stepX)
+
+            // const stepY = Math.abs(deltaY / enemyToMove.spriteBox.speed)
+            // enemyToMove.spriteBox.y += deltaY / stepY
+
             enemiesCollisionWithEnemies(gameData, "y", enemyToMove)
-            enemyToMove.spriteBox.direction.y = deltaY / stepY
+            enemyToMove.spriteBox.direction.y = (deltaY / steepH)
+            // enemyToMove.spriteBox.direction.y = (deltaY / stepY)
             enemiesCollisionWithEnemies(gameData, "x", enemyToMove)
+            enemyToMove.spriteBox.direction.x = (deltaX / steepH)
 
+            spriteBoxSetDirectionWithXY(enemyToMove.spriteBox, enemyToMove.spriteBox.direction.x, enemyToMove.spriteBox.direction.y)
         }
     }
     gameData.enemies.forEach(enemy => {
         spriteBoxSetDirectionAccordingOtherSpriteBoxLite(enemy, gameData.hero.spriteBox)
+        spriteBoxUpdateSpriteByRadianDirection(enemy.sprite, enemy.spriteBox)
     })
 }
 

@@ -15,9 +15,9 @@ export const itemCollisions = (gameData: GameData) => {
                 gameData.hero.xpToReach += gameData.hero.xpActual
                 gameData.hero.xpActual = 0
                 gameData.hero.level++
-                console.log("levelUP => " + gameData.hero.level)
+                // console.log("levelUP => " + gameData.hero.level)
             }
-            console.log("GAIN_XP => " + gameData.hero.xpActual + "/" + gameData.hero.xpToReach + " | total: " + gameData.hero.xpTotal)
+            // console.log("GAIN_XP => " + gameData.hero.xpActual + "/" + gameData.hero.xpToReach + " | total: " + gameData.hero.xpTotal)
         }
     })
 }

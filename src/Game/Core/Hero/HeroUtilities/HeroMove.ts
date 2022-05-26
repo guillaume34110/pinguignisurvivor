@@ -1,5 +1,8 @@
 import {GameData} from "../../StartData/StartData";
-import {DirectionInRadian, spriteBoxSetDirectionWithRadian} from "../../Utilities/spriteBox/directionSpriteBox";
+import {
+    DirectionInRadian,
+    spriteBoxSetDirectionWithRadian, spriteBoxUpdateSpriteByRadianDirection,
+} from "../../Utilities/spriteBox/directionSpriteBox";
 
 export const heroMove = (gameData: GameData) => {
     HeroMoveDetermination(gameData)
@@ -36,4 +39,6 @@ export const HeroMoveDetermination = (gameData: GameData) => {
     if (gameData.keys.keyState.up && gameData.keys.keyState.left) {
         gameData.hero.spriteBox.direction.radian = DirectionInRadian.UpLeft
     }
+
+    spriteBoxUpdateSpriteByRadianDirection(gameData.hero.sprite, gameData.hero.spriteBox)
 }

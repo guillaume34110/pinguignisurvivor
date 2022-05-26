@@ -1,4 +1,4 @@
-import {GameData, HitBox, SpriteBoxInterface} from "../StartData/StartData";
+import {HitBox, SpriteBoxInterface} from "../StartData/StartData";
 import {spriteBoxSetDirectionWithRadian} from "../Utilities/spriteBox/directionSpriteBox";
 
 export interface HeroProjectile {
@@ -87,24 +87,17 @@ export class HeroProjectileClass {
         spriteBoxSetDirectionWithRadian(this.spriteBox, this.spriteBox.direction.radian)
     }
 
-    private posXSpriteBoxInit = this.spriteBox.x
-    private posYSpriteBoxInit = this.spriteBox.y
-    private posXHitBoxInit = this.hitBox.x
-    private posYHitBoxInit = this.hitBox.y
+    posXSpriteBoxInit = this.spriteBox.x
+    posYSpriteBoxInit = this.spriteBox.y
+    posXHitBoxInit = this.hitBox.x
+    posYHitBoxInit = this.hitBox.y
 
-    resetPosition(gameData: GameData) {
-        this.spriteBox.x = this.posXSpriteBoxInit + gameData.hero.spriteBox.x
-        this.spriteBox.y = this.posYSpriteBoxInit + gameData.hero.spriteBox.y
-        this.hitBox.x = this.posXHitBoxInit + gameData.hero.spriteBox.x
-        this.hitBox.y = this.posYHitBoxInit + gameData.hero.spriteBox.y
-    }
-
-    sleepPosition() {
-        this.spriteBox.x = -999_999
-        this.spriteBox.y = -999_999
-        this.hitBox.x = -999_999
-        this.hitBox.y = -999_999
-    }
+    // resetPosition(gameData: GameData) {
+    //     this.spriteBox.x = this.posXSpriteBoxInit + gameData.hero.spriteBox.x
+    //     this.spriteBox.y = this.posYSpriteBoxInit + gameData.hero.spriteBox.y
+    //     this.hitBox.x = this.posXHitBoxInit + gameData.hero.spriteBox.x
+    //     this.hitBox.y = this.posYHitBoxInit + gameData.hero.spriteBox.y
+    // }
 
 }
 

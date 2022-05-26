@@ -49,7 +49,7 @@ export const enemies: Enemies = {
             back: EnemiesSprite.mouseBack,
             left: EnemiesSprite.mouseLeft,
             right: EnemiesSprite.mouseRight,
-            sprite: EnemiesSprite.mouseFront
+            sprite: EnemiesSprite.mouseBack
         },
         {
             x: 1,

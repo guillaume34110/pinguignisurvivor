@@ -1,6 +1,7 @@
 import {GameData} from "../../StartData/StartData";
 import {HeroProjectileClass} from "../HeroProjectile";
 import {spriteBoxSetDirectionWithRadian} from "../../Utilities/spriteBox/directionSpriteBox";
+import {heroProjectileResetPosition} from "./HeroProjectileResetPosition";
 
 export const heroProjectileMove = (
     gameData: GameData,
@@ -8,7 +9,7 @@ export const heroProjectileMove = (
 ) => {
     if (projectile.intervalActual >= projectile.interval) {
         spriteBoxSetDirectionWithRadian(projectile.spriteBox, gameData.hero.spriteBox.direction.radian)
-        projectile.resetPosition(gameData)
+        heroProjectileResetPosition(projectile, gameData.hero)
         projectile.intervalActual = 0
     } else {
         projectile.spriteBox.x += projectile.spriteBox.direction.x
@@ -18,7 +19,7 @@ export const heroProjectileMove = (
         projectile.intervalActual++
     }
 }
-export const heroProjectileMoves = (gameData: GameData) => {
+export const heroProjectilesMove = (gameData: GameData) => {
     gameData.heroProjectiles.forEach((projectile) => {
         heroProjectileMove(gameData, projectile)
     })
