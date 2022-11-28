@@ -2,7 +2,7 @@ import {GameData, HitBox} from "../StartData/StartData";
 import {ItemClass} from "./Item";
 import {ItemSprite} from "./ItemSprite";
 
-export const itemInit = (gameData: GameData) => {
+export const item_Init = (gameData: GameData) => {
     for (let i = 0; i < 200; i++) {
         gameData.items.push(
             new ItemClass(

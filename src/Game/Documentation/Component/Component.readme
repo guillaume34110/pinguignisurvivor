@@ -1,0 +1,11 @@
+1 -> add a new sprite :
+    go to the corresponding  folder 
+    go to the sprite file
+    import the new sprite 
+    create a new image and link the imported sprite to the src
+    add the newSprite to the selectImgFunction 
+
+2-> Create a new Component 
+    Create a Draw.ts file with the name of aggregate and create the refresh function Inside 
+    Create a Sprite.ts file with the name of aggregate and create a selectImgFunction , add your sprites
+    add the refresh Function to the DrawUpdate

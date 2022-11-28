@@ -1,6 +1,6 @@
 import {GameData} from "../../StartData/StartData";
 
-export const heroSpriteBoxUpdate = ({hero}: GameData) => {
+export const hero_SpriteBoxUpdate = ({hero}: GameData) => {
         hero.hitBox.x= hero.spriteBox.x
         hero.hitBox.y= hero.spriteBox.y  - hero.spriteBox.h /2
 }

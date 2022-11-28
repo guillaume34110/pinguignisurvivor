@@ -1,4 +1,4 @@
-import {DirectionClass, HitBox, SpriteBoxInterface, SpriteBox} from "../StartData/StartData";
+import {DirectionClass, HitBox, SpriteBoxInterface, SpriteBox, GameData} from "../StartData/StartData";
 import {ItemSprite} from "./ItemSprite";
 
 export interface Item {
@@ -10,24 +10,3 @@ export interface Item {
     hitBox: HitBox,
 }
 
-export class ItemClass implements Item {
-
-    constructor(
-        public hitBox: HitBox,
-        public sprite: ItemSprite,
-        public value: number,
-    ) {
-    }
-
-    public id: number = 0
-    public type: string = "type"
-    public spriteBox: SpriteBoxInterface = new SpriteBox(
-        this.hitBox.x,
-        this.hitBox.y,
-        this.hitBox.w,
-        this.hitBox.h,
-        new DirectionClass(0, 0, 0),
-        0,
-    )
-
-}

@@ -1,0 +1,14 @@
+each folder as same structure -> 
+
+ 5 files and 2 folders
+
+    one file with the aggregate name : contain the interface of the aggregate name
+    one file with the aggregate name with "s" : 
+        contain an interface with all different type of aggregate
+        contain a const with all different type of aggregate
+    one file with the aggregate name and "Sprite" : contain an enum of all of sprites
+    one file With the aggregate name and "_Init" : contain an init Function (add it to init folder and file)
+    one file With the aggregate name and "Update" : contain an update Function (add it to update folder and file)
+
+    one folder with the name of aggregate and Type : contain all types of this aggregate each time an objects 
+    one folder with the name of aggregate and Functions : contains all function for this aggregate (add this functions to this aggregate update)

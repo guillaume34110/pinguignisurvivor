@@ -2,7 +2,7 @@ import {GameData} from "../../StartData/StartData";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
 import {setPositionSpriteBoxHitBox} from "../../Utilities/spriteBox/positionSpriteBox";
 
-export const itemCollisions = (gameData: GameData) => {
+export const item_Collisions = (gameData: GameData) => {
     gameData.items.forEach((item) => {
         if (hitBoxMatch(gameData.hero.hitBox, item.hitBox)) {
 

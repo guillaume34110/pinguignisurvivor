@@ -6,7 +6,7 @@ import {selectImg} from "./ItemsSprites";
 const image = new Image()
 image.src = itemImg
 
-export const itemsRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
+export const items_Refresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
     const hero = gameData.hero
 
     gameData.items.forEach((item, index) => {

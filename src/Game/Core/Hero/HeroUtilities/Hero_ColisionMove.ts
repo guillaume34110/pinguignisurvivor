@@ -1,7 +1,7 @@
 import {GameData} from "../../StartData/StartData";
 import {Hero} from "../Hero";
 
-export const heroCollisionMove = (gameData: GameData) => {
+export const hero_CollisionMove = (gameData: GameData) => {
     applyHeroMoveOnCollision(gameData.hero)
 }
 

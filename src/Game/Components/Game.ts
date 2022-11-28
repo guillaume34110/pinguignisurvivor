@@ -2,25 +2,12 @@ import '../Style/components/Game.css'
 import {GameData, HitBox, SpriteBoxInterface, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
-import {heroUpdate} from "../Core/Hero/HeroUpdate";
-import {buildingInit} from "../Core/Building/BuildingInit";
-import {enemiesUpdate} from "../Core/Enemies/EnemiesUpdate";
 import Hud from "./Hud/Hud";
-import {heroRefresh} from "./Hero/Hero";
-import {enemiesRefresh} from "./Enemies/Enemies";
 import {Hero} from "../Core/Hero/Hero";
-import {buildingUpdate} from "../Core/Building/BuildingUpdate";
-import {heroProjectileUpdate} from "../Core/HeroProjectile/HeroProjectileUpdate";
 import {Enemy} from "../Core/Enemies/Enemy";
-import {buildingsRefresh} from "./buildings/Buildings";
-import {hitBoxRefresh} from "./Hitboxs/Hitbox";
-import {projectileRefresh} from "./Projectiles/Projectiles";
-import {itemsRefresh} from "./Items/Items";
-import {terrainRefresh} from "./Terrain";
-import {heroProjectileInit} from "../Core/HeroProjectile/HeroProjectileInit";
-import {heroInit} from "../Core/Hero/HeroInit";
-import {itemInit} from "../Core/Items/ItemInit";
-import {itemUpdate} from "../Core/Items/ItemUpdate";
+import {initCore} from "../Core/init/init";
+import { updateCore} from "../Core/update/Update";
+import {draw} from "./DrawUpdate";
 
 
 let coreInterval: NodeJS.Timer
@@ -40,13 +27,7 @@ export const Game = () => {
         </div>
    `
     const mainLoop = () => {
-
-        heroUpdate(gameData)
-        enemiesUpdate(gameData)
-        heroProjectileUpdate(gameData)
-        itemUpdate(gameData)
-        buildingUpdate(gameData)
-
+        updateCore(gameData)
     }
 
     const drawLoop = () => {
@@ -54,13 +35,7 @@ export const Game = () => {
         const targetGl = targetEnemy?.getContext('2d')
         if (targetGl !== null && targetGl !== undefined) {
             frameInit(gameData, targetGl)
-            terrainRefresh(gameData, targetGl)
-            buildingsRefresh(gameData, targetGl)
-            projectileRefresh(gameData, targetGl)
-            itemsRefresh(gameData, targetGl)
-            enemiesRefresh(gameData, targetGl)
-            heroRefresh(gameData, targetGl)
-            hitBoxRefresh(gameData, targetGl)
+            draw(gameData, targetGl)
         }
         window.requestAnimationFrame(drawLoop)
     }
@@ -100,10 +75,7 @@ export const Game = () => {
     const componentInit = () => {
         eventListeners()
         gameData = JSON.parse(JSON.stringify(startData))
-        buildingInit(gameData)
-        heroInit(gameData)
-        heroProjectileInit(gameData)
-        itemInit(gameData)
+        initCore(gameData)
         drawInit()
         coreInterval = setInterval(mainLoop, timeInterval);
         window.requestAnimationFrame(drawLoop)

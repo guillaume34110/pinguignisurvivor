@@ -1,3 +1,5 @@
-export const timer = (time: number) => {
-    return time += 16
+import {GameData} from "../../StartData/StartData";
+
+export const timer = (gameData: GameData) => {
+    return gameData.time += 16
 }

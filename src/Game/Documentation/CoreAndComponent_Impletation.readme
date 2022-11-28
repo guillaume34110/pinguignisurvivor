@@ -5,16 +5,17 @@
  |                                                                              |
  |                                    CORE                                      |
  |                                                                              |
- |          DOMAIN ----- CREATION FUNCTION REGISTER ----> INIT                  |
+ |          DOMAIN ----- CREATION FUNCTION REGISTER ----> INIT()                |
  |             |                                                                |
- |             |-------- LOGIC FUNCTION REGISTER -----------|---->   CORE       |
- |             |                                            '                   |
- |             |                    COMPONENT          CORE UPDATE              |
- |             |                                            '                   |
- |             '-------- IMAGE DRAW FUNCTION REGISTER ------|---->   DRAW       |
+ |             |-------- LOGIC FUNCTION REGISTER ------- UPDATE()->   CORE      |
+ |             |                                                                |
+ |             |                    COMPONENT                                   |
+ |             |                                                                |
+ |          COMPONENT--- IMAGE DRAW FUNCTION REGISTER -- UPDATE()->   DRAW      |
+ |             '-------- SPRITE LIBRARIE FUNCTION                               |
  |                                                                              |
  |______________________________________________________________________________|
-                                                                               
+
 CREATION FUNCTION - > a loop function who create a pool of objects
 
                 **********________________________*****************
@@ -35,8 +36,8 @@ export const item_Init = (gameData: GameData) => {
     }
 }
                 **********________________________*****************
-                
-IMAGE DRAW FUNCTION - > a function who dra the new parameters of the object at each frames
+
+IMAGE DRAW FUNCTION - > a function who draw the new parameters of the object at each frames
 
                 **********________________________*****************
 export const items_Refresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
@@ -70,4 +71,27 @@ export const enemies_Move = (gameData: GameData) => {
     })
 }
 
+                **********________________________*****************
+
+SPRITE LIBRARIE FUNCTION -> a function for indexing all sprites
+
+                **********________________________*****************
+const image = new Image()
+
+const pinguignyFrontImage = new Image()
+pinguignyFrontImage.src = pinguignyFront
+const pinguignyBackImage = new Image()
+pinguignyBackImage.src = pinguignyBack
+const pinguignyLeftImage = new Image()
+pinguignyLeftImage.src = pinguignyLeft
+const pinguignyRightImage = new Image()
+pinguignyRightImage.src = pinguignyRight
+
+export const selectImg = (sprite: EnemiesSprite | HeroSprite): HTMLImageElement => {
+    if (sprite === HeroSprite.heroFront) return pinguignyFrontImage
+    else if (sprite === HeroSprite.heroBack) return pinguignyBackImage
+    else if (sprite === HeroSprite.heroLeft) return pinguignyLeftImage
+    else if (sprite === HeroSprite.heroRight) return pinguignyRightImage
+    else return image
+}
                 **********________________________*****************

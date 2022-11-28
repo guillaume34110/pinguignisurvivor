@@ -1,7 +1,7 @@
 import {HeroProjectile, HeroProjectileClass} from "../HeroProjectile";
 import {GameData} from "../../StartData/StartData";
 
-export const projectileResetPosition = (projectile : HeroProjectileClass , gameData : GameData)=> {
+export const projectile_ResetPosition = (projectile : HeroProjectileClass , gameData : GameData)=> {
     projectile.spriteBox.x =  gameData.hero.spriteBox.x
     projectile.spriteBox.y =  gameData.hero.spriteBox.y
     projectile.hitBox.x =  gameData.hero.spriteBox.x

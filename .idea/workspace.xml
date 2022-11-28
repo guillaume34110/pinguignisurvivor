@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="mob">
+    <list default="true" id="22154407-110e-46a4-8ee3-a339a78fdadb" name="Changes" comment="enemies collisions">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pinguignisurvivor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/ProjectileMove.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/ProjectileRemove.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/ProjectileShoot.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/EnemyFunctions/enemiesHitBox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Enemies/enemies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/Hero/HeroInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/Hero/HeroInit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroItem/HeroItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroItem/HeroItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroItem/heroItems.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroItem/heroItems.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileCollision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileFunctions/HeroProjectileMove.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileInit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/HeroProjectile/HeroProjectileUpdate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Core/StartData/StartData.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +42,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="main" />
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="guillaume" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,10 +83,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documents/piguignysurvivor/pinguigny/pinguignisurvivor/src/Game/Assets/pinguiny",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "D:/Documents/regiePubMinix",
     "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "D:\\Documents\\piguignysurvivor\\pinguigny\\pinguignisurvivor\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
@@ -137,6 +154,9 @@
       <workItem from="1653234594141" duration="6656000" />
       <workItem from="1653328842236" duration="2032000" />
       <workItem from="1653419003571" duration="1774000" />
+      <workItem from="1653573766187" duration="4953000" />
+      <workItem from="1653585141414" duration="2096000" />
+      <workItem from="1654107249943" duration="146000" />
     </task>
     <task id="LOCAL-00001" summary="jj">
       <created>1651924100083</created>
@@ -320,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653330832844</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="enemies collisions">
+      <created>1653552192790</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1653552192790</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +378,7 @@
     <MESSAGE value="heroProjectiles basement" />
     <MESSAGE value="heroProjectiles + itemsXP" />
     <MESSAGE value="mob" />
-    <option name="LAST_COMMIT_MESSAGE" value="mob" />
+    <MESSAGE value="enemies collisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="enemies collisions" />
   </component>
 </project>

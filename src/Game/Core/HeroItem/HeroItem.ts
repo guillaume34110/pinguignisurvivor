@@ -1,20 +1,21 @@
-import {HeroProjectileClass} from "../HeroProjectile/HeroProjectile";
-import {HeroSupply} from "../HeroSupply/HeroSupply";
+import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
+import {heroProjectiles} from "../HeroProjectile/heroProjectiles";
 
 export interface HeroItem {
-    sprite: string,
-    type: string,
+    sprite: String,
+
+    type: String,
     level: number,
-    rarity: number,
-    projectile: HeroProjectileClass | null,
-    supply: HeroSupply | null,
+    coolDown: number,
+    projectile: HeroProjectile,
+    coolDownCounter: number,
 }
 
 export const heroItemGeneric: HeroItem = {
     sprite: "heroItemGeneric",
     type: "generic",
     level: 0,
-    rarity: 0,
-    projectile: null,
-    supply: null,
+    coolDown: 0,
+    projectile: heroProjectiles.snowBall,
+    coolDownCounter: 0,
 }

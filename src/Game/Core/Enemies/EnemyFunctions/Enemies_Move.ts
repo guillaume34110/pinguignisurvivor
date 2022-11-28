@@ -1,8 +1,8 @@
 import {GameData, SpriteBoxInterface} from "../../StartData/StartData";
 import {Enemy} from "../Enemy";
-import {enemiesCollisionWithEnemies} from "./EnemiesCollision";
+import {enemies_CollisionWithEnemies} from "./Enemies_Collision";
 
-export const moveEnemies = (gameData: GameData) => {
+export const enemies_Move = (gameData: GameData) => {
     const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
         enemyToMove: Enemy, spriteBoxTarget: SpriteBoxInterface
     ) => {
@@ -16,9 +16,9 @@ export const moveEnemies = (gameData: GameData) => {
 
             const stepY = Math.abs(deltaY / enemyToMove.spriteBox.speed)
             enemyToMove.spriteBox.y += deltaY / stepY
-            enemiesCollisionWithEnemies(gameData, "y", enemyToMove)
+            enemies_CollisionWithEnemies(gameData, "y", enemyToMove)
             enemyToMove.spriteBox.direction.y = deltaY / stepY
-            enemiesCollisionWithEnemies(gameData, "x", enemyToMove)
+            enemies_CollisionWithEnemies(gameData, "x", enemyToMove)
 
         }
     }
@@ -27,12 +27,12 @@ export const moveEnemies = (gameData: GameData) => {
     })
 }
 
-export const enemyCollisionWithBuildingMove = (enemy: Enemy) => {
+export const enemies_CollisionWithBuildingMove = (enemy: Enemy) => {
     enemy.spriteBox.x -= enemy.spriteBox.direction.x * 18
     enemy.spriteBox.y -= enemy.spriteBox.direction.y * 18
 }
 
-export const collisionBetweenEnemiesMove = (enemyToMove: Enemy, type: string) => {
+export const enemies_collisionBetweenMove = (enemyToMove: Enemy, type: string) => {
     if (type === "y") enemyToMove.spriteBox.y -= enemyToMove.spriteBox.direction.y
     if (type === "x") enemyToMove.spriteBox.x -= enemyToMove.spriteBox.direction.x
 }

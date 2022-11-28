@@ -1,8 +1,9 @@
 import {GameData} from "../../StartData/StartData";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
 import {getCenterSpriteBox, setPositionSpriteBoxHitBox} from "../../Utilities/spriteBox/positionSpriteBox";
+import {heroProjectiles} from "../heroProjectiles";
 
-export const hero_ProjectileCollisions = (gameData: GameData) => {
+export const heroProjectile_Collisions = (gameData: GameData) => {
     gameData.heroProjectiles.forEach((projectile) => {
         if(projectile.type !="none"){
 
@@ -25,7 +26,8 @@ export const hero_ProjectileCollisions = (gameData: GameData) => {
                             break
                         }
                     }
-                    projectile.assignParameters("none")
+                    //TODO replace snowball by none
+                   projectile = JSON.parse(JSON.stringify( heroProjectiles.snowBall ))
                 }
             }
         })

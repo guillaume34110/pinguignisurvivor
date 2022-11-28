@@ -1,18 +1,19 @@
 import {Hero} from "../Hero/Hero";
-import {HeroProjectileClass} from "../HeroProjectile/HeroProjectile";
-import {ItemClass} from "../Items/Item";
-import {EnemyClass} from "../Enemies/Enemy";
+import {Item} from "../Items/Item";
 import {Building} from "../Building/Building";
 import {buildingsGeneric} from "../Building/Buildings";
 import {heroesGeneric} from "../Hero/Heroes";
 import {EnemiesSprite} from "../Enemies/EnemiesSprite";
 import {HeroSprite} from "../Hero/HeroSprite";
+import {HeroProjectileSprite} from "../HeroProjectile/HeroProjectileSprite";
+import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
+import { Enemy } from "../Enemies/Enemy";
 
 export interface GameData {
     hero: Hero,
-    heroProjectiles: HeroProjectileClass[],
-    enemies: EnemyClass[],
-    items: ItemClass[],
+    heroProjectiles: HeroProjectile[],
+    enemies: Enemy[],
+    items: Item[],
     keys: Keys,
     time: number,
     camera: Camera,
@@ -76,11 +77,11 @@ export interface SpriteAndHitBox {
 }
 
 export interface Sprite {
-    front: EnemiesSprite | HeroSprite,
-    back: EnemiesSprite | HeroSprite,
-    left: EnemiesSprite | HeroSprite,
-    right: EnemiesSprite | HeroSprite,
-    sprite: EnemiesSprite | HeroSprite,
+    front: EnemiesSprite | HeroSprite | HeroProjectileSprite,
+    back: EnemiesSprite | HeroSprite | HeroProjectileSprite,
+    left: EnemiesSprite | HeroSprite | HeroProjectileSprite,
+    right: EnemiesSprite | HeroSprite | HeroProjectileSprite,
+    sprite: EnemiesSprite | HeroSprite | HeroProjectileSprite,
 }
 
 export interface Keys {

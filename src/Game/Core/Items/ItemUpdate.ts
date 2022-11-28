@@ -1,6 +1,6 @@
 import {GameData} from "../StartData/StartData";
-import {itemCollisions} from "./ItemFunctions/ItemCollision";
+import {item_Collisions} from "./ItemFunctions/Item_Collision";
 
 export const itemUpdate = (gameData:GameData) => {
-    itemCollisions(gameData)
+    item_Collisions(gameData)
 }

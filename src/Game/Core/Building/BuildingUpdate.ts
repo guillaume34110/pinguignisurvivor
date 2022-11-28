@@ -1,9 +1,9 @@
 import {GameData} from "../StartData/StartData";
-import {buildingCollisionWithEnemies, buildingCollisionWithHero} from "./BuildingUtilities/BuildingColisions";
-import {buildingHitBox} from "./BuildingUtilities/BuildingHitBox";
+import {buildingCollisionWithEnemies, building_CollisionWithHero} from "./BuildingUtilities/Building_Colisions";
+import {building_HitBox} from "./BuildingUtilities/Building_HitBox";
 
 export const buildingUpdate = (gameData:GameData) => {
-    buildingHitBox(gameData)
-    buildingCollisionWithHero(gameData)
+    building_HitBox(gameData)
+    building_CollisionWithHero(gameData)
     buildingCollisionWithEnemies(gameData)
 }

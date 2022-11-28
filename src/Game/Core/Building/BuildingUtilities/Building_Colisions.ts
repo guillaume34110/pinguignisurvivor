@@ -1,21 +1,21 @@
 import {GameData} from "../../StartData/StartData";
-import {heroCollisionMove} from "../../Hero/HeroUtilities/HeroColisionMove";
-import {enemyCollisionWithBuildingMove} from "../../Enemies/EnemyFunctions/MoveEnemies";
+import {hero_CollisionMove} from "../../Hero/HeroUtilities/Hero_ColisionMove";
+import {enemies_CollisionWithBuildingMove} from "../../Enemies/EnemyFunctions/Enemies_Move";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
 
-export const buildingCollisionWithHero = (gameData: GameData) => {
+export const building_CollisionWithHero = (gameData: GameData) => {
 
     const collision = gameData.building.map(building => {
         if (hitBoxMatch(building.hitBox, gameData.hero.hitBox)) return true
         else return false
     })
-    if (collision.includes(true)) heroCollisionMove(gameData)
+    if (collision.includes(true)) hero_CollisionMove(gameData)
 }
 
 export const buildingCollisionWithEnemies = (gameData: GameData) => {
     gameData.building.forEach(building => {
         gameData.enemies.forEach(enemy => {
-            if (hitBoxMatch(building.hitBox, enemy.hitBox)) enemyCollisionWithBuildingMove(enemy)
+            if (hitBoxMatch(building.hitBox, enemy.hitBox)) enemies_CollisionWithBuildingMove(enemy)
         })
     })
 }

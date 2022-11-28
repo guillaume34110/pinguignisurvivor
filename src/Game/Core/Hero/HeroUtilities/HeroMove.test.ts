@@ -1,6 +1,6 @@
 import {keydownController} from "../../KeysInputs/keys"
 import {GameData, startData} from "../../StartData/StartData"
-import {heroMove} from "./HeroMove";
+import {hero_Move} from "./Hero_Move";
 
 const given = describe
 const when = describe
@@ -35,7 +35,7 @@ given('hero is on map and key input is send', () => {
         then('Hero should go right', () => {
 
             keydownController(gameData.keys, "ArrowRight")
-            heroMove(gameData)
+            hero_Move(gameData)
             expect(gameData.hero.spriteBox.x).toBe(105)
 
 
@@ -45,7 +45,7 @@ given('hero is on map and key input is send', () => {
     when('keydown input left is received', () => {
         then('Hero should go left', () => {
             keydownController(gameData.keys, "ArrowLeft")
-            heroMove(gameData)
+            hero_Move(gameData)
             expect(gameData.hero.spriteBox.x).toBe(95)
 
         })
@@ -54,7 +54,7 @@ given('hero is on map and key input is send', () => {
     when('keydown input down is received', () => {
         then('Hero should go down', () => {
             keydownController(gameData.keys, "ArrowDown")
-            heroMove(gameData)
+            hero_Move(gameData)
             expect(gameData.hero.spriteBox.y).toBe(105)
         })
     })
@@ -62,7 +62,7 @@ given('hero is on map and key input is send', () => {
     when('keydown input up is received', () => {
         then('Hero should go up', () => {
             keydownController(gameData.keys, "ArrowUp")
-            heroMove(gameData)
+            hero_Move(gameData)
             expect(gameData.hero.spriteBox.y).toBe(95)
         })
     })
@@ -71,7 +71,7 @@ given('hero is on map and key input is send', () => {
         then('Hero should go right and down', () => {
             keydownController(gameData.keys, "ArrowRight")
             keydownController(gameData.keys, "ArrowDown")
-            heroMove(gameData)
+            hero_Move(gameData)
 
             expect(gameData.hero.spriteBox.y).toBe(103.53553390593274)
             expect(gameData.hero.spriteBox.y).toBe(103.53553390593274)

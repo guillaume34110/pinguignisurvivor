@@ -1,7 +1,41 @@
 import {Hero} from "../../Hero/Hero"
 import {GameData, startData} from "../../StartData/StartData"
-import {Enemy, enemyGeneric} from "../Enemy"
-import {collisionEnemiesWithHero} from "./collisionEnemyWithHero"
+import {Enemy} from "../Enemy"
+import {collision_EnemiesWithHero} from "./Collision_EnemyWithHero"
+import {EnemiesSprite} from "../EnemiesSprite";
+
+export const enemyGeneric: Enemy = {
+    id: 0,
+    sprite: {
+        front: EnemiesSprite.rabbitFront,
+        back: EnemiesSprite.rabbitBack,
+        left: EnemiesSprite.rabbitLeft,
+        right: EnemiesSprite.rabbitRight,
+        sprite: EnemiesSprite.rabbitFront
+    },
+    spriteBox: {
+        x: 0,
+        y: 0,
+        w: 32,
+        h: 32,
+        direction: {
+            radian: 0,
+            x: 0,
+            y: 0
+        },
+        speed: 1,
+    },
+    hitBox: {
+        x: 0,
+        y: 0,
+        w: 64,
+        h: 32,
+    },
+    type: "",
+    maxHealth: 100,
+    health: 100,
+    damage: 1,
+}
 
 const given = describe
 const when = describe
@@ -37,7 +71,7 @@ given('hero and enemy are on the map', () => {
 
     when('they have the same position', () => {
         then('hero should left 10 health points', () => {
-            collisionEnemiesWithHero(gameData)
+            collision_EnemiesWithHero(gameData)
             expect(hero.health).toBe(90)
         })
     })
@@ -46,7 +80,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 51
             enemy.spriteBox.y = 51
-            collisionEnemiesWithHero(gameData)
+            collision_EnemiesWithHero(gameData)
             expect(hero.health).toBe(80)
         })
 
@@ -56,7 +90,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 149
             enemy.spriteBox.y = 51
-            collisionEnemiesWithHero(gameData)
+            collision_EnemiesWithHero(gameData)
             expect(hero.health).toBe(70)
         })
 
@@ -66,7 +100,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 51
             enemy.spriteBox.y = 149
-            collisionEnemiesWithHero(gameData)
+            collision_EnemiesWithHero(gameData)
             expect(hero.health).toBe(60)
         })
 
@@ -76,7 +110,7 @@ given('hero and enemy are on the map', () => {
         then('hero should left 10 health points', () => {
             enemy.spriteBox.x = 149
             enemy.spriteBox.y = 149
-            collisionEnemiesWithHero(gameData)
+            collision_EnemiesWithHero(gameData)
             expect(hero.health).toBe(50)
         })
 
@@ -86,7 +120,7 @@ given('hero and enemy are on the map', () => {
         then('nothing happen', () => {
             enemy.spriteBox.x = 150
             enemy.spriteBox.y = 150
-            collisionEnemiesWithHero(gameData)
+            collision_EnemiesWithHero(gameData)
             expect(hero.health).toBe(50)
         })
 

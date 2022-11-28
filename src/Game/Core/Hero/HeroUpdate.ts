@@ -1,8 +1,8 @@
 import {GameData} from "../StartData/StartData";
-import {heroSpriteBoxUpdate} from "./HeroUtilities/HeroHitBox";
-import {heroMove} from "./HeroUtilities/HeroMove";
+import {hero_SpriteBoxUpdate} from "./HeroUtilities/Hero_HitBox";
+import {hero_Move} from "./HeroUtilities/Hero_Move";
 
 export const heroUpdate = (gameData:GameData) => {
-    heroMove(gameData)
-    heroSpriteBoxUpdate(gameData)
+    hero_Move(gameData)
+    hero_SpriteBoxUpdate(gameData)
 }
