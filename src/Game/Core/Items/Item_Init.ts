@@ -18,4 +18,3 @@ export const itemInit = (gameData: GameData) => {
         )
     }
 }
-

@@ -1,0 +1,73 @@
+
+ |------------------------------------------------------------------------------|
+ |                           CORE AND COMPONENT DESIGN                          |
+ |------------------------------------------------------------------------------|
+ |                                                                              |
+ |                                    CORE                                      |
+ |                                                                              |
+ |          DOMAIN ----- CREATION FUNCTION REGISTER ----> INIT                  |
+ |             |                                                                |
+ |             |-------- LOGIC FUNCTION REGISTER -----------|---->   CORE       |
+ |             |                                            '                   |
+ |             |                    COMPONENT          CORE UPDATE              |
+ |             |                                            '                   |
+ |             '-------- IMAGE DRAW FUNCTION REGISTER ------|---->   DRAW       |
+ |                                                                              |
+ |______________________________________________________________________________|
+                                                                               
+CREATION FUNCTION - > a loop function who create a pool of objects
+
+                **********________________________*****************
+export const item_Init = (gameData: GameData) => {
+    for (let i = 0; i < 200; i++) {
+        gameData.items.push(
+            new ItemClass(
+                new HitBox(
+                    -999_999,
+                    -999_999,
+                    16,
+                    16
+                ),
+                ItemSprite.xpBlue,
+                1,
+            )
+        )
+    }
+}
+                **********________________________*****************
+                
+IMAGE DRAW FUNCTION - > a function who dra the new parameters of the object at each frames
+
+                **********________________________*****************
+export const items_Refresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
+    const hero = gameData.hero
+
+    gameData.items.forEach((item, index) => {
+        if (isOnScreen(hero, item.spriteBox)) {
+            targetGl.drawImage(
+                selectImg(item.sprite),
+                animation4Frames(16),
+                0,
+                16,
+                16,
+                item.spriteBox.x - hero.spriteBox.x + 600,
+                item.spriteBox.y - hero.spriteBox.y + 300,
+                item.spriteBox.w,
+                item.spriteBox.h
+            )
+        }
+    })
+}
+                **********________________________*****************
+
+LOGIC FUNCTION -> all you need for your aggregate executed each frames
+
+                **********________________________*****************
+
+export const enemies_Move = (gameData: GameData) => {
+    gameData.enemies.forEach(enemy => {
+        spriteBoxSetDirectionAccordingOtherSpriteBoxLite(enemy, gameData.hero.spriteBox)
+    })
+}
+
+                **********________________________*****************

@@ -2,8 +2,11 @@ import {GameData} from "../../StartData/StartData";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
 import {getCenterSpriteBox, setPositionSpriteBoxHitBox} from "../../Utilities/spriteBox/positionSpriteBox";
 
-export const heroProjectileCollisions = (gameData: GameData) => {
+export const hero_ProjectileCollisions = (gameData: GameData) => {
     gameData.heroProjectiles.forEach((projectile) => {
+        if(projectile.type !="none"){
+
+
         gameData.enemies.forEach((enemy) => {
             if (hitBoxMatch(enemy.hitBox, projectile.hitBox)){
 
@@ -22,11 +25,11 @@ export const heroProjectileCollisions = (gameData: GameData) => {
                             break
                         }
                     }
-
-                    setPositionSpriteBoxHitBox(enemy,999_999,999_999)
-
+                    projectile.assignParameters("none")
                 }
             }
         })
+        }
     })
 }
+
