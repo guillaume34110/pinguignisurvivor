@@ -1,6 +1,6 @@
 import {GameData} from "../StartData/StartData";
 
-export const building_Init = (gameData:GameData) => {
+export const mapBlocks_Init = (gameData:GameData) => {
     gameData.building[0].spriteBox.x=1000
     gameData.building[0].spriteBox.y=1000
     gameData.building[0].id = 0

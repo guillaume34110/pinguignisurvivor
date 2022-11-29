@@ -1,4 +1,4 @@
-import { BuildingType } from "../Building"
+import { MapBlockType } from "../MapBlock"
 
 export const tree = {
     id: 0,
@@ -8,5 +8,5 @@ export const tree = {
     rotationY: 0,
     rotationX: 90,
     translateY: 50,
-    type:BuildingType.tree
+    type:MapBlockType.tree
 }

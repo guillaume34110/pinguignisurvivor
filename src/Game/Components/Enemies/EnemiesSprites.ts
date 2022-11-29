@@ -8,7 +8,7 @@ import mouseFront from "../../Assets/pinguiny/mouse-front.png"
 import mouseBack from "../../Assets/pinguiny/mouse-back.png"
 import mouseLat from "../../Assets/pinguiny/mouse-lateral.png"
 import {EnemiesSprite} from "../../Core/Enemies/EnemiesSprite";
-import {HeroSprite} from "../../Core/Hero/HeroSprite";
+import {GodSprite} from "../../Core/Hero/GodSprite";
 
 const image = new Image()
 
@@ -33,7 +33,7 @@ mouseBackImage.src = mouseBack
 const mouseLatImage = new Image()
 mouseLatImage.src = mouseLat
 
-export const selectImg = (sprite: EnemiesSprite | HeroSprite): HTMLImageElement => {
+export const selectImg = (sprite: EnemiesSprite | GodSprite): HTMLImageElement => {
     if (sprite === EnemiesSprite.rabbitFront) return rabbitFrontImage
     else if (sprite === EnemiesSprite.rabbitBack) return rabbitBackImage
     else if (sprite === EnemiesSprite.rabbitLeft) return rabbitLatImage

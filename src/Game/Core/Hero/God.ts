@@ -1,7 +1,7 @@
 import {HeroItem} from "../HeroItem/HeroItem";
 import {HitBox, Sprite, SpriteBoxInterface} from "../StartData/StartData";
 
-export interface Hero {
+export interface God {
 
     // GRAPHICAL AND POSITION :
     sprite: Sprite

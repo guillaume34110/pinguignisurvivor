@@ -1,4 +1,4 @@
-import {Hero} from "../../Hero/Hero"
+import {God} from "../../Hero/God"
 import {DirectionEnum, spriteBoxSetDirection} from "../../Utilities/spriteBox/directionSpriteBox"
 import {HeroProjectile} from "../HeroProjectile"
 import {heroProjectile_Move} from "./HeroProjectile_Move"
@@ -56,7 +56,7 @@ const when = describe
 const then = it
 
 const gameData: GameData = Object.create(startData)
-const hero: Hero = gameData.hero
+const hero: God = gameData.hero
 const heroProjectile: HeroProjectile = JSON.parse(JSON.stringify(heroProjectileGeneric))
 
 const testInit = () => {

@@ -1,5 +1,5 @@
 import { HeroProjectileSprite } from "../HeroProjectileSprite";
-import { heroesGeneric } from '../../Hero/Heroes';
+import { heroesGeneric } from '../../Hero/Gods';
 import { DirectionInRadian } from '../../Utilities/spriteBox/directionSpriteBox';
 
 export const  snowBall = {

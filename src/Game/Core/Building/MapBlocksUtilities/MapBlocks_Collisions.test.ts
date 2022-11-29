@@ -1,8 +1,8 @@
 import {GameData, startData} from "../../StartData/StartData"
 import {keydownController, keyupController} from "../../KeysInputs/keys";
-import {heroUpdate} from "../../Hero/HeroUpdate";
-import {buildingsGeneric} from "../Buildings";
-import {buildingUpdate} from "../BuildingUpdate";
+import {heroUpdate} from "../../Hero/GodUpdate";
+import {MapBlocksGeneric} from "../MapBlocks";
+import {mapBlocksUpdate} from "../MapBlocksUpdate";
 
 const given = describe
 const when = describe
@@ -13,7 +13,7 @@ let gameData: GameData = JSON.parse(JSON.stringify(startData))
 
 const resetData = () => {
     gameData = JSON.parse(JSON.stringify(startData))
-    gameData.building[0] = buildingsGeneric.verticalWall
+    gameData.building[0] = MapBlocksGeneric.verticalWall
     gameData.building[0].spriteBox = {x: 1000, y: 1000, h: 100, w: 100}
     gameData.hero.spriteBox.speed = 2
 }
@@ -28,7 +28,7 @@ given('hero is on map between a wall and key input is send', () => {
             gameData.hero.spriteBox.y = 1000
             keyupController(gameData.keys, "ArrowRight")
             heroUpdate(gameData)
-            buildingUpdate(gameData)
+            mapBlocksUpdate(gameData)
             expect(gameData.hero.spriteBox.y).toBe(1000)
         })
     })
@@ -38,7 +38,7 @@ given('hero is on map between a wall and key input is send', () => {
             gameData.hero.spriteBox.y = 1000
             keyupController(gameData.keys, "ArrowLeft")
             heroUpdate(gameData)
-            buildingUpdate(gameData)
+            mapBlocksUpdate(gameData)
             expect(gameData.hero.spriteBox.y).toBe(1000)
         })
     })
@@ -48,7 +48,7 @@ given('hero is on map between a wall and key input is send', () => {
             gameData.hero.spriteBox.y = 1000
             keyupController(gameData.keys, "ArrowDown")
             heroUpdate(gameData)
-            buildingUpdate(gameData)
+            mapBlocksUpdate(gameData)
             expect(gameData.hero.spriteBox.y).toBe(1000)
         })
     })
@@ -58,7 +58,7 @@ given('hero is on map between a wall and key input is send', () => {
             gameData.hero.spriteBox.y = 1000
             keydownController(gameData.keys, "ArrowUp")
             heroUpdate(gameData)
-            buildingUpdate(gameData)
+            mapBlocksUpdate(gameData)
             expect(gameData.hero.spriteBox.x).toBe(1000)
         })
     })
@@ -69,7 +69,7 @@ given('hero is on map between a wall and key input is send', () => {
             gameData.building[1] = gameData.building[0]
             keydownController(gameData.keys, "ArrowUp")
             heroUpdate(gameData)
-            buildingUpdate(gameData)
+            mapBlocksUpdate(gameData)
             expect(gameData.hero.spriteBox.x).toBe(1000)
         })
     })
@@ -81,7 +81,7 @@ given('hero is on map between a wall and key input is send', () => {
             keydownController(gameData.keys, "ArrowUp")
             keydownController(gameData.keys, "ArrowLeft")
             heroUpdate(gameData)
-            buildingUpdate(gameData)
+            mapBlocksUpdate(gameData)
             expect(gameData.hero.spriteBox.x).toBe(1000)
             expect(gameData.hero.spriteBox.y).toBe(1000)
         })

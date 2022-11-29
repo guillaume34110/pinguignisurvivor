@@ -1,23 +1,23 @@
-import {Hero} from "../Hero/Hero";
+import {God} from "../Hero/God";
 import {Item} from "../Items/Item";
-import {Building} from "../Building/Building";
-import {buildingsGeneric} from "../Building/Buildings";
-import {heroesGeneric} from "../Hero/Heroes";
+import {MapBlock} from "../Building/MapBlock";
+import {MapBlocksGeneric} from "../Building/MapBlocks";
+import {heroesGeneric} from "../Hero/Gods";
 import {EnemiesSprite} from "../Enemies/EnemiesSprite";
-import {HeroSprite} from "../Hero/HeroSprite";
+import {GodSprite} from "../Hero/GodSprite";
 import {HeroProjectileSprite} from "../HeroProjectile/HeroProjectileSprite";
 import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
 import { Enemy } from "../Enemies/Enemy";
 
 export interface GameData {
-    hero: Hero,
+    hero: God,
     heroProjectiles: HeroProjectile[],
     enemies: Enemy[],
     items: Item[],
     keys: Keys,
     time: number,
     camera: Camera,
-    building: Building[],
+    building: MapBlock[],
 }
 
 export class DirectionClass {
@@ -77,11 +77,11 @@ export interface SpriteAndHitBox {
 }
 
 export interface Sprite {
-    front: EnemiesSprite | HeroSprite | HeroProjectileSprite,
-    back: EnemiesSprite | HeroSprite | HeroProjectileSprite,
-    left: EnemiesSprite | HeroSprite | HeroProjectileSprite,
-    right: EnemiesSprite | HeroSprite | HeroProjectileSprite,
-    sprite: EnemiesSprite | HeroSprite | HeroProjectileSprite,
+    front: EnemiesSprite | GodSprite | HeroProjectileSprite,
+    back: EnemiesSprite | GodSprite | HeroProjectileSprite,
+    left: EnemiesSprite | GodSprite | HeroProjectileSprite,
+    right: EnemiesSprite | GodSprite | HeroProjectileSprite,
+    sprite: EnemiesSprite | GodSprite | HeroProjectileSprite,
 }
 
 export interface Keys {
@@ -133,8 +133,8 @@ export const startData: GameData = {
         y: 0,
     },
     building: [
-        buildingsGeneric.horizontalWall,
-        buildingsGeneric.verticalWall,
-        buildingsGeneric.tree
+        MapBlocksGeneric.horizontalWall,
+        MapBlocksGeneric.verticalWall,
+        MapBlocksGeneric.tree
     ]
 }

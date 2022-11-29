@@ -1,9 +1,9 @@
 import {GameData} from "../../StartData/StartData";
-import {hero_CollisionMove} from "../../Hero/HeroUtilities/Hero_ColisionMove";
+import {hero_CollisionMove} from "../../Hero/GodUtilities/God_ColisionMove";
 import {enemies_CollisionWithBuildingMove} from "../../Enemies/EnemyFunctions/Enemies_Move";
 import {hitBoxMatch} from "../../Utilities/HitBoxMatch";
 
-export const building_CollisionWithHero = (gameData: GameData) => {
+export const mapBlocks_CollisionWithHero = (gameData: GameData) => {
 
     const collision = gameData.building.map(building => {
         if (hitBoxMatch(building.hitBox, gameData.hero.hitBox)) return true

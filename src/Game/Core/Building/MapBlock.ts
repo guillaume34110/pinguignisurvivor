@@ -1,6 +1,6 @@
 import {HitBox} from "../StartData/StartData";
 
-export interface Building {
+export interface MapBlock {
     id: number,
     spriteBox: HitBox,
     hitBox: HitBox,
@@ -8,9 +8,9 @@ export interface Building {
     rotationY: number,
     translateY: number,
     sprite: string,
-    type: BuildingType,
+    type: MapBlockType,
 }
 
-export enum BuildingType {
+export enum MapBlockType {
     xWall, yWall, tree,
 }

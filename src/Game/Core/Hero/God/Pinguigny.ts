@@ -1,11 +1,11 @@
-import { HeroSprite } from '../HeroSprite';
+import { GodSprite } from '../GodSprite';
 export const  pinguigny = {
     sprite: {
-        front: HeroSprite.heroFront,
-        back: HeroSprite.heroBack,
-        left: HeroSprite.heroLeft,
-        right: HeroSprite.heroRight,
-        sprite: HeroSprite.heroFront
+        front: GodSprite.heroFront,
+        back: GodSprite.heroBack,
+        left: GodSprite.heroLeft,
+        right: GodSprite.heroRight,
+        sprite: GodSprite.heroFront
     },
     spriteBox: {
         x: 0,

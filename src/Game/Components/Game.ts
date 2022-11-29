@@ -3,7 +3,7 @@ import {GameData, HitBox, SpriteBoxInterface, startData} from '../Core/StartData
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
 import Hud from "./Hud/Hud";
-import {Hero} from "../Core/Hero/Hero";
+import {God} from "../Core/Hero/God";
 import {Enemy} from "../Core/Enemies/Enemy";
 import {initCore} from "../Core/init/init";
 import { updateCore} from "../Core/update/Update";
@@ -94,7 +94,7 @@ export const Game = () => {
     }
 }
 
-export const isOnScreen = (hero: Hero, spriteBox: SpriteBoxInterface | HitBox): Boolean => {
+export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox): Boolean => {
     if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 680)
         && spriteBox.y < (hero.spriteBox.y + 400) && spriteBox.y > (hero.spriteBox.y - 400)) {
         return true

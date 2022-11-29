@@ -1,4 +1,4 @@
-export enum HeroSprite{
+export enum GodSprite{
     heroFront,
     heroBack,
     heroLeft,

@@ -5,8 +5,7 @@ import buildingImg from "../../Assets/buildings/grey128.png"
 const image = new Image()
 image.src = buildingImg
 
-export const buildingsRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
-
+export const mapBlocksRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
 
     const hero = gameData.hero
 

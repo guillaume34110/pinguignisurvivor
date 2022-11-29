@@ -1,4 +1,4 @@
-import {Hero} from "../../Hero/Hero"
+import {God} from "../../Hero/God"
 import {GameData, startData} from "../../StartData/StartData"
 import {Enemy} from "../Enemy"
 import {collision_EnemiesWithHero} from "./Collision_EnemyWithHero"
@@ -42,7 +42,7 @@ const when = describe
 const then = it
 
 const gameData:GameData = Object.create(startData)
-const hero: Hero = gameData.hero
+const hero: God = gameData.hero
 const enemy: Enemy = Object.create(enemyGeneric)
 const init = () => {
     hero.health = 100
