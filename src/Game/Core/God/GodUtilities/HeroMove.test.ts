@@ -1,6 +1,6 @@
 import {keydownController} from "../../KeysInputs/keys"
 import {GameData, startData} from "../../StartData/StartData"
-import {hero_Move} from "./God_Move";
+import {god_Move} from "./God_Move";
 
 const given = describe
 const when = describe
@@ -8,10 +8,10 @@ const then = it
 
 const gameData: GameData = JSON.parse(JSON.stringify(startData))
 
-const heroInit = () => {
-    gameData.hero.spriteBox.x = 100
-    gameData.hero.spriteBox.y = 100
-    gameData.hero.spriteBox.speed = 5
+const godInit = () => {
+    gameData.god.spriteBox.x = 100
+    gameData.god.spriteBox.y = 100
+    gameData.god.spriteBox.speed = 5
     gameData.keys = {
         keysInstant: {
             left: false,
@@ -27,54 +27,54 @@ const heroInit = () => {
         }
     }
 }
-given('hero is on map and key input is send', () => {
+given('god is on map and key input is send', () => {
 
-    beforeEach(() => heroInit())
+    beforeEach(() => godInit())
 
     when('keydown input right is received', () => {
-        then('Hero should go right', () => {
+        then('god should go right', () => {
 
             keydownController(gameData.keys, "ArrowRight")
-            hero_Move(gameData)
-            expect(gameData.hero.spriteBox.x).toBe(105)
+            god_Move(gameData)
+            expect(gameData.god.spriteBox.x).toBe(105)
 
 
         })
     })
 
     when('keydown input left is received', () => {
-        then('Hero should go left', () => {
+        then('god should go left', () => {
             keydownController(gameData.keys, "ArrowLeft")
-            hero_Move(gameData)
-            expect(gameData.hero.spriteBox.x).toBe(95)
+            god_Move(gameData)
+            expect(gameData.god.spriteBox.x).toBe(95)
 
         })
     })
 
     when('keydown input down is received', () => {
-        then('Hero should go down', () => {
+        then('god should go down', () => {
             keydownController(gameData.keys, "ArrowDown")
-            hero_Move(gameData)
-            expect(gameData.hero.spriteBox.y).toBe(105)
+            god_Move(gameData)
+            expect(gameData.god.spriteBox.y).toBe(105)
         })
     })
 
     when('keydown input up is received', () => {
-        then('Hero should go up', () => {
+        then('god should go up', () => {
             keydownController(gameData.keys, "ArrowUp")
-            hero_Move(gameData)
-            expect(gameData.hero.spriteBox.y).toBe(95)
+            god_Move(gameData)
+            expect(gameData.god.spriteBox.y).toBe(95)
         })
     })
 
     when('keydown input right and down is received', () => {
-        then('Hero should go right and down', () => {
+        then('god should go right and down', () => {
             keydownController(gameData.keys, "ArrowRight")
             keydownController(gameData.keys, "ArrowDown")
-            hero_Move(gameData)
+            god_Move(gameData)
 
-            expect(gameData.hero.spriteBox.y).toBe(103.53553390593274)
-            expect(gameData.hero.spriteBox.y).toBe(103.53553390593274)
+            expect(gameData.god.spriteBox.y).toBe(103.53553390593274)
+            expect(gameData.god.spriteBox.y).toBe(103.53553390593274)
 
 
         })

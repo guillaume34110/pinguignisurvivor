@@ -1,14 +1,12 @@
-import {heroUpdate} from "../Hero/GodUpdate";
-import {enemiesUpdate} from "../Enemies/EnemiesUpdate";
-import {heroProjectile_Update} from "../HeroProjectile/HeroProjectile_Update";
+import { creaturesUpdate } from "../Creatures/CreaturesUpdate";
+import { godUpdate } from "../God/GodUpdate";
 import {itemUpdate} from "../Items/ItemUpdate";
-import {mapBlocksUpdate} from "../Building/MapBlocksUpdate";
+import {mapBlocksUpdate} from "../MapBlocks/MapBlocksUpdate";
 import {GameData} from "../StartData/StartData";
 
 export const updateCore = (gameData:GameData) => {
-    heroUpdate(gameData)
-    enemiesUpdate(gameData)
-    heroProjectile_Update(gameData)
+    godUpdate(gameData);
+    creaturesUpdate(gameData)
     itemUpdate(gameData)
     mapBlocksUpdate(gameData)
 }

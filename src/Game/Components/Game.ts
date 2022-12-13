@@ -3,8 +3,8 @@ import {GameData, HitBox, SpriteBoxInterface, startData} from '../Core/StartData
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
 import Hud from "./Hud/Hud";
-import {God} from "../Core/Hero/God";
-import {Enemy} from "../Core/Enemies/Enemy";
+import {God} from "../Core/God/God";
+import {Creature} from "../Core/Creatures/Creature";
 import {initCore} from "../Core/init/init";
 import { updateCore} from "../Core/update/Update";
 import {draw} from "./DrawUpdate";
@@ -114,7 +114,7 @@ export const animation4Frames = (w: number): number => {
 }
 
 
-export const animationEnemies = (w: number, enemy: Enemy): number => {
+export const animationEnemies = (w: number, enemy: Creature): number => {
 
     if (enemy.id % 2 === 0) {
         if (frame <= Math.random() * 10) {

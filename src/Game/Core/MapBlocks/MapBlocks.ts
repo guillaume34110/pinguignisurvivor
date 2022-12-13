@@ -1,16 +1,22 @@
 import { MapBlock } from './MapBlock';
-import { horizontalWall } from './MapBlocksTypes/HorizontalWall';
-import { tree } from './MapBlocksTypes/Tree';
-import { verticalWall } from './MapBlocksTypes/VerticalWall';
+import { dirtGround } from './MapBlocksTypes/DirtGround';
+import { emptyGround } from './MapBlocksTypes/EmptyGround';
+import { grassGround } from './MapBlocksTypes/GrassGround';
+import { snowGround } from './MapBlocksTypes/SnowGround';
+import { spaceBorder} from './MapBlocksTypes/SpaceBorder';
 
 export interface MapBlocks {
-    verticalWall: MapBlock,
-    horizontalWall: MapBlock,
-    tree :MapBlock
+    dirtGround: MapBlock,
+    grassGround: MapBlock,
+    snowGround :MapBlock,
+    spaceBorder : MapBlock,
+    emptyGround : MapBlock,
 }
 
-export const MapBlocksGeneric: MapBlocks = {
-    verticalWall: verticalWall,
-    horizontalWall: horizontalWall,
-    tree:tree,
+export const mapBlocksGeneric: MapBlocks = {
+    dirtGround: dirtGround,
+    grassGround: grassGround,
+    snowGround:snowGround,
+    spaceBorder : spaceBorder,
+    emptyGround : emptyGround,
 }

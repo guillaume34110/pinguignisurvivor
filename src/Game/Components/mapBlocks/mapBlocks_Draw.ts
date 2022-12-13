@@ -1,26 +1,24 @@
-import {GameData} from "../../Core/StartData/StartData";
-import {isOnScreen} from "../Game";
-import buildingImg from "../../Assets/buildings/grey128.png"
+import { GameData } from '../../Core/StartData/StartData';
+import { isOnScreen } from '../Game';
+import { selectImg } from './MapBoxSprites';
 
-const image = new Image()
-image.src = buildingImg
 
 export const mapBlocksRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
 
-    const hero = gameData.hero
+    const god = gameData.god
 
-    gameData.building.forEach((building, index) => {
-        if (isOnScreen(hero, building.spriteBox)) {
+    gameData.mapBlocks.forEach(mapBlock => {
+        if (isOnScreen(god, mapBlock.spriteBox)) {
             targetGl.drawImage(
-                image,
+                selectImg(mapBlock.sprite),
                 0,
                 0,
-                128,
-                128,
-                building.spriteBox.x - hero.spriteBox.x + 600,
-                building.spriteBox.y - hero.spriteBox.y + 300,
-                building.spriteBox.w,
-                building.spriteBox.h
+                32,
+                32,
+                mapBlock.spriteBox.x - god.spriteBox.x + 600,
+                mapBlock.spriteBox.y - god.spriteBox.y + 300,
+                mapBlock.spriteBox.w,
+                mapBlock.spriteBox.h
             )
         }
     })

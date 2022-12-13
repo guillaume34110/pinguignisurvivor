@@ -1,10 +1,10 @@
 import {God} from "./God";
-import { pinguigny } from './God/Pinguigny';
+import { god } from "./God/God";
 
 export interface Gods {
-    pinguigny: God
+    god: God
 }
 
-export const heroesGeneric: Gods = {
-    pinguigny: pinguigny
+export const godsGeneric: Gods = {
+    god: god
 }

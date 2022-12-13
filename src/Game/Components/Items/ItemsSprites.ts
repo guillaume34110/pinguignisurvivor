@@ -9,6 +9,6 @@ xpBlueImage.src = xpBlue
 
 
 export const selectImg = (sprite:ItemSprite): HTMLImageElement => {
-    if (sprite === ItemSprite.xpBlue ) return xpBlueImage
+    if (sprite === ItemSprite.grey128 ) return xpBlueImage
     else return image
 }

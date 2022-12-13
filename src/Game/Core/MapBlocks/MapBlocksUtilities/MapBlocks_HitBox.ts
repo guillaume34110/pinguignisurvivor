@@ -3,7 +3,7 @@ import {MapBlock} from "../MapBlock";
 
 
 export const mapBlocks_HitBox = (gameData:GameData) => {
-    gameData.building.forEach(building => {
+    gameData.mapBlocks.forEach(building => {
         building.hitBox = mapBlocksHitBoxDetermination(building)
     })
 }

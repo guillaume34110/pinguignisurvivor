@@ -1,23 +1,20 @@
-import {God} from "../Hero/God";
+import {God} from "../God/God";
 import {Item} from "../Items/Item";
-import {MapBlock} from "../Building/MapBlock";
-import {MapBlocksGeneric} from "../Building/MapBlocks";
-import {heroesGeneric} from "../Hero/Gods";
-import {EnemiesSprite} from "../Enemies/EnemiesSprite";
-import {GodSprite} from "../Hero/GodSprite";
-import {HeroProjectileSprite} from "../HeroProjectile/HeroProjectileSprite";
-import {HeroProjectile} from "../HeroProjectile/HeroProjectile";
-import { Enemy } from "../Enemies/Enemy";
+import {MapBlock} from "../MapBlocks/MapBlock";
+import {CreaturesSprite} from "../Creatures/CreaturesSprite";
+
+import { Creature } from "../Creatures/Creature";
+import { godsGeneric } from "../God/Gods";
+import { mapBlocksGeneric } from "../MapBlocks/MapBlocks";
 
 export interface GameData {
-    hero: God,
-    heroProjectiles: HeroProjectile[],
-    enemies: Enemy[],
+    god: God,
+    creatures: Creature[],
     items: Item[],
     keys: Keys,
     time: number,
     camera: Camera,
-    building: MapBlock[],
+    mapBlocks: MapBlock[],
 }
 
 export class DirectionClass {
@@ -77,11 +74,11 @@ export interface SpriteAndHitBox {
 }
 
 export interface Sprite {
-    front: EnemiesSprite | GodSprite | HeroProjectileSprite,
-    back: EnemiesSprite | GodSprite | HeroProjectileSprite,
-    left: EnemiesSprite | GodSprite | HeroProjectileSprite,
-    right: EnemiesSprite | GodSprite | HeroProjectileSprite,
-    sprite: EnemiesSprite | GodSprite | HeroProjectileSprite,
+    front: CreaturesSprite,
+    back: CreaturesSprite,
+    left: CreaturesSprite,
+    right: CreaturesSprite,
+    sprite: CreaturesSprite,
 }
 
 export interface Keys {
@@ -107,10 +104,9 @@ export interface Camera {
 
 export const startData: GameData = {
 
-    hero: heroesGeneric.pinguigny,
+    god:godsGeneric.god,
 
-    heroProjectiles: [],
-    enemies: [],
+    creatures: [],
     items: [],
     keys: {
         keysInstant: {
@@ -132,9 +128,7 @@ export const startData: GameData = {
         x: 0,
         y: 0,
     },
-    building: [
-        MapBlocksGeneric.horizontalWall,
-        MapBlocksGeneric.verticalWall,
-        MapBlocksGeneric.tree
+    mapBlocks: [
+       
     ]
 }

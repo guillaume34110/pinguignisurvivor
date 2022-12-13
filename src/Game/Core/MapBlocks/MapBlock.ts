@@ -1,4 +1,5 @@
 import {HitBox} from "../StartData/StartData";
+import { MapBlocksSprite } from "./MapBlocksSprite";
 
 export interface MapBlock {
     id: number,
@@ -7,10 +8,10 @@ export interface MapBlock {
     rotationX: number,
     rotationY: number,
     translateY: number,
-    sprite: string,
+    sprite: MapBlocksSprite,
     type: MapBlockType,
 }
 
 export enum MapBlockType {
-    xWall, yWall, tree,
+    space, groundDirt , groundGrass , groundSnow , emptyGround
 }
