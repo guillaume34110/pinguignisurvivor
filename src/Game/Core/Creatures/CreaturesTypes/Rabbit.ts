@@ -1,10 +1,11 @@
+import { SensorType } from "../../StartData/StartData";
 import { CreaturesSprite } from "../CreaturesSprite";
 
-export const rabbit=  {
+export const rabbit = {
     id: 0,
     type: "rabbit",
-    maxHealth: 1,
-    health: 1,
+    maxHealth: 1000,
+    health: 1000,
     damage: 1,
     sprite: {
         front: CreaturesSprite.rabbitFront,
@@ -30,5 +31,19 @@ export const rabbit=  {
         y: 1,
         w: 16,
         h: 16,
-    }
+    },
+    sensors: {
+        sensors: [
+            {
+                distanceFromCreature: 15,
+                degOffset: 20 ,
+                x:0,
+                 y:0,
+                h: 15,
+                w: 15,
+                type: SensorType.Collision
+            }
+        ]
+    },
+    fertility: 0
 }

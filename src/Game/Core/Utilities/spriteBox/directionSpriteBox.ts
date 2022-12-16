@@ -1,4 +1,5 @@
 import {SpriteBoxInterface} from "../../StartData/StartData";
+import { getCenterSpriteBox } from "./positionSpriteBox";
 
 export enum DirectionEnum {
     Right,
@@ -78,6 +79,14 @@ export const spriteBoxSetDirectionWithRadian = (
 ) => {
     spriteBox.direction.x = Math.cos(radAngle) * spriteBox.speed
     spriteBox.direction.y = Math.sin(radAngle) * spriteBox.speed
+}
+
+export const spriteBoxSetPositionByRotateInDegree = (
+    spriteBox: SpriteBoxInterface, degreeAngle: number, step:number
+) => {
+    const direction = spriteBox.direction.radian + (degreeAngle * Math.PI / 180)
+    if ((Math.abs(spriteBox.direction.x + ((Math.cos(direction) * spriteBox.speed) / step)) ) < spriteBox.speed ) spriteBox.direction.x += (Math.cos(direction) * spriteBox.speed) / step
+    if ((Math.abs(spriteBox.direction.y + ((Math.sin(direction) * spriteBox.speed) / step)) ) < spriteBox.speed ) spriteBox.direction.y += (Math.sin(direction) * spriteBox.speed) / step
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (

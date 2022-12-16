@@ -1,4 +1,4 @@
-import {HitBox, Sprite, SpriteBoxInterface} from "../StartData/StartData";
+import {HitBox, Sensors, Sprite, SpriteBoxInterface} from "../StartData/StartData";
 
 export interface Creature {
     id: number
@@ -6,12 +6,13 @@ export interface Creature {
     sprite: Sprite,
     spriteBox: SpriteBoxInterface,
     hitBox: HitBox,
-
+    sensors : Sensors
     // STATS :
     type: string,
     maxHealth: number,
     health: number,
-    damage: number,
+    damage: number, 
+    fertility : number,
 }
 
 

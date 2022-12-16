@@ -1,12 +1,15 @@
+import { SensorType } from '../../StartData/StartData';
+import { Creature } from '../Creature';
 import { CreaturesSprite } from '../CreaturesSprite';
-export const mouse=  {
+
+export const mouse: Creature = {
     id: 0,
     type: "mouse",
-    maxHealth: 1,
-    health: 1,
+    maxHealth: 5000,
+    health: 5000,
     damage: 1,
-    sprite :
-        {
+    sprite:
+    {
         front: CreaturesSprite.mouseFront,
         back: CreaturesSprite.mouseBack,
         left: CreaturesSprite.mouseLeft,
@@ -25,9 +28,33 @@ export const mouse=  {
         },
         speed: 1,
     },
-    hitBox:{
+    hitBox: {
         x: 1,
         y: 1,
         w: 16,
         h: 16,
-    }}
+    },
+    sensors: {
+        sensors: [
+           {
+            distanceFromCreature: 50,
+                degOffset: 20,
+                x:0,
+                y:0,
+                h: 15,
+                w: 15,
+                type: SensorType.TurnRight
+            },
+            {
+                distanceFromCreature: 50,
+                degOffset: 340,
+                x:0,
+                y:0,
+                h: 15,
+                w: 15,
+                type: SensorType.TurnLeft
+            }
+        ]
+    },
+    fertility: 0
+}

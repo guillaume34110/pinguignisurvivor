@@ -8,5 +8,5 @@ export const draw = (gameData:GameData , targetGl : CanvasRenderingContext2D ) =
     mapBlocksRefresh(gameData, targetGl)
     items_Refresh(gameData, targetGl)
     creaturesRefresh(gameData, targetGl)
-   // hitBoxRefresh(gameData, targetGl)
+    hitBoxRefresh(gameData, targetGl)
 }

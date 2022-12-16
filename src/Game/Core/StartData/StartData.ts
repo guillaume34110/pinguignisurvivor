@@ -101,6 +101,22 @@ export interface Camera {
     y: number
 }
 
+export interface Sensors {
+    sensors : Sensor[]
+}
+export interface Sensor {
+    distanceFromCreature : number, 
+    degOffset : number,
+    x : number,
+    y : number,
+    h : number, 
+    w : number, 
+    type : SensorType,
+}
+
+export enum SensorType {
+    Collision, TurnRight , TurnLeft 
+}
 
 export const startData: GameData = {
 

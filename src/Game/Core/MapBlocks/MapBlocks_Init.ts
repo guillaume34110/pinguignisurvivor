@@ -5,7 +5,7 @@ import { mapBlocks_SpaceBlocks } from "./MapBlocksUtilities/ProceduralGeneration
 import { mapBlocks_disposition } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_disposition";
 
 export const mapBlocks_Init = (gameData:GameData) => {
-    const HowMuchMapBlocks = 1000
+    const HowMuchMapBlocks = 250
     const lineStep = 50 
     gameData.mapBlocks =  mapBlocks_biomeGenerator(mapPresets, HowMuchMapBlocks , lineStep)
     for (let i = 0; i < HowMuchMapBlocks; i++) {
