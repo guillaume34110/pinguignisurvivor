@@ -13,7 +13,20 @@ export interface Creature {
     health: number,
     damage: number, 
     fertility : number,
+    maxFertilityFemale : number,
+    maxFertilityMale : number,
+    sex : CreatureSex,
+    lifeBar : LifeBar,
 }
 
+export interface LifeBar {
+    x : number,
+    y : number, 
+    h : number, 
+    wMax: number, 
+    wCurrent : number
+}
 
-
+export enum CreatureSex {
+    Male , Female , Herma
+}

@@ -3,6 +3,7 @@ import {GameData} from "../StartData/StartData";
 import { mapBlocks_biomeGenerator } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_BiomeGenerator";
 import { mapBlocks_SpaceBlocks } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_Space";
 import { mapBlocks_disposition } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_disposition";
+import { mapBlocks_HitBox } from "./MapBlocksUtilities/MapBlocks_HitBox";
 
 export const mapBlocks_Init = (gameData:GameData) => {
     const HowMuchMapBlocks = 260
@@ -14,6 +15,8 @@ export const mapBlocks_Init = (gameData:GameData) => {
         const mapBlock = gameData.mapBlocks[i]
         mapBlocks_disposition(mapBlock , i , HowMuchMapBlocks , line , lineStep)
     }
+    mapBlocks_HitBox(gameData)
+    
 }
 
 const mapPresets : MapPreset = { 

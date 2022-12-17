@@ -8,5 +8,6 @@ export interface Item {
     value: number,
     spriteBox: SpriteBoxInterface,
     hitBox: HitBox,
+    isTaken : Boolean,
 }
 

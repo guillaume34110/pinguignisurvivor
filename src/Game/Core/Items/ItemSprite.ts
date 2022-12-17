@@ -1,3 +1,3 @@
 export enum ItemSprite{
-    grey128,
+    seeds,
 }

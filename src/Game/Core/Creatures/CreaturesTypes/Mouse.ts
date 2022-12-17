@@ -1,5 +1,5 @@
 import { SensorType } from '../../StartData/StartData';
-import { Creature } from '../Creature';
+import { Creature, CreatureSex } from '../Creature';
 import { CreaturesSprite } from '../CreaturesSprite';
 
 export const mouse: Creature = {
@@ -23,8 +23,8 @@ export const mouse: Creature = {
         h: 32,
         direction: {
             radian: 0,
-            x: 1,
-            y: 1
+            x: 0.1,
+            y: 0.1
         },
         speed: 1,
     },
@@ -56,5 +56,9 @@ export const mouse: Creature = {
             }
         ]
     },
-    fertility: 0
+    fertility: 0,
+    maxFertilityMale : 250 ,
+    maxFertilityFemale : 750,
+    sex : CreatureSex.Male,
+    lifeBar:{x:0 , y:0 , h : 10 , wMax : 16 , wCurrent : 16}
 }

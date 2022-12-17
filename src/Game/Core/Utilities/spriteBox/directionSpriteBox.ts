@@ -122,11 +122,11 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
 
         const stepX = Math.abs(deltaX / spriteBoxToMove.speed)
         spriteBoxToMove.x += deltaX / stepX
-        spriteBoxToMove.direction.x = deltaX / stepX
+        spriteBoxToMove.direction.x = (deltaX / stepX)/20
 
         const stepY = Math.abs(deltaY / spriteBoxToMove.speed)
         spriteBoxToMove.y += deltaY / stepY
-        spriteBoxToMove.direction.y = deltaY / stepY
+        spriteBoxToMove.direction.y = (deltaY / stepY)/20
 
     }
 }

@@ -1,4 +1,5 @@
 import { SensorType } from "../../StartData/StartData";
+import { CreatureSex } from "../Creature";
 import { CreaturesSprite } from "../CreaturesSprite";
 
 export const rabbit = {
@@ -21,8 +22,8 @@ export const rabbit = {
         h: 32,
         direction: {
             radian: 0,
-            x: 0,
-            y: 0
+            x: 0.1,
+            y: 0.1
         },
         speed: 1,
     },
@@ -45,5 +46,9 @@ export const rabbit = {
             }
         ]
     },
-    fertility: 0
+    fertility: 0,
+    maxFertilityMale : 200 ,
+    maxFertilityFemale : 1200,
+    sex : CreatureSex.Male,
+    lifeBar:{x:0 , y:0 , h : 10 , wMax : 16 , wCurrent : 16}
 }

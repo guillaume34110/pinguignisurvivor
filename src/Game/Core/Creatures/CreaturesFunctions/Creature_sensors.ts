@@ -18,9 +18,9 @@ export const creature_sensorTurnOnCollision = (gameData: GameData, creature: Cre
             }
         })
     })
-    if (flagLeft && flagRight)spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 120, 5) 
-    else if (flagLeft) { spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 90, 20) }
-    else if (flagRight) { spriteBoxSetPositionByRotateInDegree(creature.spriteBox, -90, 20) }
+    if (flagLeft && flagRight)spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 120, 8) 
+    else if (flagLeft)  spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 90, 15) 
+    else if (flagRight) spriteBoxSetPositionByRotateInDegree(creature.spriteBox, -90, 15) 
 }
 
 export const creature_updateSensorsPosition = (creature: Creature) => {

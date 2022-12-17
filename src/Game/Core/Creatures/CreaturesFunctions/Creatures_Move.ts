@@ -1,37 +1,34 @@
 import { GameData, Sensor, SpriteBoxInterface } from '../../StartData/StartData';
 import { getCenterSpriteBox } from '../../Utilities/spriteBox/positionSpriteBox';
 import { Creature } from '../Creature';
-import { creatures_CollisionWithEnemies } from './Creatures_Collision';
+import { creatures_CollisionWithCreatures } from './Creatures_Collision';
 import { creature_sensorTurnOnCollision, creature_updateSensorsPosition } from './Creature_sensors';
 
 export const creatures_Move = (gameData: GameData) => {
 
-    const spriteBoxSetDirectionAccordingrandomDirection = (
-        creatureToMove: Creature, spriteBoxTarget: SpriteBoxInterface
+    const creature_BasicMove = (
+        creatureToMove: Creature
     ) => {
         if (creatureToMove.spriteBox.speed === 0) return
-
-        const stepX = (Math.random() - 0.5) * 2 / creatureToMove.spriteBox.speed
-       if ( Math.abs(creatureToMove.spriteBox.direction.x + (stepX / 20)) < creatureToMove.spriteBox.speed) creatureToMove.spriteBox.direction.x += (stepX / 20)
+        const stepDivider = 20
+        const stepX = ((Math.random() - 0.5) * 2 * creatureToMove.spriteBox.speed) / stepDivider
+       if ( Math.abs(creatureToMove.spriteBox.direction.x + (stepX )) < creatureToMove.spriteBox.speed) creatureToMove.spriteBox.direction.x += (stepX )    
         creatureToMove.spriteBox.x += creatureToMove.spriteBox.direction.x
-        const stepY = (Math.random() - 0.5) * 2 / creatureToMove.spriteBox.speed
-       if ((Math.abs(creatureToMove.spriteBox.direction.y + (stepY /20) ) < creatureToMove.spriteBox.speed)
-       ) creatureToMove.spriteBox.direction.y += (stepY /20) 
+        const stepY = (Math.random() - 0.5) * 2 * creatureToMove.spriteBox.speed / stepDivider
+       if ((Math.abs(creatureToMove.spriteBox.direction.y + (stepY) ) < creatureToMove.spriteBox.speed)
+       ) creatureToMove.spriteBox.direction.y += (stepY) 
         creatureToMove.spriteBox.y += creatureToMove.spriteBox.direction.y
         
         creature_setDirectionRadian(creatureToMove)
         creature_updateSensorsPosition(creatureToMove)
         creature_sensorTurnOnCollision(gameData,creatureToMove)
-        creatures_CollisionWithEnemies(gameData, "y", creatureToMove)
-        creatures_CollisionWithEnemies(gameData, "x", creatureToMove)
-        
-        
-
-
+        creatures_CollisionWithCreatures(gameData, "y", creatureToMove)
+        creatures_CollisionWithCreatures(gameData, "x", creatureToMove)
+    
     }
 
     gameData.creatures.forEach(creature => {
-        spriteBoxSetDirectionAccordingrandomDirection(creature, gameData.god.spriteBox)
+        creature_BasicMove(creature)
     })
 }
 
@@ -52,4 +49,12 @@ export const creature_setDirectionRadian = (creatureToMove: Creature) => {
     if((creatureX < 0 && creatureY < 0) || creatureX < 0){
         creatureToMove.spriteBox.direction.radian += Math.PI
     }
+}
+
+export const creature_loseSpeed = (creature : Creature) => { 
+if(creature.spriteBox.direction.x > 0 ) creature.spriteBox.direction.x -= creature.spriteBox.direction.x/100
+else creature.spriteBox.direction.x -= creature.spriteBox.direction.x/100
+
+if(creature.spriteBox.direction.y > 0 ) creature.spriteBox.direction.y -= creature.spriteBox.direction.y/100
+else creature.spriteBox.direction.y -= creature.spriteBox.direction.y/100 
 }

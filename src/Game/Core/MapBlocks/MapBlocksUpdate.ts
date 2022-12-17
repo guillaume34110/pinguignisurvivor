@@ -4,6 +4,6 @@ import { mapBlocksCollisionWithCreatures } from "./MapBlocksUtilities/MapBlocks_
 import {mapBlocks_HitBox} from "./MapBlocksUtilities/MapBlocks_HitBox";
 
 export const mapBlocksUpdate = (gameData:GameData) => {
-    mapBlocks_HitBox(gameData)
+   
    // mapBlocksCollisionWithCreatures(gameData)
 }

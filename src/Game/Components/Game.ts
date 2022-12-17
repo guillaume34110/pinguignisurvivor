@@ -4,7 +4,7 @@ import {keydownController, keyupController} from '../Core/KeysInputs/keys'
 import {scaling} from '../Core/Scaling/scaling'
 import Hud from "./Hud/Hud";
 import {God} from "../Core/God/God";
-import {Creature} from "../Core/Creatures/Creature";
+import {Creature, LifeBar} from "../Core/Creatures/Creature";
 import {initCore} from "../Core/init/init";
 import { updateCore} from "../Core/update/Update";
 import {draw} from "./DrawUpdate";
@@ -94,7 +94,7 @@ export const Game = () => {
     }
 }
 
-export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox): Boolean => {
+export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox |LifeBar): Boolean => {
     if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 680)
         && spriteBox.y < (hero.spriteBox.y + 400) && spriteBox.y > (hero.spriteBox.y - 400)) {
         return true
