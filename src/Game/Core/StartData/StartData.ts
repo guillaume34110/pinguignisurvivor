@@ -115,7 +115,7 @@ export interface Sensor {
 }
 
 export enum SensorType {
-    Collision, TurnRight , TurnLeft 
+    Collision, TurnRight , TurnLeft , Hunt
 }
 
 export const startData: GameData = {

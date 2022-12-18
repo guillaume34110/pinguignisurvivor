@@ -3,7 +3,7 @@ import {ItemSprite} from "./ItemSprite";
 
 export interface Item {
     id: number,
-    type: string,
+    type: ItemType,
     sprite: ItemSprite,
     value: number,
     spriteBox: SpriteBoxInterface,
@@ -11,3 +11,6 @@ export interface Item {
     isTaken : Boolean,
 }
 
+export enum ItemType { 
+    foodVegetable , Solid
+}

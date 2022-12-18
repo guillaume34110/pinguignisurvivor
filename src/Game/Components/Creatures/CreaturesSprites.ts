@@ -7,7 +7,9 @@ import batLat from "../../Assets/pinguiny/bat-lateral.png"
 import mouseFront from "../../Assets/pinguiny/mouse-front.png"
 import mouseBack from "../../Assets/pinguiny/mouse-back.png"
 import mouseLat from "../../Assets/pinguiny/mouse-lateral.png"
+import mouseLeft from "../../Assets/pinguiny/mousele-left.png"
 import { CreaturesSprite } from "../../Core/Creatures/CreaturesSprite";
+import { scaling } from '../../Core/Scaling/scaling';
 
 const image = new Image()
 
@@ -29,8 +31,10 @@ const mouseFrontImage = new Image()
 mouseFrontImage.src = mouseFront
 const mouseBackImage = new Image()
 mouseBackImage.src = mouseBack
-const mouseLatImage = new Image()
-mouseLatImage.src = mouseLat
+const mouseRightImage = new Image()
+mouseRightImage.src = mouseLat
+const mouseLeftImage = new Image()
+mouseLeftImage.src = mouseLeft
 
 export const selectImg = (sprite: CreaturesSprite ): HTMLImageElement => {
     if (sprite === CreaturesSprite.rabbitFront) return rabbitFrontImage
@@ -43,8 +47,8 @@ export const selectImg = (sprite: CreaturesSprite ): HTMLImageElement => {
     else if (sprite === CreaturesSprite.batRight) return batLatImage
     else if (sprite === CreaturesSprite.mouseFront) return mouseFrontImage
     else if (sprite === CreaturesSprite.mouseBack) return mouseBackImage
-    else if (sprite === CreaturesSprite.mouseLeft) return mouseLatImage
-    else if (sprite === CreaturesSprite.mouseRight) return mouseLatImage
+    else if (sprite === CreaturesSprite.mouseLeft) return mouseLeftImage
+    else if (sprite === CreaturesSprite.mouseRight) return mouseRightImage
 
     else return image
 }

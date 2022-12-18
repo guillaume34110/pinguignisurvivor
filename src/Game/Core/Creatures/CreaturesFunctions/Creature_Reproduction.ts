@@ -8,7 +8,7 @@ gameData.creatures.forEach(creature => {
     if (creature.sex === CreatureSex.Male && creature.fertility >= creature.maxFertilityMale) {
         creature.sensors.sensors.forEach(sensor => { 
             gameData.creatures.forEach(creatureFemale => { 
-                if (creatureFemale.sex === CreatureSex.Female && creatureFemale.fertility >= creatureFemale.maxFertilityFemale) {
+                if (creatureFemale.type === creature.type &&  creatureFemale.sex === CreatureSex.Female && creatureFemale.fertility >= creatureFemale.maxFertilityFemale) {
                     if (hitBoxMatch(sensor, creatureFemale.hitBox)) {
                         spriteBoxSetDirectionAccordingOtherSpriteBoxLite(creature.spriteBox,creatureFemale.spriteBox)
                     }

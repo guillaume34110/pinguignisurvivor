@@ -1,11 +1,10 @@
-import { ItemSprite } from "../ItemSprite";
+import { ItemSprite } from '../ItemSprite';
 import { ItemType } from '../Item';
-
-export const seeds = {
+export const rock = {
     id: 0,
-    type: ItemType.foodVegetable,
-    sprite: ItemSprite.Seeds,
-    value: 2500,
+    type: ItemType.Solid,
+    sprite: ItemSprite.Rock,
+    value: 0,
     spriteBox: {
         x: 1,
         y: 1,

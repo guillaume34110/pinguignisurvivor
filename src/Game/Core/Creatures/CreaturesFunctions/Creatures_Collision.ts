@@ -1,9 +1,10 @@
 import { GameData } from "../../StartData/StartData";
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
-import { creatures_collisionBetweenMove } from "./Creatures_Move";
+import { creatures_CollisionWithMapBlockMove, creatures_collisionBetweenMove } from "./Creatures_Move";
 import { Creature } from "../Creature";
 import { MapBlockType } from "../../MapBlocks/MapBlock";
 import { creature_MakeBaby } from "./Creature_Nursery";
+import { Item, ItemType } from "../../Items/Item";
 
 export const creatures_CollisionWithCreatures = (gameData: GameData, type: string, enemyBoxToMove: Creature) => {
     gameData.creatures.forEach(enemyToCompare => {
@@ -43,15 +44,23 @@ export const creature_CollisionWithSolidMapBlocks = (gameData: GameData) => {
 
 
 export const creature_collisionWithItem = (gameData: GameData) => {
-    gameData.creatures.forEach(creature => { 
-        gameData.items.forEach(item =>{
+    gameData.creatures.forEach(creature => {
+        gameData.items.forEach(item => {
             if (hitBoxMatch(item.hitBox, creature.hitBox)) {
-                creature.health += item.value
-                if (creature.health > creature.maxHealth){
-                     creature.health = creature.maxHealth
-                    }item.isTaken = true
-
+                if (item.type === ItemType.foodVegetable) creature_EatFood(item, creature)
+                if (item.type === ItemType.Solid) creatures_CollisionWithMapBlockMove(creature)
             }
         })
     })
 }
+
+export const creature_EatFood = (item: Item, creature: Creature) => {
+
+    creature.health += item.value
+    if (creature.health > creature.maxHealth) {
+        creature.health = creature.maxHealth
+    }
+    item.isTaken = true
+
+}
+

@@ -50,5 +50,6 @@ export const rabbit = {
     maxFertilityMale : 200 ,
     maxFertilityFemale : 1200,
     sex : CreatureSex.Male,
-    lifeBar:{x:0 , y:0 , h : 10 , wMax : 16 , wCurrent : 16}
+    lifeBar:{x:0 , y:0 , h : 10 , wMax : 16 , wCurrent : 16},
+    hunting : false
 }

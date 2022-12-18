@@ -1,4 +1,4 @@
-import { LifeBar } from "../../Core/Creatures/Creature";
+import { LifeBar, CreatureSex } from '../../Core/Creatures/Creature';
 import { GameData, HitBox } from "../../Core/StartData/StartData";
 import { isOnScreen } from "../Game";
 
@@ -15,6 +15,7 @@ export const lifeBarDraw = (gameData: GameData, targetGl: CanvasRenderingContext
         }
     }
     gameData.creatures.forEach((creature) => {
-        drawLifeBar(creature.lifeBar, "hsla(0, 100%, 70%,0.8)", 'black')
+       if(creature.sex === CreatureSex.Female) drawLifeBar(creature.lifeBar, "hsla(302, 54%, 43%,0.8)", 'black')
+       if(creature.sex === CreatureSex.Male) drawLifeBar(creature.lifeBar, "hsla(18, 54%, 43%,0.8)", 'black')
     })
 }

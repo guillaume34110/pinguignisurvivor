@@ -5,8 +5,8 @@ import { CreaturesSprite } from '../CreaturesSprite';
 export const mouse: Creature = {
     id: 0,
     type: "mouse",
-    maxHealth: 5000,
-    health: 5000,
+    maxHealth: 10_000,
+    health: 10_000,
     damage: 1,
     sprite:
     {
@@ -19,8 +19,8 @@ export const mouse: Creature = {
     spriteBox: {
         x: 1,
         y: 1,
-        w: 16,
-        h: 32,
+        w: 12,
+        h: 16,
         direction: {
             radian: 0,
             x: 0.1,
@@ -31,8 +31,8 @@ export const mouse: Creature = {
     hitBox: {
         x: 1,
         y: 1,
-        w: 16,
-        h: 16,
+        w: 12,
+        h: 12,
     },
     sensors: {
         sensors: [
@@ -41,8 +41,8 @@ export const mouse: Creature = {
                 degOffset: 20,
                 x:0,
                 y:0,
-                h: 15,
-                w: 15,
+                h: 10,
+                w: 10,
                 type: SensorType.TurnRight
             },
             {
@@ -50,15 +50,25 @@ export const mouse: Creature = {
                 degOffset: 340,
                 x:0,
                 y:0,
-                h: 15,
-                w: 15,
+                h: 10,
+                w: 10,
                 type: SensorType.TurnLeft
-            }
+            },
+            {
+                distanceFromCreature: 0,
+                degOffset: 0,
+                x:0,
+                y:0,
+                h: 120,
+                w: 120,
+                type: SensorType.Hunt
+            },
         ]
     },
     fertility: 0,
     maxFertilityMale : 250 ,
     maxFertilityFemale : 750,
     sex : CreatureSex.Male,
-    lifeBar:{x:0 , y:0 , h : 10 , wMax : 16 , wCurrent : 16}
+    lifeBar:{x:0 , y:0 , h : 8 , wMax : 12 , wCurrent : 12},
+    hunting : false
 }

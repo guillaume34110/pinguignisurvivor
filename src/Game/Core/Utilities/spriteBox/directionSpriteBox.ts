@@ -120,14 +120,16 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
         const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
         const deltaY = spriteBoxTarget.y - spriteBoxToMove.y
 
-        const stepX = Math.abs(deltaX / spriteBoxToMove.speed)
-        spriteBoxToMove.x += deltaX / stepX
-        spriteBoxToMove.direction.x = (deltaX / stepX)/20
+        const stepX = (deltaX /Math.abs(deltaX / spriteBoxToMove.speed))/20
+        if ( Math.abs(spriteBoxToMove.direction.x + ((deltaX / stepX)/20 )) < spriteBoxToMove.speed) {
+            spriteBoxToMove.direction.x += (deltaX / stepX)/20
+            spriteBoxToMove.x += (deltaX / stepX)/20}
 
-        const stepY = Math.abs(deltaY / spriteBoxToMove.speed)
-        spriteBoxToMove.y += deltaY / stepY
-        spriteBoxToMove.direction.y = (deltaY / stepY)/20
-
+        const stepY = (deltaY /Math.abs(deltaY / spriteBoxToMove.speed))/20
+        if ( Math.abs(spriteBoxToMove.direction.y +  stepY) < spriteBoxToMove.speed) {
+            spriteBoxToMove.direction.y += stepY
+            spriteBoxToMove.y += stepY
+        }
     }
 }
 

@@ -7,16 +7,22 @@ import { creature_CollisionWithSolidMapBlocks, creature_collisionWithItem } from
 import { creature_Fertility } from "./CreaturesFunctions/Creature_Nursery";
 import { creature_Info } from "./CreaturesFunctions/Creature_Info";
 import { creature_MaleHuntFemale } from "./CreaturesFunctions/Creature_Reproduction";
+import { creatures_Hunt } from "./CreaturesFunctions/Creature_Hunt";
+import { creature_RotateSprite } from "./CreaturesFunctions/Creature_RotateSprite";
 
 export const creaturesUpdate = (gameData:GameData) => {
     creatures_Move(gameData)
+    creatures_Hunt(gameData)
+    creature_MaleHuntFemale(gameData)
+
+    creature_RotateSprite(gameData)
+
     creatures_HitBox(gameData) 
     creature_CollisionWithSolidMapBlocks(gameData)
     creature_collisionWithItem(gameData)
 
     creature_lifeDecrease(gameData)
     creature_Fertility(gameData)
-    creature_MaleHuntFemale(gameData)
     creature_Info(gameData)
 
     creature_Death(gameData)

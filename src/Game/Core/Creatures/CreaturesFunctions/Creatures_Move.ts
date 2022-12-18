@@ -33,8 +33,11 @@ export const creatures_Move = (gameData: GameData) => {
 }
 
 export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
-    creature.spriteBox.x -= creature.spriteBox.direction.x * 18
-    creature.spriteBox.y -= creature.spriteBox.direction.y * 18
+
+    creature.spriteBox.x -= creature.spriteBox.direction.x * 40
+    creature.spriteBox.direction.x -= creature.spriteBox.direction.x
+    creature.spriteBox.y -= creature.spriteBox.direction.y * 40
+    creature.spriteBox.direction.y -= creature.spriteBox.direction.y
 }
 
 export const creatures_collisionBetweenMove = (creatureToMove: Creature, type: string) => {

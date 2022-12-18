@@ -17,6 +17,7 @@ export interface Creature {
     maxFertilityMale : number,
     sex : CreatureSex,
     lifeBar : LifeBar,
+    hunting : Boolean,
 }
 
 export interface LifeBar {
