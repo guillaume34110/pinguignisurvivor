@@ -19,7 +19,7 @@ export const creature_MakeBaby = (gameData: GameData, creature: Creature, creatu
     last.spriteBox.y = (creature.spriteBox.y + creatureToCompare.spriteBox.y) / 2
     last.hitBox.x = last.spriteBox.x
     last.hitBox.y = last.spriteBox.y
-    last.spriteBox.speed += ((creature.spriteBox.speed + creatureToCompare.spriteBox.speed) / 2) + ((last.spriteBox.speed * (Math.random() - 0.5)) / 100)
+    last.spriteBox.speed = ((creature.spriteBox.speed + creatureToCompare.spriteBox.speed) / 2) + ((last.spriteBox.speed * (Math.random() - 0.5)) / 10)
     last.id = gameData.creatures.length - 1
     if (Math.random() > 0.5) last.sex = CreatureSex.Female
 }
