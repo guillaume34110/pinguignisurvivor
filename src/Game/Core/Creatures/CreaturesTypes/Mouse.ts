@@ -26,7 +26,7 @@ export const mouse: Creature = {
             x: 0.1,
             y: 0.1
         },
-        speed: 1,
+        speed: 1.5,
     },
     hitBox: {
         x: 1,
@@ -37,21 +37,21 @@ export const mouse: Creature = {
     sensors: {
         sensors: [
            {
-            distanceFromCreature: 50,
-                degOffset: 20,
+            distanceFromCreature: 40,
+                degOffset: 30,
                 x:0,
                 y:0,
-                h: 10,
-                w: 10,
+                h: 15,
+                w: 15,
                 type: SensorType.TurnRight
             },
             {
-                distanceFromCreature: 50,
-                degOffset: 340,
+                distanceFromCreature: 40,
+                degOffset: 330,
                 x:0,
                 y:0,
-                h: 10,
-                w: 10,
+                h: 15,
+                w: 15,
                 type: SensorType.TurnLeft
             },
             {

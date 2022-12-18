@@ -81,12 +81,25 @@ export const spriteBoxSetDirectionWithRadian = (
     spriteBox.direction.y = Math.sin(radAngle) * spriteBox.speed
 }
 
+export const moveSpriteBoxWithRadian = (spriteBox: SpriteBoxInterface) => { 
+    spriteBox.direction.x = Math.cos(spriteBox.direction.radian) * spriteBox.speed
+    spriteBox.direction.y = Math.sin(spriteBox.direction.radian) * spriteBox.speed
+    spriteBox.x += spriteBox.direction.x
+    spriteBox.y += spriteBox.direction.y
+}
+
 export const spriteBoxSetPositionByRotateInDegree = (
-    spriteBox: SpriteBoxInterface, degreeAngle: number, step:number
+    spriteBox: SpriteBoxInterface, degreeAngle: number
 ) => {
-    const direction = spriteBox.direction.radian + (degreeAngle * Math.PI / 180)
-    if ((Math.abs(spriteBox.direction.x + ((Math.cos(direction) * spriteBox.speed) / step)) ) < spriteBox.speed ) spriteBox.direction.x += (Math.cos(direction) * spriteBox.speed) / step
-    if ((Math.abs(spriteBox.direction.y + ((Math.sin(direction) * spriteBox.speed) / step)) ) < spriteBox.speed ) spriteBox.direction.y += (Math.sin(direction) * spriteBox.speed) / step
+    spriteBox.direction.radian += (degreeAngle * Math.PI / 180)
+}
+export const spriteBoxSetDirectionAccordingOtherSpriteBoxRad = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => { 
+    const deltaX =  spriteBoxTarget.x -spriteBoxToMove.x  
+    const deltaY =   spriteBoxTarget.y - spriteBoxToMove.y
+    const tan = deltaY / deltaX
+    if ( deltaX > 0) spriteBoxToMove.direction.radian = (Math.atan(tan)) 
+    else spriteBoxToMove.direction.radian = (Math.atan(tan)) + Math.PI
+    
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (

@@ -3,6 +3,7 @@ import { getCenterSpriteBox } from '../../Utilities/spriteBox/positionSpriteBox'
 import { Creature } from '../Creature';
 import { creatures_CollisionWithCreatures } from './Creatures_Collision';
 import { creature_sensorTurnOnCollision, creature_updateSensorsPosition } from './Creature_sensors';
+import { moveSpriteBoxWithRadian, spriteBoxSetDirectionWithRadian } from '../../Utilities/spriteBox/directionSpriteBox';
 
 export const creatures_Move = (gameData: GameData) => {
 
@@ -10,21 +11,16 @@ export const creatures_Move = (gameData: GameData) => {
         creatureToMove: Creature
     ) => {
         if (creatureToMove.spriteBox.speed === 0) return
-        const stepDivider = 20
-        const stepX = ((Math.random() - 0.5) * 2 * creatureToMove.spriteBox.speed) / stepDivider
-       if ( Math.abs(creatureToMove.spriteBox.direction.x + (stepX )) < creatureToMove.spriteBox.speed) creatureToMove.spriteBox.direction.x += (stepX )    
-        creatureToMove.spriteBox.x += creatureToMove.spriteBox.direction.x
-        const stepY = (Math.random() - 0.5) * 2 * creatureToMove.spriteBox.speed / stepDivider
-       if ((Math.abs(creatureToMove.spriteBox.direction.y + (stepY) ) < creatureToMove.spriteBox.speed)
-       ) creatureToMove.spriteBox.direction.y += (stepY) 
-        creatureToMove.spriteBox.y += creatureToMove.spriteBox.direction.y
+       
+        creatureToMove.spriteBox.direction.radian += (Math.random() - 0.5) / 10  
         
-        creature_setDirectionRadian(creatureToMove)
-        creature_updateSensorsPosition(creatureToMove)
+     //  creature_setDirectionRadian(creatureToMove)
         creature_sensorTurnOnCollision(gameData,creatureToMove)
+        moveSpriteBoxWithRadian(creatureToMove.spriteBox)
         creatures_CollisionWithCreatures(gameData, "y", creatureToMove)
         creatures_CollisionWithCreatures(gameData, "x", creatureToMove)
-    
+        creature_updateSensorsPosition(creatureToMove)
+        
     }
 
     gameData.creatures.forEach(creature => {
@@ -34,10 +30,9 @@ export const creatures_Move = (gameData: GameData) => {
 
 export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
 
-    creature.spriteBox.x -= creature.spriteBox.direction.x * 40
-    creature.spriteBox.direction.x -= creature.spriteBox.direction.x
-    creature.spriteBox.y -= creature.spriteBox.direction.y * 40
-    creature.spriteBox.direction.y -= creature.spriteBox.direction.y
+    creature.spriteBox.x -= creature.spriteBox.direction.x * 10
+    creature.spriteBox.y -= creature.spriteBox.direction.y * 10
+    creature.spriteBox.direction.radian -= Math.PI*2/3
 }
 
 export const creatures_collisionBetweenMove = (creatureToMove: Creature, type: string) => {

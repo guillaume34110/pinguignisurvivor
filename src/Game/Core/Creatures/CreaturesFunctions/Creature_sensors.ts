@@ -11,6 +11,14 @@ export const creature_sensorTurnOnCollision = (gameData: GameData, creature: Cre
     let flagRight = false
     creature.sensors.sensors.forEach(sensor => {
         if (sensor.type === SensorType.TurnLeft || sensor.type === SensorType.TurnRight) {
+            gameData.items.forEach(item => {
+                if (item.type === ItemType.Solid){
+                 if (hitBoxMatch(item.hitBox, sensor)) {
+                     if (sensor.type === SensorType.TurnLeft) flagLeft = true
+                     else if (sensor.type === SensorType.TurnRight) flagRight = true
+                 }
+                }
+             })
             gameData.mapBlocks.forEach(mapBlock => {
                 if (mapBlock.type === mapBlocksGeneric.spaceBorder.type) {
                     if (hitBoxMatch(mapBlock.hitBox, sensor)) {
@@ -19,19 +27,11 @@ export const creature_sensorTurnOnCollision = (gameData: GameData, creature: Cre
                     }
                 }
             })
-            gameData.items.forEach(item => {
-               if (item.type === ItemType.Solid){
-                if (hitBoxMatch(item.hitBox, sensor)) {
-                    if (sensor.type === SensorType.TurnLeft) flagLeft = true
-                    else if (sensor.type === SensorType.TurnRight) flagRight = true
-                }
-               }
-            })
         }
     })
-    if (flagLeft && flagRight) spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 120, 5)
-    else if (flagLeft) spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 90, 12)
-    else if (flagRight) spriteBoxSetPositionByRotateInDegree(creature.spriteBox, -90, 12)
+    if (flagLeft && flagRight) spriteBoxSetPositionByRotateInDegree(creature.spriteBox,50)
+    else if (flagLeft) spriteBoxSetPositionByRotateInDegree(creature.spriteBox, 5)
+    else if (flagRight) spriteBoxSetPositionByRotateInDegree(creature.spriteBox, -5)
 }
 
 export const creature_updateSensorsPosition = (creature: Creature) => {
