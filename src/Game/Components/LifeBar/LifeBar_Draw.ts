@@ -1,5 +1,5 @@
 import { LifeBar, CreatureSex, Creature } from '../../Core/Creatures/Creature';
-import { GameData, HitBox, SpriteBox } from '../../Core/StartData/StartData';
+import { GameData } from '../../Core/StartData/StartData';
 import { isOnScreen } from "../Game";
 
 export const lifeBarDraw = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
@@ -12,7 +12,7 @@ export const lifeBarDraw = (gameData: GameData, targetGl: CanvasRenderingContext
             const y = lifeBar.y - god.spriteBox.y + 300
             targetGl.fillRect(x, y, lifeBar.wCurrent, lifeBar.h)
             targetGl.strokeRect(x, y, lifeBar.wMax, lifeBar.h)
-            targetGl.fillText(creature.spriteBox.direction.radian.toString() , x , y-20)
+            targetGl.fillText((creature.spriteBox.direction.radian % (2*Math.PI) / Math.PI).toFixed(3) + " PI"  , x , y-20)
         }
     }
     gameData.creatures.forEach((creature) => {
