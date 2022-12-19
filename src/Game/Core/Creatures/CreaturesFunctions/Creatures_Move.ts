@@ -24,7 +24,7 @@ export const creatures_collisionBetweenMove = (creatureToMove: Creature, type: s
 export const creature_setDirectionRadian = (creatureToMove: Creature) => {
     const creatureX = creatureToMove.spriteBox.direction.x
     const creatureY = creatureToMove.spriteBox.direction.y
-    creatureToMove.spriteBox.direction.radian = Math.atan(creatureX / creatureY)
+    creatureToMove.spriteBox.direction.radian = Math.atan(creatureY / creatureX)
     if ((creatureX < 0 && creatureY < 0) || creatureX < 0) {
         creatureToMove.spriteBox.direction.radian += Math.PI
     }
