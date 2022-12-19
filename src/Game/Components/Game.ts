@@ -15,9 +15,10 @@ const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
 let componentInitState = true
 let frame = 0
+let zoomFactor = 1
 
 export const Game = () => {
-let zoomFactor = 1
+
     const gameHtml = `
         <div class="game">
          ${'' //  ${Hud()}  
@@ -64,15 +65,20 @@ let zoomFactor = 1
     }
 
     const zoom = (e: WheelEvent) => {
-        if (e.deltaY > 0) zoomFactor = 0.9;
-        else zoomFactor = 1.1;
+        let currentZoom = 1
+        console.log(zoomFactor);
+        if (e.deltaY > 0 && zoomFactor < 20) {
+            currentZoom = 0.9
+            zoomFactor ++ 
+        }
+        else if(e.deltaY < 0 && zoomFactor > -20){
+             currentZoom = 1.111111
+             zoomFactor -- 
+            }
        
         const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
         const targetGl = targetEnemy?.getContext('2d')
-        
-        targetGl?.scale(zoomFactor, zoomFactor)
-        targetGl?.scale(zoomFactor, zoomFactor)
-        console.log(e.deltaY, zoomFactor, "zoom",targetGl)
+        targetGl?.scale(currentZoom, currentZoom)
     }
     /*Listeners*/
 
@@ -115,10 +121,18 @@ let zoomFactor = 1
 }
 
 export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
-    if (spriteBox.x < (hero.spriteBox.x + (7000)) && spriteBox.x > (hero.spriteBox.x - (7000))
-        && spriteBox.y < (hero.spriteBox.y + (5000)) && spriteBox.y > (hero.spriteBox.y - (5000))) {
+    if (zoomFactor> 0){
+    if (spriteBox.x < (hero.spriteBox.x + (700*(zoomFactor))) && spriteBox.x > (hero.spriteBox.x - (700*(zoomFactor)))
+        && spriteBox.y < (hero.spriteBox.y + (500*(zoomFactor))) && spriteBox.y > (hero.spriteBox.y - (500*(zoomFactor)))) {
+        return true
+    } else return false}
+    else {
+       
+        if (spriteBox.x < (hero.spriteBox.x + (700)) && spriteBox.x > (hero.spriteBox.x - (700))
+        && spriteBox.y < (hero.spriteBox.y + (500)) && spriteBox.y > (hero.spriteBox.y - (500))) {
         return true
     } else return false
+    }
 }
 
 export const animation4Frames = (w: number): number => {
