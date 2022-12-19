@@ -36,7 +36,7 @@ given('a mouse is mouving', () => {
                 creatureRad += Math.PI
             } 
             const offsetRad = ( sensor.degOffset * Math.PI / 180 ) + creatureRad
-            creature_updateSensorsPosition(myCreature)
+            creature_updateSensorsPosition(myCreature ,sensor)
             expect(sensor).toBe({
                 "degOffset": sensor.degOffset,
                 "distanceFromCreature": sensor.distanceFromCreature,

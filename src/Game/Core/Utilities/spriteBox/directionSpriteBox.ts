@@ -99,7 +99,6 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBoxRad = (spriteBoxToMove:
     const tan = deltaY / deltaX
     if ( deltaX > 0) spriteBoxToMove.direction.radian = (Math.atan(tan)) 
     else spriteBoxToMove.direction.radian = (Math.atan(tan)) + Math.PI
-    
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (

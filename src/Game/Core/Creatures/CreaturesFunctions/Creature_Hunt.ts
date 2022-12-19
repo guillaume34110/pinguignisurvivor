@@ -1,21 +1,13 @@
-import { ItemType } from '../../Items/Item';
-import { GameData, SensorType } from '../../StartData/StartData';
+import { ItemType, Item } from '../../Items/Item';
+import { GameData, Sensor, SensorType } from '../../StartData/StartData';
 import { hitBoxMatch } from '../../Utilities/HitBoxMatch';
-import { spriteBoxSetDirectionAccordingOtherSpriteBoxLite, spriteBoxSetDirectionAccordingOtherSpriteBoxRad } from '../../Utilities/spriteBox/directionSpriteBox';
-export const creatures_Hunt = (gameData: GameData) => {
-    gameData.creatures.forEach(creature => {
-        creature.hunting = false
-            creature.sensors.sensors.forEach(sensor => {
-                if (sensor.type === SensorType.Hunt) {
-                    gameData.items.forEach(item => {
-                        if (item.type === ItemType.foodVegetable && creature.hunting === false && hitBoxMatch(sensor, item.hitBox)) {
-                            spriteBoxSetDirectionAccordingOtherSpriteBoxRad(creature.spriteBox, item.spriteBox)
-                            creature.hunting = true
-                            
-                        }
-                    })
-                }
-            })
-        
-    })
+import { spriteBoxSetDirectionAccordingOtherSpriteBoxRad } from '../../Utilities/spriteBox/directionSpriteBox';
+import { Creature } from '../Creature';
+export const creatures_Hunt = ( creature: Creature, sensor: Sensor, item: Item) => {
+    if (sensor.type === SensorType.Hunt) {
+        if (item.type === ItemType.foodVegetable && creature.hunting === false && hitBoxMatch(sensor, item.hitBox)) {
+            spriteBoxSetDirectionAccordingOtherSpriteBoxRad(creature.spriteBox, item.spriteBox)
+            creature.hunting = true
+        }
+    }
 }

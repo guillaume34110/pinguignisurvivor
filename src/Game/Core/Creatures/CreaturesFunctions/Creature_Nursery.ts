@@ -25,8 +25,6 @@ export const creature_MakeBaby = (gameData: GameData, creature: Creature, creatu
 }
 }
 
-export const creature_Fertility = (gameData: GameData) => {
-    gameData.creatures.forEach(creature => {
+export const creature_Fertility = (creature: Creature) => {
         creature.fertility++
-    })
 }

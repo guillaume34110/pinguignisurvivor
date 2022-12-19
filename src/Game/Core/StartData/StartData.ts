@@ -104,6 +104,10 @@ export interface Camera {
 export interface Sensors {
     sensors : Sensor[]
 }
+export interface SensorsFlag{
+    flagLeft: boolean, 
+    flagRight: boolean
+}
 export interface Sensor {
     distanceFromCreature : number, 
     degOffset : number,
@@ -112,6 +116,7 @@ export interface Sensor {
     h : number, 
     w : number, 
     type : SensorType,
+    flag : Boolean,
 }
 
 export enum SensorType {

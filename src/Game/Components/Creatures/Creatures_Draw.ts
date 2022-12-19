@@ -19,6 +19,7 @@ export const creaturesRefresh = (gameData: GameData, targetGl: CanvasRenderingCo
                 creature.spriteBox.w,
                 creature.spriteBox.h
             )
+            createImageBitmap( selectImg(creature.sprite.sprite), 0, 0, 1, 1)
         }
     })
 }

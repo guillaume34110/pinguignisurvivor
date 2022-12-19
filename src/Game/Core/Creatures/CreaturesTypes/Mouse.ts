@@ -36,39 +36,46 @@ export const mouse: Creature = {
     },
     sensors: {
         sensors: [
-           {
-            distanceFromCreature: 40,
+            {
+                distanceFromCreature: 40,
                 degOffset: 30,
-                x:0,
-                y:0,
+                x: 0,
+                y: 0,
                 h: 15,
                 w: 15,
-                type: SensorType.TurnRight
+                type: SensorType.TurnRight,
+                flag: false,
             },
             {
                 distanceFromCreature: 40,
                 degOffset: 330,
-                x:0,
-                y:0,
+                x: 0,
+                y: 0,
                 h: 15,
                 w: 15,
-                type: SensorType.TurnLeft
+                type: SensorType.TurnLeft,
+                flag: false,
             },
             {
                 distanceFromCreature: 0,
                 degOffset: 0,
-                x:0,
-                y:0,
+                x: 0,
+                y: 0,
                 h: 120,
                 w: 120,
-                type: SensorType.Hunt
+                type: SensorType.Hunt,
+                flag: false,
             },
         ]
     },
+    sensorsFlags: {
+        flagLeft: false,
+        flagRight: false
+    },
     fertility: 0,
-    maxFertilityMale : 250 ,
-    maxFertilityFemale : 750,
-    sex : CreatureSex.Male,
-    lifeBar:{x:0 , y:0 , h : 8 , wMax : 12 , wCurrent : 12},
-    hunting : false
+    maxFertilityMale: 250,
+    maxFertilityFemale: 750,
+    sex: CreatureSex.Male,
+    lifeBar: { x: 0, y: 0, h: 8, wMax: 12, wCurrent: 12 },
+    hunting: false
 }

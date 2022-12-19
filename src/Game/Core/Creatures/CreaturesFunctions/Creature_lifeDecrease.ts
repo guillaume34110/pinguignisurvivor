@@ -1,7 +1,7 @@
-import { GameData } from "../../StartData/StartData";
 
-export const creature_lifeDecrease = (gameData : GameData  ) => { 
-gameData.creatures.forEach( creature => { 
+import { Creature } from "../Creature";
+
+export const creature_lifeDecrease = (creature: Creature  ) => { 
+
     creature.health -=1
-})
 }

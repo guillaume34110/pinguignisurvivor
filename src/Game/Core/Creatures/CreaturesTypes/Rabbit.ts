@@ -37,19 +37,24 @@ export const rabbit = {
         sensors: [
             {
                 distanceFromCreature: 15,
-                degOffset: 20 ,
-                x:0,
-                 y:0,
+                degOffset: 20,
+                x: 0,
+                y: 0,
                 h: 15,
                 w: 15,
-                type: SensorType.Collision
+                type: SensorType.Collision,
+                flag: false,
             }
         ]
     },
+    sensorsFlags: {
+        flagLeft: false,
+        flagRight: false
+    },
     fertility: 0,
-    maxFertilityMale : 200 ,
-    maxFertilityFemale : 1200,
-    sex : CreatureSex.Male,
-    lifeBar:{x:0 , y:0 , h : 10 , wMax : 16 , wCurrent : 16},
-    hunting : false
+    maxFertilityMale: 200,
+    maxFertilityFemale: 1200,
+    sex: CreatureSex.Male,
+    lifeBar: { x: 0, y: 0, h: 10, wMax: 16, wCurrent: 16 },
+    hunting: false
 }

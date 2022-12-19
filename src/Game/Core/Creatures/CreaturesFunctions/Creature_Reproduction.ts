@@ -1,22 +1,14 @@
-import { GameData } from "../../StartData/StartData";
+import { GameData, Sensor } from "../../StartData/StartData";
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
-import { CreatureSex } from "../Creature";
-import { spriteBoxSetDirectionAccordingOtherSpriteBoxLite, spriteBoxSetDirectionAccordingOtherSpriteBoxRad } from '../../Utilities/spriteBox/directionSpriteBox';
+import { Creature, CreatureSex } from "../Creature";
+import { spriteBoxSetDirectionAccordingOtherSpriteBoxRad } from '../../Utilities/spriteBox/directionSpriteBox';
 
-export const creature_MaleHuntFemale = (gameData: GameData) => { 
-gameData.creatures.forEach(creature => {
+export const creature_MaleHuntFemale = ( creature: Creature, sensor: Sensor, creatureFemale: Creature) => {
     if (creature.sex === CreatureSex.Male && creature.fertility >= creature.maxFertilityMale) {
-        creature.sensors.sensors.forEach(sensor => { 
-            gameData.creatures.forEach(creatureFemale => { 
-                if (creatureFemale.type === creature.type &&  creatureFemale.sex === CreatureSex.Female && creatureFemale.fertility >= creatureFemale.maxFertilityFemale) {
-                    if (hitBoxMatch(sensor, creatureFemale.hitBox)) {
-                        spriteBoxSetDirectionAccordingOtherSpriteBoxRad(creature.spriteBox,creatureFemale.spriteBox)
-                    }
-                }
-            })
-        })
+        if (creatureFemale.type === creature.type && creatureFemale.sex === CreatureSex.Female && creatureFemale.fertility >= creatureFemale.maxFertilityFemale) {
+            if (hitBoxMatch(sensor, creatureFemale.hitBox)) {
+                spriteBoxSetDirectionAccordingOtherSpriteBoxRad(creature.spriteBox, creatureFemale.spriteBox)
+            }
+        }
     }
-})
-
-
 }
