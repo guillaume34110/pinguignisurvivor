@@ -1,12 +1,12 @@
 import { SensorType } from "../../StartData/StartData";
-import { CreatureSex } from "../Creature";
+import { CreatureSex, CreatureType } from "../Creature";
 import { CreaturesSprite } from "../CreaturesSprite";
 
 export const rabbit = {
     id: 0,
-    type: "rabbit",
-    maxHealth: 1000,
-    health: 1000,
+    type: CreatureType.Rabbit,
+    maxHealth: 13_000,
+    health: 13_000,
     damage: 1,
     sprite: {
         front: CreaturesSprite.rabbitFront,
@@ -25,7 +25,7 @@ export const rabbit = {
             x: 0.1,
             y: 0.1
         },
-        speed: 1,
+        speed: 1.7,
     },
     hitBox: {
         x: 1,
@@ -36,15 +36,35 @@ export const rabbit = {
     sensors: {
         sensors: [
             {
-                distanceFromCreature: 15,
-                degOffset: 20,
+                distanceFromCreature: 80,
+                degOffset: 30,
                 x: 0,
                 y: 0,
-                h: 15,
-                w: 15,
-                type: SensorType.Collision,
+                h: 25,
+                w: 25,
+                type: SensorType.TurnRight,
                 flag: false,
-            }
+            },
+            {
+                distanceFromCreature: 80,
+                degOffset: 330,
+                x: 0,
+                y: 0,
+                h: 25,
+                w: 25,
+                type: SensorType.TurnLeft,
+                flag: false,
+            },
+            {
+                distanceFromCreature: 0,
+                degOffset: 0,
+                x: 0,
+                y: 0,
+                h: 210,
+                w: 210,
+                type: SensorType.Hunt,
+                flag: false,
+            },
         ]
     },
     sensorsFlags: {
@@ -53,7 +73,7 @@ export const rabbit = {
     },
     fertility: 0,
     maxFertilityMale: 200,
-    maxFertilityFemale: 1200,
+    maxFertilityFemale: 3000,
     sex: CreatureSex.Male,
     lifeBar: { x: 0, y: 0, h: 10, wMax: 16, wCurrent: 16 },
     hunting: false

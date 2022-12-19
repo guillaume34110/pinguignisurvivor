@@ -1,13 +1,13 @@
 import { SensorType } from '../../StartData/StartData';
-import { Creature, CreatureSex } from '../Creature';
+import { Creature, CreatureSex, CreatureType } from '../Creature';
 import { CreaturesSprite } from '../CreaturesSprite';
 
 export const mouse: Creature = {
     id: 0,
-    type: "mouse",
-    maxHealth: 10_000,
-    health: 10_000,
-    damage: 1,
+    type: CreatureType.Mouse,
+    maxHealth: 5_000,
+    health: 5_000,
+    damage: 10,
     sprite:
     {
         front: CreaturesSprite.mouseFront,
@@ -26,7 +26,7 @@ export const mouse: Creature = {
             x: 0.1,
             y: 0.1
         },
-        speed: 1.5,
+        speed: 0.75,
     },
     hitBox: {
         x: 1,
@@ -73,8 +73,8 @@ export const mouse: Creature = {
         flagRight: false
     },
     fertility: 0,
-    maxFertilityMale: 250,
-    maxFertilityFemale: 750,
+    maxFertilityMale: 400,
+    maxFertilityFemale: 2000,
     sex: CreatureSex.Male,
     lifeBar: { x: 0, y: 0, h: 8, wMax: 12, wCurrent: 12 },
     hunting: false

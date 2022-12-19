@@ -9,7 +9,7 @@ export interface Creature {
     sensors : Sensors
     sensorsFlags : SensorsFlags
     // STATS :
-    type: string,
+    type: CreatureType,
     maxHealth: number,
     health: number,
     damage: number, 
@@ -31,4 +31,8 @@ export interface LifeBar {
 
 export enum CreatureSex {
     Male , Female , Herma
+}
+
+export enum CreatureType { 
+    Mouse , Rabbit
 }
