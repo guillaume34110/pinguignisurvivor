@@ -12,7 +12,7 @@ export const creature_MakeBaby = (gameData: GameData, creature: Creature, creatu
       )  {
     creature.fertility = 0
     creatureToCompare.fertility = 0
-    console.log("baby born")
+    console.log("creatures = " , gameData.creatures.length)
     gameData.creatures.push(JSON.parse(JSON.stringify(mouse)))
     const last = gameData.creatures[gameData.creatures.length - 1]
     last.spriteBox.x = (creature.spriteBox.x + creatureToCompare.spriteBox.x) / 2

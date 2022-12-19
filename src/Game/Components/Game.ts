@@ -1,7 +1,7 @@
 import '../Style/components/Game.css'
 import {GameData, HitBox, SpriteBoxInterface, startData} from '../Core/StartData/StartData'
 import {keydownController, keyupController} from '../Core/KeysInputs/keys'
-import {scaling} from '../Core/Scaling/scaling'
+import { scaling } from '../Core/Scaling/scaling';
 import Hud from "./Hud/Hud";
 import {God} from "../Core/God/God";
 import {Creature, LifeBar} from "../Core/Creatures/Creature";
@@ -19,9 +19,10 @@ export const Game = () => {
 
     const gameHtml = `
         <div class="game">
-            ${Hud()}  
+         ${'' //  ${Hud()}  
+        }
             <div class="camera">
-                <canvas  width="1280" height="720" class="scene" >
+                <canvas  width="12800" height="7200" class="scene" >
                 </canvas>
             </div>
         </div>
@@ -45,6 +46,10 @@ export const Game = () => {
         const html = document.querySelector('#root')
         if (html !== null)
             html.innerHTML = gameHtml
+            const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
+            const targetGl = targetEnemy?.getContext('2d')
+            targetGl?.scale(1 ,1)
+            
     }
 
     /*keyControl*/
@@ -89,14 +94,15 @@ export const Game = () => {
     const frameInit = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
         if (frame < 60) frame++
         else frame = 0
-        targetGl.imageSmoothingEnabled = false
-        targetGl.clearRect(0, 0, 1280, 720)
+        //targetGl.imageSmoothingEnabled = false
+        targetGl.clearRect(0, 0, 5120, 2880)
+        
     }
 }
 
 export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox |LifeBar): Boolean => {
-    if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 680)
-        && spriteBox.y < (hero.spriteBox.y + 400) && spriteBox.y > (hero.spriteBox.y - 400)) {
+    if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 700)
+        && spriteBox.y < (hero.spriteBox.y + 500) && spriteBox.y > (hero.spriteBox.y - 500)) {
         return true
     } else return false
 }
