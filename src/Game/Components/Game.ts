@@ -48,7 +48,7 @@ export const Game = () => {
             html.innerHTML = gameHtml
             const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
             const targetGl = targetEnemy?.getContext('2d')
-            targetGl?.scale(1 ,1)
+            targetGl?.scale(0.5 ,0.5)
             
     }
 
@@ -101,8 +101,8 @@ export const Game = () => {
 }
 
 export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox |LifeBar): Boolean => {
-    if (spriteBox.x < (hero.spriteBox.x + 700) && spriteBox.x > (hero.spriteBox.x - 700)
-        && spriteBox.y < (hero.spriteBox.y + 500) && spriteBox.y > (hero.spriteBox.y - 500)) {
+    if (spriteBox.x < (hero.spriteBox.x + 7000) && spriteBox.x > (hero.spriteBox.x - 7000)
+        && spriteBox.y < (hero.spriteBox.y + 5000) && spriteBox.y > (hero.spriteBox.y - 5000)) {
         return true
     } else return false
 }
