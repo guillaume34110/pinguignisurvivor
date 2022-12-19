@@ -15,9 +15,9 @@ const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
 let componentInitState = true
 let frame = 0
-let zoomFactor = 1
-export const Game = () => {
 
+export const Game = () => {
+let zoomFactor = 1
     const gameHtml = `
         <div class="game">
          ${'' //  ${Hud()}  
@@ -50,7 +50,7 @@ export const Game = () => {
             html.innerHTML = gameHtml
         const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
         const targetGl = targetEnemy?.getContext('2d')
-        targetGl?.scale(zoomFactor, zoomFactor)
+        targetGl?.scale(1, 1)
 
     }
 
@@ -64,14 +64,15 @@ export const Game = () => {
     }
 
     const zoom = (e: WheelEvent) => {
-        if (e.deltaY > 0) zoomFactor += 0.1;
-        else zoomFactor -= 0.1;
-        if (zoomFactor < 0.4) zoomFactor = 0.4
-        if (zoomFactor > 2) zoomFactor = 2
+        if (e.deltaY > 0) zoomFactor = 0.9;
+        else zoomFactor = 1.1;
+       
         const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
         const targetGl = targetEnemy?.getContext('2d')
+        
         targetGl?.scale(zoomFactor, zoomFactor)
-        console.log(e.deltaY, zoomFactor, "zoom")
+        targetGl?.scale(zoomFactor, zoomFactor)
+        console.log(e.deltaY, zoomFactor, "zoom",targetGl)
     }
     /*Listeners*/
 
@@ -107,15 +108,15 @@ export const Game = () => {
     const frameInit = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
         if (frame < 60) frame++
         else frame = 0
-        //targetGl.imageSmoothingEnabled = false
-        targetGl.clearRect(0, 0, 5120, 2880)
+        targetGl.imageSmoothingEnabled = false
+        targetGl.clearRect(0, 0, 14000, 10000)
 
     }
 }
 
 export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
-    if (spriteBox.x < (hero.spriteBox.x + (700 * zoomFactor)) && spriteBox.x > (hero.spriteBox.x - (700 * zoomFactor))
-        && spriteBox.y < (hero.spriteBox.y + (500 * zoomFactor)) && spriteBox.y > (hero.spriteBox.y - (500 * zoomFactor))) {
+    if (spriteBox.x < (hero.spriteBox.x + (7000)) && spriteBox.x > (hero.spriteBox.x - (7000))
+        && spriteBox.y < (hero.spriteBox.y + (5000)) && spriteBox.y > (hero.spriteBox.y - (5000))) {
         return true
     } else return false
 }
