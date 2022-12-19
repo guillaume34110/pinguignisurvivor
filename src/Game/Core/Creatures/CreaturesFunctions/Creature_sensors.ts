@@ -53,7 +53,8 @@ export const creature_updateSensorsPosition = (creature: Creature, sensor: Senso
         sensor.y = getCenterSpriteBox(creature.spriteBox).y + (Math.sin(offsetRad) * sensor.distanceFromCreature)
     }
     else if (sensor.type === SensorType.Hunt) {
-        sensor.x = getCenterSpriteBox(creature.spriteBox).x - sensor.w / 2
-        sensor.y = getCenterSpriteBox(creature.spriteBox).y - sensor.h / 2
+        
+        sensor.x = getCenterSpriteBox(creature.spriteBox).x - (sensor.w / 2)
+        sensor.y = getCenterSpriteBox(creature.spriteBox).y -( sensor.h / 2)
     }
 }
