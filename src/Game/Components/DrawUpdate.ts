@@ -1,5 +1,5 @@
 import {GameData} from "../Core/StartData/StartData";
-import {mapBlocksRefresh} from "./MapBlocks/MapBlocks_Draw";
+import {mapBlocksRefresh} from "./mapBlocks/mapBlocks_Draw";
 import {items_Refresh} from "./Items/Items_Draw";
 import {creaturesRefresh} from "./Creatures/Creatures_Draw";
 import {hitBoxRefresh} from "./Hitboxs/Hitbox_Draw";
