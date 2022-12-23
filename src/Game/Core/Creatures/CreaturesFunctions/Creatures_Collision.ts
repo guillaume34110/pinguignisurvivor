@@ -27,7 +27,24 @@ export const creatures_CollisionWithCreatures = (gameData: GameData, type: strin
     }
 
 }
+export const creatures_CollisionWithCreaturesWithoutHitboxMatch = ( type: string, enemyBoxToMove: Creature, otherCreature: Creature) => {
 
+    if (otherCreature !== enemyBoxToMove) {     
+            
+            if (type === "x"
+                && ((enemyBoxToMove.hitBox.x - otherCreature.hitBox.x > 0
+                    && enemyBoxToMove.spriteBox.direction.x < 0)
+                    || (enemyBoxToMove.hitBox.x - otherCreature.hitBox.x < 0
+                        && enemyBoxToMove.spriteBox.direction.x > 0)
+                )) creatures_collisionBetweenMove(enemyBoxToMove, type)
+            if (type === "y"
+                && ((enemyBoxToMove.hitBox.y - otherCreature.hitBox.y > 0
+                    && enemyBoxToMove.spriteBox.direction.y < 0)
+                    || (enemyBoxToMove.hitBox.y - otherCreature.hitBox.y < 0
+                        && enemyBoxToMove.spriteBox.direction.y > 0)
+                )) creatures_collisionBetweenMove(enemyBoxToMove, type)
+        }
+}
 
 
 export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBlock: MapBlock) => {

@@ -1,5 +1,6 @@
 import { MapBlockType } from "../MapBlocks/MapBlock";
 import { GameData } from "../StartData/StartData";
+import { setCoordinateIndexposition } from "../Utilities/coordinate/Coordinate";
 import { rock } from "./ItemsTypes/Rock";
 import { seeds } from './ItemsTypes/Seeds';
 
@@ -19,6 +20,8 @@ export const item_Init = (gameData: GameData) => {
           lastSeeds.hitBox.x =lastSeeds.spriteBox.x
           lastSeeds.hitBox.y =lastSeeds.spriteBox.y
           lastSeeds.id = gameData.items.length - 1
+          lastRlastSeedsabbit.coordinate = setCoordinateIndexposition(lastSeeds.spriteBox , gameData)
+          
         }
       }
     })
@@ -35,6 +38,7 @@ export const item_Init = (gameData: GameData) => {
           lastSeeds.hitBox.x =lastSeeds.spriteBox.x
           lastSeeds.hitBox.y = lastSeeds.spriteBox.y
           lastSeeds.id = gameData.items.length - 1
+          lastSeeds.coordinate = setCoordinateIndexposition(lastSeeds.spriteBox , gameData)
         }
       }
     })

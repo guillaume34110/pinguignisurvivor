@@ -15,6 +15,9 @@ export interface GameData {
     time: number,
     camera: Camera,
     mapBlocks: MapBlock[],
+    message :string,
+    howMuchTiles : number ,
+    howMuchLinesOfTiles : number
 }
 
 export class DirectionClass {
@@ -117,6 +120,7 @@ export interface Sensor {
     w : number, 
     type : SensorType,
     flag : Boolean,
+    coordinate : number
 }
 
 export enum SensorType {
@@ -151,5 +155,7 @@ export const startData: GameData = {
     },
     mapBlocks: [
        
-    ]
+    ], message : "",
+    howMuchTiles :5000 ,
+    howMuchLinesOfTiles : 50
 }

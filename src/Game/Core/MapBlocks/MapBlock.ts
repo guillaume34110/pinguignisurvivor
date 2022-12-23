@@ -10,6 +10,8 @@ export interface MapBlock {
     translateY: number,
     sprite: MapBlocksSprite,
     type: MapBlockType,
+    coordinate : number
+
 }
 
 export enum MapBlockType {

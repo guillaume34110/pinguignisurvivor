@@ -14,7 +14,7 @@ let coreInterval: NodeJS.Timer
 const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
 let componentInitState = true
-let frame = 0
+export let frame = 0
 let zoomFactor = 1
 
 export const Game = () => {

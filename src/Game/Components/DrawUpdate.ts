@@ -4,11 +4,14 @@ import {creaturesRefresh} from "./Creatures/Creatures_Draw";
 import {hitBoxRefresh} from "./Hitboxs/Hitbox_Draw";
 import { lifeBarDraw } from "./LifeBar/LifeBar_Draw";
 import { mapBlocksRefresh } from "./MapBlocks/MapBlocks_Draw";
+import Hud from "./Hud/Hud";
+import hud_Refresh from "./Hud/Hud";
 
 export const draw = (gameData:GameData , targetGl : CanvasRenderingContext2D ) => {
     mapBlocksRefresh(gameData, targetGl)
     items_Refresh(gameData, targetGl)
     creaturesRefresh(gameData, targetGl)
+    hud_Refresh(gameData, targetGl)
     //hitBoxRefresh(gameData, targetGl)
     lifeBarDraw(gameData, targetGl)
 }

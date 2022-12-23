@@ -19,6 +19,7 @@ export interface Creature {
     sex : CreatureSex,
     lifeBar : LifeBar,
     hunting : Boolean,
+    coordinate : number
 }
 
 export interface LifeBar {

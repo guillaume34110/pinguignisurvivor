@@ -44,6 +44,7 @@ export const rabbit = {
                 w: 25,
                 type: SensorType.TurnRight,
                 flag: false,
+                coordinate : 0
             },
             {
                 distanceFromCreature: 80,
@@ -54,6 +55,7 @@ export const rabbit = {
                 w: 25,
                 type: SensorType.TurnLeft,
                 flag: false,
+                coordinate : 0
             },
             {
                 distanceFromCreature: 0,
@@ -64,6 +66,7 @@ export const rabbit = {
                 w: 210,
                 type: SensorType.Hunt,
                 flag: false,
+                coordinate : 0
             },
         ]
     },
@@ -76,5 +79,6 @@ export const rabbit = {
     maxFertilityFemale: 3000,
     sex: CreatureSex.Male,
     lifeBar: { x: 0, y: 0, h: 10, wMax: 16, wCurrent: 16 },
-    hunting: false
+    hunting: false,
+    coordinate : 0
 }

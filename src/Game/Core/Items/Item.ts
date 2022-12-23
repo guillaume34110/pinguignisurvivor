@@ -9,6 +9,8 @@ export interface Item {
     spriteBox: SpriteBoxInterface,
     hitBox: HitBox,
     isTaken : Boolean,
+    coordinate : number,
+    unMovable : boolean
 }
 
 export enum ItemType { 

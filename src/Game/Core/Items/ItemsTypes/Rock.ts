@@ -24,4 +24,6 @@ export const rock = {
         h: 32,
     },
     isTaken : false,
+    coordinate : 0,
+    unMovable : true
  }

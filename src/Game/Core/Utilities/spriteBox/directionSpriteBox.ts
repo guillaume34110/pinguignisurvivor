@@ -122,7 +122,6 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
             spriteBoxToMove.direction.x = deltaX
             spriteBoxToMove.direction.y = deltaY
         }
-
     }
 }
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (

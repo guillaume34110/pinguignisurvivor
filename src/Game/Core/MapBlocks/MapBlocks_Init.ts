@@ -4,24 +4,25 @@ import { mapBlocks_biomeGenerator } from "./MapBlocksUtilities/ProceduralGenerat
 import { mapBlocks_SpaceBlocks } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_Space";
 import { mapBlocks_disposition } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_disposition";
 import { mapBlocks_HitBox } from "./MapBlocksUtilities/MapBlocks_HitBox";
+import { setCoordinateIndexposition } from "../Utilities/coordinate/Coordinate";
 
 export const mapBlocks_Init = (gameData:GameData) => {
-    const HowMuchMapBlocks = 1000
-    const lineStep = 50 
-    gameData.mapBlocks =  mapBlocks_biomeGenerator(mapPresets, HowMuchMapBlocks , lineStep)
-    for (let i = 0; i < HowMuchMapBlocks; i++) {
-        const line  = Math.floor(i/lineStep)  
-        mapBlocks_SpaceBlocks( gameData.mapBlocks , i , HowMuchMapBlocks , line , lineStep )
+   
+    gameData.mapBlocks =  mapBlocks_biomeGenerator(mapPresets, gameData.howMuchTiles , gameData.howMuchLinesOfTiles)
+    for (let i = 0; i < gameData.howMuchTiles; i++) {
+        const line  = Math.floor(i/gameData.howMuchLinesOfTiles)  
+        mapBlocks_SpaceBlocks( gameData.mapBlocks , i , gameData.howMuchTiles , line , gameData.howMuchLinesOfTiles )
         const mapBlock = gameData.mapBlocks[i]
-        mapBlocks_disposition(mapBlock , i , HowMuchMapBlocks , line , lineStep)
+        mapBlocks_disposition(mapBlock , i , gameData.howMuchTiles , line , gameData.howMuchLinesOfTiles)
+        mapBlock.coordinate = setCoordinateIndexposition(mapBlock.spriteBox , gameData)
     }
     mapBlocks_HitBox(gameData)
     
 }
 
 const mapPresets : MapPreset = { 
-    grassGround  : 30 ,
-    snowGround   : 35,
+    grassGround  : 55 ,
+    snowGround   : 10,
     dirtGround : 35
   }
 

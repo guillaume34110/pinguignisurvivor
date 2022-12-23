@@ -45,6 +45,7 @@ export const mouse: Creature = {
                 w: 15,
                 type: SensorType.TurnRight,
                 flag: false,
+                coordinate : 0
             },
             {
                 distanceFromCreature: 40,
@@ -55,6 +56,7 @@ export const mouse: Creature = {
                 w: 15,
                 type: SensorType.TurnLeft,
                 flag: false,
+                coordinate : 0
             },
             {
                 distanceFromCreature: 0,
@@ -65,6 +67,7 @@ export const mouse: Creature = {
                 w: 120,
                 type: SensorType.Hunt,
                 flag: false,
+                coordinate : 0
             },
         ]
     },
@@ -77,5 +80,6 @@ export const mouse: Creature = {
     maxFertilityFemale: 2000,
     sex: CreatureSex.Male,
     lifeBar: { x: 0, y: 0, h: 8, wMax: 12, wCurrent: 12 },
-    hunting: false
+    hunting: false,
+    coordinate : 0
 }

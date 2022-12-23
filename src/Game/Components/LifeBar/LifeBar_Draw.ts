@@ -8,11 +8,12 @@ export const lifeBarDraw = (gameData: GameData, targetGl: CanvasRenderingContext
         if (isOnScreen(god, lifeBar)) {
             targetGl.fillStyle = fillColor
             targetGl.strokeStyle = strokeColor;
+            targetGl.font = "8px Arial";
             const x = lifeBar.x - god.spriteBox.x + 600
             const y = lifeBar.y - god.spriteBox.y + 300
             targetGl.fillRect(x, y, lifeBar.wCurrent, lifeBar.h)
             targetGl.strokeRect(x, y, lifeBar.wMax, lifeBar.h)
-            targetGl.fillText(creature.spriteBox.direction.radian.toString() , x , y-20)
+           // targetGl.fillText(creature.spriteBox.direction.radian.toString() , x , y-20)
         }
     }
     gameData.creatures.forEach((creature) => {
