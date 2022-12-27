@@ -20,18 +20,18 @@ export const creature_RotateSprite = (creature: Creature) => {
 
 export const creature_RotateSpriteBy10Degrees = (creature: Creature) => {
 
-    const direction10Degrees = creature.spriteBox.direction.degree10
+    const direction10Degrees = creature.spriteBox.direction.degree10 % 36
 
-    if (direction10Degrees < 5) {
+    if (direction10Degrees < 4) {
         creature.sprite.sprite = creature.sprite.right
     }
-    else if (direction10Degrees < 14) {
+    else if (direction10Degrees < 15) {
         creature.sprite.sprite = creature.sprite.front
     }
-    else if (direction10Degrees < 23) {
+    else if (direction10Degrees < 22) {
         creature.sprite.sprite = creature.sprite.left
     }
-    else if (direction10Degrees < 32) {
+    else if (direction10Degrees < 33) {
         creature.sprite.sprite = creature.sprite.back
     }
     else {
