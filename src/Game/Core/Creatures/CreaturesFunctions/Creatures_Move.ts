@@ -1,23 +1,22 @@
-import { GameData } from '../../StartData/StartData';
 import { Creature } from '../Creature';
 import { moveSpriteBoxAccording10DegreesDirection, moveSpriteBoxWithRadian, rotateSpriteBox10degreesLeft, rotateSpriteBox10degreesRight, rotateSpriteBoxByX10Degrees } from '../../Utilities/spriteBox/directionSpriteBox';
 
-export const creatures_Move = (gameData: GameData, creature: Creature) => {
+export const creatures_Move = (creature: Creature) => {
 
     // creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
     // moveSpriteBoxWithRadian(creature.spriteBox)
 
     const rand = Math.random()
-    if (rand < 0.01){
+    if (rand < 0.03){
     rotateSpriteBox10degreesLeft(creature.spriteBox)
     }
-    else if(rand > 0.99){
+    else if(rand > 0.97){
     rotateSpriteBox10degreesRight(creature.spriteBox)
     }
     moveSpriteBoxAccording10DegreesDirection(creature.spriteBox)
 
 }
-export const creatures_MoveOld = (gameData: GameData, creature: Creature) => {
+export const creatures_MoveOld = (creature: Creature) => {
 
      creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
      moveSpriteBoxWithRadian(creature.spriteBox)

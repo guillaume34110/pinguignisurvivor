@@ -8,25 +8,22 @@ import { creature_Fertility } from './CreaturesFunctions/Creature_Nursery';
 import { creature_Info } from './CreaturesFunctions/Creature_Info';
 import { creature_lifeDecrease as creature_LifeDecrease } from './CreaturesFunctions/Creature_lifeDecrease';
 import { creature_MaleHuntFemale } from './CreaturesFunctions/Creature_Reproduction';
-import { creature_RotateSprite, creature_RotateSpriteBy10Degrees } from './CreaturesFunctions/Creature_RotateSprite';
+import { creature_RotateSpriteBy10Degrees } from './CreaturesFunctions/Creature_RotateSprite';
 import {
     creature_sensorSetCollisionFlagWithItems,
     creature_sensorSetCollisionWithMapBlocksFlags,
     creature_TurnOnCollision,
-    creature_updateSensorsPosition,
     creature_updateSensorsPositionBy10Degrees
     } from './CreaturesFunctions/Creature_sensors';
 import { creatures_HitBox } from './CreaturesFunctions/Creatures_HitBox';
 import { creatures_Hunt } from './CreaturesFunctions/Creature_Hunt';
 import { creatures_Move } from './CreaturesFunctions/Creatures_Move';
-import { easyQuickSort, fast_quicksort } from '../Utilities/sorting/quickSort';
-import { frame, Game } from '../../Components/Game';
+import { easyQuickSort } from '../Utilities/sorting/quickSort';
+import { frame } from '../../Components/Game';
 import {
     GameData,
     Sensor,
-    Sensors,
     SensorType,
-    SpriteBox
     } from '../StartData/StartData';
 import { Item } from '../Items/Item';
 import { MapBlock } from '../MapBlocks/MapBlock';
@@ -88,7 +85,7 @@ export const creaturesUpdate = (gameData: GameData) => {
         }
 
         creature_TurnOnCollision(creature)
-        creatures_Move(gameData, creature)
+        creatures_Move(creature)
         const afterItem = Date.now() - startCreature - afterSensor
         for (let j = 0; j < gameData.creatures.length; j++) {
             const otherCreature = gameData.creatures[j]
@@ -220,7 +217,7 @@ export const creaturesUpdate2 = (gameData: GameData) => {
                 creature_collisionWithItem(creature, item)
             }
             creature_TurnOnCollision(creature)
-            creatures_Move(gameData, creature)
+            creatures_Move(creature)
             for (let c = 0; c < slicedArrays.creatures[cc].length; c++) {
                 const otherCreature = slicedArrays.creatures[cc][c]
                 creatures_CollisionWithCreatures(gameData, "y", creature, otherCreature)

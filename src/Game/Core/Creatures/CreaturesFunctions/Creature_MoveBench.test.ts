@@ -19,7 +19,7 @@ given('bench test rad', () => {
     when('a spritebox on the map', () => {
         then('should be 1020', () => {
             const t0 = performance.now()
-            for (let i = 0 ; i< 100000 ; i++)creatures_Move(gameData, creature)
+            for (let i = 0 ; i< 100000 ; i++)creatures_Move(creature)
             const t1 = performance.now()
             console.log(`Time it takes to run the new =move: ${t1 - t0} ms`)
             expect(1).toBe(1)
@@ -28,7 +28,7 @@ given('bench test rad', () => {
     when('a spritebox on the map', () => {
         then('should be 1020', () => {
             const t0 = performance.now()
-            for (let i = 0 ; i< 100000 ; i++)creatures_MoveOld(gameData, creature)
+            for (let i = 0 ; i< 100000 ; i++)creatures_MoveOld(creature)
             const t1 = performance.now()
             console.log(`Time it takes to run the old move: ${t1 - t0} ms`)
             expect(1).toBe(1)
