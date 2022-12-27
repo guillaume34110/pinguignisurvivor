@@ -144,13 +144,13 @@ export const moveSpriteBoxAccording10DegreesDirection = (spriteBox: SpriteBoxInt
 export const spriteBoxSetDirectionXYBy10DegreesAngle = (
     spriteBox: SpriteBoxInterface, degreeAngle: number
 ) => {
-    LightDirection.setXYby10DegreesAngleWithAngle(spriteBox,degreeAngle)
+    LightDirection.setXYby10DegreesAngleWithAngle(spriteBox, degreeAngle)
 }
 
 export const spriteBoxAddX10DegreesDirection = (
     spriteBox: SpriteBoxInterface, degreeAngle: number
 ) => {
-    spriteBox.direction.degree10 += ~~ (36 + degreeAngle / 10) % 36
+    spriteBox.direction.degree10 += ~~(36 + degreeAngle / 10) % 36
 }
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => {
@@ -186,6 +186,7 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
         }
     }
 }
+
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
     spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface
 ) => {

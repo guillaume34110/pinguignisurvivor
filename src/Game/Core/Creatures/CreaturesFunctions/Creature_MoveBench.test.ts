@@ -1,6 +1,5 @@
 import { mapBlocks_Init } from "../../MapBlocks/MapBlocks_Init"
-import { GameData, SpriteBox, startData } from "../../StartData/StartData"
-import { creature_updateSensorsPosition, creature_updateSensorsPositionBy10Degrees } from "./Creature_sensors"
+import { GameData, startData } from "../../StartData/StartData"
 import { Creature } from '../Creature';
 import { mouse } from "../CreaturesTypes/Mouse";
 import { creatures_CollisionWithMapBlockMove, creatures_CollisionWithMapBlockMoveOld, creatures_Move, creatures_MoveOld } from './Creatures_Move';
@@ -16,7 +15,7 @@ const creature : Creature = {...mouse}
 
 given('bench test rad', () => {
 
-    when('a spritebox on the map', () => {
+    when('a spriteBox on the map', () => {
         then('should be 1020', () => {
             const t0 = performance.now()
             for (let i = 0 ; i< 100000 ; i++)creatures_Move(creature)
@@ -25,7 +24,7 @@ given('bench test rad', () => {
             expect(1).toBe(1)
         })
     })
-    when('a spritebox on the map', () => {
+    when('a spriteBox on the map', () => {
         then('should be 1020', () => {
             const t0 = performance.now()
             for (let i = 0 ; i< 100000 ; i++)creatures_MoveOld(creature)
@@ -34,7 +33,7 @@ given('bench test rad', () => {
             expect(1).toBe(1)
         })
     })
-    when('a spritebox on the map', () => {
+    when('a spriteBox on the map', () => {
         then('should be 1020', () => {
             const t0 = performance.now()
             for (let i = 0 ; i< 100000 ; i++) creatures_CollisionWithMapBlockMoveOld( creature)
@@ -43,7 +42,7 @@ given('bench test rad', () => {
             expect(1).toBe(1)
         })
     })
-    when('a spritebox on the map', () => {
+    when('a spriteBox on the map', () => {
         then('should be 1020', () => {
             const t0 = performance.now()
             for (let i = 0 ; i< 100000 ; i++) creatures_CollisionWithMapBlockMove( creature)

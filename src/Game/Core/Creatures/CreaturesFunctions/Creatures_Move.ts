@@ -3,23 +3,20 @@ import { moveSpriteBoxAccording10DegreesDirection, moveSpriteBoxWithRadian, rota
 
 export const creatures_Move = (creature: Creature) => {
 
-    // creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
-    // moveSpriteBoxWithRadian(creature.spriteBox)
-
     const rand = Math.random()
-    if (rand < 0.03){
-    rotateSpriteBox10degreesLeft(creature.spriteBox)
+    if (rand < 0.03) {
+        rotateSpriteBox10degreesLeft(creature.spriteBox)
     }
-    else if(rand > 0.97){
-    rotateSpriteBox10degreesRight(creature.spriteBox)
+    else if (rand > 0.97) {
+        rotateSpriteBox10degreesRight(creature.spriteBox)
     }
     moveSpriteBoxAccording10DegreesDirection(creature.spriteBox)
 
 }
 export const creatures_MoveOld = (creature: Creature) => {
 
-     creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
-     moveSpriteBoxWithRadian(creature.spriteBox)
+    creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
+    moveSpriteBoxWithRadian(creature.spriteBox)
 
 }
 
@@ -27,16 +24,14 @@ export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
 
     creature.spriteBox.x -= creature.spriteBox.direction.x * 10
     creature.spriteBox.y -= creature.spriteBox.direction.y * 10
-    // creature.spriteBox.direction.radian -= Math.PI * 2 / 3
-    
     rotateSpriteBoxByX10Degrees(creature.spriteBox, 3)
 
 }
 export const creatures_CollisionWithMapBlockMoveOld = (creature: Creature) => {
     creature.spriteBox.x -= creature.spriteBox.direction.x * 10
     creature.spriteBox.y -= creature.spriteBox.direction.y * 10
-     creature.spriteBox.direction.radian -= Math.PI * 2 / 3
-    
+    creature.spriteBox.direction.radian -= Math.PI * 2 / 3
+
 }
 
 
