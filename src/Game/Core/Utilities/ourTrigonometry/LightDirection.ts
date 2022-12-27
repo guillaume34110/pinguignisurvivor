@@ -16,7 +16,7 @@ export abstract class LightDirection {
     }
     
     static addX10Degrees(spriteBox: SpriteBox, x10Degrees: number) {
-        const degree = Math.round(x10Degrees) % 36
+        const degree = (~~ x10Degrees) % 36
         if (x10Degrees < 0) {
             const newDirection = spriteBox.direction.degree10 + degree
             if (newDirection < 0) {

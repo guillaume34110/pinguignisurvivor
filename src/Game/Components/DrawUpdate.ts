@@ -20,8 +20,8 @@ export const drawPixi = (gameData:GameData, targetPixi:PIXI.Application ) =>{
     mapBlocksRefreshPixi(gameData, targetPixi)
     items_RefreshPixi(gameData, targetPixi)
     creatures_RefreshPixi(gameData, targetPixi)
-    /*hud_RefreshPixi(gameData, targetPixi)
-    hitBoxRefreshPixi(gameData, targetPixi)
-    lifeBarDrawPixi(gameData, targetPixi)*/
+    hud_RefreshPixi(gameData, targetPixi)
+   // hitBoxRefreshPixi(gameData, targetPixi)
+   // lifeBarDrawPixi(gameData, targetPixi)/**/
 
 }

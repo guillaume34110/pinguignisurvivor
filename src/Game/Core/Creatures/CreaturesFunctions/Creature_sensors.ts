@@ -63,7 +63,7 @@ export const creature_updateSensorsPosition = (creature: Creature, sensor: Senso
 export const creature_updateSensorsPositionBy10Degrees = (creature: Creature, sensor: Sensor) => {
 
     if (sensor.type === SensorType.TurnRight || sensor.type === SensorType.TurnLeft) {
-        const offset10Degrees = Math.round(36 + sensor.degOffset/10 + creature.spriteBox.direction.degree10) % 36
+        const offset10Degrees = ~~(36 + sensor.degOffset/10 + creature.spriteBox.direction.degree10) % 36
         
         sensor.x = getCenterSpriteBox(creature.spriteBox).x + (LightTrigo.coordinateCoupleBy10DegreesStep0To350Degrees[offset10Degrees].x * sensor.distanceFromCreature)
         sensor.y = getCenterSpriteBox(creature.spriteBox).y + (LightTrigo.coordinateCoupleBy10DegreesStep0To350Degrees[offset10Degrees].y * sensor.distanceFromCreature)
