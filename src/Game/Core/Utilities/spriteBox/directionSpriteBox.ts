@@ -109,7 +109,8 @@ export const moveSpriteBoxAccording10DegreesDirection = (spriteBox: SpriteBoxInt
 export const spriteBoxSetPositionByRotateInDegree = (
     spriteBox: SpriteBoxInterface, degreeAngle: number
 ) => {
-    spriteBox.direction.radian += (degreeAngle * Math.PI / 180)
+    // spriteBox.direction.radian += (degreeAngle * Math.PI / 180)
+    spriteBox.direction.degree10 += Math.round(36 + degreeAngle/10) % 36
 }
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxRad = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => { 
     const deltaX =  spriteBoxTarget.x -spriteBoxToMove.x  
