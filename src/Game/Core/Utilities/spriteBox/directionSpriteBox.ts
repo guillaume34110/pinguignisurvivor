@@ -1,4 +1,5 @@
 import {SpriteBoxInterface} from "../../StartData/StartData";
+import {LightDirection} from "../ourTrigonometry/LightDirection";
 
 export enum DirectionEnum {
     Right,
@@ -83,6 +84,24 @@ export const spriteBoxSetDirectionWithRadian = (
 export const moveSpriteBoxWithRadian = (spriteBox: SpriteBoxInterface) => { 
     spriteBox.direction.x = Math.cos(spriteBox.direction.radian) * spriteBox.speed
     spriteBox.direction.y = Math.sin(spriteBox.direction.radian) * spriteBox.speed
+    spriteBox.x += spriteBox.direction.x
+    spriteBox.y += spriteBox.direction.y
+}
+
+export const rotateSpriteBox10degreesRight = (spriteBox: SpriteBoxInterface) => { 
+    LightDirection.add10Degrees(spriteBox)
+}
+
+export const rotateSpriteBox10degreesLeft = (spriteBox: SpriteBoxInterface) => { 
+    LightDirection.remove10Degrees(spriteBox)
+}
+
+export const rotateSpriteBoxByX10Degrees = (spriteBox: SpriteBoxInterface, x10Degrees:number) => { 
+    LightDirection.addX10Degrees(spriteBox, x10Degrees)
+}
+
+export const moveSpriteBoxAccording10DegreesDirection = (spriteBox: SpriteBoxInterface) => { 
+    LightDirection.setXYbyAngle(spriteBox)
     spriteBox.x += spriteBox.direction.x
     spriteBox.y += spriteBox.direction.y
 }

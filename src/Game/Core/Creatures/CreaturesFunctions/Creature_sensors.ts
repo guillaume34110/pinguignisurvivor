@@ -6,6 +6,7 @@ import { spriteBoxSetPositionByRotateInDegree } from "../../Utilities/spriteBox/
 import { Item, ItemType } from "../../Items/Item";
 import { MapBlock } from "../../MapBlocks/MapBlock";
 import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
+import { LightTrigo } from "../../Utilities/ourTrigonometry/LightTrigo";
 
 export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
         if (mapBlock.type === mapBlocksGeneric.spaceBorder.type) {
@@ -51,6 +52,21 @@ export const creature_updateSensorsPosition = (creature: Creature, sensor: Senso
         const offsetRad = (sensor.degOffset * Math.PI / 180) + creatureRad
         sensor.x = getCenterSpriteBox(creature.spriteBox).x + (Math.cos(offsetRad) * sensor.distanceFromCreature)
         sensor.y = getCenterSpriteBox(creature.spriteBox).y + (Math.sin(offsetRad) * sensor.distanceFromCreature)
+    }
+    else if (sensor.type === SensorType.Hunt) {
+        
+        sensor.x = getCenterSpriteBox(creature.spriteBox).x - (sensor.w / 2)
+        sensor.y = getCenterSpriteBox(creature.spriteBox).y -( sensor.h / 2)
+    }
+}
+
+export const creature_updateSensorsPositionBy10Degrees = (creature: Creature, sensor: Sensor) => {
+
+    if (sensor.type === SensorType.TurnRight || sensor.type === SensorType.TurnLeft) {
+        const offset10Degrees = Math.round(36 + sensor.degOffset/10 + creature.spriteBox.direction.degree10) % 36
+        
+        sensor.x = getCenterSpriteBox(creature.spriteBox).x + (LightTrigo.coordinateCoupleBy10DegreesStep0To350Degrees[offset10Degrees].x * sensor.distanceFromCreature)
+        sensor.y = getCenterSpriteBox(creature.spriteBox).y + (LightTrigo.coordinateCoupleBy10DegreesStep0To350Degrees[offset10Degrees].y * sensor.distanceFromCreature)
     }
     else if (sensor.type === SensorType.Hunt) {
         

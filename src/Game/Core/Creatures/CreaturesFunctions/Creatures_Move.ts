@@ -1,11 +1,20 @@
 import { GameData } from '../../StartData/StartData';
 import { Creature } from '../Creature';
-import { moveSpriteBoxWithRadian } from '../../Utilities/spriteBox/directionSpriteBox';
+import { moveSpriteBoxAccording10DegreesDirection, moveSpriteBoxWithRadian, rotateSpriteBox10degreesLeft, rotateSpriteBox10degreesRight, rotateSpriteBoxByX10Degrees } from '../../Utilities/spriteBox/directionSpriteBox';
 
 export const creatures_Move = (gameData: GameData, creature: Creature) => {
 
-    creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
-    moveSpriteBoxWithRadian(creature.spriteBox)
+    // creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
+    // moveSpriteBoxWithRadian(creature.spriteBox)
+
+    const rand = Math.random()
+    if (rand < 0.1){
+    rotateSpriteBox10degreesLeft(creature.spriteBox)
+    }
+    else if(rand > 0.9){
+    rotateSpriteBox10degreesRight(creature.spriteBox)
+    }
+    moveSpriteBoxAccording10DegreesDirection(creature.spriteBox)
 
 }
 
@@ -13,12 +22,15 @@ export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
 
     creature.spriteBox.x -= creature.spriteBox.direction.x * 10
     creature.spriteBox.y -= creature.spriteBox.direction.y * 10
-    creature.spriteBox.direction.radian -= Math.PI * 2 / 3
+    // creature.spriteBox.direction.radian -= Math.PI * 2 / 3
+    
+    rotateSpriteBoxByX10Degrees(creature.spriteBox, 3)
+
 }
 
 export const creatures_collisionBetweenMove = (creatureToMove: Creature, type: string) => {
-   // if (type === "y") creatureToMove.spriteBox.y -= creatureToMove.spriteBox.direction.y
-    //if (type === "x") creatureToMove.spriteBox.x -= creatureToMove.spriteBox.direction.x
+    // if (type === "y") creatureToMove.spriteBox.y -= creatureToMove.spriteBox.direction.y
+    // if (type === "x") creatureToMove.spriteBox.x -= creatureToMove.spriteBox.direction.x
     if (type === "x" || type === "y") creatureToMove.spriteBox[type] -= creatureToMove.spriteBox.direction[type];
 }
 
