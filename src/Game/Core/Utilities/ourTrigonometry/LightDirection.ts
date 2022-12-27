@@ -41,11 +41,11 @@ export const LightDirection = {
         spriteBox.direction.y = coupleXY.y * spriteBox.speed
     },
 
-    setXYby10DegreesAngleWithAngle(spriteBox: SpriteBox, degreeAngle: number) {
-        const checkedDirection = (~~(degreeAngle / 10) + 36) % 36
+    setXYby10DegreesAngleWithAngle(spriteBox: SpriteBox, degree10Angle: number) {
+        const checkedDirection = (~~degree10Angle + 36) % 36
         const coupleXY = LightTrigonometry.coordinateCoupleBy10DegreesStep0To350Degrees[checkedDirection]
-        spriteBox.direction.x = coupleXY.x
-        spriteBox.direction.y = coupleXY.y
+        spriteBox.direction.x = coupleXY.x * spriteBox.speed
+        spriteBox.direction.y = coupleXY.y * spriteBox.speed
     },
 
     setDirectionIn10degreesModeAccordingXYPointToReach(spriteBox: SpriteBox, x: number, y: number) {
