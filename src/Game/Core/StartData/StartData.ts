@@ -17,7 +17,7 @@ export interface GameData {
     mapBlocks: MapBlock[],
     message :string,
     howMuchTiles : number ,
-    howMuchLinesOfTiles : number
+    howMuchTilesOnLine : number
 }
 
 export class DirectionClass {
@@ -157,5 +157,5 @@ export const startData: GameData = {
        
     ], message : "",
     howMuchTiles :5000 ,
-    howMuchLinesOfTiles : 50
+    howMuchTilesOnLine : 50
 }

@@ -9,5 +9,6 @@ export const emptyGround : MapBlock = {
     rotationY: 0,
     rotationX: 0,
     translateY: 0,
-    type:MapBlockType.emptyGround
+    type:MapBlockType.emptyGround,
+    coordinate : 0
 }

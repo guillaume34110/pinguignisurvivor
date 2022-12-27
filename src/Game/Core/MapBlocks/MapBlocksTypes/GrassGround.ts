@@ -9,5 +9,6 @@ export const  grassGround : MapBlock = {
     rotationY: 0,
     rotationX: 0,
     translateY: 0,
-    type: MapBlockType.groundGrass
+    type: MapBlockType.groundGrass,
+    coordinate : 0
 }

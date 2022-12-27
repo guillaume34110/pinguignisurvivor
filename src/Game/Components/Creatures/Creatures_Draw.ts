@@ -1,10 +1,11 @@
 import { GameData, Sprite } from '../../Core/StartData/StartData';
 import { animationEnemies, isOnScreen } from "../Game";
-import { selectImg } from "./CreaturesSprites";
+import { selectImg, selectImgPixi } from "./CreaturesSprites";
+
+import * as PIXI from 'pixi.js'
 
 
-
-export const creaturesRefresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
+export const creatures_Refresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
     const god = gameData.god
     gameData.creatures.forEach(creature => {
         if (isOnScreen(god, creature.spriteBox)) {
@@ -24,3 +25,21 @@ export const creaturesRefresh = (gameData: GameData, targetGl: CanvasRenderingCo
     })
 }
 
+
+// pixi 
+
+export const creatures_RefreshPixi = (gameData: GameData, targetGl: PIXI.Application) => {
+    const god = gameData.god
+    gameData.creatures.forEach(creature => {
+        if (isOnScreen(god, creature.spriteBox)) {
+            const sprite = new PIXI.Sprite(selectImgPixi(creature.sprite.sprite))
+            sprite.x = creature.spriteBox.x - god.spriteBox.x + 600
+            sprite.y = creature.spriteBox.y - god.spriteBox.y + 300
+            sprite.width = creature.spriteBox.w
+            sprite.height = creature.spriteBox.h
+            sprite.texture.frame =new PIXI.Rectangle(0, 0, 16, 16);
+
+            targetGl.stage.addChild(sprite)
+        }
+    })
+}

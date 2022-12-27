@@ -17,23 +17,17 @@ export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
 }
 
 export const creatures_collisionBetweenMove = (creatureToMove: Creature, type: string) => {
-    if (type === "y") creatureToMove.spriteBox.y -= creatureToMove.spriteBox.direction.y
-    if (type === "x") creatureToMove.spriteBox.x -= creatureToMove.spriteBox.direction.x
+   // if (type === "y") creatureToMove.spriteBox.y -= creatureToMove.spriteBox.direction.y
+    //if (type === "x") creatureToMove.spriteBox.x -= creatureToMove.spriteBox.direction.x
+    if (type === "x" || type === "y") creatureToMove.spriteBox[type] -= creatureToMove.spriteBox.direction[type];
 }
 
 export const creature_setDirectionRadian = (creatureToMove: Creature) => {
-    const creatureX = creatureToMove.spriteBox.direction.x
-    const creatureY = creatureToMove.spriteBox.direction.y
-    creatureToMove.spriteBox.direction.radian = Math.atan(creatureY / creatureX)
-    if ((creatureX < 0 && creatureY < 0) || creatureX < 0) {
-        creatureToMove.spriteBox.direction.radian += Math.PI
-    }
+    const { x: creatureX, y: creatureY } = creatureToMove.spriteBox.direction;
+    creatureToMove.spriteBox.direction.radian = Math.atan(creatureY / creatureX) + (creatureX < 0 ? Math.PI : 0);
 }
 
 export const creature_loseSpeed = (creature: Creature) => {
-    if (creature.spriteBox.direction.x > 0) creature.spriteBox.direction.x -= creature.spriteBox.direction.x / 100
-    else creature.spriteBox.direction.x -= creature.spriteBox.direction.x / 100
-
-    if (creature.spriteBox.direction.y > 0) creature.spriteBox.direction.y -= creature.spriteBox.direction.y / 100
-    else creature.spriteBox.direction.y -= creature.spriteBox.direction.y / 100
+    creature.spriteBox.direction.x -= creature.spriteBox.direction.x / 100;
+    creature.spriteBox.direction.y -= creature.spriteBox.direction.y / 100;
 }

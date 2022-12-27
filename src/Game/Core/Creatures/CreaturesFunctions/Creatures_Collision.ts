@@ -44,7 +44,12 @@ export const creatures_CollisionWithCreaturesWithoutHitboxMatch = ( type: string
                         && enemyBoxToMove.spriteBox.direction.y > 0)
                 )) creatures_collisionBetweenMove(enemyBoxToMove, type)
         }
+    
+
+
 }
+
+
 
 
 export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBlock: MapBlock) => {
@@ -70,11 +75,13 @@ export const creature_collisionWithItem = (creature: Creature, item: Item) => {
 
 export const creature_EatFood = (item: Item, creature: Creature) => {
 
-    creature.health += item.value
+   /* creature.health += item.value
     if (creature.health > creature.maxHealth) {
         creature.health = creature.maxHealth
     }
-    item.isTaken = true
+    item.isTaken = true*/
+    creature.health = creature.health + item.value > creature.maxHealth ? creature.maxHealth : creature.health + item.value;
+    item.isTaken = true;
 
 }
 

@@ -6,38 +6,30 @@ import { God } from "../Core/God/God";
 import { Creature, LifeBar } from "../Core/Creatures/Creature";
 import { initCore } from "../Core/init/init";
 import { updateCore } from "../Core/update/Update";
-import { draw } from "./DrawUpdate";
+import { draw, drawPixi } from './DrawUpdate';
+import * as PIXI from 'pixi.js'
 
 
 let coreInterval: NodeJS.Timer
 const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
 let componentInitState = true
+let targetEnemy: PIXI.Application | null = null
 export let frame = 0
 let zoomFactor = 1
 
-export const Game = () => {
+export const GamePixi = () => {
 
-    const gameHtml = `
-        <div class="game">
-         ${'' //  ${Hud()}  
-        }
-            <div class="camera">
-                <canvas  width="12800" height="7200" class="scene" >
-                </canvas>
-            </div>
-        </div>
-   `
+   
     const mainLoop = () => {
         updateCore(gameData)
     }
 
     const drawLoop = () => {
-        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
-        const targetGl = targetEnemy?.getContext('2d')
+        const targetGl = targetEnemy;
         if (targetGl !== null && targetGl !== undefined) {
             frameInit(gameData, targetGl)
-            draw(gameData, targetGl)
+            drawPixi(gameData, targetGl)
 
         }
         window.requestAnimationFrame(drawLoop)
@@ -47,10 +39,15 @@ export const Game = () => {
 
         const html = document.querySelector('#root')
         if (html !== null)
-            html.innerHTML = gameHtml
-        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
-        const targetGl = targetEnemy?.getContext('2d')
-        targetGl?.scale(1, 1)
+       targetEnemy  = new PIXI.Application({
+            width: 1280,
+            height: 720,
+            antialias: true
+        });
+        //@ts-ignore
+        html?.appendChild(targetEnemy.view);
+        const targetGl = targetEnemy?.stage;
+        targetGl?.scale.set(1, 1)
 
     }
 
@@ -74,10 +71,7 @@ export const Game = () => {
              currentZoom = 1.111111
              zoomFactor -- 
             }
-       
-        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
-        const targetGl = targetEnemy?.getContext('2d')
-        targetGl?.scale(currentZoom, currentZoom)
+       targetEnemy?.stage.scale.set(currentZoom, currentZoom)
     }
     /*Listeners*/
 
@@ -110,12 +104,10 @@ export const Game = () => {
         // }
     }
     if (componentInitState) componentInit()
-    const frameInit = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
+    const frameInit = (gameData: GameData, targetGl: PIXI.Application) => {
         if (frame < 60) frame++
         else frame = 0
-        targetGl.imageSmoothingEnabled = false
-        targetGl.clearRect(0, 0, 14000, 10000)
-
+        targetGl.stage.removeChildren();
     }
 }
 

@@ -52,7 +52,7 @@ export function fast_quicksort(ary:number[]) {
          continue;
         }
         depth--;
-        var pivot = Math.round((start + end) / 2);
+        var pivot = ~~((start + end) / 2);
             
         var pivotNewIndex = inplace_quicksort_partition(ary,start,end, pivot);
         if(end - pivotNewIndex > 16) {
@@ -69,7 +69,7 @@ export function fast_quicksort(ary:number[]) {
 }
 
 function shell_sort_bound(ary:number[],start:number,end:number) {
-    var inc = Math.round((start + end)/2),
+    var inc = ~~((start + end)/2),
         i, j, t;
 
     while (inc >= start) {
@@ -82,7 +82,7 @@ function shell_sort_bound(ary:number[],start:number,end:number) {
             }
             ary[j] = t;
         }
-        inc = Math.round(inc / 2.2);
+        inc = ~~(inc / 2.2);
     }
 
     return ary;

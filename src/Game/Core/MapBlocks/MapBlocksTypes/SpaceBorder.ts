@@ -9,5 +9,6 @@ export const spaceBorder : MapBlock = {
     rotationY: 0,
     rotationX: 0,
     translateY: 0,
-    type: MapBlockType.space
+    type: MapBlockType.space,
+    coordinate : 0
 }

@@ -25,6 +25,6 @@ export const seeds = {
         h: 32,
     },
     isTaken : false,
-    coordinate : 0,
+    coordinate :0,
     unMovable : false
  }

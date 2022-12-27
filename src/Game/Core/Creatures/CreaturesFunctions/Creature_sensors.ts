@@ -7,7 +7,7 @@ import { Item, ItemType } from "../../Items/Item";
 import { MapBlock } from "../../MapBlocks/MapBlock";
 import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
 
-export const creature_sensorSetCollisionWithMapBlocksFlag = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
+export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
         if (mapBlock.type === mapBlocksGeneric.spaceBorder.type) {
             if (hitBoxMatch(mapBlock.hitBox, sensor)) {
                 if (sensor.type === SensorType.TurnLeft) creature.sensorsFlags.flagLeft = true

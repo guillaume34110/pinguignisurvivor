@@ -1,5 +1,4 @@
 import {SpriteBoxInterface} from "../../StartData/StartData";
-import { getCenterSpriteBox } from "./positionSpriteBox";
 
 export enum DirectionEnum {
     Right,

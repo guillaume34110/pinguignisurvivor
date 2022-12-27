@@ -36,7 +36,7 @@ const addNewPositions = (MapBlockTable: MapBlock[], howMuch: number, lineStep: n
 
 const assignParameter = (totalMapBlocks: number, mapPreset: number, mapBlockTable: MapBlock[]): Parameters => {
     return {
-        Seeds: [Math.floor(Math.random() * totalMapBlocks)],
+        Seeds: [~~(Math.random() * totalMapBlocks -1)],
         howMuch: (mapPreset * totalMapBlocks) / 100,
         MapBlockTable: mapBlocks(mapBlockTable, totalMapBlocks)
     }
@@ -84,7 +84,7 @@ const generateSeedPositions = (positions: SeedPositions, MapBlockTable: MapBlock
         }
     }
     )
-    const seed = newSeeds[Math.floor(random * newSeeds.length - 1)]
+    const seed = newSeeds[~~(random * newSeeds.length - 1)]
     if (seed !== undefined) return seed
 
     else return positions

@@ -1,10 +1,10 @@
-import itemImg from "../../Assets/items/img.png";
+
 import {GameData} from "../../Core/StartData/StartData";
 import {animation4Frames, isOnScreen} from "../Game";
-import {selectImg} from "./ItemsSprites";
+import { selectImg, selectImgPixi } from './ItemsSprites';
 
-const image = new Image()
-image.src = itemImg
+import * as PIXI from 'pixi.js'
+
 
 export const items_Refresh = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
     const god = gameData.god
@@ -25,3 +25,20 @@ export const items_Refresh = (gameData: GameData, targetGl: CanvasRenderingConte
         }
     })
 }
+
+export const items_RefreshPixi = (gameData: GameData, target: PIXI.Application) => {
+    const god = gameData.god
+
+    gameData.items.forEach((item) => {
+        if (isOnScreen(god, item.spriteBox)) {
+            let sprite = new PIXI.Sprite(selectImgPixi(item.sprite))
+            sprite.x = item.spriteBox.x - god.spriteBox.x + 600;
+            sprite.y = item.spriteBox.y - god.spriteBox.y + 300;
+            sprite.width =  item.spriteBox.w
+            sprite.height = item.spriteBox.h
+            sprite.texture.frame =new PIXI.Rectangle(0, 0, item.spriteBox.w, item.spriteBox.h);
+            target.stage.addChild(sprite);
+        }
+    })
+}
+

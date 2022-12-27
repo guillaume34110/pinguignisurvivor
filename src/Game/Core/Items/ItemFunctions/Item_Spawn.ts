@@ -8,7 +8,7 @@ export const item_Spawn = (gameData: GameData) => {
 
 
 const item_spawnSeeds = (gameData : GameData) => { 
-    const mapBlock = gameData.mapBlocks[Math.floor(Math.random() * gameData.mapBlocks.length - 1)]
+    const mapBlock = gameData.mapBlocks[~~(Math.random() * gameData.mapBlocks.length - 1)]
     if (mapBlock !== undefined && (mapBlock.type === MapBlockType.groundGrass || mapBlock.type === MapBlockType.groundDirt)) {
         if (Math.random() > 0.980 && !gameData.items.find(item => (item.spriteBox.x === mapBlock.spriteBox.x && item.spriteBox.y === mapBlock.spriteBox.y))) {
             gameData.items.push(JSON.parse(JSON.stringify(seeds)))
