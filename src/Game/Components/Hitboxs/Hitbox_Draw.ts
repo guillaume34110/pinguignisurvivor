@@ -53,7 +53,7 @@ export const hitBoxRefreshPixi = (gameData: GameData, target: PIXI.Application) 
             const y = hitBox.y - god.spriteBox.y + 300
             let rect: PIXI.Graphics
             if (cachedRectData) {
-                rect = cachedRectData.rect
+                rect = cachedRectData.rect 
                 rect.beginFill(fillColor)
                 rect.alpha = 0.5;
                 rect.lineStyle(1, strokeColor)
@@ -87,4 +87,11 @@ export const hitBoxRefreshPixi = (gameData: GameData, target: PIXI.Application) 
     gameData.items.forEach((item) => {
         drawHitBox(item.hitBox, 0x4e2a04, 0xffa500)
     })
+    for(let [key, value] of cachedRects.entries()){
+        if (!isOnScreen(god,key)){
+                target.stage.removeChild(value.rect);
+                cachedRects.delete(key);
+        }
+
+}
 }

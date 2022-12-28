@@ -36,9 +36,11 @@ export const creatures_CollisionWithMapBlockMoveOld = (creature: Creature) => {
 
 
 export const creatures_collisionBetweenMove = (creatureToMove: Creature, type: string) => {
-    // if (type === "y") creatureToMove.spriteBox.y -= creatureToMove.spriteBox.direction.y
-    // if (type === "x") creatureToMove.spriteBox.x -= creatureToMove.spriteBox.direction.x
     if (type === "x" || type === "y") creatureToMove.spriteBox[type] -= creatureToMove.spriteBox.direction[type];
+}
+export const creatures_pushOtherCreature = (otherCreature:Creature,creatureToMove: Creature, type: string) => { 
+    if (type === "x" || type === "y") otherCreature.spriteBox[type] += creatureToMove.spriteBox.direction[type]*2;
+    creature_loseSpeed(creatureToMove)
 }
 
 export const creature_setDirectionRadian = (creatureToMove: Creature) => {
@@ -47,6 +49,6 @@ export const creature_setDirectionRadian = (creatureToMove: Creature) => {
 }
 
 export const creature_loseSpeed = (creature: Creature) => {
-    creature.spriteBox.direction.x -= creature.spriteBox.direction.x / 100;
-    creature.spriteBox.direction.y -= creature.spriteBox.direction.y / 100;
+    creature.spriteBox.x -= creature.spriteBox.direction.x / 2;
+    creature.spriteBox.y -= creature.spriteBox.direction.y / 2;
 }

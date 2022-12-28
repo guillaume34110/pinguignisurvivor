@@ -33,8 +33,8 @@ export const creature_sensorSetCollisionFlagWithItems = (creature: Creature, sen
 
 export const creature_TurnOnCollision = (creature: Creature) => {
     if (creature.sensorsFlags.flagLeft && creature.sensorsFlags.flagRight) spriteBoxAddX10DegreesDirection(creature.spriteBox, 50)
-    else if (creature.sensorsFlags.flagLeft) spriteBoxAddX10DegreesDirection(creature.spriteBox, 5)
-    else if (creature.sensorsFlags.flagRight) spriteBoxAddX10DegreesDirection(creature.spriteBox, -5)
+    else if (creature.sensorsFlags.flagLeft) spriteBoxAddX10DegreesDirection(creature.spriteBox, 10)
+    else if (creature.sensorsFlags.flagRight) spriteBoxAddX10DegreesDirection(creature.spriteBox, -10)
 }
 
 export const creature_updateSensorsPosition = (creature: Creature, sensor: Sensor) => {

@@ -48,6 +48,7 @@ export const creature_MakeBabyWithCreature = (creatures: Creature[], creature: C
     last.hitBox.x = last.spriteBox.x
     last.hitBox.y = last.spriteBox.y
     last.spriteBox.speed = ((creature.spriteBox.speed + creatureToCompare.spriteBox.speed) / 2) + ((last.spriteBox.speed * (Math.random() - 0.5)) / 10)
+    last.weight = ((creature.weight + creatureToCompare.weight) / 2) + ((last.weight * (Math.random() - 0.5)) / 10)
     last.id = creatures.length - 1
     if (Math.random() > 0.5) last.sex = CreatureSex.Female
 }

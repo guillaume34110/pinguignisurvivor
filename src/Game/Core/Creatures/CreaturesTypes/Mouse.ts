@@ -82,5 +82,6 @@ export const mouse: Creature = {
     sex: CreatureSex.Male,
     lifeBar: { x: 0, y: 0, h: 8, wMax: 12, wCurrent: 12 },
     hunting: false,
-    coordinate : 0
+    coordinate : 0,
+    weight : 0.1
 }

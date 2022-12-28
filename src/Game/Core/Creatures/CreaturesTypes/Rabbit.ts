@@ -81,5 +81,6 @@ export const rabbit = {
     sex: CreatureSex.Male,
     lifeBar: { x: 0, y: 0, h: 10, wMax: 16, wCurrent: 16 },
     hunting: false,
-    coordinate : 0
+    coordinate : 0,
+    weight : 3
 }
