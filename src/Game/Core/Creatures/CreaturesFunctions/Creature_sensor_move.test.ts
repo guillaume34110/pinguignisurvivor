@@ -16,7 +16,7 @@ const creatureInit = () => {
     gameData.creatures[0].spriteBox.y = 100
     gameData.creatures[0].spriteBox.speed = 5
 }
-given('a mouse is mouving', () => {
+given('a mouse is moving', () => {
 
     beforeEach(() => creatureInit())
     when('she go at x rad ', () => {

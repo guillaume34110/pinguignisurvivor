@@ -7,4 +7,4 @@ export const creatures_HitBox = (creature: Creature) => {
 }
 
 //  w: enemy.spriteBox.w,
-//     h: enemy.spriteBox.h * 0.6,
+//  h: enemy.spriteBox.h * 0.6,

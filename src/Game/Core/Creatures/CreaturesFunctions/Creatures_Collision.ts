@@ -27,6 +27,7 @@ export const creatures_CollisionWithCreatures = (gameData: GameData, type: strin
     }
 
 }
+
 export const creatures_CollisionWithCreaturesWithoutHitboxMatch = ( type: string, enemyBoxToMove: Creature, otherCreature: Creature) => {
 
     if (otherCreature !== enemyBoxToMove) {     
@@ -49,9 +50,6 @@ export const creatures_CollisionWithCreaturesWithoutHitboxMatch = ( type: string
 
 }
 
-
-
-
 export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBlock: MapBlock) => {
 
     if (mapBlock.type === MapBlockType.space) {
@@ -63,7 +61,6 @@ export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBloc
 
 }
 
-
 export const creature_collisionWithItem = (creature: Creature, item: Item) => {
 
     if (hitBoxMatch(item.hitBox, creature.hitBox)) {
@@ -71,7 +68,6 @@ export const creature_collisionWithItem = (creature: Creature, item: Item) => {
         if (item.type === ItemType.Solid) creatures_CollisionWithMapBlockMove(creature)
     }
 }
-
 
 export const creature_EatFood = (item: Item, creature: Creature) => {
 
@@ -84,4 +80,3 @@ export const creature_EatFood = (item: Item, creature: Creature) => {
     item.isTaken = true;
 
 }
-

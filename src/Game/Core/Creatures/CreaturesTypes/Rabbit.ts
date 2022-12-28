@@ -22,6 +22,7 @@ export const rabbit = {
         h: 32,
         direction: {
             radian: 0,
+            degree10:0,
             x: 0.1,
             y: 0.1
         },

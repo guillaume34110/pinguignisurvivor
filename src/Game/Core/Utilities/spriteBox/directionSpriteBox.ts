@@ -1,4 +1,7 @@
-import {SpriteBoxInterface} from "../../StartData/StartData";
+import { SpriteBoxInterface } from "../../StartData/StartData";
+import { LightDirection } from "../ourTrigonometry/LightDirection";
+import { LightTrigonometry } from "../ourTrigonometry/LightTrigo";
+import { getCenterSpriteBox } from "./positionSpriteBox";
 
 export enum DirectionEnum {
     Right,
@@ -11,6 +14,10 @@ export enum DirectionEnum {
     UpRight,
     Random
 }
+
+// ----------------------
+//  Direction by Radian :
+// ---------------------
 
 export const DirectionInRadian = {
     Right: 0,
@@ -48,23 +55,23 @@ export const spriteBoxSetDirection = (
             break
         }
         case DirectionEnum.DownRight: {
-            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.DownRight)
+            spriteBoxSetDirectionXYByRadianAngle(spriteBox, DirectionInRadian.DownRight)
             break
         }
         case DirectionEnum.DownLeft: {
-            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.DownLeft)
+            spriteBoxSetDirectionXYByRadianAngle(spriteBox, DirectionInRadian.DownLeft)
             break
         }
         case DirectionEnum.UpLeft: {
-            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.UpLeft)
+            spriteBoxSetDirectionXYByRadianAngle(spriteBox, DirectionInRadian.UpLeft)
             break
         }
         case DirectionEnum.UpRight: {
-            spriteBoxSetDirectionWithRadian(spriteBox, DirectionInRadian.UpRight)
+            spriteBoxSetDirectionXYByRadianAngle(spriteBox, DirectionInRadian.UpRight)
             break
         }
         case DirectionEnum.Random: {
-            spriteBoxSetDirectionWithRadian(spriteBox, Math.random() * Math.PI * 2)
+            spriteBoxSetDirectionXYByRadianAngle(spriteBox, Math.random() * Math.PI * 2)
             break
         }
         default: {
@@ -73,32 +80,88 @@ export const spriteBoxSetDirection = (
     }
 }
 
-export const spriteBoxSetDirectionWithRadian = (
+export const spriteBoxSetDirectionXYByRadianAngle = (
     spriteBox: SpriteBoxInterface, radAngle: number
 ) => {
     spriteBox.direction.x = Math.cos(radAngle) * spriteBox.speed
     spriteBox.direction.y = Math.sin(radAngle) * spriteBox.speed
 }
 
-export const moveSpriteBoxWithRadian = (spriteBox: SpriteBoxInterface) => { 
+export const moveSpriteBoxWithRadian = (spriteBox: SpriteBoxInterface) => {
     spriteBox.direction.x = Math.cos(spriteBox.direction.radian) * spriteBox.speed
     spriteBox.direction.y = Math.sin(spriteBox.direction.radian) * spriteBox.speed
     spriteBox.x += spriteBox.direction.x
     spriteBox.y += spriteBox.direction.y
 }
 
-export const spriteBoxSetPositionByRotateInDegree = (
+export const spriteBoxSetDirectionAccordingOtherSpriteBoxRad = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => {
+    const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
+    const deltaY = spriteBoxTarget.y - spriteBoxToMove.y
+    const tan = deltaY / deltaX
+    if (deltaX > 0) spriteBoxToMove.direction.radian = (Math.atan(tan))
+    else spriteBoxToMove.direction.radian = (Math.atan(tan)) + Math.PI
+}
+
+export const spriteBoxSetRadianDirectionByAngle = (
     spriteBox: SpriteBoxInterface, degreeAngle: number
 ) => {
     spriteBox.direction.radian += (degreeAngle * Math.PI / 180)
 }
-export const spriteBoxSetDirectionAccordingOtherSpriteBoxRad = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => { 
-    const deltaX =  spriteBoxTarget.x -spriteBoxToMove.x  
-    const deltaY =   spriteBoxTarget.y - spriteBoxToMove.y
-    const tan = deltaY / deltaX
-    if ( deltaX > 0) spriteBoxToMove.direction.radian = (Math.atan(tan)) 
-    else spriteBoxToMove.direction.radian = (Math.atan(tan)) + Math.PI
+
+// -------------------------
+//  Direction by 10Degrees :
+// ------------------------
+
+export const DirectionIn10Degrees = {
+    Right: 0,
+    Down: 27,
+    Left: 18,
+    Up: 9,
+    DownRight: 35,
+    DownLeft: 23,
+    UpLeft: 14,
+    UpRight: 5
 }
+
+export const rotateSpriteBox10degreesRight = (spriteBox: SpriteBoxInterface) => {
+    LightDirection.add10Degrees(spriteBox)
+}
+
+export const rotateSpriteBox10degreesLeft = (spriteBox: SpriteBoxInterface) => {
+    LightDirection.remove10Degrees(spriteBox)
+}
+
+export const rotateSpriteBoxByX10Degrees = (spriteBox: SpriteBoxInterface, x10Degrees: number) => {
+    LightDirection.addX10Degrees(spriteBox, x10Degrees)
+}
+
+export const moveSpriteBoxAccording10DegreesDirection = (spriteBox: SpriteBoxInterface) => {
+    LightDirection.setXYby10DegreesAngle(spriteBox)
+    spriteBox.x += spriteBox.direction.x
+    spriteBox.y += spriteBox.direction.y
+}
+
+export const spriteBoxSetDirectionXYBy10DegreesAngle = (
+    spriteBox: SpriteBoxInterface, degreeAngle: number
+) => {
+    LightDirection.setXYby10DegreesAngleWithAngle(spriteBox, degreeAngle)
+}
+
+export const spriteBoxAddX10DegreesDirection = (
+    spriteBox: SpriteBoxInterface, degreeAngle: number
+) => {
+    spriteBox.direction.degree10 += ~~(36 + degreeAngle / 10) % 36
+}
+
+export const spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => {
+    const center = getCenterSpriteBox(spriteBoxTarget)
+    spriteBoxToMove.direction.degree10 = LightTrigonometry.getDirectionIn10degreesModeAccordingXYPointToReach(center.x, center.y)
+    LightDirection.setXYby10DegreesAngle(spriteBoxToMove)
+}
+
+// -------------------
+//  Direction by x/y :
+// ------------------
 
 export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
     spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface
@@ -123,6 +186,7 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBox = (
         }
     }
 }
+
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
     spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface
 ) => {
@@ -130,19 +194,19 @@ export const spriteBoxSetDirectionAccordingOtherSpriteBoxLite = (
         const deltaX = spriteBoxTarget.x - spriteBoxToMove.x
         const deltaY = spriteBoxTarget.y - spriteBoxToMove.y
 
-        const stepX = (deltaX /Math.abs(deltaX / spriteBoxToMove.speed))/20
-        if ( Math.abs(spriteBoxToMove.direction.x + ((deltaX / stepX)/20 )) < spriteBoxToMove.speed) {
-            spriteBoxToMove.direction.x += (deltaX / stepX)/20
-            spriteBoxToMove.x += (deltaX / stepX)/20}
+        const stepX = (deltaX / Math.abs(deltaX / spriteBoxToMove.speed)) / 20
+        if (Math.abs(spriteBoxToMove.direction.x + ((deltaX / stepX) / 20)) < spriteBoxToMove.speed) {
+            spriteBoxToMove.direction.x += (deltaX / stepX) / 20
+            spriteBoxToMove.x += (deltaX / stepX) / 20
+        }
 
-        const stepY = (deltaY /Math.abs(deltaY / spriteBoxToMove.speed))/20
-        if ( Math.abs(spriteBoxToMove.direction.y +  stepY) < spriteBoxToMove.speed) {
+        const stepY = (deltaY / Math.abs(deltaY / spriteBoxToMove.speed)) / 20
+        if (Math.abs(spriteBoxToMove.direction.y + stepY) < spriteBoxToMove.speed) {
             spriteBoxToMove.direction.y += stepY
             spriteBoxToMove.y += stepY
         }
     }
 }
-
 
 export const spriteBoxSetDirectionAccordingPoint = (
     spriteBoxA: SpriteBoxInterface, pointX: number, pointY: number

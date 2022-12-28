@@ -6,6 +6,7 @@ export const god = {
         h: 1,
         direction: {
             radian: 0,
+            degree10:0,
             x: 0,
             y: 0
         },

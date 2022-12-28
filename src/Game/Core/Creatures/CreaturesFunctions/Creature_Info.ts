@@ -1,4 +1,3 @@
-import { GameData } from "../../StartData/StartData";
 import { Creature } from '../Creature';
 
 export const creature_Info = (creature: Creature) => { 

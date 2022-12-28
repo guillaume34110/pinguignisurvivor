@@ -21,8 +21,9 @@ export interface GameData {
 }
 
 export class DirectionClass {
+    public radian:number = 0
     constructor(
-        public radian: number,
+        public degree10: number,
         public x: number,
         public y: number,
     ) {
@@ -36,6 +37,7 @@ export interface SpriteBoxInterface {
     h: number,
     direction: {
         radian: number,
+        degree10: number,
         x: number,
         y: number,
     },

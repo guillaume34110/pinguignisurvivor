@@ -40,7 +40,6 @@ export const lifeBarDrawPixi = (gameData: GameData, targetPixi: PIXI.Application
             rect.endFill();
             rect.lineStyle(1, 0x000000, 1);
             rect.drawRect(x, y, lifeBar.wMax, lifeBar.h);
-            targetPixi.stage.addChild(rect);
 
             const text = new PIXI.Text(creature.coordinate.toString(), {
                 fontSize: 20,
@@ -48,6 +47,7 @@ export const lifeBarDrawPixi = (gameData: GameData, targetPixi: PIXI.Application
             });
             text.x = x;
             text.y = y - 20;
+            targetPixi.stage.addChild(rect);
             targetPixi.stage.addChild(text);
         }
     }

@@ -15,6 +15,7 @@ const spriteBoxe: SpriteBox = {
     h: 16,
     direction: {
         radian: 0,
+        degree10:0,
         x: 0.1,
         y: 0.1
     },
