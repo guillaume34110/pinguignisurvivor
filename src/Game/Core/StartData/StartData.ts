@@ -158,6 +158,6 @@ export const startData: GameData = {
     mapBlocks: [
        
     ], message : "",
-    howMuchTiles :5000 ,
-    howMuchTilesOnLine : 50
+    howMuchTiles :500 ,
+    howMuchTilesOnLine : 20
 }

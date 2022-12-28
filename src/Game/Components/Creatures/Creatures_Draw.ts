@@ -1,5 +1,6 @@
 import { GameData, Sprite } from '../../Core/StartData/StartData';
-import { animationEnemies, isOnScreen } from "../Game";
+import { animationEnemies } from "../Game";
+import { isOnScreen } from "../GamePixi";
 import { selectImg, selectImgPixi } from "./CreaturesSprites";
 
 import * as PIXI from 'pixi.js'

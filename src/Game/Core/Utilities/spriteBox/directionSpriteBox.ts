@@ -1,7 +1,6 @@
 import { SpriteBoxInterface } from "../../StartData/StartData";
 import { LightDirection } from "../ourTrigonometry/LightDirection";
 import { LightTrigonometry } from "../ourTrigonometry/LightTrigo";
-import { getCenterSpriteBox } from "./positionSpriteBox";
 
 export enum DirectionEnum {
     Right,
@@ -153,10 +152,12 @@ export const spriteBoxAddX10DegreesDirection = (
     spriteBox.direction.degree10 += ~~(36 + degreeAngle / 10) % 36
 }
 
+let x = 0 
+let y = 0 
 export const spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees = (spriteBoxToMove: SpriteBoxInterface, spriteBoxTarget: SpriteBoxInterface) => {
-    const center = getCenterSpriteBox(spriteBoxTarget)
-    spriteBoxToMove.direction.degree10 = LightTrigonometry.getDirectionIn10degreesModeAccordingXYPointToReach(center.x, center.y)
-    LightDirection.setXYby10DegreesAngle(spriteBoxToMove)
+    x =  spriteBoxTarget.x-spriteBoxToMove.x
+    y = spriteBoxTarget.y - spriteBoxToMove.y 
+    spriteBoxToMove.direction.degree10 = LightTrigonometry.getDirectionIn10degreesModeAccordingXYPointToReach(x, y)
 }
 
 // -------------------

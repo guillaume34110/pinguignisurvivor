@@ -1,6 +1,6 @@
 import { LifeBar, CreatureSex, Creature } from '../../Core/Creatures/Creature';
 import { GameData } from '../../Core/StartData/StartData';
-import { isOnScreen } from "../Game";
+import { isOnScreen } from "../GamePixi";
 
 import * as PIXI from 'pixi.js'
 

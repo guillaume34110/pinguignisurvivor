@@ -1,5 +1,5 @@
-import { isOnScreen } from "../Game";
-import { GameData, HitBox } from '../../Core/StartData/StartData';
+import { isOnScreen } from  "../GamePixi";
+import { GameData, HitBox, SensorType } from '../../Core/StartData/StartData';
 
 import * as PIXI from 'pixi.js'
 
@@ -26,9 +26,10 @@ export const hitBoxRefresh = (gameData: GameData, targetGl: CanvasRenderingConte
     /*sensors*/
     gameData.creatures.forEach((creature) => {
         creature.sensors.sensors.forEach(sensor => {
-
-            const newBox: HitBox = { x: sensor.x, y: sensor.y, w: sensor.w, h: sensor.h }
-            if (sensor.flag === false)
+                  const newBox: HitBox = { x: sensor.x, y: sensor.y, w: sensor.w, h: sensor.h }
+          
+      
+             if  (sensor.flag === false)
                 drawHitBox(newBox, "hsla(116,100%,50%,0.3)", 'red')
             else
                 drawHitBox(newBox, "red", 'red')
@@ -74,13 +75,16 @@ export const hitBoxRefreshPixi = (gameData: GameData, target: PIXI.Application) 
     gameData.creatures.forEach((creature) => {
         creature.sensors.sensors.forEach(sensor => {
             const newBox: HitBox = { x: sensor.x, y: sensor.y, w: sensor.w, h: sensor.h }
-            if (sensor.flag === false)
+            if (creature.hunting === true && sensor.type === SensorType.Hunt){
+                drawHitBox(newBox, 0x55d134, 0xff0000)
+            }
+            else if (sensor.flag === false)
                 drawHitBox(newBox, 0x29d134, 0xff0000)
             else
                 drawHitBox(newBox, 0xB30000, 0xff0000)
         })
     })
-    gameData.items.forEach((hitBox) => {
-        drawHitBox(hitBox.hitBox, 0x4e2a04, 0xffa500)
+    gameData.items.forEach((item) => {
+        drawHitBox(item.hitBox, 0x4e2a04, 0xffa500)
     })
 }

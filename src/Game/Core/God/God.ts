@@ -8,5 +8,5 @@ export interface God {
     xpToReach: number,
     xpTotal:number
     level: number,
-
+    speed : number
 }

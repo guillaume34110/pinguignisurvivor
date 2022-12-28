@@ -1,5 +1,5 @@
 import { GameData } from '../../Core/StartData/StartData';
-import { isOnScreen } from '../Game';
+import { isOnScreen } from '../GamePixi';
 import { selectImg, selectTexture } from './MapBoxSprites';
 
 import * as PIXI from 'pixi.js'

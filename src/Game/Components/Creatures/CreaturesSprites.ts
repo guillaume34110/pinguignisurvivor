@@ -1,6 +1,8 @@
 import rabbitFront from "../../Assets/pinguiny/rabbit.png";
 import rabbitBack from "../../Assets/pinguiny/rabbit-back.png"
 import rabbitLat from "../../Assets/pinguiny/rabbit-lateral.png"
+import rabbitLeft from "../../Assets/pinguiny/rabbit-left.png"
+import rabbitRight from "../../Assets/pinguiny/rabbit-right.png"
 import batFront from "../../Assets/pinguiny/bat-front.png"
 import batBack from "../../Assets/pinguiny/bat-back.png"
 import batLat from "../../Assets/pinguiny/bat-lateral.png"
@@ -57,7 +59,8 @@ export const selectImg = (sprite: CreaturesSprite ): HTMLImageElement => {
 
 const rabbitFrontTexture = PIXI.Texture.from(rabbitFront);
 const rabbitBackTexture = PIXI.Texture.from(rabbitBack);
-const rabbitLatTexture = PIXI.Texture.from(rabbitLat);
+const rabbitRightTexture = PIXI.Texture.from(rabbitLeft);
+const rabbitLeftTexture = PIXI.Texture.from(rabbitRight);
 
 const batFrontTexture = PIXI.Texture.from(batFront);
 const batBackTexture = PIXI.Texture.from(batBack);
@@ -71,8 +74,8 @@ const mouseLeftTexture = PIXI.Texture.from(mouseLeft);
 export const selectImgPixi = (sprite: CreaturesSprite ): PIXI.Texture => {
     if (sprite === CreaturesSprite.rabbitFront) return rabbitFrontTexture
     else if (sprite === CreaturesSprite.rabbitBack) return rabbitBackTexture
-    else if (sprite === CreaturesSprite.rabbitLeft) return rabbitLatTexture
-    else if (sprite === CreaturesSprite.rabbitRight) return rabbitLatTexture
+    else if (sprite === CreaturesSprite.rabbitLeft) return rabbitLeftTexture
+    else if (sprite === CreaturesSprite.rabbitRight) return rabbitRightTexture
     else if (sprite === CreaturesSprite.batFront) return batFrontTexture
     else if (sprite === CreaturesSprite.batBack) return batBackTexture
     else if (sprite === CreaturesSprite.batLeft) return batLatTexture

@@ -9,7 +9,14 @@ import { updateCore } from "../Core/update/Update";
 import { draw, drawPixi } from './DrawUpdate';
 import * as PIXI from 'pixi.js'
 
-
+import { settings } from 'pixi.js';
+/*pixi config */
+settings.RESOLUTION = window.devicePixelRatio;
+settings.ROUND_PIXELS = true
+settings.RENDER_OPTIONS.preserveDrawingBuffer = true
+settings.RENDER_OPTIONS.antialias = true
+settings.RENDER_OPTIONS.autoDensity = true 
+settings.STRICT_TEXTURE_CACHE = true
 let coreInterval: NodeJS.Timer
 const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
@@ -30,7 +37,6 @@ export const GamePixi = () => {
         if (targetGl !== null && targetGl !== undefined) {
             frameInit(gameData, targetGl)
             drawPixi(gameData, targetGl)
-
         }
         window.requestAnimationFrame(drawLoop)
     }
@@ -61,17 +67,15 @@ export const GamePixi = () => {
     }
 
     const zoom = (e: WheelEvent) => {
-        let currentZoom = 1
+        if (zoomFactor <= 0.4 ) zoomFactor =0.45
+        if (zoomFactor >= 1.6) zoomFactor = 1.55
         console.log(zoomFactor);
-        if (e.deltaY > 0 && zoomFactor < 20) {
-            currentZoom = 0.9
-            zoomFactor ++ 
-        }
-        else if(e.deltaY < 0 && zoomFactor > -20){
-             currentZoom = 1.111111
-             zoomFactor -- 
+         if(  zoomFactor > 0.4 &&  zoomFactor < 1.6){   
+            if(e.deltaY > 0)zoomFactor -= 0.05
+             else zoomFactor += 0.05
             }
-       targetEnemy?.stage.scale.set(currentZoom, currentZoom)
+       targetEnemy?.stage.scale.set(zoomFactor, zoomFactor)
+       gameData.god.spriteBox.speed = gameData.god.speed * (1/zoomFactor)
     }
     /*Listeners*/
 
@@ -94,8 +98,8 @@ export const GamePixi = () => {
         eventListeners()
         gameData = JSON.parse(JSON.stringify(startData))
         initCore(gameData)
+         coreInterval = setInterval(mainLoop, timeInterval);
         drawInit()
-        coreInterval = setInterval(mainLoop, timeInterval);
         window.requestAnimationFrame(drawLoop)
         scaling()
         // return () => {
@@ -112,64 +116,9 @@ export const GamePixi = () => {
 }
 
 export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
-    if (zoomFactor> 0){
-    if (spriteBox.x < (hero.spriteBox.x + (700*(zoomFactor))) && spriteBox.x > (hero.spriteBox.x - (700*(zoomFactor)))
-        && spriteBox.y < (hero.spriteBox.y + (500*(zoomFactor))) && spriteBox.y > (hero.spriteBox.y - (500*(zoomFactor)))) {
-        return true
-    } else return false}
-    else {
-       
-        if (spriteBox.x < (hero.spriteBox.x + (700)) && spriteBox.x > (hero.spriteBox.x - (700))
-        && spriteBox.y < (hero.spriteBox.y + (500)) && spriteBox.y > (hero.spriteBox.y - (500))) {
+    if (spriteBox.x < (hero.spriteBox.x  + 1200*(1/zoomFactor)) && spriteBox.x > (hero.spriteBox.x  - 1200*(1/zoomFactor))
+        && spriteBox.y < (hero.spriteBox.y + 800*(1/zoomFactor)) && spriteBox.y > (hero.spriteBox.y - 800*(1/zoomFactor))) {
         return true
     } else return false
-    }
 }
 
-export const animation4Frames = (w: number): number => {
-    if (frame <= 15) {
-        return w
-    } else if (frame <= 30) {
-        return 2 * w
-    } else if (frame <= 45) {
-        return 3 * w
-    } else if (frame <= 60) {
-        return 0
-    } else return 0
-}
-
-
-export const animationEnemies = (w: number, enemy: Creature): number => {
-
-    if (enemy.id % 2 === 0) {
-        if (frame <= Math.random() * 10) {
-            return w
-        } else if (frame <= 10 + Math.random() * 10) {
-            return 2 * w
-        } else if (frame <= 30 + Math.random() * 10) {
-            return 3 * w
-        } else if (frame <= 50 + Math.random() * 10) {
-            return 0
-        } else return 0
-    } else if (enemy.id % 3 === 0) {
-        if (frame <= Math.random() * 10) {
-            return 2 * w
-        } else if (frame <= 10 + Math.random() * 10) {
-            return 3 * w
-        } else if (frame <= 30 + Math.random() * 10) {
-            return 0
-        } else if (frame <= 50 + Math.random() * 10) {
-            return w
-        } else return w
-    } else {
-        if (frame <= Math.random() * 10) {
-            return 0
-        } else if (frame <= 10 + Math.random() * 10) {
-            return w
-        } else if (frame <= 30 + Math.random() * 10) {
-            return 2 * w
-        } else if (frame <= 50 + Math.random() * 10) {
-            return 3 * w
-        } else return 3 * w
-    }
-}

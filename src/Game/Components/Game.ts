@@ -119,7 +119,7 @@ export const Game = () => {
     }
 }
 
-export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
+/*export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
     if (zoomFactor> 0){
     if (spriteBox.x < (hero.spriteBox.x + (700*(zoomFactor))) && spriteBox.x > (hero.spriteBox.x - (700*(zoomFactor)))
         && spriteBox.y < (hero.spriteBox.y + (500*(zoomFactor))) && spriteBox.y > (hero.spriteBox.y - (500*(zoomFactor)))) {
@@ -132,7 +132,7 @@ export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | L
         return true
     } else return false
     }
-}
+}*/
 
 export const animation4Frames = (w: number): number => {
     if (frame <= 15) {

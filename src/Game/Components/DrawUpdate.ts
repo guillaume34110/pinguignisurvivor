@@ -12,16 +12,16 @@ export const draw = (gameData:GameData , targetGl : CanvasRenderingContext2D ) =
     items_Refresh(gameData, targetGl)
     creatures_Refresh(gameData, targetGl)
     hud_Refresh(gameData, targetGl)
-    hitBoxRefresh(gameData, targetGl)
-    lifeBarDraw(gameData, targetGl)
+   // hitBoxRefresh(gameData, targetGl)
+    //lifeBarDraw(gameData, targetGl)
 }
 
 export const drawPixi = (gameData:GameData, targetPixi:PIXI.Application ) =>{
     mapBlocksRefreshPixi(gameData, targetPixi)
     items_RefreshPixi(gameData, targetPixi)
     creatures_RefreshPixi(gameData, targetPixi)
-    hud_RefreshPixi(gameData, targetPixi)
+   // hud_RefreshPixi(gameData, targetPixi)
    // hitBoxRefreshPixi(gameData, targetPixi)
-   // lifeBarDrawPixi(gameData, targetPixi)/**/
+    //lifeBarDrawPixi(gameData, targetPixi)/**/
 
 }

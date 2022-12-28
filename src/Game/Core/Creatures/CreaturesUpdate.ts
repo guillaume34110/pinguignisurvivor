@@ -196,6 +196,10 @@ export const creaturesUpdate2 = (gameData: GameData) => {
                 for (let it = 0; it < slicedArrays.items[sensor.coordinate].length; it++) {
                     const item = slicedArrays.items[sensor.coordinate][it]
                     creature_sensorSetCollisionFlagWithItems(creature, sensor, item)
+                   
+                }
+                for (let it = 0; it < gameData.items.length; it++) {
+                    const item = gameData.items[it]
                     creatures_Hunt(creature, sensor, item)
                 }
 
