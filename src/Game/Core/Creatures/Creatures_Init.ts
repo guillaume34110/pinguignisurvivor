@@ -5,7 +5,7 @@ import { rabbit } from './CreaturesTypes/Rabbit';
 import { setCoordinateIndexPosition } from "../Utilities/coordinate/Coordinate";
 
 export const Creatures_Init = (gameData: GameData) => {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 400; i++) {
         gameData.creatures.push(JSON.parse(JSON.stringify(mouse)) )
         const lastMouse = gameData.creatures[gameData.creatures.length - 1]
         lastMouse.spriteBox.x = (200 * Math.random() * 3) + 500
@@ -15,7 +15,7 @@ export const Creatures_Init = (gameData: GameData) => {
         lastMouse.id = i
         lastMouse.coordinate = setCoordinateIndexPosition(lastMouse.spriteBox , gameData)
     }
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 400; i++) {
         gameData.creatures.push(JSON.parse(JSON.stringify(rabbit)) )
         const lastRabbit = gameData.creatures[gameData.creatures.length - 1]
         lastRabbit.spriteBox.x = (200 * Math.random() * 3) + 500
