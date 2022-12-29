@@ -1,6 +1,5 @@
 import {keydownController} from "../../KeysInputs/keys"
 import {GameData, startData} from "../../StartData/StartData"
-import { binarySearch } from "../../Utilities/search/BinarySearch";
 import {god_Move} from "./God_Move";
 
 const given = describe

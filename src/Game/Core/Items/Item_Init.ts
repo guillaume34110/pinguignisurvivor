@@ -1,6 +1,6 @@
 import { MapBlockType } from "../MapBlocks/MapBlock";
 import { GameData } from "../StartData/StartData";
-import { setCoordinateIndexPosition } from "../Utilities/coordinate/Coordinate";
+import { setCoordinateIndexPosition } from "../Utilities/Coordinate/Coordinate";
 import { rock } from "./ItemsTypes/Rock";
 import { seeds } from './ItemsTypes/Seeds';
 

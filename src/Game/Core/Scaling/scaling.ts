@@ -8,8 +8,8 @@ export const scaling = () => {
         scaleFactor = height / 760;
     }
 
-    const gameContainer: HTMLDivElement | null = document.querySelector(".game")
-    const appContainer: HTMLDivElement | null = document.querySelector(".App")
+    const gameContainer: HTMLCanvasElement | null = document.querySelector("canvas")
+    const appContainer: HTMLBodyElement | null = document.querySelector("#root")
     if (gameContainer) gameContainer.style.transform = "scale(" + scaleFactor + ")";
     if (appContainer) appContainer.style.height = height + "px";
 };

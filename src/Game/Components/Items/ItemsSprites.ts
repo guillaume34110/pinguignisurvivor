@@ -24,8 +24,10 @@ const seedsPixi = PIXI.Texture.from(seedsPng)
 const rockPixi = PIXI.Texture.from(rockPng)
 
 export const selectImgPixi = (sprite:ItemSprite): PIXI.Texture => {
-    if (sprite === ItemSprite.Seeds ) return seedsPixi
-    if (sprite === ItemSprite.Rock) return rockPixi
-    else return PIXI.Texture.WHITE
+    switch(sprite) {
+        case ItemSprite.Seeds : return seedsPixi
+        case ItemSprite.Rock : return rockPixi
+        default : return PIXI.Texture.WHITE
+    }
 }
 

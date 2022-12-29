@@ -1,5 +1,5 @@
 import { Creature } from '../Creature';
-import { moveSpriteBoxAccording10DegreesDirection, moveSpriteBoxWithRadian, rotateSpriteBox10degreesLeft, rotateSpriteBox10degreesRight, rotateSpriteBoxByX10Degrees } from '../../Utilities/spriteBox/directionSpriteBox';
+import { moveSpriteBoxAccording10DegreesDirection,  rotateSpriteBox10degreesLeft, rotateSpriteBox10degreesRight, rotateSpriteBoxByX10Degrees } from '../../Utilities/SpriteBox/DirectionSpriteBox';
 
 export const creatures_Move = (creature: Creature) => {
 
@@ -13,12 +13,7 @@ export const creatures_Move = (creature: Creature) => {
     moveSpriteBoxAccording10DegreesDirection(creature.spriteBox)
 
 }
-export const creatures_MoveOld = (creature: Creature) => {
 
-    creature.spriteBox.direction.radian += (Math.random() - 0.5) / 10
-    moveSpriteBoxWithRadian(creature.spriteBox)
-
-}
 
 export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
 

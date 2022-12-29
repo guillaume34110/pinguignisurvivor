@@ -1,4 +1,4 @@
-import { creaturesUpdate, creaturesUpdate2, creaturesUpdate_ChristmasPanettone } from "../Creatures/CreaturesUpdate";
+import {  creaturesUpdate_ChristmasPanettone } from "../Creatures/CreaturesUpdate";
 import { godUpdate } from "../God/GodUpdate";
 import {itemUpdate} from "../Items/ItemUpdate";
 import {mapBlocksUpdate} from "../MapBlocks/MapBlocksUpdate";

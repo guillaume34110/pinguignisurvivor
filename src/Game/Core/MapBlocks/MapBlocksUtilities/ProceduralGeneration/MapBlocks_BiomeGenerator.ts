@@ -141,14 +141,24 @@ const HoleFilling = (mapBlockTable: MapBlock[], mapBlockGeneric: MapBlock, lineS
 const determinationNextPosition = (positions: SeedPositions, mapBlockTable: MapBlock[], mapBlockGeneric: MapBlock,): number => {
 
     const positionDetermination = (): number => {
-        if (positions.random < 0.25 && mapBlockTable[positions.left]?.type === MapBlockType.emptyGround) return positions.left
-        else if (positions.random < 0.5 && mapBlockTable[positions.right]?.type === MapBlockType.emptyGround) return positions.right
-        else if (positions.random < 0.75 && mapBlockTable[positions.top]?.type === MapBlockType.emptyGround) return positions.top
-        else if (mapBlockTable[positions.bottom]?.type === MapBlockType.emptyGround) return positions.bottom
-        else if (mapBlockTable[positions.left]?.type === MapBlockType.emptyGround) return positions.left
-        else if (mapBlockTable[positions.right]?.type === MapBlockType.emptyGround) return positions.right
-        else if (mapBlockTable[positions.top]?.type === MapBlockType.emptyGround) return positions.top
-        else return positions.bottom
+        switch (true) {
+            case (positions.random < 0.25 && mapBlockTable[positions.left]?.type === MapBlockType.emptyGround):
+                return positions.left;
+            case (positions.random < 0.5 && mapBlockTable[positions.right]?.type === MapBlockType.emptyGround):
+                return positions.right;
+            case (positions.random < 0.75 && mapBlockTable[positions.top]?.type === MapBlockType.emptyGround):
+                return positions.top;
+            case (mapBlockTable[positions.bottom]?.type === MapBlockType.emptyGround):
+                return positions.bottom;
+            case (mapBlockTable[positions.left]?.type === MapBlockType.emptyGround):
+                return positions.left;
+            case (mapBlockTable[positions.right]?.type === MapBlockType.emptyGround):
+                return positions.right;
+            case (mapBlockTable[positions.top]?.type === MapBlockType.emptyGround):
+                return positions.top;
+            default:
+                return positions.bottom;
+        }
     }
     const newPosition: number = positionDetermination()
     if (mapBlockTable[newPosition]?.type === MapBlockType.emptyGround) {

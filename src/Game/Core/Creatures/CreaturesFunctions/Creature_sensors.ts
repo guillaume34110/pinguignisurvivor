@@ -1,12 +1,12 @@
 import {  Sensor, SensorType } from "../../StartData/StartData"
-import { getCenterSpriteBox } from "../../Utilities/spriteBox/positionSpriteBox"
+import { getCenterSpriteBox } from "../../Utilities/SpriteBox/PositionSpriteBox"
 import { Creature } from "../Creature"
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
-import { spriteBoxAddX10DegreesDirection } from "../../Utilities/spriteBox/directionSpriteBox";
+import { spriteBoxAddX10DegreesDirection } from "../../Utilities/SpriteBox/DirectionSpriteBox";
 import { Item, ItemType } from "../../Items/Item";
 import { MapBlock } from "../../MapBlocks/MapBlock";
 import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
-import { LightTrigonometry } from "../../Utilities/ourTrigonometry/LightTrigo";
+import { LightTrigonometry } from "../../Utilities/OurTrigonometry/LightTrigo";
 
 export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
         if (mapBlock.type === mapBlocksGeneric.spaceBorder.type) {
@@ -32,9 +32,17 @@ export const creature_sensorSetCollisionFlagWithItems = (creature: Creature, sen
 
 
 export const creature_TurnOnCollision = (creature: Creature) => {
-    if (creature.sensorsFlags.flagLeft && creature.sensorsFlags.flagRight) spriteBoxAddX10DegreesDirection(creature.spriteBox, 50)
-    else if (creature.sensorsFlags.flagLeft) spriteBoxAddX10DegreesDirection(creature.spriteBox, 10)
-    else if (creature.sensorsFlags.flagRight) spriteBoxAddX10DegreesDirection(creature.spriteBox, -10)
+    switch (true) {
+        case creature.sensorsFlags.flagLeft && creature.sensorsFlags.flagRight:
+            spriteBoxAddX10DegreesDirection(creature.spriteBox, 50);
+            break;
+        case creature.sensorsFlags.flagLeft:
+            spriteBoxAddX10DegreesDirection(creature.spriteBox, 10);
+            break;
+        case creature.sensorsFlags.flagRight:
+            spriteBoxAddX10DegreesDirection(creature.spriteBox, -10);
+            break;
+    }
 }
 
 export const creature_updateSensorsPosition = (creature: Creature, sensor: Sensor) => {

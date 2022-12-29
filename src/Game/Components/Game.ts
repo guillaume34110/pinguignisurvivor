@@ -6,39 +6,39 @@ import { God } from "../Core/God/God";
 import { Creature, LifeBar } from "../Core/Creatures/Creature";
 import { initCore } from "../Core/init/init";
 import { updateCore } from "../Core/update/Update";
-import { draw } from "./DrawUpdate";
+import { draw } from './DrawUpdate';
+import * as PIXI from 'pixi.js'
 
-
+import { settings } from 'pixi.js';
+/*pixi config */
+settings.RESOLUTION = window.devicePixelRatio;
+settings.ROUND_PIXELS = true
+settings.RENDER_OPTIONS.preserveDrawingBuffer = true
+settings.RENDER_OPTIONS.antialias = true
+settings.RENDER_OPTIONS.autoDensity = true 
+settings.STRICT_TEXTURE_CACHE = true
 let coreInterval: NodeJS.Timer
 const timeInterval = 16
 let gameData: GameData = JSON.parse(JSON.stringify(startData))
 let componentInitState = true
+let targetEnemy: PIXI.Application | null = null
 export let frame = 0
 let zoomFactor = 1
 
+/* * * ChristmassPanettone version :) * * * */
+
 export const Game = () => {
 
-    const gameHtml = `
-        <div class="game">
-         ${'' //  ${Hud()}  
-        }
-            <div class="camera">
-                <canvas  width="12800" height="7200" class="scene" >
-                </canvas>
-            </div>
-        </div>
-   `
+   
     const mainLoop = () => {
         updateCore(gameData)
     }
 
     const drawLoop = () => {
-        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
-        const targetGl = targetEnemy?.getContext('2d')
+        const targetGl = targetEnemy;
         if (targetGl !== null && targetGl !== undefined) {
             frameInit(gameData, targetGl)
             draw(gameData, targetGl)
-
         }
         window.requestAnimationFrame(drawLoop)
     }
@@ -47,10 +47,15 @@ export const Game = () => {
 
         const html = document.querySelector('#root')
         if (html !== null)
-            html.innerHTML = gameHtml
-        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
-        const targetGl = targetEnemy?.getContext('2d')
-        targetGl?.scale(1, 1)
+       targetEnemy  = new PIXI.Application({
+            width: 1280,
+            height: 720,
+            antialias: true
+        });
+        //@ts-ignore
+        html?.appendChild(targetEnemy.view);
+        const targetGl = targetEnemy?.stage;
+        targetGl?.scale.set(1, 1)
 
     }
 
@@ -64,20 +69,15 @@ export const Game = () => {
     }
 
     const zoom = (e: WheelEvent) => {
-        let currentZoom = 1
+        if (zoomFactor <= 0.4 ) zoomFactor =0.45
+        if (zoomFactor >= 1.6) zoomFactor = 1.55
         console.log(zoomFactor);
-        if (e.deltaY > 0 && zoomFactor < 20) {
-            currentZoom = 0.9
-            zoomFactor ++ 
-        }
-        else if(e.deltaY < 0 && zoomFactor > -20){
-             currentZoom = 1.111111
-             zoomFactor -- 
+         if(  zoomFactor > 0.4 &&  zoomFactor < 1.6){   
+            if(e.deltaY > 0)zoomFactor -= 0.05
+             else zoomFactor += 0.05
             }
-       
-        const targetEnemy: HTMLCanvasElement | null = document.querySelector('.scene')
-        const targetGl = targetEnemy?.getContext('2d')
-        targetGl?.scale(currentZoom, currentZoom)
+       targetEnemy?.stage.scale.set(zoomFactor, zoomFactor)
+       gameData.god.spriteBox.speed = gameData.god.speed * (1/zoomFactor)
     }
     /*Listeners*/
 
@@ -88,20 +88,14 @@ export const Game = () => {
         window.addEventListener("resize", scaling);
     };
 
-    const removeEventListeners = () => {
-        document.removeEventListener("keydown", keydown);
-        document.removeEventListener("keyup", keyup);
-        window.removeEventListener("resize", scaling);
-    };
-
     /*Initialization*/
 
     const componentInit = () => {
         eventListeners()
         gameData = JSON.parse(JSON.stringify(startData))
         initCore(gameData)
+         coreInterval = setInterval(mainLoop, timeInterval);
         drawInit()
-        coreInterval = setInterval(mainLoop, timeInterval);
         window.requestAnimationFrame(drawLoop)
         scaling()
         // return () => {
@@ -110,31 +104,21 @@ export const Game = () => {
         // }
     }
     if (componentInitState) componentInit()
-    const frameInit = (gameData: GameData, targetGl: CanvasRenderingContext2D) => {
+    const frameInit = (gameData: GameData, targetGl: PIXI.Application) => {
         if (frame < 60) frame++
         else frame = 0
-        targetGl.imageSmoothingEnabled = false
-        targetGl.clearRect(0, 0, 14000, 10000)
-
+        targetGl.stage.removeChildren();
     }
 }
 
-/*export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
-    if (zoomFactor> 0){
-    if (spriteBox.x < (hero.spriteBox.x + (700*(zoomFactor))) && spriteBox.x > (hero.spriteBox.x - (700*(zoomFactor)))
-        && spriteBox.y < (hero.spriteBox.y + (500*(zoomFactor))) && spriteBox.y > (hero.spriteBox.y - (500*(zoomFactor)))) {
-        return true
-    } else return false}
-    else {
-       
-        if (spriteBox.x < (hero.spriteBox.x + (700)) && spriteBox.x > (hero.spriteBox.x - (700))
-        && spriteBox.y < (hero.spriteBox.y + (500)) && spriteBox.y > (hero.spriteBox.y - (500))) {
+export const isOnScreen = (hero: God, spriteBox: SpriteBoxInterface | HitBox | LifeBar): Boolean => {
+    if (spriteBox.x < (hero.spriteBox.x  + 1200*(1/zoomFactor)) && spriteBox.x > (hero.spriteBox.x  - 1200*(1/zoomFactor))
+        && spriteBox.y < (hero.spriteBox.y + 800*(1/zoomFactor)) && spriteBox.y > (hero.spriteBox.y - 800*(1/zoomFactor))) {
         return true
     } else return false
-    }
-}*/
+}
 
-export const animation4Frames = (w: number): number => {
+export const animation4FramesOLD = (w: number): number => {
     if (frame <= 15) {
         return w
     } else if (frame <= 30) {
@@ -145,7 +129,20 @@ export const animation4Frames = (w: number): number => {
         return 0
     } else return 0
 }
-
+export const animation4Frames = (w: number): number => {
+    switch (true) {
+        case frame <= 15:
+            return w
+        case frame <= 30:
+            return 2 * w
+        case frame <= 45:
+            return 3 * w
+        case frame <= 60:
+            return 0
+        default:
+            return 0
+    }
+}
 
 export const animationEnemies = (w: number, enemy: Creature): number => {
 

@@ -19,58 +19,10 @@ import mouseMaleBack from "../../Assets/pinguiny/mouse-male-back.png"
 import mouseMaleLat from "../../Assets/pinguiny/mouse-male-right.png"
 import mouseMaleLeft from "../../Assets/pinguiny/mouse-male-left.png"
 import { CreaturesSprite } from "../../Core/Creatures/CreaturesSprite";
-import { scaling } from '../../Core/Scaling/scaling';
 
 import * as PIXI from 'pixi.js'
 import { CreatureSex } from '../../Core/Creatures/Creature';
-import { invert } from "../Utils/PngColorInverter";
-const image = new Image()
 
-const rabbitFrontImage = new Image()
-rabbitFrontImage.src = rabbitFront
-const rabbitBackImage = new Image()
-rabbitBackImage.src = rabbitBack
-const rabbitLatImage = new Image()
-rabbitLatImage.src = rabbitLat
-
-
-
-
-
-
-const batFrontImage = new Image()
-batFrontImage.src = batFront
-const batBackImage = new Image()
-batBackImage.src = batBack
-const batLatImage = new Image()
-batLatImage.src = batLat
-
-const mouseFrontImage = new Image()
-mouseFrontImage.src = mouseFront
-const mouseBackImage = new Image()
-mouseBackImage.src = mouseBack
-const mouseRightImage = new Image()
-mouseRightImage.src = mouseLat
-const mouseLeftImage = new Image()
-mouseLeftImage.src = mouseLeft
-
-export const selectImg = (sprite: CreaturesSprite): HTMLImageElement => {
-    if (sprite === CreaturesSprite.rabbitFront) return rabbitFrontImage
-    else if (sprite === CreaturesSprite.rabbitBack) return rabbitBackImage
-    else if (sprite === CreaturesSprite.rabbitLeft) return rabbitLatImage
-    else if (sprite === CreaturesSprite.rabbitRight) return rabbitLatImage
-    else if (sprite === CreaturesSprite.batFront) return batFrontImage
-    else if (sprite === CreaturesSprite.batBack) return batBackImage
-    else if (sprite === CreaturesSprite.batLeft) return batLatImage
-    else if (sprite === CreaturesSprite.batRight) return batLatImage
-    else if (sprite === CreaturesSprite.mouseFront) return mouseFrontImage
-    else if (sprite === CreaturesSprite.mouseBack) return mouseBackImage
-    else if (sprite === CreaturesSprite.mouseLeft) return mouseLeftImage
-    else if (sprite === CreaturesSprite.mouseRight) return mouseRightImage
-
-    else return image
-}
-//pixi
 
 const rabbitFrontTexture = PIXI.Texture.from(rabbitFront);
 const rabbitBackTexture = PIXI.Texture.from(rabbitBack);
@@ -98,38 +50,43 @@ const mouseMaleLeftTexture = PIXI.Texture.from(mouseMaleLeft);
 
 
 export const selectImgPixi = (sprite: CreaturesSprite, sex: CreatureSex): PIXI.Texture => {
-    if (sex === CreatureSex.Female) {
-
-        if (sprite === CreaturesSprite.rabbitFront) return rabbitFrontTexture
-        else if (sprite === CreaturesSprite.rabbitBack) return rabbitBackTexture
-        else if (sprite === CreaturesSprite.rabbitLeft) return rabbitLeftTexture
-        else if (sprite === CreaturesSprite.rabbitRight) return rabbitRightTexture
-        else if (sprite === CreaturesSprite.batFront) return batFrontTexture
-        else if (sprite === CreaturesSprite.batBack) return batBackTexture
-        else if (sprite === CreaturesSprite.batLeft) return batLatTexture
-        else if (sprite === CreaturesSprite.batRight) return batLatTexture
-        else if (sprite === CreaturesSprite.mouseFront) return mouseFrontTexture
-        else if (sprite === CreaturesSprite.mouseBack) return mouseBackTexture
-        else if (sprite === CreaturesSprite.mouseLeft) return mouseLeftTexture
-        else if (sprite === CreaturesSprite.mouseRight) return mouseRightTexture
-
-        else return PIXI.Texture.EMPTY;
+ 
+        switch (sex) {
+            case CreatureSex.Female:
+                switch (sprite) {
+                    case CreaturesSprite.rabbitFront: return rabbitFrontTexture
+                    case CreaturesSprite.rabbitBack: return rabbitBackTexture
+                    case CreaturesSprite.rabbitLeft: return rabbitLeftTexture
+                    case CreaturesSprite.rabbitRight: return rabbitRightTexture
+                    case CreaturesSprite.batFront: return batFrontTexture
+                    case CreaturesSprite.batBack: return batBackTexture
+                    case CreaturesSprite.batLeft: return batLatTexture
+                    case CreaturesSprite.batRight: return batLatTexture
+                    case CreaturesSprite.mouseFront: return mouseFrontTexture
+                    case CreaturesSprite.mouseBack: return mouseBackTexture
+                    case CreaturesSprite.mouseLeft: return mouseLeftTexture
+                    case CreaturesSprite.mouseRight: return mouseRightTexture
+                    default: return PIXI.Texture.EMPTY
+                }
+            case CreatureSex.Male:
+                switch (sprite) {
+                    case CreaturesSprite.rabbitFront: return rabbitMaleFrontTexture
+                    case CreaturesSprite.rabbitBack: return rabbitMaleBackTexture
+                    case CreaturesSprite.rabbitLeft: return rabbitMaleLeftTexture
+                    case CreaturesSprite.rabbitRight: return rabbitMaleRightTexture
+                    case CreaturesSprite.batFront: return batFrontTexture
+                    case CreaturesSprite.batBack: return batBackTexture
+                    case CreaturesSprite.batLeft: return batLatTexture
+                    case CreaturesSprite.batRight: return batLatTexture
+                    case CreaturesSprite.mouseFront: return mouseMaleFrontTexture
+                    case CreaturesSprite.mouseBack: return mouseMaleBackTexture
+                    case CreaturesSprite.mouseLeft: return mouseMaleLeftTexture
+                    case CreaturesSprite.mouseRight: return mouseMaleRightTexture
+                    default: return PIXI.Texture.EMPTY
+                }
+            default: return PIXI.Texture.EMPTY
+        }
     }
-    else {
-        
-        if (sprite === CreaturesSprite.rabbitFront) return rabbitMaleFrontTexture
-        else if (sprite === CreaturesSprite.rabbitBack) return rabbitMaleBackTexture
-        else if (sprite === CreaturesSprite.rabbitLeft) return rabbitMaleLeftTexture
-        else if (sprite === CreaturesSprite.rabbitRight) return rabbitMaleRightTexture
-        else if (sprite === CreaturesSprite.batFront) return batFrontTexture
-        else if (sprite === CreaturesSprite.batBack) return batBackTexture
-        else if (sprite === CreaturesSprite.batLeft) return batLatTexture
-        else if (sprite === CreaturesSprite.batRight) return batLatTexture
-        else if (sprite === CreaturesSprite.mouseFront) return mouseMaleFrontTexture
-        else if (sprite === CreaturesSprite.mouseBack) return mouseMaleBackTexture
-        else if (sprite === CreaturesSprite.mouseLeft) return mouseMaleLeftTexture
-        else if (sprite === CreaturesSprite.mouseRight) return mouseMaleRightTexture
-        else return PIXI.Texture.EMPTY;
-    }
 
-}
+
+

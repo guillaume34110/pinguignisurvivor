@@ -1,7 +1,7 @@
 import { Sensor } from "../../StartData/StartData";
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
 import { Creature, CreatureSex } from "../Creature";
-import { spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees } from '../../Utilities/spriteBox/directionSpriteBox';
+import { spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees } from '../../Utilities/SpriteBox/DirectionSpriteBox';
 
 export const creature_MaleHuntFemale = ( creature: Creature, sensor: Sensor, creatureFemale: Creature) => {
     if (creature.sex === CreatureSex.Male && creature.fertility >= creature.maxFertilityMale) {
