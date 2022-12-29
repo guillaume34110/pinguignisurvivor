@@ -8,7 +8,7 @@ import { setCoordinateIndexPosition } from "../Utilities/Coordinate/Coordinate";
 
 export const mapBlocks_Init = (gameData:GameData) => {
    
-    gameData.mapBlocks =  mapBlocks_biomeGenerator(mapPresets, gameData.howMuchTiles , gameData.howMuchTilesOnLine)
+    gameData.mapBlocks =  mapBlocks_biomeGenerator(gameData.mapPreset, gameData.howMuchTiles , gameData.howMuchTilesOnLine)
     for (let i = 0; i < gameData.howMuchTiles; i++) {
         const line  = ~~(i/gameData.howMuchTilesOnLine)  
         mapBlocks_SpaceBlocks( gameData.mapBlocks , i , gameData.howMuchTiles , line , gameData.howMuchTilesOnLine )
@@ -19,12 +19,6 @@ export const mapBlocks_Init = (gameData:GameData) => {
     mapBlocks_HitBox(gameData)
     
 }
-
-const mapPresets : MapPreset = { 
-    grassGround  : 55 ,
-    snowGround   : 10,
-    dirtGround : 35
-  }
 
   export interface MapPreset {
     dirtGround : number  

@@ -2,6 +2,7 @@ import {HitBox, Sensors, SensorsFlag as SensorsFlags, Sprite, SpriteBoxInterface
 
 export interface Creature {
     id: number
+    name : string 
     // GRAPHICAL AND POSITION :
     sprite: Sprite,
     spriteBox: SpriteBoxInterface,
@@ -36,5 +37,5 @@ export enum CreatureSex {
 }
 
 export enum CreatureType { 
-    Mouse , Rabbit
+    Mouse = "mouse", Rabbit = "rabbit",
 }

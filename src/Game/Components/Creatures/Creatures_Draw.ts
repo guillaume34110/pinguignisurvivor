@@ -1,5 +1,4 @@
 import { GameData} from '../../Core/StartData/StartData';
-import { animationEnemies } from "../Game";
 import { animation4Frames, isOnScreen } from "../Game";
 import {  selectImgPixi } from "./CreaturesSprites";
 

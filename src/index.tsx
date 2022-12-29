@@ -1,9 +1,11 @@
 
 import reportWebVitals from "./reportWebVitals";
 import {Game} from "./Game/Components/Game";
+import { menu } from './Game/Components/Menu';
 
 const init = () => {
     Game()
+   
 }
 init()
 

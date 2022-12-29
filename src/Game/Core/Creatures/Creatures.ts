@@ -7,8 +7,8 @@ interface Creatures {
     mouse: Creature,
 }
 
-export const enemies: Creatures = {
-    rabbit: rabbit,
-    mouse: mouse,
-}
+export const creatures: Creature[] = [
+     rabbit,
+     mouse,
+]
 

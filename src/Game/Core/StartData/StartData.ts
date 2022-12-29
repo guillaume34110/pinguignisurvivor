@@ -3,9 +3,10 @@ import {Item} from "../Items/Item";
 import {MapBlock} from "../MapBlocks/MapBlock";
 import {CreaturesSprite} from "../Creatures/CreaturesSprite";
 
-import { Creature } from "../Creatures/Creature";
+import { Creature, CreatureType } from '../Creatures/Creature';
 import { godsGeneric } from "../God/Gods";
 import { mapBlocksGeneric } from "../MapBlocks/MapBlocks";
+import { MapPreset } from '../MapBlocks/MapBlocks_Init';
 
 export interface GameData {
     god: God,
@@ -17,7 +18,9 @@ export interface GameData {
     mapBlocks: MapBlock[],
     message :string,
     howMuchTiles : number ,
-    howMuchTilesOnLine : number
+    howMuchTilesOnLine : number,
+    mapPreset:MapPreset,
+    creaturePreset : CreatureType[],
 }
 
 export class DirectionClass {
@@ -159,5 +162,11 @@ export const startData: GameData = {
        
     ], message : "",
     howMuchTiles :500 ,
-    howMuchTilesOnLine : 20
+    howMuchTilesOnLine : 20,
+    mapPreset:{ 
+        grassGround  : 55 ,
+        snowGround   : 10,
+        dirtGround : 35
+      },
+      creaturePreset : []
 }

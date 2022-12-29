@@ -4,6 +4,7 @@ import { CreaturesSprite } from '../CreaturesSprite';
 
 export const mouse: Creature = {
     id: 0,
+    name : 'mouse',
     type: CreatureType.Mouse,
     maxHealth: 5_000,
     health: 5_000,

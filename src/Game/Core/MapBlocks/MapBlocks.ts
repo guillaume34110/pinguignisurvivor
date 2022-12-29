@@ -20,3 +20,4 @@ export const mapBlocksGeneric: MapBlocks = {
     spaceBorder : spaceBorder,
     emptyGround : emptyGround,
 }
+export const mapBlocksArray = [dirtGround,grassGround,snowGround]
