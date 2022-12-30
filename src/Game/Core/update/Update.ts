@@ -5,7 +5,7 @@ import {mapBlocksUpdate} from "../MapBlocks/MapBlocksUpdate";
 import {GameData} from "../StartData/StartData";
 
 export const updateCore = (gameData:GameData) => {
-    godUpdate(gameData);
+    //godUpdate(gameData);
     creaturesUpdate_ChristmasPanettone(gameData)
     itemUpdate(gameData)
     mapBlocksUpdate(gameData)

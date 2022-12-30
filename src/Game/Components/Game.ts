@@ -1,5 +1,5 @@
 import '../Style/components/Game.css'
-import { GameData, HitBox, SpriteBoxInterface, startData } from '../Core/StartData/StartData'
+import { GameData, HitBox, SpriteBoxInterface, startData } from '../Core/StartData/StartData';
 import { keydownController, keyupController } from '../Core/KeysInputs/keys'
 import { scaling } from '../Core/Scaling/scaling';
 import { God } from "../Core/God/God";
@@ -20,7 +20,7 @@ settings.RENDER_OPTIONS.autoDensity = true
 settings.STRICT_TEXTURE_CACHE = true
 let coreInterval: NodeJS.Timer
 const timeInterval = 16
-let gameData: GameData = JSON.parse(JSON.stringify(startData))
+export let gameData: GameData = JSON.parse(JSON.stringify(startData))
 export const componentInitState: Boolean[] = [false]
 let targetEnemy: PIXI.Application | null = null
 export let frame = 0
@@ -33,20 +33,20 @@ export const Game = () => {
     menu(gameData)
 }
 
-export const componentInit = (newGameData : GameData) => {
-     gameData = JSON.parse(JSON.stringify(newGameData))
+export const componentInit = (newGameData: GameData) => {
+    gameData = JSON.parse(JSON.stringify(newGameData))
     initCore(gameData)
     coreInterval = setInterval(mainLoop, timeInterval);
-    drawInit()
-    window.requestAnimationFrame(drawLoop)
-    scaling()
+   // drawInit()
+   // window.requestAnimationFrame(drawLoop)
+   // scaling()
     // return () => {
     //     removeEventListeners()
     //     clearInterval(intervale)
     // }
 }
 
-const drawLoop = () => {
+export const drawLoop = () => {
     const targetGl = targetEnemy;
     if (targetGl !== null && targetGl !== undefined) {
         frameCount(gameData, targetGl)
@@ -72,6 +72,7 @@ const zoom = (e: WheelEvent) => {
     }
     targetEnemy?.stage.scale.set(zoomFactor, zoomFactor)
     gameData.god.spriteBox.speed = gameData.god.speed * (1 / zoomFactor)
+    scaling()
 }
 
 const frameCount = (gameData: GameData, targetGl: PIXI.Application) => {
@@ -80,20 +81,23 @@ const frameCount = (gameData: GameData, targetGl: PIXI.Application) => {
     targetGl.stage.removeChildren();
 }
 
-const drawInit = () => {
+export const drawInit = () => {
 
-    const html = document.querySelector('#root')
-    if (html !== null)
-        targetEnemy = new PIXI.Application({
-            width: 1280,
-            height: 720,
-            antialias: true
-        });
+    const html : HTMLDivElement | null = document.querySelector('#root')
+    if (html === null) return
+    targetEnemy = new PIXI.Application({
+        width: 1280,
+        height: 720,
+        antialias: true,
+        backgroundColor:
+        0x007044
+    });
     //@ts-ignore
-    html?.appendChild(targetEnemy.view);
+    html.appendChild(targetEnemy.view);
+    html.style.zIndex = '5';
     const targetGl = targetEnemy?.stage;
     targetGl?.scale.set(1, 1)
-
+    
 }
 const mainLoop = () => {
     updateCore(gameData)

@@ -9,6 +9,6 @@ export const snowGround : MapBlock  = {
     rotationY: 0,
     rotationX: 0,
     translateY: 0,
-    type:MapBlockType.groundSnow,
+    type:MapBlockType.Snow,
     coordinate : 0
 }

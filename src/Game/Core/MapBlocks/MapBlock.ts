@@ -15,5 +15,5 @@ export interface MapBlock {
 }
 
 export enum MapBlockType {
-    space = "space", groundDirt = "dirt", groundGrass = "grass" , groundSnow = "snow" , emptyGround ="emptyGround"
+    space = "space", Dirt = "Dirt", Grass = "Grass" , Snow = "Snow" , emptyGround ="emptyGround"
 }

@@ -9,6 +9,6 @@ export const dirtGround : MapBlock = {
     rotationY: 0,
     rotationX: 0,
     translateY: 0,
-    type:MapBlockType.groundDirt,
+    type:MapBlockType.Dirt,
     coordinate : 0
 }

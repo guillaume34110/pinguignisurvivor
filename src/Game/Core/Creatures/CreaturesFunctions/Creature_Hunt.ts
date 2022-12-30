@@ -6,7 +6,7 @@ import { Creature } from '../Creature';
 export const creatures_Hunt = ( creature: Creature, sensor: Sensor, item: Item) => {
     if (sensor.type === SensorType.Hunt) {
    
-        if (item.type === ItemType.foodVegetable && creature.hunting === false && hitBoxMatch(sensor, item.hitBox)) {
+        if (item.type === ItemType.FoodVegetable && creature.hunting === false && hitBoxMatch(sensor, item.hitBox)) {
 
             // spriteBoxSetDirectionAccordingOtherSpriteBoxRad(creature.spriteBox, item.spriteBox)
             spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees(creature.spriteBox, item.spriteBox)

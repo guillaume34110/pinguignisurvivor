@@ -27,10 +27,9 @@ code {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgb(68, 87, 87);;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.8rem;
-    height:100vh;
 }
 .game {
     display: flex;

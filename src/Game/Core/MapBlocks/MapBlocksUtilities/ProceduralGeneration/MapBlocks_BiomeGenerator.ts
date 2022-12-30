@@ -5,10 +5,12 @@ import { MapPreset } from '../../MapBlocks_Init';
 export const mapBlocks_biomeGenerator = (mapPreset: MapPreset, totalMapBlocks: number, lineStep: number): MapBlock[] => {
     let mapBlocks: MapBlock[] = []
     Object.keys(mapPreset).forEach(key => {
-        const parameters = assignParameter(totalMapBlocks, returnNumberValueForKey(mapPreset, key), mapBlocks)
-        mapBlocks = addNewPositions(parameters.MapBlockTable, parameters.howMuch, lineStep, parameters.Seeds, mapBlockDetermination(key))
-    })
-    return mapBlocks
+        // @ts-ignore 
+        if (mapPreset[key] > 0) {
+            const parameters = assignParameter(totalMapBlocks, returnNumberValueForKey(mapPreset, key), mapBlocks)
+            mapBlocks = addNewPositions(parameters.MapBlockTable, parameters.howMuch, lineStep, parameters.Seeds, mapBlockDetermination(key))
+}})
+return mapBlocks
 }
 
 const mapBlockDetermination = (key: string): MapBlock => {
@@ -36,7 +38,7 @@ const addNewPositions = (MapBlockTable: MapBlock[], howMuch: number, lineStep: n
 
 const assignParameter = (totalMapBlocks: number, mapPreset: number, mapBlockTable: MapBlock[]): Parameters => {
     return {
-        Seeds: [~~(Math.random() * totalMapBlocks -1)],
+        Seeds: [~~(Math.random() * totalMapBlocks - 1)],
         howMuch: (mapPreset * totalMapBlocks) / 100,
         MapBlockTable: mapBlocks(mapBlockTable, totalMapBlocks)
     }
@@ -131,10 +133,10 @@ const HoleFilling = (mapBlockTable: MapBlock[], mapBlockGeneric: MapBlock, lineS
         mapBlockTable[inContactWith3[0]] = JSON.parse(JSON.stringify(mapBlockGeneric))
         return inContactWith3[0]
     }
-     if (inContactWith2.length > 0) {
-         mapBlockTable[inContactWith2[0]] = JSON.parse(JSON.stringify(mapBlockGeneric))
-         return inContactWith2[0]
-     }
+    if (inContactWith2.length > 0) {
+        mapBlockTable[inContactWith2[0]] = JSON.parse(JSON.stringify(mapBlockGeneric))
+        return inContactWith2[0]
+    }
     return -1
 }
 

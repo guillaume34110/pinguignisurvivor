@@ -6,6 +6,7 @@ import {  lifeBarDrawPixi } from './LifeBar/LifeBar_Draw';
 import {  mapBlocksRefresh } from './MapBlocks/MapBlocks_Draw';
 import {  hud_RefreshPixi } from "./Hud/Hud";
 import * as PIXI from 'pixi.js'
+import { godUpdate } from "../Core/God/GodUpdate";
 
 
 export const draw = (gameData:GameData, targetPixi:PIXI.Application ) =>{
@@ -15,5 +16,5 @@ export const draw = (gameData:GameData, targetPixi:PIXI.Application ) =>{
    // hud_RefreshPixi(gameData, targetPixi)
    // hitBoxRefreshPixi(gameData, targetPixi)
     //lifeBarDrawPixi(gameData, targetPixi)/**/
-
+    godUpdate(gameData);
 }

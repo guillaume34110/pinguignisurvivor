@@ -37,5 +37,5 @@ export enum CreatureSex {
 }
 
 export enum CreatureType { 
-    Mouse = "mouse", Rabbit = "rabbit",
+    Mouse = "Mouse", Rabbit = "Rabbit",
 }

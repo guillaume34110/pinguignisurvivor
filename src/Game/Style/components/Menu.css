@@ -1,0 +1,126 @@
+h1{
+    margin: 0.5rem;
+    font-size: 2rem;
+    height : 10vh;
+  }
+h6{
+    padding:0;
+    margin:0;
+    position: relative;
+    top : -3.5rem;
+    left :9rem;
+    transform: rotate(-10deg);
+    font-size: 0.6rem;
+}
+
+
+
+.menu-container {
+    z-index: 10;
+    position: absolute;
+    top:0vh;
+    left : 0;
+    width: 100vw;
+    height: 95vh;
+    margin: 0 ;
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:space-around;
+    user-select: none;
+
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f2f2f2;
+    border-radius:  0 5px 5px 0  ;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius:  0 5px 5px 0  ;
+  }
+
+.btn-start {
+    background-color: #0099ff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="number"] {
+    min-width: 5rem;
+    padding: 0.4rem;
+    margin-right: 0.2rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.mapBlocks-proportion {
+    min-width: 3rem;
+    padding: 0.2rem;
+    margin-right: 0.2rrem;
+    font-size: 1rem;
+    text-align: center;
+}
+.menu-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:  rgba(255, 255, 255, 0.3);
+    border-radius : 5px;
+    padding : 0.2rem  0.5rem ;
+    border : 2px double black;
+    width: 60vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+.flex { 
+    display: flex;
+    align-items: center;
+}
+
+.flex-column { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.space-around{
+    justify-content: space-around;
+} 
+.align-left-self{ 
+   align-self: flex-start;
+}
+.p-0x5rem{
+    padding: 0.5rem;
+}
+.p-1rem{
+    padding: 1rem;
+}
+.border{
+    
+    border-radius : 5px;
+    padding : 0.2rem  0.5rem ;
+    border : 2px double black;
+    margin : 0.5rem 0 ;
+}
+.w-100{
+width: 100%;
+}
+.w-5rem{
+    width: 5rem;
+}

@@ -1,5 +1,5 @@
 import {God} from "../God/God";
-import {Item} from "../Items/Item";
+import {Item, ItemName} from "../Items/Item";
 import {MapBlock} from "../MapBlocks/MapBlock";
 import {CreaturesSprite} from "../Creatures/CreaturesSprite";
 
@@ -21,6 +21,7 @@ export interface GameData {
     howMuchTilesOnLine : number,
     mapPreset:MapPreset,
     creaturePreset : CreatureType[],
+    itemPreset : ItemName[],
 }
 
 export class DirectionClass {
@@ -168,5 +169,6 @@ export const startData: GameData = {
         snowGround   : 10,
         dirtGround : 35
       },
-      creaturePreset : []
+      creaturePreset : [],
+      itemPreset : [],
 }

@@ -1,8 +1,9 @@
 import { ItemSprite } from '../ItemSprite';
-import { ItemType } from '../Item';
-export const rock = {
+import { Item, ItemName, ItemType } from '../Item';
+export const rock : Item= {
     id: 0,
     type: ItemType.Solid,
+    name: ItemName.Rock,
     sprite: ItemSprite.Rock,
     value: 0,
     spriteBox: {
@@ -11,6 +12,7 @@ export const rock = {
         w: 32,
         h: 32,
         direction: {
+            degree10: 0 ,
             radian: 0,
             x: 0,
             y: 0

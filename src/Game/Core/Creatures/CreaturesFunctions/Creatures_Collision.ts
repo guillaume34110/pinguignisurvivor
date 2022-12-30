@@ -68,7 +68,7 @@ export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBloc
 export const creature_collisionWithItem = (creature: Creature, item: Item) => {
 
     if (hitBoxMatch(item.hitBox, creature.hitBox)) {
-        if (item.type === ItemType.foodVegetable) creature_EatFood(item, creature)
+        if (item.type === ItemType.FoodVegetable) creature_EatFood(item, creature)
         if (item.type === ItemType.Solid) creatures_CollisionWithMapBlockMove(creature)
     }
 }
