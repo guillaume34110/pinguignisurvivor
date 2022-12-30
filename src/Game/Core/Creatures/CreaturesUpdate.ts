@@ -52,7 +52,6 @@ export const fillSkSlicedArraysWithEmptyArray = (gameData: GameData) => {
 
 export const reFillSkSlicedArraysWithEmptyArray = (gameData: GameData) => {
     slicedArrays.creatures = []
-    slicedArrays.mapBlocks = []
     slicedArrays.items = []
     for (let i = 0; i < gameData.mapBlocks.length; i++) {
         slicedArrays.creatures.push([])

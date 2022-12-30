@@ -43,7 +43,7 @@ h6{
     border-radius:  0 5px 5px 0  ;
   }
 
-.btn-start {
+.btn-start , .btn-generate {
     background-color: #0099ff;
     color: white;
     text-transform: uppercase;

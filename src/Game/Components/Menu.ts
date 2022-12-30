@@ -18,6 +18,7 @@ export const menu = (gameData: GameData) => {
     drawInit()
     window.requestAnimationFrame(drawLoop)
     scaling()
+    generateNewMap()
 
 }
 function createMenuInterface() {
@@ -42,6 +43,7 @@ function createMenuInterface() {
                 <h4>Largeur de la carte:</h4>
                 <input type="number"value="25" id="map-width" />
             </div>
+            <button class = "btn btn-generate" >Generer</button>
         </div>
         <div class = "flex-column border " >
             <h4>Choix des créatures:</h4>
@@ -61,6 +63,7 @@ function createMenuInterface() {
                 <label for="block-percentage">%</label>
             </div>`
     ).join('')}
+    <button class = "btn btn-generate" >Generer</button>
         </div>
         <div class = "flex-column  border" >
             <h4>Choix des items:</h4>
@@ -86,17 +89,11 @@ const btnStartListener = () => {
 }
 
 const mapBloksListener = () => {
-    mapBlocksArray?.forEach(mapBlock => {
-        const inputElement = document.querySelector(`#${mapBlock.type + "-percent"}`);
-        if (inputElement !== null)
-            inputElement.addEventListener("change", generateNewMap);
-    })
-    const blockNumberElement: HTMLInputElement | null = document.querySelector("#map-blocks")
-    const mapWidthElement: HTMLInputElement | null = document.querySelector("#map-width")
-    if (blockNumberElement !== null && mapWidthElement !== null) {
-        blockNumberElement.addEventListener("change", generateNewMap)
-        mapWidthElement.addEventListener("change", generateNewMap)
-    }
+  
+        const inputElement : NodeList = document.querySelectorAll(`.btn-generate`);
+        Array.from(inputElement as NodeListOf<HTMLButtonElement>).forEach((element: HTMLButtonElement) => {
+           element.addEventListener("click", generateNewMap)
+        });
 }
 
 const generateNewMap = () => {

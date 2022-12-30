@@ -34,7 +34,7 @@ export const Game = () => {
 }
 
 export const componentInit = (newGameData: GameData) => {
-    gameData = JSON.parse(JSON.stringify(newGameData))
+  //  gameData = JSON.parse(JSON.stringify(newGameData))
     initCore(gameData)
     coreInterval = setInterval(mainLoop, timeInterval);
    // drawInit()
@@ -90,7 +90,7 @@ export const drawInit = () => {
         height: 720,
         antialias: true,
         backgroundColor:
-        0x007044
+        0x00001c
     });
     //@ts-ignore
     html.appendChild(targetEnemy.view);

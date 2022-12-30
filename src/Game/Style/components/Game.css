@@ -30,6 +30,7 @@ code {
     background-color: rgb(68, 87, 87);;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.8rem;
+    height:100vh;
 }
 .game {
     display: flex;

@@ -1,7 +1,7 @@
 export const god = { 
     spriteBox: {
-        x: 1,
-        y: 1,
+        x: 800,
+        y: 500,
         w: 1,
         h: 1,
         direction: {
