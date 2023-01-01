@@ -19,6 +19,7 @@ export interface Item {
     hitBox: HitBox,
     isTaken : Boolean,
     coordinate : number,
-    unMovable : boolean
+    unMovable : boolean,
+    price : number,
 }
 

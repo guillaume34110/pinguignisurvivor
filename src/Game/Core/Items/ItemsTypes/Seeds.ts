@@ -27,5 +27,6 @@ export const seeds : Item = {
     },
     isTaken : false,
     coordinate :0,
-    unMovable : false
+    unMovable : false,
+    price : 80
  }

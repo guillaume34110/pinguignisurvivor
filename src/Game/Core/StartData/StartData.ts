@@ -1,11 +1,10 @@
-import {God} from "../God/God";
-import {Item, ItemName} from "../Items/Item";
-import {MapBlock} from "../MapBlocks/MapBlock";
-import {CreaturesSprite} from "../Creatures/CreaturesSprite";
+import { God } from "../God/God";
+import { Item, ItemName } from "../Items/Item";
+import { MapBlock } from "../MapBlocks/MapBlock";
+import { CreaturesSprite } from "../Creatures/CreaturesSprite";
 
 import { Creature, CreatureType } from '../Creatures/Creature';
 import { godsGeneric } from "../God/Gods";
-import { mapBlocksGeneric } from "../MapBlocks/MapBlocks";
 import { MapPreset } from '../MapBlocks/MapBlocks_Init';
 
 export interface GameData {
@@ -16,16 +15,23 @@ export interface GameData {
     time: number,
     camera: Camera,
     mapBlocks: MapBlock[],
-    message :string,
-    howMuchTiles : number ,
-    howMuchTilesOnLine : number,
-    mapPreset:MapPreset,
-    creaturePreset : CreatureType[],
-    itemPreset : ItemName[],
+    message: string,
+    howMuchTiles: number,
+    howMuchTilesOnLine: number,
+    mapPreset: MapPreset,
+    creaturePreset: CreatureType[],
+    itemPreset: ItemName[],
+    gold: number,
+    mapBlockPrice: number,
+    totalCreaturePrice: number,
+    totalItemPrice: number,
+    totalMapBlockPrice: number,
+    totalPrice : number,
+    timeBeforeHarvest : number,
 }
 
 export class DirectionClass {
-    public radian:number = 0
+    public radian: number = 0
     constructor(
         public degree10: number,
         public x: number,
@@ -78,8 +84,8 @@ export class HitBox {
 }
 
 export interface SpriteAndHitBox {
-    spriteBox : SpriteBox
-    hitBox : HitBox
+    spriteBox: SpriteBox
+    hitBox: HitBox
 }
 
 export interface Sprite {
@@ -111,31 +117,31 @@ export interface Camera {
 }
 
 export interface Sensors {
-    sensors : Sensor[]
+    sensors: Sensor[]
 }
-export interface SensorsFlag{
-    flagLeft: boolean, 
+export interface SensorsFlag {
+    flagLeft: boolean,
     flagRight: boolean
 }
 export interface Sensor {
-    distanceFromCreature : number, 
-    degOffset : number,
-    x : number,
-    y : number,
-    h : number, 
-    w : number, 
-    type : SensorType,
-    flag : Boolean,
-    coordinate : number
+    distanceFromCreature: number,
+    degOffset: number,
+    x: number,
+    y: number,
+    h: number,
+    w: number,
+    type: SensorType,
+    flag: Boolean,
+    coordinate: number
 }
 
 export enum SensorType {
-    Collision, TurnRight , TurnLeft , Hunt
+    Collision, TurnRight, TurnLeft, Hunt
 }
 
 export const startData: GameData = {
 
-    god:godsGeneric.god,
+    god: godsGeneric.god,
 
     creatures: [],
     items: [],
@@ -160,15 +166,22 @@ export const startData: GameData = {
         y: 0,
     },
     mapBlocks: [
-       
-    ], message : "",
-    howMuchTiles :500 ,
-    howMuchTilesOnLine : 20,
-    mapPreset:{ 
-        grassGround  : 55 ,
-        snowGround   : 10,
-        dirtGround : 35
-      },
-      creaturePreset : [],
-      itemPreset : [],
+
+    ], message: "",
+    howMuchTiles: 1000,
+    howMuchTilesOnLine: 20,
+    mapPreset: {
+        grassGround: 55,
+        snowGround: 10,
+        dirtGround: 35
+    },
+    creaturePreset: [],
+    itemPreset: [],
+    gold: 50,
+    mapBlockPrice: 1,
+    totalCreaturePrice: 0,
+    totalItemPrice: 0,
+    totalMapBlockPrice: 0,
+    totalPrice : 0,
+    timeBeforeHarvest : 0,
 }

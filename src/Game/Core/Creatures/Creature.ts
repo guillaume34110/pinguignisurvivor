@@ -21,7 +21,9 @@ export interface Creature {
     lifeBar : LifeBar,
     hunting : Boolean,
     coordinate : number,
-    weight : number
+    weight : number,
+    price : number,
+    sellPrice : number,
 }
 
 export interface LifeBar {

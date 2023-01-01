@@ -32,9 +32,11 @@ export const Game = () => {
     eventListeners()
     menu(gameData)
 }
-
+export const stopCoreLoop = () => { 
+    clearInterval(coreInterval);
+}
 export const componentInit = (newGameData: GameData) => {
-  //  gameData = JSON.parse(JSON.stringify(newGameData))
+   gameData = JSON.parse(JSON.stringify(newGameData))
     initCore(gameData)
     coreInterval = setInterval(mainLoop, timeInterval);
    // drawInit()
@@ -63,10 +65,10 @@ const keyup = (e: KeyboardEvent) => {
 }
 
 const zoom = (e: WheelEvent) => {
-    if (zoomFactor <= 0.4) zoomFactor = 0.45
-    if (zoomFactor >= 1.6) zoomFactor = 1.55
+    if (zoomFactor <= 0.3) zoomFactor = 0.35
+    if (zoomFactor >= 2) zoomFactor = 1.95
     console.log(zoomFactor);
-    if (zoomFactor > 0.4 && zoomFactor < 1.6) {
+    if (zoomFactor > 0.3 && zoomFactor < 2) {
         if (e.deltaY > 0) zoomFactor -= 0.05
         else zoomFactor += 0.05
     }

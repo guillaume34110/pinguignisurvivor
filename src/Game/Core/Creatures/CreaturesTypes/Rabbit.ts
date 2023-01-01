@@ -83,5 +83,7 @@ export const rabbit = {
     lifeBar: { x: 0, y: 0, h: 10, wMax: 16, wCurrent: 16 },
     hunting: false,
     coordinate : 0,
-    weight : 3
+    weight : 3, 
+    price : 100,
+    sellPrice : 5,
 }

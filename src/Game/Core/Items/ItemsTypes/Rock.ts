@@ -27,5 +27,6 @@ export const rock : Item= {
     },
     isTaken : false,
     coordinate :0,
-    unMovable : true
+    unMovable : true,
+    price :15
  }
