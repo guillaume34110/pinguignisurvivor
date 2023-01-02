@@ -41,6 +41,8 @@ export const menu = (gameData: GameData) => {
     }
     generateNewMap()
     setNumberBlockTotalPrice()
+    setItemTotalPrice()
+    setCreatureTotalPrice()
     setTotalPriceElement()
 }
 function createMenuInterface() {
@@ -92,7 +94,7 @@ function createMenuInterface() {
         ${creatures?.map(creature =>
         `<div  class = "flex  p-0x5rem w-100 space-around">
             <div class = "w-5rem"> ${creature.type}</div>
-                <input data-price="${creature.price}" data-type="${creature.type}"  class = "creature-number" type="number" value="0" min="0" max="100" id="${creature.type + "-number"}" />
+                <input data-price="${creature.price}" data-type="${creature.type}"  class = "creature-number" type="number" value="0" min="0" max="10000" id="${creature.type + "-number"}" />
                 <label for="creature-price">${creature.price}$</label>
             </div>`
     ).join('')}
@@ -261,7 +263,6 @@ const generateNewMap = () => {
         snowGround: blocksProportions[2],
         dirtGround: blocksProportions[0]
     }
-    console.log(newMapPreset, blocksProportions);
     gameData.howMuchTiles = blockNumber
     gameData.howMuchTilesOnLine = mapWidth
     gameData.mapPreset = newMapPreset
@@ -319,7 +320,10 @@ const setGameDataAndLaunchGame = () => {
 
     //@ts-ignore
     const newItemsPreset = itemsNames.map(itemName => ItemName[itemName])
-    console.log(itemsNames, creaturesNames);
+    if (gameData.gold < gameData.totalPrice){
+        priceError(gameData)
+         return
+        }
     gameData.timeBeforeHarvest = timeBeforeHarvest * 60 * 1000
     gameData.howMuchTiles = blockNumber
     gameData.howMuchTilesOnLine = mapWidth
@@ -331,10 +335,22 @@ const setGameDataAndLaunchGame = () => {
     const menuContainer = getMenuContainerElement();
     if (root === null || menuContainer === null) return
     root.removeChild(menuContainer);
-    console.log(gameData);
     componentInit(gameData)
 }
 
 const refillGold = (gameData: GameData) => {
     if (gameData.gold < 400) gameData.gold = 400
 }
+
+const priceError =async (gameData: GameData) =>{
+     const totalPriceElement = getTotalPriceElement()
+    if (totalPriceElement === null) return
+    const totalPriceBuffer = gameData.totalItemPrice + gameData.totalCreaturePrice + gameData.totalMapBlockPrice
+    totalPriceElement.innerHTML = `Price : ${totalPriceBuffer} <div class = "error-text">Or insufisant</div>`
+    await sleep(2000)
+    totalPriceElement.innerHTML = `Price : ${totalPriceBuffer} `
+}
+
+export function sleep(ms : number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }

@@ -101,6 +101,10 @@ label {
     font-size: 1rem;
     text-align: center;
 }
+.error-text{
+    margin-top: 0.5rem;
+    color : rgb(97, 0, 0)
+}
 
 .flex { 
     display: flex;
