@@ -10,5 +10,6 @@ export const snowGround : MapBlock  = {
     rotationX: 0,
     translateY: 0,
     type:MapBlockType.Snow,
-    coordinate : 0
+    coordinate : 0,
+    isAnimated : false,
 }

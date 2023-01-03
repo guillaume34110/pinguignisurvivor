@@ -56,7 +56,7 @@ export const creatures_CollisionWithCreaturesWithoutHitboxMatch = (type: string,
 
 export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBlock: MapBlock) => {
 
-    if (mapBlock.type === MapBlockType.space) {
+    if (mapBlock.type === MapBlockType.Space) {
         if (hitBoxMatch(mapBlock.hitBox, creature.hitBox)) {
             creature.health = 0
             console.log("fall in space ")
@@ -69,7 +69,7 @@ export const creature_collisionWithItem = (creature: Creature, item: Item) => {
 
     if (hitBoxMatch(item.hitBox, creature.hitBox)) {
         if (item.type === ItemType.FoodVegetable) creature_EatFood(item, creature)
-        if (item.type === ItemType.Solid) creatures_CollisionWithMapBlockMove(creature)
+        if (item.type === ItemType.Rock) creatures_CollisionWithMapBlockMove(creature)
     }
 }
 

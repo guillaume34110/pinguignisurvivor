@@ -1,3 +1,3 @@
 export enum ItemSprite{
-    Seeds,Rock
+    Seeds,Rock,SeedsTree
 }

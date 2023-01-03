@@ -81,10 +81,10 @@ export const mouse: Creature = {
     maxFertilityMale: 400,
     maxFertilityFemale: 2000,
     sex: CreatureSex.Male,
-    lifeBar: { x: 0, y: 0, h: 8, wMax: 12, wCurrent: 12 },
     hunting: false,
     coordinate : 0,
     weight : 0.1,
     price : 20,
     sellPrice : 0.1,
+    valueAsFood :4000
 }

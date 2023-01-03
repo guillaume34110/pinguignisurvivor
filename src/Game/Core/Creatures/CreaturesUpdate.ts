@@ -7,7 +7,6 @@ import {
 } from './CreaturesFunctions/Creatures_Collision';
 import { creature_Death } from './CreaturesFunctions/Creature_Death';
 import { creature_Fertility } from './CreaturesFunctions/Creature_Nursery';
-import { creature_Info } from './CreaturesFunctions/Creature_Info';
 import { creature_lifeDecrease as creature_LifeDecrease } from './CreaturesFunctions/Creature_lifeDecrease';
 import { creature_MaleHuntFemale } from './CreaturesFunctions/Creature_Reproduction';
 import { creature_RotateSpriteBy10Degrees } from './CreaturesFunctions/Creature_RotateSprite';
@@ -29,14 +28,14 @@ import { Item } from '../Items/Item';
 import { MapBlock } from '../MapBlocks/MapBlock';
 import { setCoordinateIndexPosition } from '../Utilities/Coordinate/Coordinate';
 
-interface slicedArraysInterface {
+export interface slicedArraysInterface {
     creatures: Creature[][]
     sensors: Sensor[][]
     mapBlocks: MapBlock[][]
     items: Item[][]
 }
 
-const slicedArrays: slicedArraysInterface = { creatures: [], sensors: [], mapBlocks: [], items: [] }
+export const slicedArrays: slicedArraysInterface = { creatures: [], sensors: [], mapBlocks: [], items: [] }
 export const fillSkSlicedArraysWithEmptyArray = (gameData: GameData) => {
     slicedArrays.creatures = []
     slicedArrays.sensors = []
@@ -134,7 +133,6 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
             creature_RotateSpriteBy10Degrees(creature)
             creatures_HitBox(creature)
             creature_LifeDecrease(creature)
-            creature_Info(creature)
             creature_Fertility(creature)
 
             for (let m = 0; m < 8; m++) {
@@ -149,7 +147,7 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
     creature_Death(gameData)
 }
 
-const coordinatesMapping = (coordinate: number, gameData: GameData): number[] => {
+export const coordinatesMapping = (coordinate: number, gameData: GameData): number[] => {
     const array = [coordinate,
         coordinate - 1,
         coordinate + 1,

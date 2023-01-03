@@ -18,12 +18,12 @@ export interface Creature {
     maxFertilityFemale : number,
     maxFertilityMale : number,
     sex : CreatureSex,
-    lifeBar : LifeBar,
     hunting : Boolean,
     coordinate : number,
     weight : number,
     price : number,
     sellPrice : number,
+    valueAsFood : number
 }
 
 export interface LifeBar {
@@ -35,9 +35,9 @@ export interface LifeBar {
 }
 
 export enum CreatureSex {
-    Male , Female , Herma
+    Male , Female , Herma , Sterile
 }
 
 export enum CreatureType { 
-    Mouse = "Mouse", Rabbit = "Rabbit",
+    Mouse = "Mouse", Rabbit = "Rabbit",Worms = "Worms"
 }

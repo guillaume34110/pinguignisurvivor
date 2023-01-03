@@ -1,8 +1,10 @@
 import { ItemSprite } from '../ItemSprite';
-import { Item, ItemName, ItemType } from '../Item';
+import { Item, ItemName, ItemType, BabyType } from '../Item';
+import { MapBlockType } from '../../MapBlocks/MapBlock';
+import { worms } from '../../Creatures/CreaturesTypes/Worms';
 export const rock : Item= {
     id: 0,
-    type: ItemType.Solid,
+    type: ItemType.Rock,
     name: ItemName.Rock,
     sprite: ItemSprite.Rock,
     value: 0,
@@ -28,5 +30,10 @@ export const rock : Item= {
     isTaken : false,
     coordinate :0,
     unMovable : true,
-    price :15
+    price :15,
+    gestation : 0,
+    gestationMax : 5000,
+    mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
+    babyType : BabyType.Creature,
+    baby : worms
  }

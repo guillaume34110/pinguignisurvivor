@@ -1,25 +1,44 @@
-import { MapBlockType } from "../../MapBlocks/MapBlock"
+import { MapBlock, MapBlockType } from "../../MapBlocks/MapBlock"
 import { GameData } from "../../StartData/StartData"
 import { seeds } from "../ItemsTypes/Seeds"
-import { ItemName, ItemType } from '../Item';
+import { BabyType, Item, ItemName, ItemType } from '../Item';
+import { coordinatesMapping, slicedArrays } from '../../Creatures/CreaturesUpdate';
+import { seedsTree } from '../ItemsTypes/SeedsTree';
+import { Creature } from '../../Creatures/Creature';
+
+let coordinates: number[];
+let mapBlockAround: MapBlock[];
+let lastElement: Item | Creature | null;
+let mapBlock: MapBlock;
 
 export const item_Spawn = (gameData: GameData) => {
-    item_spawnSeeds(gameData)
-}
-
-
-const item_spawnSeeds = (gameData : GameData) => { 
-    if(!gameData.itemPreset.includes(ItemName.Seeds))return
-    const mapBlock = gameData.mapBlocks[~~(Math.random() * gameData.mapBlocks.length - 1)]
-    if (mapBlock !== undefined && (mapBlock.type === MapBlockType.Grass || mapBlock.type === MapBlockType.Dirt)) {
-        if (Math.random() > 0.980 && !gameData.items.find(item => (item.spriteBox.x === mapBlock.spriteBox.x && item.spriteBox.y === mapBlock.spriteBox.y))) {
-            gameData.items.push(JSON.parse(JSON.stringify(seeds)))
-            const lastSeeds = gameData.items[gameData.items.length - 1]
-            lastSeeds.spriteBox.x = mapBlock.spriteBox.x
-            lastSeeds.spriteBox.y = mapBlock.spriteBox.y
-            lastSeeds.hitBox.x = mapBlock.spriteBox.x
-            lastSeeds.hitBox.y = mapBlock.spriteBox.y
-            lastSeeds.id = gameData.items.length - 1
+    gameData.items.forEach(item => {
+        if (item.baby !== null) {
+            if (item.gestation < item.gestationMax) {
+                coordinates = coordinatesMapping(item.coordinate, gameData);
+                mapBlockAround = [];
+                coordinates.forEach(coordinate => {
+                    if (slicedArrays.mapBlocks[coordinate] !== undefined && slicedArrays.mapBlocks[coordinate][0] !== undefined) {
+                        if (item.mapBlockToDrop.includes(mapBlock.type)) mapBlockAround.push(slicedArrays.mapBlocks[coordinate][0]);
+                    }
+                });
+                lastElement = null;
+                mapBlock = mapBlockAround[~~(Math.random() * mapBlockAround.length)];
+                if (item.babyType === BabyType.Item) {
+                    gameData.items.push(JSON.parse(JSON.stringify(item.baby)));
+                    lastElement = gameData.items[gameData.items.length - 1];
+                } else if (item.babyType === BabyType.Creature) {
+                    gameData.creatures.push(JSON.parse(JSON.stringify(item.baby)));
+                    lastElement = gameData.creatures[gameData.items.length - 1];
+                }
+                if (lastElement !== null) {
+                    lastElement.spriteBox.x = mapBlock.spriteBox.x + (Math.random() * (mapBlock.spriteBox.w - lastElement.spriteBox.w));
+                    lastElement.spriteBox.y = mapBlock.spriteBox.y + (Math.random() * (mapBlock.spriteBox.h - lastElement.spriteBox.h));
+                    lastElement.hitBox.x = lastElement.spriteBox.x;
+                    lastElement.hitBox.y = lastElement.spriteBox.y;
+                    lastElement.id = gameData.items.length - 1;
+                }
+            }
         }
-    }
+    });
 }

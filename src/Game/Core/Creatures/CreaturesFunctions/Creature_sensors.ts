@@ -21,7 +21,7 @@ export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature
 
 export const creature_sensorSetCollisionFlagWithItems = (creature: Creature, sensor: Sensor, item: Item) => {
     if (sensor.type === SensorType.TurnLeft || sensor.type === SensorType.TurnRight) {
-        if (item.type === ItemType.Solid) {
+        if (item.type === ItemType.Rock) {
             if (hitBoxMatch(item.hitBox, sensor)) {
                 if (sensor.type === SensorType.TurnLeft) creature.sensorsFlags.flagLeft = true
                 else if (sensor.type === SensorType.TurnRight) creature.sensorsFlags.flagRight = true

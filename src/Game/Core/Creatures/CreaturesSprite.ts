@@ -11,4 +11,6 @@ export enum CreaturesSprite{
     mouseBack,
     mouseLeft,
     mouseRight,
+    wormsLeft, 
+    wormsRight,
 }

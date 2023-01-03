@@ -10,10 +10,10 @@ export interface MapBlock {
     translateY: number,
     sprite: MapBlocksSprite,
     type: MapBlockType,
-    coordinate : number
-
+    coordinate : number,
+    isAnimated : boolean,
 }
 
 export enum MapBlockType {
-    space = "space", Dirt = "Dirt", Grass = "Grass" , Snow = "Snow" , emptyGround ="emptyGround"
+    Space = "space", Dirt = "Dirt", Grass = "Grass" , Snow = "Snow" , emptyGround ="emptyGround"
 }

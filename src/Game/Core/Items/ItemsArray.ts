@@ -1,5 +1,5 @@
 import { Item } from "./Item";
 import { rock } from "./ItemsTypes/Rock";
-import { seeds } from "./ItemsTypes/Seeds";
+import { seedsTree } from "./ItemsTypes/SeedsTree";
 
-export const itemsArray : Item[] = [rock,seeds]
+export const itemsArray : Item[] = [rock,seedsTree]

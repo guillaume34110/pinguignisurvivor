@@ -10,5 +10,6 @@ export const dirtGround : MapBlock = {
     rotationX: 0,
     translateY: 0,
     type:MapBlockType.Dirt,
-    coordinate : 0
+    coordinate : 0,
+    isAnimated : false,
 }
