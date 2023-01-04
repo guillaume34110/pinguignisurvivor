@@ -33,7 +33,7 @@ export const seedsTree : Item = {
     unMovable : false,
     price : 80,
     gestation : 0,
-    gestationMax : 2000,
+    gestationMax : 200,
     mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
     babyType : BabyType.Item,
     baby : seeds

@@ -32,7 +32,7 @@ export const rock : Item= {
     unMovable : true,
     price :15,
     gestation : 0,
-    gestationMax : 5000,
+    gestationMax : 500,
     mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
     babyType : BabyType.Creature,
     baby : worms

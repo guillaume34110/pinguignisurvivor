@@ -14,12 +14,14 @@ let mapBlock: MapBlock;
 export const item_Spawn = (gameData: GameData) => {
     gameData.items.forEach(item => {
         if (item.baby !== null) {
-            if (item.gestation < item.gestationMax) {
+            if (item.gestation > item.gestationMax) {
+                item.gestation = 0
                 coordinates = coordinatesMapping(item.coordinate, gameData);
                 mapBlockAround = [];
                 coordinates.forEach(coordinate => {
-                    if (slicedArrays.mapBlocks[coordinate] !== undefined && slicedArrays.mapBlocks[coordinate][0] !== undefined) {
-                        if (item.mapBlockToDrop.includes(mapBlock.type)) mapBlockAround.push(slicedArrays.mapBlocks[coordinate][0]);
+                    mapBlock = slicedArrays.mapBlocks[coordinate][0]
+                    if (mapBlock !== undefined) {
+                        if (item.mapBlockToDrop.includes(mapBlock.type)) mapBlockAround.push(mapBlock);
                     }
                 });
                 lastElement = null;
@@ -29,7 +31,7 @@ export const item_Spawn = (gameData: GameData) => {
                     lastElement = gameData.items[gameData.items.length - 1];
                 } else if (item.babyType === BabyType.Creature) {
                     gameData.creatures.push(JSON.parse(JSON.stringify(item.baby)));
-                    lastElement = gameData.creatures[gameData.items.length - 1];
+                    lastElement = gameData.creatures[gameData.creatures.length - 1];
                 }
                 if (lastElement !== null) {
                     lastElement.spriteBox.x = mapBlock.spriteBox.x + (Math.random() * (mapBlock.spriteBox.w - lastElement.spriteBox.w));
@@ -39,6 +41,7 @@ export const item_Spawn = (gameData: GameData) => {
                     lastElement.id = gameData.items.length - 1;
                 }
             }
+            else item.gestation ++
         }
     });
 }

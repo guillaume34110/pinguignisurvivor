@@ -9,7 +9,7 @@ export enum ItemType {
     FoodVegetable = "FoodVegetable" , Rock = "Rock" , Tree = "Three"
 }
 export enum ItemName { 
-    Seeds = "Seeds" , Rock = "Rock" , SeedsTree ="SeedsThree"
+    Seeds = "Seeds" , Rock = "Rock" , SeedsTree ="SeedsTree"
 }
 export interface Item {
     id: number,

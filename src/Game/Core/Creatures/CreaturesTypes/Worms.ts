@@ -27,7 +27,7 @@ export const worms = {
             x: 0.1,
             y: 0.1
         },
-        speed: 0.6,
+        speed: 0.1,
     },
     hitBox: {
         x: 1,
