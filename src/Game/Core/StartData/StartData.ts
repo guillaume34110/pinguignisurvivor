@@ -171,13 +171,14 @@ export const startData: GameData = {
     howMuchTiles: 1000,
     howMuchTilesOnLine: 20,
     mapPreset: {
-        grassGround: 55,
-        snowGround: 10,
-        dirtGround: 35
+        grassGround: 0,
+        snowGround: 0,
+        dirtGround: 0,
+        waterGround: 0
     },
     creaturePreset: [],
     itemPreset: [],
-    gold: 50,
+    gold: 5000,
     mapBlockPrice: 1,
     totalCreaturePrice: 0,
     totalItemPrice: 0,

@@ -17,16 +17,18 @@ export const creatures_CollisionWithCreatures = (gameData: GameData, type: strin
                     || (creatureBoxToMove.hitBox.x - otherCreature.hitBox.x < 0
                         && creatureBoxToMove.spriteBox.direction.x > 0)
                 )) {
-                    if (otherCreature.weight >= creatureBoxToMove.weight) creatures_collisionBetweenMove(creatureBoxToMove, type)
-                    else creatures_pushOtherCreature(otherCreature , creatureBoxToMove , type)}
+                if (otherCreature.weight >= creatureBoxToMove.weight) creatures_collisionBetweenMove(creatureBoxToMove, type)
+                else creatures_pushOtherCreature(otherCreature, creatureBoxToMove, type)
+            }
             if (type === "y"
                 && ((creatureBoxToMove.hitBox.y - otherCreature.hitBox.y > 0
                     && creatureBoxToMove.spriteBox.direction.y < 0)
                     || (creatureBoxToMove.hitBox.y - otherCreature.hitBox.y < 0
                         && creatureBoxToMove.spriteBox.direction.y > 0)
                 )) {
-                    if (otherCreature.weight >= creatureBoxToMove.weight) creatures_collisionBetweenMove(creatureBoxToMove, type)
-                    else creatures_pushOtherCreature(otherCreature , creatureBoxToMove , type)}
+                if (otherCreature.weight >= creatureBoxToMove.weight) creatures_collisionBetweenMove(creatureBoxToMove, type)
+                else creatures_pushOtherCreature(otherCreature, creatureBoxToMove, type)
+            }
         }
     }
 
@@ -56,7 +58,7 @@ export const creatures_CollisionWithCreaturesWithoutHitboxMatch = (type: string,
 
 export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBlock: MapBlock) => {
 
-    if (mapBlock.type === MapBlockType.Space) {
+    if (mapBlock.type === MapBlockType.Water || mapBlock.type === MapBlockType.Space) {
         if (hitBoxMatch(mapBlock.hitBox, creature.hitBox)) {
             creature.health = 0
             console.log("fall in space ")
@@ -69,7 +71,9 @@ export const creature_collisionWithItem = (creature: Creature, item: Item) => {
 
     if (hitBoxMatch(item.hitBox, creature.hitBox)) {
         if (item.type === ItemType.FoodVegetable) creature_EatFood(item, creature)
-        if (item.type === ItemType.Rock) creatures_CollisionWithMapBlockMove(creature)
+        if ((item.type === ItemType.Rock) 
+        || (item.type === ItemType.Tree)) 
+        creatures_CollisionWithMapBlockMove(creature)
     }
 }
 

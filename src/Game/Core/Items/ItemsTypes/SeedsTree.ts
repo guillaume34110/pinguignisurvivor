@@ -30,7 +30,7 @@ export const seedsTree : Item = {
     },
     isTaken : false,
     coordinate :0,
-    unMovable : false,
+    unMovable : true,
     price : 80,
     gestation : 0,
     gestationMax : 200,

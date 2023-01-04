@@ -261,6 +261,7 @@ const generateNewMap = () => {
     const newMapPreset = {
         grassGround: blocksProportions[1],
         snowGround: blocksProportions[2],
+        waterGround: blocksProportions[3],
         dirtGround: blocksProportions[0]
     }
     gameData.howMuchTiles = blockNumber
@@ -313,6 +314,7 @@ const setGameDataAndLaunchGame = () => {
     const newMapPreset = {
         grassGround: blocksProportions[1],
         snowGround: blocksProportions[2],
+        waterGround: blocksProportions[3],
         dirtGround: blocksProportions[0]
     }
     //@ts-ignore

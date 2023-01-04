@@ -1,4 +1,4 @@
-import {HitBox} from "../StartData/StartData";
+import { HitBox } from "../StartData/StartData";
 import { MapBlocksSprite } from "./MapBlocksSprite";
 
 export interface MapBlock {
@@ -10,10 +10,10 @@ export interface MapBlock {
     translateY: number,
     sprite: MapBlocksSprite,
     type: MapBlockType,
-    coordinate : number,
-    isAnimated : boolean,
+    coordinate: number,
+    isAnimated: boolean,
 }
 
 export enum MapBlockType {
-    Space = "space", Dirt = "Dirt", Grass = "Grass" , Snow = "Snow" , emptyGround ="emptyGround"
+    Space = "space", Dirt = "Dirt", Grass = "Grass", Snow = "Snow", emptyGround = "emptyGround", Water = "Water"
 }

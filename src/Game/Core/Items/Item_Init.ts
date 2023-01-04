@@ -7,7 +7,7 @@ import { ItemName, ItemType } from './Item';
 import { seedsTree } from "./ItemsTypes/SeedsTree";
 
 export const item_Init = (gameData: GameData) => {
-  let mapBlocks: MapBlock[] = gameData.mapBlocks.filter(mapBlock => mapBlock.type !== MapBlockType.Space)
+  let mapBlocks: MapBlock[] = gameData.mapBlocks.filter(mapBlock => ((mapBlock.type !== MapBlockType.Space) && (mapBlock.type !== MapBlockType.Water)))
 
   gameData.itemPreset.forEach(itemName => {
     if (itemName !== ItemName.Rock && itemName !== ItemName.SeedsTree) return

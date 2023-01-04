@@ -27,8 +27,8 @@ import { CreatureSex } from '../../Core/Creatures/Creature';
 
 const rabbitFrontTexture = PIXI.Texture.from(rabbitFront);
 const rabbitBackTexture = PIXI.Texture.from(rabbitBack);
-const rabbitRightTexture = PIXI.Texture.from(rabbitLeft);
-const rabbitLeftTexture = PIXI.Texture.from(rabbitRight);
+const rabbitRightTexture = PIXI.Texture.from(rabbitRight);
+const rabbitLeftTexture = PIXI.Texture.from(rabbitLeft);
 
 const rabbitMaleFrontTexture = PIXI.Texture.from(rabbitMaleFront);
 const rabbitMaleBackTexture = PIXI.Texture.from(rabbitMaleBack);

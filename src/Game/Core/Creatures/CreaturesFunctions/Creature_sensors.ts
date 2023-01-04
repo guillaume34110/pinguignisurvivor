@@ -9,7 +9,7 @@ import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
 import { LightTrigonometry } from "../../Utilities/OurTrigonometry/LightTrigo";
 
 export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
-        if (mapBlock.type === mapBlocksGeneric.spaceBorder.type) {
+        if (mapBlock.type === mapBlocksGeneric.spaceBorder.type || mapBlock.type === mapBlocksGeneric.waterGround.type) {
             if (hitBoxMatch(mapBlock.hitBox, sensor)) {
                 if (sensor.type === SensorType.TurnLeft) creature.sensorsFlags.flagLeft = true
                 else if (sensor.type === SensorType.TurnRight) creature.sensorsFlags.flagRight = true
