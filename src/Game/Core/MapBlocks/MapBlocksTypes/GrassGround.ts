@@ -12,4 +12,5 @@ export const  grassGround : MapBlock = {
     type: MapBlockType.Grass,
     coordinate : 0,
     isAnimated : false,
+    walkable : true,
 }

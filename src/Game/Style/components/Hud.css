@@ -22,10 +22,10 @@
     left : 20px;
     color: lightblue;
 }
-.time{
+.hud-time{
     position :absolute;
-    left:550px;
-    top:45px;
+    left:85vw;
+    top:25px;
     color : antiquewhite;
-    font-size: 20px;
+    font-size: 10px;
 }

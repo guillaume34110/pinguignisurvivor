@@ -1,10 +1,9 @@
-import { MapBlock, MapBlockType } from "../../MapBlocks/MapBlock"
+import { MapBlock } from "../../MapBlocks/MapBlock"
 import { GameData } from "../../StartData/StartData"
-import { seeds } from "../ItemsTypes/Seeds"
-import { BabyType, Item, ItemName, ItemType } from '../Item';
-import { coordinatesMapping, slicedArrays } from '../../Creatures/CreaturesUpdate';
-import { seedsTree } from '../ItemsTypes/SeedsTree';
+import { BabyType, Item} from '../Item';
+import { coordinatesMapping,  slicedArrays } from '../../Creatures/CreaturesUpdate';
 import { Creature } from '../../Creatures/Creature';
+import { hitBoxMatch } from '../../Utilities/HitBoxMatch';
 
 let coordinates: number[];
 let mapBlockAround: MapBlock[];
@@ -25,7 +24,7 @@ export const item_Spawn = (gameData: GameData) => {
                     }
                 });
                 lastElement = null;
-                mapBlock = mapBlockAround[~~(Math.random() * mapBlockAround.length)];
+                mapBlock = mapBlockAround[~~(Math.random() * mapBlockAround.length)]
                 if (item.babyType === BabyType.Item) {
                     gameData.items.push(JSON.parse(JSON.stringify(item.baby)));
                     lastElement = gameData.items[gameData.items.length - 1];
@@ -33,15 +32,47 @@ export const item_Spawn = (gameData: GameData) => {
                     gameData.creatures.push(JSON.parse(JSON.stringify(item.baby)));
                     lastElement = gameData.creatures[gameData.creatures.length - 1];
                 }
-                if (lastElement !== null) {
-                    lastElement.spriteBox.x = mapBlock.spriteBox.x + (Math.random() * (mapBlock.spriteBox.w - lastElement.spriteBox.w));
-                    lastElement.spriteBox.y = mapBlock.spriteBox.y + (Math.random() * (mapBlock.spriteBox.h - lastElement.spriteBox.h));
+                if (lastElement !== null && lastElement.spriteBox !== undefined && mapBlock !== undefined) {
+                    item_EnsureHitNothingForSpawn(gameData, lastElement, mapBlock)
+
                     lastElement.hitBox.x = lastElement.spriteBox.x;
                     lastElement.hitBox.y = lastElement.spriteBox.y;
                     lastElement.id = gameData.items.length - 1;
+                    if (item.dieWhenMakeABaby) item.isTaken = true
                 }
             }
-            else item.gestation ++
+            else item.gestation++
         }
     });
+}
+
+export const item_EnsureHitNothingForSpawn = (gameData: GameData, element: Item | Creature, mapBlock: MapBlock) => {
+    let hitToken = false;
+    const items = gameData.items;
+    const creatures = gameData.creatures;
+
+    for (let t = 0; t < 150; t++) {
+        hitToken = false;
+        element.spriteBox.x = mapBlock.spriteBox.x + (Math.random() * (mapBlock.spriteBox.w - element.spriteBox.w));
+        element.spriteBox.y = mapBlock.spriteBox.y + (Math.random() * (mapBlock.spriteBox.h - element.spriteBox.h));
+
+       
+        for (const item of items) {
+            if (element !==item && item.solid && hitBoxMatch(element.spriteBox, item.spriteBox)) {
+                hitToken = true
+                break;
+            }
+        }
+       
+        for (const creature of creatures) {
+            if (hitBoxMatch(element.hitBox, creature.hitBox)) {
+                hitToken = true
+                break
+            }
+        }
+        // Ajout d'un break pour interrompre la boucle lorsque hitToken est faux
+        if (hitToken === false) {
+            break
+        }
+    }
 }

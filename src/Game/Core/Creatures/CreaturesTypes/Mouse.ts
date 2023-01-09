@@ -1,13 +1,16 @@
 import { SensorType } from '../../StartData/StartData';
 import { Creature, CreatureSex, CreatureType } from '../Creature';
 import { CreaturesSprite } from '../CreaturesSprite';
+import { worms } from './Worms';
+import { MapBlockType } from '../../MapBlocks/MapBlock';
+import { seeds } from '../../Items/ItemsTypes/Seeds';
 
 export const mouse: Creature = {
     id: 0,
     name : 'mouse',
     type: CreatureType.Mouse,
-    maxHealth: 5_000,
-    health: 5_000,
+    maxHealth: 20_000,
+    health: 20_000,
     damage: 10,
     sprite:
     {
@@ -85,6 +88,15 @@ export const mouse: Creature = {
     coordinate : 0,
     weight : 0.1,
     price : 20,
-    sellPrice : 0.1,
-    valueAsFood :4000
+    sellPrice : 0.2,
+    valueAsFood :400,
+    typeFoodToEat : [worms.type , seeds.type],
+    huntingInhibitor : 0,
+    gestation : false, 
+    gestationTime : 0, 
+    gestationMaxTime : 1000,
+    hunger : 2000 ,
+    hungerMax : 5000 ,
+    mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
+    unLikedMapBlock : [MapBlockType.Snow],
 }

@@ -1,5 +1,5 @@
 import { God } from "../God/God";
-import { Item, ItemName } from "../Items/Item";
+import { Item, ItemType } from '../Items/Item';
 import { MapBlock } from "../MapBlocks/MapBlock";
 import { CreaturesSprite } from "../Creatures/CreaturesSprite";
 
@@ -20,7 +20,7 @@ export interface GameData {
     howMuchTilesOnLine: number,
     mapPreset: MapPreset,
     creaturePreset: CreatureType[],
-    itemPreset: ItemName[],
+    itemPreset: ItemType[],
     gold: number,
     mapBlockPrice: number,
     totalCreaturePrice: number,

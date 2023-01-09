@@ -1,8 +1,9 @@
+import { MapBlockType } from "../../MapBlocks/MapBlock";
 import { SensorType } from "../../StartData/StartData";
-import { CreatureSex, CreatureType } from "../Creature";
+import { Creature, CreatureSex, CreatureType } from "../Creature";
 import { CreaturesSprite } from "../CreaturesSprite";
 
-export const worms = {
+export const worms : Creature = {
     id: 0,
     name : 'worms',
     type: CreatureType.Worms,
@@ -53,5 +54,14 @@ export const worms = {
     weight : 0.01, 
     price : 0,
     sellPrice : 0,
-    valueAsFood : 2000
+    valueAsFood : 400,
+    typeFoodToEat : [],
+    huntingInhibitor: 0,
+    gestation : false, 
+    gestationTime : 0, 
+    gestationMaxTime : 0,
+    hunger : 4000 ,
+    hungerMax : 8000 ,
+    mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
+    unLikedMapBlock : [MapBlockType.Snow],
 }

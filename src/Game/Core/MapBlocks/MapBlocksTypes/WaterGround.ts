@@ -12,4 +12,5 @@ export const waterGround : MapBlock = {
     type:MapBlockType.Water,
     coordinate : 0,
     isAnimated : true,
+    walkable : false
 }

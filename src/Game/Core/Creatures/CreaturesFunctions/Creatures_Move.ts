@@ -16,10 +16,10 @@ export const creatures_Move = (creature: Creature) => {
 
 
 export const creatures_CollisionWithMapBlockMove = (creature: Creature) => {
-
+    creature.huntingInhibitor = 200
     creature.spriteBox.x -= creature.spriteBox.direction.x * 10
     creature.spriteBox.y -= creature.spriteBox.direction.y * 10
-    rotateSpriteBoxByX10Degrees(creature.spriteBox, 3)
+    rotateSpriteBoxByX10Degrees(creature.spriteBox, ((Math.random()-0.5) *15))
 
 }
 export const creatures_CollisionWithMapBlockMoveOld = (creature: Creature) => {

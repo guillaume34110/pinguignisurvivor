@@ -12,4 +12,5 @@ export const dirtGround : MapBlock = {
     type:MapBlockType.Dirt,
     coordinate : 0,
     isAnimated : false,
+    walkable : true,
 }

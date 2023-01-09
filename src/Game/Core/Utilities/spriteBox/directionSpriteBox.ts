@@ -45,7 +45,7 @@ export const spriteBoxSetDirectionXYBy10DegreesAngle = (
 export const spriteBoxAddX10DegreesDirection = (
     spriteBox: SpriteBoxInterface, degreeAngle: number
 ) => {
-    spriteBox.direction.degree10 += ~~(36 + degreeAngle / 10) % 36
+    spriteBox.direction.degree10 += Math.round(36 + degreeAngle / 10) % 36
 }
 
 let x = 0 

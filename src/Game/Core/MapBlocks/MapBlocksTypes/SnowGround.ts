@@ -12,4 +12,5 @@ export const snowGround : MapBlock  = {
     type:MapBlockType.Snow,
     coordinate : 0,
     isAnimated : false,
+   walkable : true,
 }

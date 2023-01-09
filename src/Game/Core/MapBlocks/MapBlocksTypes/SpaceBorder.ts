@@ -12,4 +12,5 @@ export const spaceBorder : MapBlock = {
     type: MapBlockType.Space,
     coordinate : 0,
     isAnimated : false,
+    walkable : false
 }

@@ -1,14 +1,13 @@
 import { MapBlockType } from "../../MapBlocks/MapBlock";
-import { Item, ItemName, ItemType, BabyType } from '../Item';
+import { Item, ItemType, BabyType } from '../Item';
 import { ItemSprite } from "../ItemSprite";
-import { seeds } from "./Seeds";
+import { seeds } from './Seeds';
 
 export const seedsTree : Item = {
     id: 0,
-    type: ItemType.Tree,
-    name: ItemName.SeedsTree,
+    type: ItemType.SeedsTree,
     sprite: ItemSprite.SeedsTree,
-    value: 2500,
+    valueAsFood: 2500,
     spriteBox: {
         x: 1,
         y: 1,
@@ -33,8 +32,10 @@ export const seedsTree : Item = {
     unMovable : true,
     price : 80,
     gestation : 0,
-    gestationMax : 200,
+    gestationMax : 400,
     mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
     babyType : BabyType.Item,
-    baby : seeds
+    baby : seeds,
+    solid: true,
+    dieWhenMakeABaby : false
  }

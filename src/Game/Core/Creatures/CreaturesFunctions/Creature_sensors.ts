@@ -9,7 +9,9 @@ import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
 import { LightTrigonometry } from "../../Utilities/OurTrigonometry/LightTrigo";
 
 export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
-        if (mapBlock.type === mapBlocksGeneric.spaceBorder.type || mapBlock.type === mapBlocksGeneric.waterGround.type) {
+        if (mapBlock.type === mapBlocksGeneric.spaceBorder.type 
+            || mapBlock.type === mapBlocksGeneric.waterGround.type 
+            || (creature.unLikedMapBlock.includes(mapBlock.type)  && Math.random() > 0.96)) {
             if (hitBoxMatch(mapBlock.hitBox, sensor)) {
                 if (sensor.type === SensorType.TurnLeft) creature.sensorsFlags.flagLeft = true
                 else if (sensor.type === SensorType.TurnRight) creature.sensorsFlags.flagRight = true
@@ -34,13 +36,16 @@ export const creature_sensorSetCollisionFlagWithItems = (creature: Creature, sen
 export const creature_TurnOnCollision = (creature: Creature) => {
     switch (true) {
         case creature.sensorsFlags.flagLeft && creature.sensorsFlags.flagRight:
-            spriteBoxAddX10DegreesDirection(creature.spriteBox, 50);
+            if (!creature.hunting)spriteBoxAddX10DegreesDirection(creature.spriteBox, 50);
+            else spriteBoxAddX10DegreesDirection(creature.spriteBox, 120);
             break;
         case creature.sensorsFlags.flagLeft:
-            spriteBoxAddX10DegreesDirection(creature.spriteBox, 10);
+            if (!creature.hunting) spriteBoxAddX10DegreesDirection(creature.spriteBox, 10);
+            else  spriteBoxAddX10DegreesDirection(creature.spriteBox, 60);
             break;
         case creature.sensorsFlags.flagRight:
-            spriteBoxAddX10DegreesDirection(creature.spriteBox, -10);
+            if (!creature.hunting)spriteBoxAddX10DegreesDirection(creature.spriteBox, -10);
+             else  spriteBoxAddX10DegreesDirection(creature.spriteBox, -60);
             break;
     }
 }

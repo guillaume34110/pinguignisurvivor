@@ -12,4 +12,5 @@ export const emptyGround : MapBlock = {
     type:MapBlockType.emptyGround,
     coordinate : 0,
     isAnimated : false,
+    walkable : true,
 }

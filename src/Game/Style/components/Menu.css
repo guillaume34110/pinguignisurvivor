@@ -69,7 +69,7 @@ h6{ position: relative;
 
 
 
-.btn-start , .btn-generate {
+.btn  {
     background-color: #0099ff;
     color: white;
     text-transform: uppercase;

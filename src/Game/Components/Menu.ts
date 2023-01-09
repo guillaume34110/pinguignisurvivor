@@ -5,18 +5,22 @@ import { GameData } from '../Core/StartData/StartData';
 import { componentInit, drawInit, drawLoop, gameData } from './Game';
 import '../Style/components/Menu.css'
 import { itemsArray } from "../Core/Items/ItemsArray";
-import { ItemName } from "../Core/Items/Item";
 import { scaling } from "../Core/Scaling/scaling";
 import { mapBlocks_Init } from "../Core/MapBlocks/MapBlocks_Init";
+import { Creatures_Init } from "../Core/Creatures/Creatures_Init";
+import { item_Init } from "../Core/Items/Item_Init";
+import { ItemType } from "../Core/Items/Item";
 
 let totalPrice = 0
 
 const getTimerElement = (): HTMLInputElement | null => document.querySelector('#timer-input')
-const getBlockNumberElement = (): HTMLInputElement | null => document.querySelector("#map-blocks")
+const getBlockHeightElement = (): HTMLInputElement | null => document.querySelector("#map-blocks")
 const getMapWidthElement = (): HTMLInputElement | null => document.querySelector("#map-width")
 const getRootElement = (): HTMLElement | null => document.getElementById('root')
 const getBtnStartElement = (): HTMLDivElement | null => document.querySelector('.btn-start')
 const getBtnGenerateElements = (): NodeList => document.querySelectorAll(`.btn-generate`)
+const getBtnGenerateElementsElement = (): HTMLButtonElement | null => document.querySelector(`.btn-generate-elements`)
+const getBtnGenerateCreaturesElement = (): HTMLButtonElement | null => document.querySelector(`.btn-generate-creatures`)
 const getMapBlockPriceElement = (): HTMLTitleElement | null => document.querySelector(".map-block-price")
 const getItemTotalPriceElement = (): HTMLTitleElement | null => document.querySelector(".item-total-price")
 const getCreatureTotalPriceElement = (): HTMLTitleElement | null => document.querySelector(".creature-total-price")
@@ -32,6 +36,8 @@ export const menu = (gameData: GameData) => {
     createMenuInterface()
     changesListeners()
     btnStartListener()
+    creatureListener()
+    itemListener()
     mapBlocksListener()
     if (!firstTimeToken) {
         firstTimeToken = true
@@ -75,16 +81,15 @@ function createMenuInterface() {
     const mapBlocksMenuCard = `
 <div class = "flex-column  border" >
         <div class = "flex ">
-            <h4>Nombre de block:</h4>
-            <input type="number" value="1000"  id="map-blocks" />
-            <h4> ${gameData.mapBlockPrice}$</h4>
+            <h4>Longueur de la carte:</h4>
+            <input type="number" value="10"  id="map-blocks" />
         </div>
         <div  class = "flex">
             <h4>Largeur de la carte:</h4>
             <input type="number"value="25" id="map-width" />
         </div>
         <h4 class = "map-block-price" >Price : ${gameData.mapBlockPrice * gameData.howMuchTiles}</h4>
-        <button class = "btn btn-generate" >Generer</button>
+        <button class = "btn btn-generate" >Generer carte</button>
     </div>
 `
 
@@ -98,6 +103,7 @@ function createMenuInterface() {
                 <label for="creature-price">${creature.price}$</label>
             </div>`
     ).join('')}
+    <button class = "btn btn-generate-creatures" >Generer creatures</button>
     <h4 class = "creature-total-price" >Price : ${gameData.totalCreaturePrice}</h4>
     </div>
 `
@@ -112,20 +118,21 @@ function createMenuInterface() {
                 <label for="block-percentage">%</label>
             </div>`
     ).join('')}
-        <button class = "btn btn-generate" >Generer</button>
+        <button class = "btn btn-generate" >Generer carte</button>
     </div>
 `
 
     const itemsMenuCard = `
 <div  class = "flex-column border ">
-        <h4>Choix des items:</h4>
+        <h4>Choix des elements:</h4>
         ${itemsArray?.map(item =>
         `<div  class = "flex  p-0x5rem w-100 space-around">
-            <div class = "w-5rem"> ${item.name}</div>
-                <input data-name = ${item.name} data-price="${item.price}"  class = "item-number" type="number" value="0" min="0" max="100" id="${item.name + "-number"}" />
+            <div class = "w-5rem"> ${item.type}</div>
+                <input data-name = ${item.type} data-price="${item.price}"  class = "item-number" type="number" value="0" min="0" max="100" id="${item.type + "-number"}" />
                 <label for="item-price">${item.price}$</label>
             </div>`
     ).join('')}
+    <button class = "btn btn-generate-elements" >Generer elements</button>
     <h4 class = "item-total-price" >Price : ${gameData.totalCreaturePrice}</h4>
     </div>
 `
@@ -173,13 +180,61 @@ const mapBlocksListener = () => {
     })
 }
 
+const creatureListener = () => {
+    const inputElement = getBtnGenerateCreaturesElement()
+    if (inputElement === null) return
+    inputElement.addEventListener('click', creatureInitializer);
+}
+
+const creatureInitializer = () => {
+    const creaturesElement: NodeList = getCreaturesElement()
+    const creaturesNames: string[] = []
+    Array.from(creaturesElement as NodeListOf<HTMLInputElement>).forEach((element: HTMLInputElement) => {
+        const howMuch = parseInt(element.value)
+        for (let i = 0; i < howMuch; i++) {
+            const type = element.getAttribute('data-type')
+            if (type !== null)
+                creaturesNames.push(type);
+        }
+    })
+    //@ts-ignore
+    const newCreaturePreset: CreatureType[] = creaturesNames.map(creatureName => CreatureType[creatureName])
+
+    gameData.creaturePreset = newCreaturePreset
+    Creatures_Init(gameData)
+}
+
+const itemListener = () => {
+    const inputElement = getBtnGenerateElementsElement()
+    if (inputElement === null) return
+    inputElement.addEventListener('click', itemInitializer);
+}
+
+const itemInitializer = () => {
+    const ItemsElement: NodeList = getItemsElements()
+    const ItemsNames: string[] = []
+    Array.from(ItemsElement as NodeListOf<HTMLInputElement>).forEach((element: HTMLInputElement) => {
+        const howMuch = parseInt(element.value)
+        for (let i = 0; i < howMuch; i++) {
+            const type = element.getAttribute('data-name')
+            if (type !== null)
+                ItemsNames.push(type);
+        }
+    })
+    //@ts-ignore
+    const newItemPreset: ItemType[] = ItemsNames.map(ItemName => ItemType[ItemName])
+
+    gameData.itemPreset = newItemPreset
+    item_Init(gameData)
+}
+
 const changesListeners = () => {
-    const blockNumberElement: HTMLInputElement | null = getBlockNumberElement()
+    const blockNumberElement: HTMLInputElement | null = getBlockHeightElement()
     if (blockNumberElement === null) return
     blockNumberElement.addEventListener("change", setNumberBlockTotalPrice)
 
     itemsArray.forEach(item => {
-        const inputElement: HTMLInputElement | null = document.querySelector(`#${item.name + "-number"}`);
+        const inputElement: HTMLInputElement | null = document.querySelector(`#${item.type + "-number"}`);
         if (inputElement === null) return
         inputElement.addEventListener("change", setItemTotalPrice)
 
@@ -195,10 +250,11 @@ const changesListeners = () => {
 }
 
 const setNumberBlockTotalPrice = () => {
-    const blockNumberElement: HTMLInputElement | null = getBlockNumberElement()
+    const blockNumberElement: HTMLInputElement | null = getBlockHeightElement()
+    const blockWidthElement: HTMLInputElement | null = getMapWidthElement()
     const mapBlockPriceElement: HTMLTitleElement | null = getMapBlockPriceElement()
-    if (blockNumberElement === null || mapBlockPriceElement === null) return
-    const price = gameData.mapBlockPrice * parseInt(blockNumberElement.value)
+    if (blockNumberElement === null || mapBlockPriceElement === null || blockWidthElement === null) return
+    const price = gameData.mapBlockPrice * parseInt(blockNumberElement.value) * parseInt(blockWidthElement.value)
     mapBlockPriceElement.innerHTML = `Price : ${price}`
     gameData.totalMapBlockPrice = price
     setTotalPriceElement()
@@ -208,7 +264,7 @@ const setItemTotalPrice = () => {
     if (totalPriceElement === null) return
     let totalPriceBuffer = 0
     itemsArray.forEach(item => {
-        const inputElement: HTMLInputElement | null = document.querySelector(`#${item.name + "-number"}`);
+        const inputElement: HTMLInputElement | null = document.querySelector(`#${item.type + "-number"}`);
         if (inputElement === null) return
         const itemPrice = inputElement.getAttribute('data-price');
         if (itemPrice === null) return
@@ -246,7 +302,7 @@ const setTotalPriceElement = () => {
 
 const generateNewMap = () => {
 
-    const blockNumberElement = getBlockNumberElement()
+    const blockNumberElement = getBlockHeightElement()
     const mapWidthElement: HTMLInputElement | null = getMapWidthElement()
     const mapBlocksElement: NodeList = getMapBlocksProportionsElement()
     if (blockNumberElement === null || mapWidthElement === null) return
@@ -264,7 +320,7 @@ const generateNewMap = () => {
         waterGround: blocksProportions[3],
         dirtGround: blocksProportions[0]
     }
-    gameData.howMuchTiles = blockNumber
+    gameData.howMuchTiles = blockNumber * mapWidth
     gameData.howMuchTilesOnLine = mapWidth
     gameData.mapPreset = newMapPreset
 
@@ -272,71 +328,20 @@ const generateNewMap = () => {
 }
 
 const setGameDataAndLaunchGame = () => {
-
-    const blockNumberElement: HTMLInputElement | null = getBlockNumberElement()
-    const mapWidthElement: HTMLInputElement | null = getMapWidthElement()
-    const creaturesElement: NodeList = getCreaturesElement()
-    const mapBlocksElement: NodeList = getMapBlocksProportionsElement()
-    const itemsElements: NodeList = getItemsElements()
     const timerElement: HTMLInputElement | null = getTimerElement()
-    if (blockNumberElement === null || mapWidthElement === null || timerElement === null) return
-    console.log("object")
-    const blockNumber = parseInt(blockNumberElement.value)
-    const mapWidth = parseInt(mapWidthElement.value)
+    if (timerElement === null) return
     const timeBeforeHarvest = parseInt(timerElement.value)
-    const blocksProportions: number[] = []
-    const creaturesNames: string[] = []
-    const itemsNames: string[] = []
-
-    Array.from(creaturesElement as NodeListOf<HTMLInputElement>).forEach((element: HTMLInputElement) => {
-        const howMuch = parseInt(element.value)
-        for (let i = 0; i < howMuch; i++) {
-            const type = element.getAttribute('data-type')
-            if (type !== null)
-                creaturesNames.push(type);
-        }
-
-    })
-
-    Array.from(mapBlocksElement as NodeListOf<HTMLInputElement>).forEach((element: HTMLInputElement) => {
-        blocksProportions.push(parseInt(element.value, 10))
-    })
-
-    Array.from(itemsElements as NodeListOf<HTMLInputElement>).forEach((element: HTMLInputElement) => {
-        const howMuch = parseInt(element.value)
-        for (let i = 0; i < howMuch; i++) {
-            const name = element.getAttribute('data-name')
-            if (name !== null)
-                itemsNames.push(name);
-        }
-    })
-
-    const newMapPreset = {
-        grassGround: blocksProportions[1],
-        snowGround: blocksProportions[2],
-        waterGround: blocksProportions[3],
-        dirtGround: blocksProportions[0]
-    }
-    //@ts-ignore
-    const newCreaturePreset: CreatureType[] = creaturesNames.map(creatureName => CreatureType[creatureName])
-
-    //@ts-ignore
-    const newItemsPreset = itemsNames.map(itemName => ItemName[itemName])
-    if (gameData.gold < gameData.totalPrice){
+    if (gameData.gold < gameData.totalPrice) {
         priceError(gameData)
-         return
-        }
+        return
+    }
     gameData.timeBeforeHarvest = timeBeforeHarvest * 60 * 1000
-    gameData.howMuchTiles = blockNumber
-    gameData.howMuchTilesOnLine = mapWidth
-    gameData.mapPreset = newMapPreset
-    gameData.creaturePreset = newCreaturePreset
-    gameData.itemPreset = newItemsPreset
     gameData.gold -= gameData.totalPrice
     const root = getRootElement()
     const menuContainer = getMenuContainerElement();
     if (root === null || menuContainer === null) return
     root.removeChild(menuContainer);
+    console.log(gameData);
     componentInit(gameData)
 }
 
@@ -344,8 +349,8 @@ const refillGold = (gameData: GameData) => {
     if (gameData.gold < 400) gameData.gold = 400
 }
 
-const priceError =async (gameData: GameData) =>{
-     const totalPriceElement = getTotalPriceElement()
+const priceError = async (gameData: GameData) => {
+    const totalPriceElement = getTotalPriceElement()
     if (totalPriceElement === null) return
     const totalPriceBuffer = gameData.totalItemPrice + gameData.totalCreaturePrice + gameData.totalMapBlockPrice
     totalPriceElement.innerHTML = `Price : ${totalPriceBuffer} <div class = "error-text">Or insufisant</div>`
@@ -353,6 +358,6 @@ const priceError =async (gameData: GameData) =>{
     totalPriceElement.innerHTML = `Price : ${totalPriceBuffer} `
 }
 
-export function sleep(ms : number) {
+export function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+}

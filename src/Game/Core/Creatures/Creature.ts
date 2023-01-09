@@ -1,3 +1,5 @@
+import {  ItemType } from '../Items/Item';
+import { MapBlockType } from '../MapBlocks/MapBlock';
 import {HitBox, Sensors, SensorsFlag as SensorsFlags, Sprite, SpriteBoxInterface} from "../StartData/StartData";
 
 export interface Creature {
@@ -23,7 +25,16 @@ export interface Creature {
     weight : number,
     price : number,
     sellPrice : number,
-    valueAsFood : number
+    valueAsFood : number, 
+    typeFoodToEat : (CreatureType|ItemType) [],
+    huntingInhibitor  : number,
+    gestation : boolean, 
+    gestationTime : number, 
+    gestationMaxTime : number,
+    hunger : number ,
+    hungerMax : number ,
+    mapBlockToDrop :MapBlockType[],
+    unLikedMapBlock : MapBlockType[]
 }
 
 export interface LifeBar {
@@ -41,3 +52,5 @@ export enum CreatureSex {
 export enum CreatureType { 
     Mouse = "Mouse", Rabbit = "Rabbit",Worms = "Worms"
 }
+
+

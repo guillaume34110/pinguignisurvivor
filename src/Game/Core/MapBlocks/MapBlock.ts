@@ -12,6 +12,7 @@ export interface MapBlock {
     type: MapBlockType,
     coordinate: number,
     isAnimated: boolean,
+    walkable : boolean
 }
 
 export enum MapBlockType {
