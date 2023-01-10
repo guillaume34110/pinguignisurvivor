@@ -1,3 +1,4 @@
+import { waterGroundBorderDown, waterGroundBorderLeft, waterGroundBorderRight, waterGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/WaterGround";
 import { MapBlock, MapBlockType } from "../MapBlock";
 import { MapBlocksSprite } from '../MapBlocksSprite';
 
@@ -12,5 +13,12 @@ export const spaceBorder : MapBlock = {
     type: MapBlockType.Space,
     coordinate : 0,
     isAnimated : false,
-    walkable : false
+    walkable : false,
+    layer : 0,
+    borders :{
+        up : waterGroundBorderUp,
+        down : waterGroundBorderDown,
+        left : waterGroundBorderLeft,
+        right: waterGroundBorderRight
+    }
 }

@@ -1,3 +1,4 @@
+import { dirtGroundBorderDown, dirtGroundBorderLeft, dirtGroundBorderRight, dirtGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/DirtGround";
 import { MapBlock, MapBlockType } from "../MapBlock";
 import { MapBlocksSprite } from '../MapBlocksSprite';
 
@@ -13,4 +14,11 @@ export const dirtGround : MapBlock = {
     coordinate : 0,
     isAnimated : false,
     walkable : true,
+    layer : 2,
+    borders :{
+        up :dirtGroundBorderUp,
+        down :dirtGroundBorderDown,
+        left :dirtGroundBorderLeft,
+        right:dirtGroundBorderRight
+    }
 }

@@ -1,0 +1,18 @@
+export enum MapBlocksBorderSprite{
+    GroundDirtDown,
+    GroundDirtUp,
+    GroundDirtLeft,
+    GroundDirtRight,
+    GroundGrassDown,
+    GroundGrassUp,
+    GroundGrassLeft,
+    GroundGrassRight, 
+    GroundSnowDown,
+    GroundSnowUp,
+    GroundSnowLeft,
+    GroundSnowRight,
+    WaterDown,
+    WaterUp,
+    WaterLeft,
+    WaterRight,
+ }

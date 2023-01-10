@@ -6,6 +6,7 @@ import { CreaturesSprite } from "../Creatures/CreaturesSprite";
 import { Creature, CreatureType } from '../Creatures/Creature';
 import { godsGeneric } from "../God/Gods";
 import { MapPreset } from '../MapBlocks/MapBlocks_Init';
+import { MapBlockBorder } from "../MapBlockBorder/MapBlockBorder";
 
 export interface GameData {
     god: God,
@@ -15,6 +16,7 @@ export interface GameData {
     time: number,
     camera: Camera,
     mapBlocks: MapBlock[],
+    mapBlocksBorder : MapBlockBorder[],
     message: string,
     howMuchTiles: number,
     howMuchTilesOnLine: number,
@@ -167,7 +169,9 @@ export const startData: GameData = {
     },
     mapBlocks: [
 
-    ], message: "",
+    ],
+    mapBlocksBorder : [],
+     message: "",
     howMuchTiles: 1000,
     howMuchTilesOnLine: 20,
     mapPreset: {

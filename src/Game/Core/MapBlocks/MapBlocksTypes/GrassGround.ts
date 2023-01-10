@@ -1,3 +1,4 @@
+import { grassGroundBorderDown, grassGroundBorderLeft, grassGroundBorderRight, grassGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/GrassGroundBorder";
 import { MapBlock, MapBlockType } from "../MapBlock";
 import { MapBlocksSprite } from "../MapBlocksSprite";
 
@@ -13,4 +14,12 @@ export const  grassGround : MapBlock = {
     coordinate : 0,
     isAnimated : false,
     walkable : true,
+    
+    layer : 3,
+    borders :{
+        up : grassGroundBorderUp,
+        down : grassGroundBorderDown,
+        left : grassGroundBorderLeft,
+        right: grassGroundBorderRight
+    }
 }

@@ -5,6 +5,7 @@ import { mapBlocks_SpaceBlocks } from "./MapBlocksUtilities/ProceduralGeneration
 import { mapBlocks_disposition } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_disposition";
 import { mapBlocks_HitBox } from "./MapBlocksUtilities/MapBlocks_HitBox";
 import { setCoordinateIndexPosition } from "../Utilities/Coordinate/Coordinate";
+import { mapBlocksBorder_Init} from '../MapBlockBorder/MapBlockBorder_Init';
 
 export const mapBlocks_Init = (gameData: GameData) => {
 
@@ -17,7 +18,7 @@ export const mapBlocks_Init = (gameData: GameData) => {
     mapBlock.coordinate = setCoordinateIndexPosition(mapBlock.spriteBox, gameData)
   }
   mapBlocks_HitBox(gameData)
-
+  mapBlocksBorder_Init(gameData)
 }
 
 export interface MapPreset {

@@ -1,5 +1,7 @@
+import { MapBlocksBorderSprite } from "../MapBlockBorder/MapBlockBorderSprite";
 import { HitBox } from "../StartData/StartData";
 import { MapBlocksSprite } from "./MapBlocksSprite";
+import { MapBlockBorder } from '../MapBlockBorder/MapBlockBorder';
 
 export interface MapBlock {
     id: number,
@@ -12,7 +14,15 @@ export interface MapBlock {
     type: MapBlockType,
     coordinate: number,
     isAnimated: boolean,
-    walkable : boolean
+    walkable : boolean,
+    layer : number ,
+    borders: Borders
+}
+interface Borders { 
+    up : MapBlockBorder
+    down : MapBlockBorder
+    left : MapBlockBorder
+    right : MapBlockBorder
 }
 
 export enum MapBlockType {

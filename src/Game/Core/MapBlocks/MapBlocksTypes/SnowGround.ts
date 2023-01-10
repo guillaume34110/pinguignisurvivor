@@ -1,3 +1,4 @@
+import { snowGroundBorderDown, snowGroundBorderLeft, snowGroundBorderRight, snowGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/SnowGroundBorder"
 import { MapBlock, MapBlockType } from "../MapBlock"
 import { MapBlocksSprite } from "../MapBlocksSprite"
 
@@ -13,4 +14,12 @@ export const snowGround : MapBlock  = {
     coordinate : 0,
     isAnimated : false,
    walkable : true,
+   
+   layer : 4,
+   borders :{
+    up : snowGroundBorderUp,
+    down : snowGroundBorderDown,
+    left : snowGroundBorderLeft,
+    right: snowGroundBorderRight
+}
 }

@@ -7,10 +7,12 @@ import {  mapBlocksRefresh } from './MapBlocks/MapBlocks_Draw';
 import {  hud_RefreshPixi } from "./Hud/Hud";
 import * as PIXI from 'pixi.js'
 import { godUpdate } from "../Core/God/GodUpdate";
+import { mapBlocksBorderRefresh } from './MapBlocksBorder/MapBlocksBorder_Draw';
 
 
 export const draw = (gameData:GameData, targetPixi:PIXI.Application ) =>{
     mapBlocksRefresh(gameData, targetPixi)
+    mapBlocksBorderRefresh(gameData, targetPixi)
     items_RefreshPixi(gameData, targetPixi)
     creatures_RefreshPixi(gameData, targetPixi)
     hud_RefreshPixi(gameData)
