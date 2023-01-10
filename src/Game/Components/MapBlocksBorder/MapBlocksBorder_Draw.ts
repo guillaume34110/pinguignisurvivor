@@ -1,5 +1,5 @@
 import { GameData } from '../../Core/StartData/StartData';
-import { animation4Frames, isOnScreen } from '../Game';
+import { animation4Frames, isOnScreen, animation4Frames32 } from '../Game';
 
 import * as PIXI from 'pixi.js'
 import { selectTexture } from './MapBlocksBorderSprites';
@@ -14,7 +14,7 @@ export const mapBlocksBorderRefresh = (gameData: GameData, targetPixi: PIXI.Appl
             sprite.y = mapBlockBorder.spriteBox.y - god.spriteBox.y + 300
             sprite.width = mapBlockBorder.spriteBox.w
             sprite.height = mapBlockBorder.spriteBox.h
-             if (mapBlockBorder.isAnimated) sprite.texture.frame =new PIXI.Rectangle(animation4Frames(32), 0, 32, 32);
+             if (mapBlockBorder.isAnimated) sprite.texture.frame =new PIXI.Rectangle(animation4Frames32(), 0, 31.70,31.70);
             targetPixi.stage.addChild(sprite)
         }
     })
