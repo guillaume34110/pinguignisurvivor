@@ -1,4 +1,4 @@
-import { grassGroundBorderDown, grassGroundBorderLeft, grassGroundBorderRight, grassGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/GrassGroundBorder";
+import { grassGroundBorderDown, grassGroundBorderDown2, grassGroundBorderDownLeft, grassGroundBorderDownRight, grassGroundBorderLeft, grassGroundBorderLeft2, grassGroundBorderRight, grassGroundBorderRight2, grassGroundBorderUp, grassGroundBorderUp2, grassGroundBorderUpLeft, grassGroundBorderUpRight } from '../../MapBlockBorder/MapBlocksBorderTypes/GrassGroundBorder';
 import { MapBlock, MapBlockType } from "../MapBlock";
 import { MapBlocksSprite } from "../MapBlocksSprite";
 
@@ -12,14 +12,17 @@ export const  grassGround : MapBlock = {
     translateY: 0,
     type: MapBlockType.Grass,
     coordinate : 0,
-    isAnimated : false,
     walkable : true,
     
     layer : 3,
     borders :{
-        up : grassGroundBorderUp,
-        down : grassGroundBorderDown,
-        left : grassGroundBorderLeft,
-        right: grassGroundBorderRight
+        up : Math.random() < 0.5 ? grassGroundBorderUp : grassGroundBorderUp2,
+        down :  Math.random() < 0.5 ? grassGroundBorderDown : grassGroundBorderDown2,
+        left : Math.random() < 0.5 ? grassGroundBorderLeft : grassGroundBorderLeft2,
+        right: Math.random() < 0.5 ? grassGroundBorderRight : grassGroundBorderRight2,
+        downRight : grassGroundBorderDownRight,
+        downLeft : grassGroundBorderDownLeft,
+        upLeft :grassGroundBorderUpLeft,
+        upRight : grassGroundBorderUpRight
     }
 }

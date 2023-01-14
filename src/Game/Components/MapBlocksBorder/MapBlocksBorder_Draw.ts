@@ -12,9 +12,8 @@ export const mapBlocksBorderRefresh = (gameData: GameData, targetPixi: PIXI.Appl
             const sprite = new PIXI.Sprite(selectTexture(mapBlockBorder.sprite))
             sprite.x = mapBlockBorder.spriteBox.x - god.spriteBox.x + 600
             sprite.y = mapBlockBorder.spriteBox.y - god.spriteBox.y + 300
-            sprite.width = mapBlockBorder.spriteBox.w
-            sprite.height = mapBlockBorder.spriteBox.h
-             if (mapBlockBorder.isAnimated) sprite.texture.frame =new PIXI.Rectangle(animation4Frames32(), 0, 31.70,31.70);
+            sprite.width = ~~ mapBlockBorder.spriteBox.w
+            sprite.height = ~~ mapBlockBorder.spriteBox.h
             targetPixi.stage.addChild(sprite)
         }
     })

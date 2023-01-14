@@ -1,4 +1,4 @@
-import { snowGroundBorderDown, snowGroundBorderLeft, snowGroundBorderRight, snowGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/SnowGroundBorder"
+import { snowGroundBorderDown, snowGroundBorderDown2, snowGroundBorderDownLeft, snowGroundBorderDownRight, snowGroundBorderLeft, snowGroundBorderLeft2, snowGroundBorderRight, snowGroundBorderRight2, snowGroundBorderUp, snowGroundBorderUp2, snowGroundBorderUpLeft, snowGroundBorderUpRight } from '../../MapBlockBorder/MapBlocksBorderTypes/SnowGroundBorder';
 import { MapBlock, MapBlockType } from "../MapBlock"
 import { MapBlocksSprite } from "../MapBlocksSprite"
 
@@ -12,14 +12,17 @@ export const snowGround : MapBlock  = {
     translateY: 0,
     type:MapBlockType.Snow,
     coordinate : 0,
-    isAnimated : false,
    walkable : true,
    
    layer : 4,
    borders :{
-    up : snowGroundBorderUp,
-    down : snowGroundBorderDown,
-    left : snowGroundBorderLeft,
-    right: snowGroundBorderRight
+    up : Math.random() < 0.5 ? snowGroundBorderUp : snowGroundBorderUp2,
+    down : Math.random() < 0.5 ?snowGroundBorderDown : snowGroundBorderDown2,
+    left :Math.random() < 0.5 ? snowGroundBorderLeft : snowGroundBorderLeft2,
+    right:Math.random() < 0.5 ? snowGroundBorderRight :snowGroundBorderRight2,
+    downRight : snowGroundBorderDownRight,
+        downLeft : snowGroundBorderDownLeft,
+        upLeft : snowGroundBorderUpLeft,
+        upRight : snowGroundBorderUpRight 
 }
 }

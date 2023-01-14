@@ -14,7 +14,6 @@ export const mapBlocksRefresh = (gameData: GameData, targetPixi: PIXI.Applicatio
             sprite.y = mapBlock.spriteBox.y - god.spriteBox.y + 300
             sprite.width = mapBlock.spriteBox.w
             sprite.height = mapBlock.spriteBox.h
-             if (mapBlock.isAnimated) sprite.texture.frame =new PIXI.Rectangle(animation4Frames(32), 0, 32, 32);
             targetPixi.stage.addChild(sprite)
         }
     })

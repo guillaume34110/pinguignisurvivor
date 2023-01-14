@@ -13,16 +13,19 @@ export interface MapBlock {
     sprite: MapBlocksSprite,
     type: MapBlockType,
     coordinate: number,
-    isAnimated: boolean,
     walkable : boolean,
     layer : number ,
     borders: Borders
 }
 interface Borders { 
-    up : MapBlockBorder
+    up :  MapBlockBorder
     down : MapBlockBorder
     left : MapBlockBorder
     right : MapBlockBorder
+    downRight : MapBlockBorder
+    downLeft : MapBlockBorder
+    upLeft : MapBlockBorder
+    upRight : MapBlockBorder
 }
 
 export enum MapBlockType {

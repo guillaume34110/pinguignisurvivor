@@ -1,4 +1,4 @@
-import { dirtGroundBorderDown, dirtGroundBorderLeft, dirtGroundBorderRight, dirtGroundBorderUp } from "../../MapBlockBorder/MapBlocksBorderTypes/DirtGround";
+import { dirtGroundBorderDown, dirtGroundBorderLeft, dirtGroundBorderRight, dirtGroundBorderUp, dirtGroundBorderDownRight, dirtGroundBorderDownLeft, dirtGroundBorderUpLeft, dirtGroundBorderUpRight, dirtGroundBorderUp2, dirtGroundBorderDown2, dirtGroundBorderLeft2, dirtGroundBorderRight2 } from '../../MapBlockBorder/MapBlocksBorderTypes/DirtGround';
 import { MapBlock, MapBlockType } from "../MapBlock";
 import { MapBlocksSprite } from "../MapBlocksSprite";
 
@@ -12,14 +12,17 @@ export const emptyGround : MapBlock = {
     translateY: 0,
     type:MapBlockType.emptyGround,
     coordinate : 0,
-    isAnimated : false,
     walkable : true,
     
     layer : 2,
     borders :{
-        up :dirtGroundBorderUp,
-        down :dirtGroundBorderDown,
-        left :dirtGroundBorderLeft,
-        right:dirtGroundBorderRight
+        up : Math.random() < 0.5 ? dirtGroundBorderUp : dirtGroundBorderUp2,
+        down : Math.random() < 0.5 ? dirtGroundBorderDown :dirtGroundBorderDown2,
+        left : Math.random() < 0.5 ? dirtGroundBorderLeft :dirtGroundBorderLeft2,
+        right: Math.random() < 0.5 ? dirtGroundBorderRight : dirtGroundBorderRight2,
+        downRight : dirtGroundBorderDownRight,
+        downLeft : dirtGroundBorderDownLeft,
+        upLeft : dirtGroundBorderUpLeft,
+        upRight : dirtGroundBorderUpRight
     }
 }

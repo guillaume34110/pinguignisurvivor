@@ -147,12 +147,12 @@ export const animation4Frames = (w: number): number => {
 }
 export const animation4Frames32 = (): number => {
     switch (true) {
-        case frame <= 15:
-            return 32.1
-       //case frame <= 30:
-       //     return 64
-       // case frame <= 45:
-      //      return 96
+         case frame <= 15:
+            return 33
+      /*case frame <= 30:
+            return 66
+        case frame <= 45:
+            return 99*/
         case frame <= 60:
          return 0
         default:

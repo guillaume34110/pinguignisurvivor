@@ -6,5 +6,11 @@ export interface MapBlockBorder {
     spriteBox: HitBox,
     sprite: MapBlocksBorderSprite,
     type: MapBlockType,
-    isAnimated: boolean,
+    isCorner : boolean,
+    position : BorderPositions[],
+    layer : number ,
+}
+
+export enum BorderPositions { 
+     Down = "Down" ,Up = 'Up' , Left = "Left" , Right = "Right"
 }
