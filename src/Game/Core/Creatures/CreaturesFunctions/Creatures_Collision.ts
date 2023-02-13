@@ -41,7 +41,7 @@ export const creature_CollisionWithSolidMapBlocks = (creature: Creature, mapBloc
     if (mapBlock.type === MapBlockType.Water || mapBlock.type === MapBlockType.Space) {
 
         if (hitBoxMatch(mapBlock.hitBox, creature.hitBox)) {
-            creature.health = 0
+            creature.lifeTime = 0
             console.log("fall in space ")
         }
     }

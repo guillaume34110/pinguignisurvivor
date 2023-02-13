@@ -8,7 +8,7 @@ import { MapBlock } from "../../MapBlocks/MapBlock";
 import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
 import { LightTrigonometry } from "../../Utilities/OurTrigonometry/LightTrigo";
 
-export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) => {
+export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) : void => {
         if (mapBlock.type === mapBlocksGeneric.spaceBorder.type 
             || mapBlock.type === mapBlocksGeneric.waterGround.type 
             || (creature.unLikedMapBlock.includes(mapBlock.type)  && Math.random() > 0.96)) {

@@ -2,9 +2,8 @@ import { GameData } from "../../StartData/StartData"
 import { Creature, CreatureSex, CreatureType } from '../Creature'
 import { mouse } from "../CreaturesTypes/Mouse"
 import { rabbit } from '../CreaturesTypes/Rabbit';
-import { gameData } from '../../../Components/Game';
 import { creature_Determination, creature_EnsureHitNothingForSpawn } from "../Creatures_Init";
-import { slicedArrays } from '../CreaturesUpdate';
+import { creature_MemoryInit } from "./Memory/Creature_MemoryInit";
 
 export const creature_MakeBaby = (gameData: GameData, creature: Creature, creatureToCompare: Creature) => {
 
@@ -59,15 +58,16 @@ export const creature_BabyBorn = (creature: Creature, gameData: GameData) => {
     const creatures = gameData.creatures
     if (creature.gestation === true && creature.gestationTime <= 0) {
         const newCreature = creature_Determination(creature.type)
-        const mapBlock = slicedArrays.mapBlocks[creature.coordinate][0]
+        const mapBlock = gameData.slicedArrays.mapBlocks[creature.coordinate][0]
         creatures.push(JSON.parse(JSON.stringify(newCreature)))
         const last = creatures[creatures.length - 1]
         creature_EnsureHitNothingForSpawn(gameData ,last , mapBlock )
         last.hitBox.x = last.spriteBox.x
         last.hitBox.y = last.spriteBox.y
         last.spriteBox.speed = ((creature.spriteBox.speed + creature.spriteBox.speed) / 2) + ((last.spriteBox.speed * (Math.random() - 0.5)) / 10)
-        last.weight = ((creature.weight + creature.weight) / 2) + ((last.weight * (Math.random() - 0.5)) / 10)
+        last.weight = (((creature.weight + creature.weight) / 2) + ((last.weight * (Math.random() - 0.5)) / 10)/20)
         last.id = creatures.length - 1
         if (Math.random() > 0.5) last.sex = CreatureSex.Female
+        creature_MemoryInit(gameData , last )
     }
 }

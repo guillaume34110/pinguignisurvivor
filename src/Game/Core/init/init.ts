@@ -7,7 +7,7 @@ import { Creatures_Init } from "../Creatures/Creatures_Init";
 export const initCore = (gameData: GameData) => {
     // mapBlocks_Init(gameData)
    //  Creatures_Init(gameData)
-    item_Init(gameData)
+    //item_Init(gameData)
     fillSkSlicedArraysWithEmptyArray(gameData)
 
 }

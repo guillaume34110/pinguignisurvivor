@@ -1,11 +1,11 @@
-import { Creature } from "../Creatures/Creature";
+import { Creature, CreatureType } from "../Creatures/Creature";
 import { MapBlockType } from "../MapBlocks/MapBlock";
 import {DirectionClass, HitBox, SpriteBoxInterface, SpriteBox, GameData} from "../StartData/StartData";
 import {ItemSprite} from "./ItemSprite";
 import { rock } from "./ItemsTypes/Rock";
 
 export enum ItemType { 
-    Seeds = "Seeds" , Rock = "Rock" , SeedsTree ="SeedsTree"
+    Seeds = "Seeds" , Rock = "Rock" , SeedsTree ="SeedsTree" , BasicGrass = "BasicGrass"
 }
 
 export interface Item {
@@ -23,9 +23,11 @@ export interface Item {
     gestationMax :number,
     mapBlockToDrop :MapBlockType[],
     babyType : BabyType,
-    baby : Creature | Item |null,
+    baby : CreatureType | ItemType |null,
     solid : boolean, 
-    dieWhenMakeABaby : Boolean
+    dieWhenMakeABaby : Boolean,
+    life : number,
+    babyProbability : number ,  
 }
 
 export enum BabyType {

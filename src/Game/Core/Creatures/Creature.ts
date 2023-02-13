@@ -1,6 +1,7 @@
-import {  ItemType } from '../Items/Item';
-import { MapBlockType } from '../MapBlocks/MapBlock';
+import {  Item, ItemType } from '../Items/Item';
+import { MapBlock, MapBlockType } from '../MapBlocks/MapBlock';
 import {HitBox, Sensors, SensorsFlag as SensorsFlags, Sprite, SpriteBoxInterface} from "../StartData/StartData";
+import { MapBlocks } from '../MapBlocks/MapBlocks';
 
 export interface Creature {
     id: number
@@ -13,8 +14,11 @@ export interface Creature {
     sensorsFlags : SensorsFlags
     // STATS :
     type: CreatureType,
-    maxHealth: number,
-    health: number,
+    maxLifeTime: number,
+    lifeTime: number,
+    lifePoint : number, 
+    lifePointMax : number,
+    creatureWhoAttack : [],
     damage: number, 
     fertility : number,
     maxFertilityFemale : number,
@@ -23,6 +27,7 @@ export interface Creature {
     hunting : Boolean,
     coordinate : number,
     weight : number,
+    maxWeight : number,
     price : number,
     sellPrice : number,
     valueAsFood : number, 
@@ -34,8 +39,11 @@ export interface Creature {
     hunger : number ,
     hungerMax : number ,
     mapBlockToDrop :MapBlockType[],
-    unLikedMapBlock : MapBlockType[]
+    unLikedMapBlock : MapBlockType[],
+    memory : Memory , 
 }
+
+
 
 export interface LifeBar {
     x : number,
@@ -54,3 +62,23 @@ export enum CreatureType {
 }
 
 
+export interface Memory{
+    mapBlocksOrdered : (MapBlock|null)[]
+    itemsPositions : ItemPositions[]
+    creaturesPositions : CreaturePositions[] 
+    housePosition : {x: number, y: number}
+    family : Creature[]
+    detectedItems : Item[],
+    detectedCreatures : Creature[]
+    detectedMapBlocks : MapBlock[]
+}
+
+export interface ItemPositions {
+    itemType : ItemType ,
+    coordinates  : number[]
+}
+
+export interface CreaturePositions {
+    creatureType : CreatureType ,
+    coordinates : number[]
+}

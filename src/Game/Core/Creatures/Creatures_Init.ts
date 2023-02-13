@@ -7,6 +7,7 @@ import { MapBlock, MapBlockType } from '../MapBlocks/MapBlock';
 import { creatures_HitBox } from "./CreaturesFunctions/Creatures_HitBox";
 import { Item } from "../Items/Item";
 import { hitBoxMatch } from "../Utilities/HitBoxMatch";
+import { creature_MemoryInit } from "./CreaturesFunctions/Memory/Creature_MemoryInit";
 
 export const Creatures_Init = (gameData: GameData) => {
     if (gameData.mapBlocks.length === 0) {
@@ -28,6 +29,7 @@ export const Creatures_Init = (gameData: GameData) => {
                 lastCreature.id = i
                 lastCreature.coordinate = setCoordinateIndexPosition(lastCreature.spriteBox, gameData)
                 creatures_HitBox(lastCreature)
+                creature_MemoryInit(gameData , lastCreature)
             }
         }
     })

@@ -27,7 +27,8 @@ import {
 import { Item } from '../Items/Item';
 import { MapBlock } from '../MapBlocks/MapBlock';
 import { setCoordinateIndexPosition } from '../Utilities/Coordinate/Coordinate';
-import { creature_hungry } from './CreaturesFunctions/Creature_Nutrition';
+import { creature_hungry, creature_size } from './CreaturesFunctions/Creature_Nutrition';
+import { creature_MapBlockMemory, creatures_MemoryCreatures, creatures_MemoryItems } from './CreaturesFunctions/Memory/Creature_Mermory';
 
 export interface slicedArraysInterface {
     creatures: Creature[][]
@@ -36,26 +37,26 @@ export interface slicedArraysInterface {
     items: Item[][]
 }
 
-export const slicedArrays: slicedArraysInterface = { creatures: [], sensors: [], mapBlocks: [], items: [] }
+
 export const fillSkSlicedArraysWithEmptyArray = (gameData: GameData) => {
-    slicedArrays.creatures = []
-    slicedArrays.sensors = []
-    slicedArrays.mapBlocks = []
-    slicedArrays.items = []
+    gameData.slicedArrays.creatures = []
+    gameData.slicedArrays.sensors = []
+    gameData.slicedArrays.mapBlocks = []
+    gameData.slicedArrays.items = []
     for (let i = 0; i < gameData.mapBlocks.length; i++) {
-        slicedArrays.creatures.push([])
-        slicedArrays.sensors.push([])
-        slicedArrays.mapBlocks.push([gameData.mapBlocks[i]])
-        slicedArrays.items.push([])
+        gameData.slicedArrays.creatures.push([])
+        gameData.slicedArrays.sensors.push([])
+        gameData.slicedArrays.mapBlocks.push([gameData.mapBlocks[i]])
+        gameData.slicedArrays.items.push([])
     }
 }
 
 export const reFillSkSlicedArraysWithEmptyArray = (gameData: GameData) => {
-    slicedArrays.creatures = []
-    slicedArrays.items = []
+    gameData.slicedArrays.creatures = []
+    gameData.slicedArrays.items = []
     for (let i = 0; i < gameData.mapBlocks.length; i++) {
-        slicedArrays.creatures.push([])
-        slicedArrays.items.push([])
+        gameData.slicedArrays.creatures.push([])
+        gameData.slicedArrays.items.push([])
     }
 }
 
@@ -71,7 +72,9 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
         gameData.creatures[i].sensorsFlags.flagLeft = false
         gameData.creatures[i].sensorsFlags.flagRight = false
         gameData.creatures[i].coordinate = setCoordinateIndexPosition(gameData.creatures[i].spriteBox, gameData)
-        slicedArrays.creatures[gameData.creatures[i].coordinate].push(gameData.creatures[i])
+        const arrayToUpdate =  gameData.slicedArrays.creatures[gameData.creatures[i].coordinate]
+       if (arrayToUpdate === undefined) return
+        arrayToUpdate.push(gameData.creatures[i])
         for (let j = 0; j < gameData.creatures[i].sensors.sensors.length; j++) {
             creature_updateSensorsPositionBy10Degrees(gameData.creatures[i], gameData.creatures[i].sensors.sensors[j])
             gameData.creatures[i].sensors.sensors[j].coordinate = setCoordinateIndexPosition(gameData.creatures[i].sensors.sensors[j], gameData)
@@ -80,17 +83,18 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
 
     for (let it = 0; it < gameData.items.length; it++) {
         gameData.items[it].coordinate = setCoordinateIndexPosition(gameData.items[it].spriteBox, gameData)
-        slicedArrays.items[gameData.items[it].coordinate].push(gameData.items[it])
+        gameData.slicedArrays.items[gameData.items[it].coordinate].push(gameData.items[it])
     }
 
     /* logic */
-    for (let cc = 0; cc < slicedArrays.creatures.length; cc++) {
-        for (let j = 0; j < slicedArrays.creatures[cc].length; j++) {
+    for (let cc = 0; cc < gameData.slicedArrays.creatures.length; cc++) {
+        for (let j = 0; j < gameData.slicedArrays.creatures[cc].length; j++) {
 
-            const creature = slicedArrays.creatures[cc][j]
+            const creature = gameData.slicedArrays.creatures[cc][j]
             creatures_HitBox(creature)
             creatures_HuntingInhibitor(creature)
             creature_hungry(creature)
+            creature_size(creature)
             const coordinateCreature = coordinatesMapping(creature.coordinate, gameData)
 
             for (let s = 0; s < creature.sensors.sensors.length; s++) {
@@ -98,33 +102,43 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
                 const coordinateSensor = coordinatesMapping(sensor.coordinate, gameData)
 
                 for (let m = 0; m < 8; m++) {
-                    for (let it = 0; it < slicedArrays.items[coordinateSensor[m]].length; it++) {
-                        const item = slicedArrays.items[coordinateSensor[m]][it]
+                    for (let it = 0; it < gameData.slicedArrays.items[coordinateSensor[m]].length; it++) {
+                        const item = gameData.slicedArrays.items[coordinateSensor[m]][it]
                         creature_sensorSetCollisionFlagWithItems(creature, sensor, item)
                         creatures_HuntItems(creature, sensor, item)
                     }
                     if (sensor.type !== SensorType.Hunt) {
-                        for (let kb = 0; kb < slicedArrays.mapBlocks[coordinateSensor[m]].length; kb++) {
-                            const mapBlock = slicedArrays.mapBlocks[coordinateSensor[m]][kb]
-                            creature_sensorSetCollisionWithMapBlocksFlags(creature, sensor, mapBlock)
-                        }
 
-                        for (let kc = 0; kc < slicedArrays.creatures[coordinateSensor[m]].length; kc++) {
-                            const otherCreature = slicedArrays.creatures[coordinateSensor[m]][kc]
+                            const mapBlock = gameData.slicedArrays.mapBlocks[coordinateSensor[m]][0]
+                            creature_sensorSetCollisionWithMapBlocksFlags(creature, sensor, mapBlock)
+
+                        for (let kc = 0; kc < gameData.slicedArrays.creatures[coordinateSensor[m]].length; kc++) {
+                            const otherCreature = gameData.slicedArrays.creatures[coordinateSensor[m]][kc]
                             creature_MaleHuntFemale(creature, sensor, otherCreature)
                         }
+
                     } else if (sensor.type === SensorType.Hunt) {
-                        for (let kc = 0; kc < slicedArrays.creatures[coordinateSensor[m]].length; kc++) {
-                            const otherCreature = slicedArrays.creatures[coordinateSensor[m]][kc]
-                            creatures_HuntCreatures(creature, sensor, otherCreature)
+                        
+                        for (let kc = 0; kc < gameData.slicedArrays.creatures[coordinateSensor[m]].length; kc++) {
+                            const otherCreature = gameData.slicedArrays.creatures[coordinateSensor[m]][kc]
+                            creatures_HuntCreatures(creature,sensor ,otherCreature)
+                            creatures_MemoryCreatures(creature, otherCreature)
+                        }
+
+                        const mapBlock = gameData.slicedArrays.mapBlocks[coordinateSensor[m]][0]
+                        creature_MapBlockMemory(creature, mapBlock)
+
+                        for (let kc = 0; kc < gameData.slicedArrays.items[coordinateSensor[m]].length; kc++) {
+                            const otherItems = gameData.slicedArrays.items[coordinateSensor[m]][kc]
+                            creatures_MemoryItems(creature, otherItems)
                         }
                     }
                 }
             }
 
             for (let m = 0; m < 8; m++) {
-                for (let it = 0; it < slicedArrays.items[coordinateCreature[m]].length; it++) {
-                    const item = slicedArrays.items[coordinateCreature[m]][it]
+                for (let it = 0; it < gameData.slicedArrays.items[coordinateCreature[m]].length; it++) {
+                    const item = gameData.slicedArrays.items[coordinateCreature[m]][it]
                     creature_collisionWithItem(creature, item)
                 }
             }
@@ -133,8 +147,8 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
             creatures_Move(creature)
 
             for (let m = 0; m < 8; m++) {
-                for (let c = 0; c < slicedArrays.creatures[coordinateCreature[m]].length; c++) {
-                    const otherCreature = slicedArrays.creatures[coordinateCreature[m]][c]
+                for (let c = 0; c < gameData.slicedArrays.creatures[coordinateCreature[m]].length; c++) {
+                    const otherCreature = gameData.slicedArrays.creatures[coordinateCreature[m]][c]
                     creatures_CollisionWithCreatures(gameData, "y", creature, otherCreature)
                     creatures_CollisionWithCreatures(gameData, "x", creature, otherCreature)
                 }
@@ -145,13 +159,11 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
             creature_LifeDecrease(creature)
             creature_Fertility(creature)
             creature_gestation(creature)
-            creature_BabyBorn(creature , gameData)
+            creature_BabyBorn(creature, gameData)
 
             for (let m = 0; m < 8; m++) {
-                for (let mb = 0; mb < slicedArrays.mapBlocks[coordinateCreature[m]].length; mb++) {
-                    const mapBlock = slicedArrays.mapBlocks[coordinateCreature[m]][mb]
-                    creature_CollisionWithSolidMapBlocks(creature, mapBlock)
-                }
+                    const mapBlock = gameData.slicedArrays.mapBlocks[coordinateCreature[m]][0]
+                    creature_CollisionWithSolidMapBlocks(creature, mapBlock)  
             }
         }
     }

@@ -9,7 +9,7 @@ export const updateCore = (gameData:GameData) => {
     timer(gameData)
     creaturesUpdate_ChristmasPanettone(gameData)
     itemUpdate(gameData)
-    mapBlocksUpdate(gameData)
+  //  mapBlocksUpdate(gameData)
     end(gameData)
 }
 

@@ -4,13 +4,18 @@ import { MapBlockType } from "../../MapBlocks/MapBlock";
 import { SensorType } from "../../StartData/StartData";
 import { Creature, CreatureSex, CreatureType } from "../Creature";
 import { CreaturesSprite } from "../CreaturesSprite";
+import { basicGrass } from '../../Items/ItemsTypes/BasicGrass';
+import { ItemType } from '../../Items/Item';
 
 export const rabbit : Creature = {
     id: 0,
     name : 'rabbit',
     type: CreatureType.Rabbit,
-    maxHealth: 35_000,
-    health: 35_000,
+    maxLifeTime: 40_000,
+    lifeTime: 40_000,
+    lifePoint : 100,
+    lifePointMax : 100,
+    creatureWhoAttack : [],
     damage: 1,
     sprite: {
         front: CreaturesSprite.rabbitFront,
@@ -81,15 +86,16 @@ export const rabbit : Creature = {
     },
     fertility: 0,
     maxFertilityMale: 200,
-    maxFertilityFemale: 3000,
+    maxFertilityFemale: 2000,
     sex: CreatureSex.Male,
     hunting: false,
     coordinate : 0,
-    weight : 3, 
+    weight : 4, 
+    maxWeight:4,
     price : 100,
     sellPrice : 10,
     valueAsFood : 12000,
-    typeFoodToEat : [seeds.type],
+    typeFoodToEat : [ItemType.Seeds , ItemType.BasicGrass],
     huntingInhibitor : 0,
     gestation : false, 
     gestationTime : 0, 
@@ -98,4 +104,14 @@ export const rabbit : Creature = {
     hungerMax : 5000 ,
     mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
     unLikedMapBlock : [MapBlockType.Snow],
+    memory: {
+        mapBlocksOrdered: [],
+        creaturesPositions: [],
+        family: [],
+        housePosition: { x: 0, y: 0 },
+        itemsPositions: [],
+        detectedCreatures : [], 
+        detectedItems : [], 
+        detectedMapBlocks : []
+    }
 }

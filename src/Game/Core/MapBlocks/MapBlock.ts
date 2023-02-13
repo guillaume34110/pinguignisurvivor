@@ -15,17 +15,20 @@ export interface MapBlock {
     coordinate: number,
     walkable : boolean,
     layer : number ,
-    borders: Borders
+    borders: Borders,
 }
+
+
+
 interface Borders { 
-    up :  MapBlockBorder
-    down : MapBlockBorder
-    left : MapBlockBorder
-    right : MapBlockBorder
-    downRight : MapBlockBorder
-    downLeft : MapBlockBorder
-    upLeft : MapBlockBorder
-    upRight : MapBlockBorder
+    up :  MapBlockBorder[]
+    down : MapBlockBorder[]
+    left : MapBlockBorder[]
+    right : MapBlockBorder[]
+    downRight : MapBlockBorder[]
+    downLeft : MapBlockBorder[]
+    upLeft : MapBlockBorder[]
+    upRight : MapBlockBorder[]
 }
 
 export enum MapBlockType {

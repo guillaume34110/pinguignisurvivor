@@ -2,27 +2,27 @@ import { snowGroundBorderDown, snowGroundBorderDown2, snowGroundBorderDownLeft, 
 import { MapBlock, MapBlockType } from "../MapBlock"
 import { MapBlocksSprite } from "../MapBlocksSprite"
 
-export const snowGround : MapBlock  = {
+export const snowGround: MapBlock = {
     id: 0,
-    spriteBox: {x: 0, y: 0, h: 128, w: 128},
-    hitBox: {x: 0, y: 0, h: 128, w: 128},
+    spriteBox: { x: 0, y: 0, h: 128, w: 128 },
+    hitBox: { x: 0, y: 0, h: 128, w: 128 },
     sprite: MapBlocksSprite.ground_snow,
     rotationY: 0,
     rotationX: 0,
     translateY: 0,
-    type:MapBlockType.Snow,
-    coordinate : 0,
-   walkable : true,
-   
-   layer : 4,
-   borders :{
-    up : Math.random() < 0.5 ? snowGroundBorderUp : snowGroundBorderUp2,
-    down : Math.random() < 0.5 ?snowGroundBorderDown : snowGroundBorderDown2,
-    left :Math.random() < 0.5 ? snowGroundBorderLeft : snowGroundBorderLeft2,
-    right:Math.random() < 0.5 ? snowGroundBorderRight :snowGroundBorderRight2,
-    downRight : snowGroundBorderDownRight,
-        downLeft : snowGroundBorderDownLeft,
-        upLeft : snowGroundBorderUpLeft,
-        upRight : snowGroundBorderUpRight 
-}
+    type: MapBlockType.Snow,
+    coordinate: 0,
+    walkable: true,
+
+    layer: 4,
+    borders: {
+        up:  [snowGroundBorderUp , snowGroundBorderUp2],
+        down:   [snowGroundBorderDown  ,snowGroundBorderDown2],
+        left: [snowGroundBorderLeft , snowGroundBorderLeft2],
+        right:   [snowGroundBorderRight , snowGroundBorderRight2],
+        downRight:  [snowGroundBorderDownRight],
+        downLeft:  [snowGroundBorderDownLeft],
+        upLeft:  [snowGroundBorderUpLeft],
+        upRight:  [snowGroundBorderUpRight]
+    }
 }

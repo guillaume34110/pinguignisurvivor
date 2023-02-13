@@ -12,8 +12,8 @@ export const seeds : Item = {
     spriteBox: {
         x: 1,
         y: 1,
-        w: 32,
-        h: 32,
+        w: 16,
+        h: 16,
         direction: {
             degree10: 0 ,
             radian: 0,
@@ -25,8 +25,8 @@ export const seeds : Item = {
     hitBox:{
         x: 1,
         y: 1,
-        w: 32,
-        h: 32,
+        w: 16,
+        h: 16,
     },
     isTaken : false,
     coordinate :0,
@@ -36,7 +36,11 @@ export const seeds : Item = {
     gestationMax : 6000,
     mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
     babyType : BabyType.Item,
-    baby : null,
+    baby : ItemType.SeedsTree,
     solid: false,
-    dieWhenMakeABaby : true
+    dieWhenMakeABaby : true,
+    life : 6500,
+    babyProbability : 0.05,
  }
+
+ 

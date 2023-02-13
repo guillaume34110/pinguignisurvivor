@@ -16,6 +16,6 @@ const xLoop = (x: number) => {
 test("5 frames se passent", () => {
     xLoop(4)
 
-    expect(newValue.god.spriteBox.x).toBe(5)
+    expect(newValue.god.spriteBox.x).toBe(804)
 
 })

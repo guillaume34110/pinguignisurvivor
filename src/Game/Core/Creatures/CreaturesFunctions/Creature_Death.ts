@@ -1,5 +1,10 @@
 import { GameData } from "../../StartData/StartData";
+import { Creature } from "../Creature";
 
 export const creature_Death = (gameData: GameData) => { 
-    gameData.creatures = gameData.creatures.filter(creature=> creature.health > 0 )
+    gameData.creatures = death(gameData.creatures)
 }
+
+const death = (creatures : Creature[]) => 
+    creatures.filter(creature=> creature.lifeTime > 0 && creature.lifePoint > 0 )
+ 

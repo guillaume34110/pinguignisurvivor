@@ -7,6 +7,7 @@ import { Creature, CreatureType } from '../Creatures/Creature';
 import { godsGeneric } from "../God/Gods";
 import { MapPreset } from '../MapBlocks/MapBlocks_Init';
 import { MapBlockBorder } from "../MapBlockBorder/MapBlockBorder";
+import { slicedArraysInterface } from '../Creatures/CreaturesUpdate';
 
 export interface GameData {
     god: God,
@@ -30,6 +31,7 @@ export interface GameData {
     totalMapBlockPrice: number,
     totalPrice : number,
     timeBeforeHarvest : number,
+    slicedArrays : slicedArraysInterface
 }
 
 export class DirectionClass {
@@ -175,10 +177,10 @@ export const startData: GameData = {
     howMuchTiles: 1000,
     howMuchTilesOnLine: 20,
     mapPreset: {
-        grassGround: 0,
-        snowGround: 0,
-        dirtGround: 0,
-        waterGround: 0
+        grassGround: 25,
+        snowGround: 25,
+        dirtGround: 25,
+        waterGround: 25
     },
     creaturePreset: [],
     itemPreset: [],
@@ -188,5 +190,6 @@ export const startData: GameData = {
     totalItemPrice: 0,
     totalMapBlockPrice: 0,
     totalPrice : 0,
-    timeBeforeHarvest : 0,
+    timeBeforeHarvest : 5000,
+    slicedArrays:{ creatures: [], sensors: [], mapBlocks: [], items: [] }
 }

@@ -57,14 +57,24 @@ interface MapBlockBorderDetermination {
 }
 
 const determineMapBlockBorders = (lateralMapBlocks: MapBlockDetermination, block: MapBlock): MapBlockBorderDetermination => {
-    return Object.entries(lateralMapBlocks).reduce((acc  , [key, value ]) => {
+    return Object.entries(lateralMapBlocks).reduce((acc, [key, value]) => {
         // @ts-ignore
-        acc[key] = value.layer > block.layer ? value.borders[key] : null;
+        acc[key] = value.layer > block.layer ? borderDetermination(key , value) : null;
         return acc
     }, { up: null, down: null, left: null, right: null, upRight: null, downRight: null, upLeft: null, downLeft: null })
 }
-
-
+const borderDetermination = (key : string , block : MapBlock) => {
+    if( block.borders.up === undefined ) return  null
+    if (key === 'up') return block.borders.up[Math.floor(Math.random()*block.borders.up.length)]
+    else if (key === 'down' ) return block.borders.down[Math.floor(Math.random()*block.borders.down.length)]
+    else if (key === 'left' ) return block.borders.left[Math.floor(Math.random()*block.borders.left.length)]
+    else if (key === 'right' ) return block.borders.right[Math.floor(Math.random()*block.borders.right.length)]
+    else if (key === 'upRight' ) return block.borders.upRight[0]
+    else if (key === 'upLeft' ) return block.borders.upLeft[0]
+    else if (key === 'downLeft' ) return block.borders.downLeft[0]
+    else if (key === 'downRight' ) return block.borders.downRight[0]
+    else return null
+}
 const directionsBorder = ['up', 'down', 'left', 'right', 'downRight', 'downLeft', "upRight", "upLeft"];
 const directionCorner = ['downRight', 'downLeft', "upRight", "upLeft"];
 
@@ -72,30 +82,29 @@ const borderDispositions = (gameData: GameData, borders: MapBlockBorderDetermina
 
     directionsBorder.forEach(direction => {
         //@ts-ignore
-        if (borders[direction] !== null && !(directionCorner.includes(direction) && borders[direction].type === MapBlockType.Water)) {
-                //@ts-ignore
-                gameData.mapBlocksBorder.push(JSON.parse(JSON.stringify(borders[direction])))
-                gameData.mapBlocksBorder[gameData.mapBlocksBorder.length - 1].spriteBox = block.spriteBox
-            
+        if (borders[direction] !== null /*&& !(directionCorner.includes(direction) && borders[direction].type === MapBlockType.Water)*/) {
+            //@ts-ignore
+            gameData.mapBlocksBorder.push(JSON.parse(JSON.stringify(borders[direction])))
+            gameData.mapBlocksBorder[gameData.mapBlocksBorder.length - 1].spriteBox = block.spriteBox
+
         }
     })
-
 }
 
-const cornersClean = (gameData : GameData) => { 
-    const newBlockArray : MapBlockBorder[] = []
-    gameData.mapBlocksBorder.forEach(block1  => {
-        if (block1.isCorner ){
-            let blockToken = 0 
-        gameData.mapBlocksBorder.forEach(block2  => {
-            if( block2.layer > block1.layer  && hitBoxMatch(block1.spriteBox , block2.spriteBox)){
-                    if ( block1.position.includes(block2.position[0]||block2.position.includes(block1.position[0]))){     
-                       blockToken ++
-                      }
+export const cornersClean = (gameData: GameData) => {
+    const newBlockArray: MapBlockBorder[] = []
+    gameData.mapBlocksBorder.forEach(block1 => {
+        if (block1.isCorner) {
+            let blockToken = 0
+            gameData.mapBlocksBorder.forEach(block2 => {
+                if (block2.layer > block1.layer && hitBoxMatch(block1.spriteBox, block2.spriteBox)  ) {
+                    if (block1.position.includes(block2.position[0]) || block2.position.includes(block1.position[0])) {
+                        blockToken++
                     }
-        })
-    if (blockToken === 0 )  newBlockArray.push(block1)
-    }
+                }
+            })
+            if (blockToken === 0) newBlockArray.push(block1)
+        }
         else newBlockArray.push(block1)
     })
     gameData.mapBlocksBorder = newBlockArray

@@ -2,6 +2,7 @@ import { ItemSprite } from '../ItemSprite';
 import { Item, ItemType, BabyType } from '../Item';
 import { MapBlockType } from '../../MapBlocks/MapBlock';
 import { worms } from '../../Creatures/CreaturesTypes/Worms';
+import { CreatureType } from '../../Creatures/Creature';
 export const rock : Item = {
     id: 0,
     type: ItemType.Rock,
@@ -32,9 +33,11 @@ export const rock : Item = {
     price :15,
     gestation : 0,
     gestationMax : 500,
-    mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
+    mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass , MapBlockType.Snow],
     babyType : BabyType.Creature,
-    baby : worms,
+    baby : CreatureType.Worms,
     solid: true,
-    dieWhenMakeABaby : false
+    dieWhenMakeABaby : false,
+    life : 100_000_000_000,
+    babyProbability : 0.6,
  }

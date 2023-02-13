@@ -16,7 +16,7 @@ export const items_RefreshPixi = (gameData: GameData, target: PIXI.Application) 
             sprite.y = item.spriteBox.y - god.spriteBox.y + 300;
             sprite.width =  item.spriteBox.w
             sprite.height = item.spriteBox.h
-            sprite.texture.frame =new PIXI.Rectangle(animation4Frames(item.spriteBox.w), 0, item.spriteBox.w, item.spriteBox.h);
+            sprite.texture.frame =new PIXI.Rectangle(animation4Frames(32), 0, 32, 32);
             target.stage.addChild(sprite);
         }
     })

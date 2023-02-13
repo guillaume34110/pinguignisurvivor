@@ -16,13 +16,13 @@ export const emptyGround : MapBlock = {
     
     layer : 2,
     borders :{
-        up : Math.random() < 0.5 ? dirtGroundBorderUp : dirtGroundBorderUp2,
-        down : Math.random() < 0.5 ? dirtGroundBorderDown :dirtGroundBorderDown2,
-        left : Math.random() < 0.5 ? dirtGroundBorderLeft :dirtGroundBorderLeft2,
-        right: Math.random() < 0.5 ? dirtGroundBorderRight : dirtGroundBorderRight2,
-        downRight : dirtGroundBorderDownRight,
-        downLeft : dirtGroundBorderDownLeft,
-        upLeft : dirtGroundBorderUpLeft,
-        upRight : dirtGroundBorderUpRight
+        up :  [dirtGroundBorderUp , dirtGroundBorderUp2],
+        down :  [dirtGroundBorderDown ,dirtGroundBorderDown2],
+        left :  [dirtGroundBorderLeft ,dirtGroundBorderLeft2],
+        right:  [dirtGroundBorderRight , dirtGroundBorderRight2],
+        downRight : [dirtGroundBorderDownRight],
+        downLeft : [dirtGroundBorderDownLeft],
+        upLeft : [dirtGroundBorderUpLeft],
+        upRight : [dirtGroundBorderUpRight]
     }
 }

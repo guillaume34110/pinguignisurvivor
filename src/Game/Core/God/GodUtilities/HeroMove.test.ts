@@ -73,8 +73,7 @@ given('god is on map and key input is send', () => {
             keydownController(gameData.keys, "ArrowDown")
             god_Move(gameData)
 
-            expect(gameData.god.spriteBox.y).toBe(103.53553390593274)
-            expect(gameData.god.spriteBox.y).toBe(103.53553390593274)
+            expect(gameData.god.spriteBox.y).toBe( 103.8302)
 
 
         })

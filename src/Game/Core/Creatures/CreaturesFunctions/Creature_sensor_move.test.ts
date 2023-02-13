@@ -37,11 +37,13 @@ given('a mouse is moving', () => {
             } 
             const offsetRad = ( sensor.degOffset * Math.PI / 180 ) + creatureRad
             creature_updateSensorsPosition(myCreature ,sensor)
-            expect(sensor).toBe({
+            expect(sensor).toStrictEqual({
+                "coordinate" :0 ,
                 "degOffset": sensor.degOffset,
                 "distanceFromCreature": sensor.distanceFromCreature,
+                "flag": false,
                 "h": 15,
-                "type": 2,
+                "type": 1,
                 "w": 15,
                 "x": getCenterSpriteBox(myCreature.spriteBox).x + (Math.cos(offsetRad) * myCreature.sensors.sensors[0].distanceFromCreature),
                 "y": getCenterSpriteBox(myCreature.spriteBox).y + (Math.sin(offsetRad) * myCreature.sensors.sensors[0].distanceFromCreature)

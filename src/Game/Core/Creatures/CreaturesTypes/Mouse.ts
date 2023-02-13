@@ -4,14 +4,18 @@ import { CreaturesSprite } from '../CreaturesSprite';
 import { worms } from './Worms';
 import { MapBlockType } from '../../MapBlocks/MapBlock';
 import { seeds } from '../../Items/ItemsTypes/Seeds';
+import { ItemType } from '../../Items/Item';
 
 export const mouse: Creature = {
     id: 0,
     name : 'mouse',
     type: CreatureType.Mouse,
-    maxHealth: 20_000,
-    health: 20_000,
-    damage: 10,
+    maxLifeTime: 20_000,
+    lifeTime: 20_000,
+    lifePoint : 100,  
+    lifePointMax : 100,
+    damage: 1000,
+    creatureWhoAttack : [],
     sprite:
     {
         front: CreaturesSprite.mouseFront,
@@ -82,15 +86,16 @@ export const mouse: Creature = {
     },
     fertility: 0,
     maxFertilityMale: 400,
-    maxFertilityFemale: 2000,
+    maxFertilityFemale: 1000,
     sex: CreatureSex.Male,
     hunting: false,
     coordinate : 0,
-    weight : 0.1,
+    weight : 0.8,
+    maxWeight:0.8,
     price : 20,
-    sellPrice : 0.2,
+    sellPrice : 2,
     valueAsFood :400,
-    typeFoodToEat : [worms.type , seeds.type],
+    typeFoodToEat : [CreatureType.Worms , ItemType.Seeds , ItemType.BasicGrass , CreatureType.Rabbit],
     huntingInhibitor : 0,
     gestation : false, 
     gestationTime : 0, 
@@ -99,4 +104,14 @@ export const mouse: Creature = {
     hungerMax : 5000 ,
     mapBlockToDrop : [MapBlockType.Dirt , MapBlockType.Grass],
     unLikedMapBlock : [MapBlockType.Snow],
+    memory: {
+        mapBlocksOrdered: [],
+        creaturesPositions: [],
+        family: [],
+        housePosition: { x: 0, y: 0 },
+        itemsPositions: [],
+        detectedCreatures : [], 
+        detectedItems : [], 
+        detectedMapBlocks : []
+    }
 }

@@ -16,7 +16,7 @@ export const draw = (gameData:GameData, targetPixi:PIXI.Application ) =>{
     items_RefreshPixi(gameData, targetPixi)
     creatures_RefreshPixi(gameData, targetPixi)
     hud_RefreshPixi(gameData)
-   // hitBoxRefreshPixi(gameData, targetPixi)
+    hitBoxRefreshPixi(gameData, targetPixi)
     //lifeBarDrawPixi(gameData, targetPixi)/**/
     godUpdate(gameData);
 }

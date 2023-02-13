@@ -1,5 +1,5 @@
 import { CreatureType } from "../Core/Creatures/Creature";
-import { creatures } from "../Core/Creatures/Creatures";
+import { creaturesMenu } from "../Core/Creatures/Creatures";
 import { mapBlocksArray } from "../Core/MapBlocks/MapBlocks";
 import { GameData } from '../Core/StartData/StartData';
 import { componentInit, drawInit, drawLoop, gameData } from './Game';
@@ -96,7 +96,7 @@ function createMenuInterface() {
     const creaturesMenuCard = `
 <div class = "flex-column border " >
         <h4>Choix des créatures:</h4>
-        ${creatures?.map(creature =>
+        ${creaturesMenu?.map(creature =>
         `<div  class = "flex  p-0x5rem w-100 space-around">
             <div class = "w-5rem"> ${creature.type}</div>
                 <input data-price="${creature.price}" data-type="${creature.type}"  class = "creature-number" type="number" value="0" min="0" max="10000" id="${creature.type + "-number"}" />
@@ -188,17 +188,17 @@ const creatureListener = () => {
 
 const creatureInitializer = () => {
     const creaturesElement: NodeList = getCreaturesElement()
-    const creaturesNames: string[] = []
+    const creaturesTypes: string[] = []
     Array.from(creaturesElement as NodeListOf<HTMLInputElement>).forEach((element: HTMLInputElement) => {
         const howMuch = parseInt(element.value)
         for (let i = 0; i < howMuch; i++) {
             const type = element.getAttribute('data-type')
             if (type !== null)
-                creaturesNames.push(type);
+                creaturesTypes.push(type);
         }
     })
     //@ts-ignore
-    const newCreaturePreset: CreatureType[] = creaturesNames.map(creatureName => CreatureType[creatureName])
+    const newCreaturePreset: CreatureType[] = creaturesTypes.map(creatureName => CreatureType[creatureName])
 
     gameData.creaturePreset = newCreaturePreset
     Creatures_Init(gameData)
@@ -240,7 +240,7 @@ const changesListeners = () => {
 
     })
 
-    creatures.forEach(creature => {
+    creaturesMenu.forEach(creature => {
         const inputElement: HTMLInputElement | null = document.querySelector(`#${creature.type + "-number"}`);
         if (inputElement === null) return
         inputElement.addEventListener("change", setCreatureTotalPrice)
@@ -279,7 +279,7 @@ const setCreatureTotalPrice = () => {
     const totalPriceElement: HTMLTitleElement | null = getCreatureTotalPriceElement()
     if (totalPriceElement === null) return
     let totalPriceBUffer = 0
-    creatures.forEach(creature => {
+    creaturesMenu.forEach(creature => {
         const inputElement: HTMLInputElement | null = document.querySelector(`#${creature.type + "-number"}`);
         if (inputElement === null) return
         const creaturePrice = inputElement.getAttribute('data-price');

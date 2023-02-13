@@ -15,13 +15,13 @@ export const spaceBorder : MapBlock = {
     walkable : false,
     layer : 0,
     borders :{
-        up : waterGroundBorderUp,
-        down : waterGroundBorderDown,
-        left : waterGroundBorderLeft,
-        right: waterGroundBorderRight,
-        downRight : waterGroundBorderDownRight,
-        downLeft : waterGroundBorderDownLeft,
-        upLeft : waterGroundBorderUpLeft,
-        upRight : waterGroundBorderUpRight
+        up : [waterGroundBorderUp],
+        down : [waterGroundBorderDown],
+        left : [waterGroundBorderLeft],
+        right: [waterGroundBorderRight],
+        downRight : [waterGroundBorderDownRight],
+        downLeft : [waterGroundBorderDownLeft],
+        upLeft : [waterGroundBorderUpLeft],
+        upRight : [waterGroundBorderUpRight]
     }
 }
