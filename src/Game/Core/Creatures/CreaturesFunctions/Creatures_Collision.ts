@@ -3,7 +3,7 @@ import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
 import { creatures_CollisionWithMapBlockMove, creatures_collisionBetweenMove, creatures_pushOtherCreature } from './Creatures_Move';
 import { Creature } from "../Creature";
 import { MapBlock, MapBlockType } from "../../MapBlocks/MapBlock";
-import { creature_MakeBaby } from "./Creature_Nursery";
+import { creature_MakeBabyWithCreature } from "./Creature_Nursery";
 import { Item, ItemType } from "../../Items/Item";
 import { creature_Nutrition } from './Creature_Nutrition';
 
@@ -11,7 +11,7 @@ export const creatures_CollisionWithCreatures = (gameData: GameData, type: strin
 
     if (otherCreature !== creatureBoxToMove) {
         if (hitBoxMatch(otherCreature.hitBox, creatureBoxToMove.hitBox)) {
-            creature_MakeBaby(gameData, creatureBoxToMove, otherCreature)
+            creature_MakeBabyWithCreature(gameData.creatures, creatureBoxToMove, otherCreature)
             if (creatureBoxToMove.typeFoodToEat.includes(otherCreature.type)) creature_Nutrition(null, otherCreature, creatureBoxToMove)
             if (type === "x"
                 && ((creatureBoxToMove.hitBox.x - otherCreature.hitBox.x > 0

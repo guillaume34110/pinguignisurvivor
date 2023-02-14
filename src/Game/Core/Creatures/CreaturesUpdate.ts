@@ -6,7 +6,7 @@ import {
     creatures_CollisionWithCreatures,
 } from './CreaturesFunctions/Creatures_Collision';
 import { creature_Death } from './CreaturesFunctions/Creature_Death';
-import { creature_BabyBorn, creature_Fertility, creature_gestation } from './CreaturesFunctions/Creature_Nursery';
+import { creature_BabyBorn, creature_Fertility, creature_Gestation } from './CreaturesFunctions/Creature_Nursery';
 import { creature_lifeDecrease as creature_LifeDecrease } from './CreaturesFunctions/Creature_lifeDecrease';
 import { creature_MaleHuntFemale } from './CreaturesFunctions/Creature_Reproduction';
 import { creature_RotateSpriteBy10Degrees } from './CreaturesFunctions/Creature_RotateSprite';
@@ -158,7 +158,7 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
 
             creature_LifeDecrease(creature)
             creature_Fertility(creature)
-            creature_gestation(creature)
+            creature_Gestation(creature)
             creature_BabyBorn(creature, gameData)
 
             for (let m = 0; m < 8; m++) {

@@ -5,6 +5,7 @@ import { spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees } from '../../U
 import { Creature } from '../Creature';
 
 export const creatures_HuntItems = (creature: Creature, sensor: Sensor, item: Item) => {
+    
     if (sensor.type === SensorType.Hunt && creature.hunger < creature.hungerMax) {
         if (creature.typeFoodToEat.includes(item.type) && creature.hunting === false && creature.huntingInhibitor === 0 && hitBoxMatch(sensor, item.hitBox)) {
             spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees(creature.spriteBox, item.spriteBox)

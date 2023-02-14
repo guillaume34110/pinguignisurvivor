@@ -1,4 +1,4 @@
-import { CreatureType } from "../Creatures/Creature"
+import { CreatureType, Creature } from '../Creatures/Creature';
 import { worms } from "../Creatures/CreaturesTypes/Worms"
 import { Creatures_Init } from "../Creatures/Creatures_Init"
 import { ItemType } from "../Items/Item"
@@ -7,6 +7,8 @@ import { mapBlocks_Init } from "../MapBlocks/MapBlocks_Init"
 import { GameData, startData } from "../StartData/StartData"
 import { initCore } from "../init/init"
 import { updateCore } from "../update/Update"
+import { rabbit } from '../Creatures/CreaturesTypes/Rabbit';
+import { creature_updateSensorsPosition } from '../Creatures/CreaturesFunctions/Creature_sensors';
 
 const given = describe
     const when = describe
@@ -19,6 +21,25 @@ export const testingEnvironnement = () => {
     return {rabitte, gameData , given , when , then }
 
 }
+
+export const testingCreaturesSimpleEnvironement = () => {
+    const rabit1 = {...rabbit}
+    const rabit2 = {...rabbit}
+    const rabit3 = {...rabbit}
+    const rabit4 = {...rabbit} 
+    const creatures : Creature[] = [rabit1 , rabit2 ,rabit3 ,rabit4]   
+    creatures.forEach(creature => { 
+        creature.spriteBox.x = 500
+        creature.spriteBox.y = 500
+        creature.hitBox.x = 500
+        creature.hitBox.y = 500 
+        creature.sensors.sensors.forEach(sensor => {
+        creature_updateSensorsPosition(creature, sensor)
+        })
+    }) 
+    return  { given , when , then ,creatures }
+}
+
   const init = () => {
         const gameData: GameData = JSON.parse(JSON.stringify(startData))
         gameData.creaturePreset = [CreatureType.Mouse]

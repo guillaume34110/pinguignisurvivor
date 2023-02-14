@@ -25,8 +25,8 @@ export const rabbit : Creature = {
         sprite: CreaturesSprite.rabbitFront
     },
     spriteBox: {
-        x: 1,
-        y: 1,
+        x: 500,
+        y: 500,
         w: 16,
         h: 32,
         direction: {
@@ -38,8 +38,8 @@ export const rabbit : Creature = {
         speed: 1.7,
     },
     hitBox: {
-        x: 1,
-        y: 1,
+        x: 500,
+        y: 500,
         w: 16,
         h: 16,
     },
