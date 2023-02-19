@@ -2,12 +2,12 @@ import { GameData } from "../StartData/StartData";
 import { mouse } from "./CreaturesTypes/Mouse";
 import { Creature, CreatureSex, CreatureType } from './Creature';
 import { rabbit } from './CreaturesTypes/Rabbit';
-import { setCoordinateIndexPosition } from "../Utilities/Coordinate/Coordinate";
 import { MapBlock, MapBlockType } from '../MapBlocks/MapBlock';
 import { creatures_HitBox } from "./CreaturesFunctions/Creatures_HitBox";
 import { Item } from "../Items/Item";
 import { hitBoxMatch } from "../Utilities/HitBoxMatch";
 import { creature_MemoryInit } from "./CreaturesFunctions/Memory/Creature_MemoryInit";
+import { setCoordinateIndexPosition } from "../Utilities/coordinate/Coordinate";
 
 export const Creatures_Init = (gameData: GameData) => {
     if (gameData.mapBlocks.length === 0) {

@@ -1,5 +1,5 @@
+import { moveSpriteBoxAccording10DegreesDirection, rotateSpriteBox10degreesLeft, rotateSpriteBox10degreesRight, rotateSpriteBoxByX10Degrees } from '../../Utilities/spriteBox/directionSpriteBox';
 import { Creature } from '../Creature';
-import { moveSpriteBoxAccording10DegreesDirection,  rotateSpriteBox10degreesLeft, rotateSpriteBox10degreesRight, rotateSpriteBoxByX10Degrees } from '../../Utilities/SpriteBox/DirectionSpriteBox';
 
 export const creatures_Move = (creature: Creature) => {
 

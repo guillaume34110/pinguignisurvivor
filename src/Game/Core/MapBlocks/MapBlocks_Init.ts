@@ -4,8 +4,8 @@ import { mapBlocks_biomeGenerator } from "./MapBlocksUtilities/ProceduralGenerat
 import { mapBlocks_SpaceBlocks } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_Space";
 import { mapBlocks_disposition } from "./MapBlocksUtilities/ProceduralGeneration/MapBlocks_disposition";
 import { mapBlocks_HitBox } from "./MapBlocksUtilities/MapBlocks_HitBox";
-import { setCoordinateIndexPosition } from "../Utilities/Coordinate/Coordinate";
 import { mapBlocksBorder_Init} from '../MapBlockBorder/MapBlockBorder_Init';
+import { setCoordinateIndexPosition } from "../Utilities/coordinate/Coordinate";
 
 export const mapBlocks_Init = (gameData: GameData) => {
 

@@ -1,6 +1,7 @@
 import { SpriteBoxInterface } from "../../StartData/StartData";
-import { LightDirection } from "../OurTrigonometry/LightDirection";
-import { LightTrigonometry } from "../OurTrigonometry/LightTrigo";
+import { LightDirection } from "../ourTrigonometry/LightDirection";
+import { LightTrigonometry } from "../ourTrigonometry/LightTrigo";
+
 
 
 // -------------------------

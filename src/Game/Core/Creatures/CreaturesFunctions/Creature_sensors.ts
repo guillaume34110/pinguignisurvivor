@@ -1,12 +1,12 @@
 import {  Sensor, SensorType } from "../../StartData/StartData"
-import { getCenterSpriteBox } from "../../Utilities/SpriteBox/PositionSpriteBox"
 import { Creature } from "../Creature"
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
-import { spriteBoxAddX10DegreesDirection } from "../../Utilities/SpriteBox/DirectionSpriteBox";
 import { Item, ItemType } from "../../Items/Item";
 import { MapBlock } from "../../MapBlocks/MapBlock";
 import { mapBlocksGeneric } from "../../MapBlocks/MapBlocks";
-import { LightTrigonometry } from "../../Utilities/OurTrigonometry/LightTrigo";
+import { getCenterSpriteBox } from "../../Utilities/spriteBox/positionSpriteBox";
+import { spriteBoxAddX10DegreesDirection } from "../../Utilities/spriteBox/directionSpriteBox";
+import { LightTrigonometry } from "../../Utilities/ourTrigonometry/LightTrigo";
 
 export const creature_sensorSetCollisionWithMapBlocksFlags = (creature: Creature, sensor: Sensor, mapBlock: MapBlock) : void => {
         if (mapBlock.type === mapBlocksGeneric.spaceBorder.type 

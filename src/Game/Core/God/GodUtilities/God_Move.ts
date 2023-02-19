@@ -1,5 +1,5 @@
 import {GameData} from "../../StartData/StartData";
-import {DirectionIn10Degrees, spriteBoxSetDirectionXYBy10DegreesAngle} from "../../Utilities/SpriteBox/DirectionSpriteBox";
+import { DirectionIn10Degrees, spriteBoxSetDirectionXYBy10DegreesAngle } from "../../Utilities/spriteBox/directionSpriteBox";
 
 export const god_Move = (gameData: GameData) => {
     godMoveDetermination(gameData)

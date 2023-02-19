@@ -26,9 +26,9 @@ import {
 } from '../StartData/StartData';
 import { Item } from '../Items/Item';
 import { MapBlock } from '../MapBlocks/MapBlock';
-import { setCoordinateIndexPosition } from '../Utilities/Coordinate/Coordinate';
 import { creature_hungry, creature_size } from './CreaturesFunctions/Creature_Nutrition';
 import { creature_MapBlockMemory, creatures_MemoryCreatures, creatures_MemoryItems } from './CreaturesFunctions/Memory/Creature_Mermory';
+import { setCoordinateIndexPosition } from '../Utilities/coordinate/Coordinate';
 
 export interface slicedArraysInterface {
     creatures: Creature[][]

@@ -1,7 +1,7 @@
 import { ItemType, Item } from '../../Items/Item';
 import { Sensor, SensorType } from '../../StartData/StartData';
 import { hitBoxMatch } from '../../Utilities/HitBoxMatch';
-import { spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees } from '../../Utilities/SpriteBox/DirectionSpriteBox';
+import { spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees } from '../../Utilities/spriteBox/directionSpriteBox';
 import { Creature } from '../Creature';
 
 export const creatures_HuntItems = (creature: Creature, sensor: Sensor, item: Item) => {

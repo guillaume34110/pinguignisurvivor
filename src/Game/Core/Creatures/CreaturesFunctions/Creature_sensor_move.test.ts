@@ -1,5 +1,5 @@
 import { GameData, startData } from '../../StartData/StartData';
-import { getCenterSpriteBox } from '../../Utilities/SpriteBox/PositionSpriteBox';
+import { getCenterSpriteBox } from '../../Utilities/spriteBox/positionSpriteBox';
 import { mouse } from '../CreaturesTypes/Mouse';
 import { creature_updateSensorsPosition } from './Creature_sensors';
 

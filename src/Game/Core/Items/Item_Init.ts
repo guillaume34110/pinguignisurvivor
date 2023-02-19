@@ -1,11 +1,11 @@
 import { MapBlock, MapBlockType } from "../MapBlocks/MapBlock";
 import { GameData } from "../StartData/StartData";
-import { setCoordinateIndexPosition } from "../Utilities/Coordinate/Coordinate";
 import { rock } from './ItemsTypes/Rock';
 import { Item, ItemType } from './Item';
 import { seedsTree } from "./ItemsTypes/SeedsTree";
 import { item_EnsureHitNothingForSpawn } from "./ItemFunctions/Item_Spawn";
 import { basicGrass } from './ItemsTypes/BasicGrass';
+import { setCoordinateIndexPosition } from "../Utilities/coordinate/Coordinate";
 
 export const item_Init = (gameData: GameData) => {
   gameData.items = []
