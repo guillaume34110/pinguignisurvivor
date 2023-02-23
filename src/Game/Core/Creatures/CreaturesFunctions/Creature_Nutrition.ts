@@ -7,7 +7,7 @@ export const creature_Nutrition = (item: Item | null, creatureToEat: Creature | 
             creature.hunger += item.valueAsFood
             if (creature.lifePointMax > creature.lifePoint) creature.lifePoint += item.valueAsFood / 1000
             if (creature.weight < creature.maxWeight) {
-                creature.weight += item.valueAsFood / 1000
+                creature.weight += item.valueAsFood / 100000
                 if(creature.weight > creature.maxWeight) creature.weight = creature.maxWeight
             }  
             item.isTaken = true
@@ -20,7 +20,7 @@ export const creature_Nutrition = (item: Item | null, creatureToEat: Creature | 
             creature.hunger += creatureToEat.valueAsFood
             if (creature.lifePointMax > creature.lifePoint) creature.lifePoint += creatureToEat.valueAsFood / 1000
             if (creature.weight < creature.maxWeight){
-                 creature.weight += creatureToEat.valueAsFood / 1000 
+                 creature.weight += creatureToEat.valueAsFood / 100000 
                 if(creature.weight > creature.maxWeight) creature.weight = creature.maxWeight
                 }
         }

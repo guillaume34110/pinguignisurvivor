@@ -14,7 +14,7 @@ export const mouse: Creature = {
     lifeTime: 20_000,
     lifePoint : 100,  
     lifePointMax : 100,
-    damage: 1000,
+    damage: 2,
     creatureWhoAttack : [],
     sprite:
     {

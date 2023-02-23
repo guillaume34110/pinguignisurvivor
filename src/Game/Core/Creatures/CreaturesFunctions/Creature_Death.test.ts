@@ -15,15 +15,15 @@ const oneCreatureWith0LifePointAndOneWith0LifeTime = (creatures : Creature[]) =>
 given('an array with 4 rabit', () => {
 
     when('all creature are alive  ', () => {
-        then('all creatures Stay', () => {})
+        then('all creatures Stay', () => {
         const testCreature = JSON.parse(JSON.stringify(creatures))
-        expect(death(testCreature)).toHaveLength(4)
+        expect(death(testCreature)).toHaveLength(4)})
     })
 
     when('all two creature death and two are alive  ', () => {
-        then('all creatures Stay', () => {})
+        then('all creatures Stay', () => {
         const testCreature = JSON.parse(JSON.stringify(creatures))
         expect(death(oneCreatureWith0LifePointAndOneWith0LifeTime(testCreature))).toHaveLength(2)
-    })
+    })})
 
 })

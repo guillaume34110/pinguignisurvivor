@@ -94,7 +94,7 @@ export const rabbit : Creature = {
     maxWeight:4,
     price : 100,
     sellPrice : 10,
-    valueAsFood : 12000,
+    valueAsFood : 400,
     typeFoodToEat : [ItemType.Seeds , ItemType.BasicGrass],
     huntingInhibitor : 0,
     gestation : false, 
