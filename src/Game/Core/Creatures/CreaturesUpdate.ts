@@ -4,7 +4,7 @@ import {
     creature_collisionWithItem,
     creature_CollisionWithSolidMapBlocks,
     creatures_CollisionWithCreatures,
-} from './CreaturesFunctions/Creatures_Collision';
+} from './CreaturesFunctions/Creature_Collision';
 import { creature_Death } from './CreaturesFunctions/Creature_Death';
 import { creature_BabyBorn, creature_Fertility, creature_Gestation } from './CreaturesFunctions/Creature_Nursery';
 import { creature_lifeDecrease as creature_LifeDecrease } from './CreaturesFunctions/Creature_lifeDecrease';
@@ -16,9 +16,9 @@ import {
     creature_TurnOnCollision,
     creature_updateSensorsPositionBy10Degrees
 } from './CreaturesFunctions/Creature_sensors';
-import { creatures_HitBox } from './CreaturesFunctions/Creatures_HitBox';
+import { creatures_HitBox } from './CreaturesFunctions/Creature_HitBox';
 import { creatures_HuntCreatures, creatures_HuntItems, creatures_HuntingInhibitor } from './CreaturesFunctions/Creature_Hunt';
-import { creatures_Move } from './CreaturesFunctions/Creatures_Move';
+import { creatures_Move } from './CreaturesFunctions/Creature_Move';
 import {
     GameData,
     Sensor,
@@ -149,8 +149,8 @@ export const creaturesUpdate_ChristmasPanettone = (gameData: GameData) => {
             for (let m = 0; m < 8; m++) {
                 for (let c = 0; c < gameData.slicedArrays.creatures[coordinateCreature[m]].length; c++) {
                     const otherCreature = gameData.slicedArrays.creatures[coordinateCreature[m]][c]
-                    creatures_CollisionWithCreatures(gameData, "y", creature, otherCreature)
-                    creatures_CollisionWithCreatures(gameData, "x", creature, otherCreature)
+                    creatures_CollisionWithCreatures( "y", creature, otherCreature)
+                    creatures_CollisionWithCreatures( "x", creature, otherCreature)
                 }
             }
 

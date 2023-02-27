@@ -8,6 +8,7 @@ export const creature_MaleHuntFemale = ( creature: Creature, sensor: Sensor, cre
         if (creatureFemale.type === creature.type && creatureFemale.sex === CreatureSex.Female && creatureFemale.fertility >= creatureFemale.maxFertilityFemale) {
             if (hitBoxMatch(sensor, creatureFemale.hitBox)) {
                 spriteBoxSetDirectionAccordingOtherSpriteBoxBy10Degrees(creature.spriteBox, creatureFemale.spriteBox)
+                creature.hunting = true
             }
         }
     }

@@ -16,7 +16,7 @@ given('an array with 4 rabit', () => {
         testCreature[0].fertility = 100000
         testCreature[1].fertility = 100000
         expect(testCreature[0].gestation).toBe(false)
-        creature_MakeBabyWithCreature(testCreature, testCreature[0] , testCreature[1] )
+        creature_MakeBabyWithCreature( testCreature[0] , testCreature[1] )
         expect(testCreature[0].gestation).toBe(true)})
     })
 

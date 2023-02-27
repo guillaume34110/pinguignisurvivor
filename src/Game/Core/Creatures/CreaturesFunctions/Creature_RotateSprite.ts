@@ -1,5 +1,5 @@
 import { Creature } from '../Creature';
-export const creature_RotateSprite = (creature: Creature) => {
+/*export const creature_RotateSprite = (creature: Creature) => {
 
     const directionRadian = creature.spriteBox.direction.radian % (2 * Math.PI)
 
@@ -18,7 +18,7 @@ export const creature_RotateSprite = (creature: Creature) => {
             break;
     }
 
-}
+}*/
 
 export const creature_RotateSpriteBy10Degrees = (creature: Creature) => {
 

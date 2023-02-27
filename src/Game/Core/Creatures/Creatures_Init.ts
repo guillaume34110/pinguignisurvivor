@@ -3,7 +3,7 @@ import { mouse } from "./CreaturesTypes/Mouse";
 import { Creature, CreatureSex, CreatureType } from './Creature';
 import { rabbit } from './CreaturesTypes/Rabbit';
 import { MapBlock, MapBlockType } from '../MapBlocks/MapBlock';
-import { creatures_HitBox } from "./CreaturesFunctions/Creatures_HitBox";
+import { creatures_HitBox } from "./CreaturesFunctions/Creature_HitBox";
 import { Item } from "../Items/Item";
 import { hitBoxMatch } from "../Utilities/HitBoxMatch";
 import { creature_MemoryInit } from "./CreaturesFunctions/Memory/Creature_MemoryInit";

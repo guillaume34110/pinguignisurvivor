@@ -33,7 +33,7 @@ import { creature_MemoryInit } from "./Memory/Creature_MemoryInit";
 }*/
 
 
-export const creature_MakeBabyWithCreature = (creatures: Creature[], creature: Creature, creatureToCompare: Creature) => {
+export const creature_MakeBabyWithCreature = (creature: Creature, creatureToCompare: Creature) => {
 
     if (creatureToCompare.type === creature.type
         && creatureToCompare.sex !== creature.sex
@@ -44,7 +44,6 @@ export const creature_MakeBabyWithCreature = (creatures: Creature[], creature: C
         creatureToCompare.fertility = 0
         creature.gestation = true
         creature.gestationTime = creatureToCompare.gestationMaxTime
-        console.log("creatures = ", creatures.length)
 
     }
 }
