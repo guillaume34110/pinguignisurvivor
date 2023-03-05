@@ -1,9 +1,12 @@
 import { testingCreaturesSimpleEnvironement } from "../../test/testingEnvironement"
-import { Creature } from "../Creature"
-import { creature_CollisionWithSolidMapBlocks } from './Creature_Collision';
+import { Creature, CreatureSex } from "../Creature"
+import { creature_CollisionWithSolidMapBlocks, creature_collisionWithItem, creatures_CollisionWithCreatures } from './Creature_Collision';
 import { spaceBorder } from '../../MapBlocks/MapBlocksTypes/SpaceBorder';
 import { dirtGround } from '../../MapBlocks/MapBlocksTypes/DirtGround';
 import { waterGround } from '../../MapBlocks/MapBlocksTypes/WaterGround';
+import { seedsTree } from '../../Items/ItemsTypes/SeedsTree';
+import { Item } from "../../Items/Item";
+import { seeds } from '../../Items/ItemsTypes/Seeds';
 
 const {given,when,then , creatures} = testingCreaturesSimpleEnvironement()
 
@@ -40,5 +43,35 @@ given('an array with 4 rabbit', () => {
         expect(testCreature[0].lifeTime).toBe(0)})
     })
 
+    when('a rabbit is on the map ', () => {
+        then('the rabbit is in collision with a three', () => {
+        const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+        const tree : Item= JSON.parse(JSON.stringify(seedsTree))
+        tree.hitBox.x = 500
+        tree.hitBox.y = 500
+        creature_collisionWithItem(testCreature[0] , tree)
+        expect(testCreature[0].huntingInhibitor).toBe(200)})
+    })
+
+    when('a rabbit is on the map ', () => {
+        then('the rabbit is in collision with a seeds', () => {
+        const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+        testCreature[0].hunger = 0
+        const seed : Item= JSON.parse(JSON.stringify(seeds))
+        seed.hitBox.x = 500
+        seed.hitBox.y = 500
+        creature_collisionWithItem(testCreature[0] , seed)
+        expect(testCreature[0].hunger).toBe(400)})
+    })
+
+    when(' two rabbit is on the map ', () => {
+        then('the male rabbit is in collision with a fertile female rabbit', () => {
+        const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+        testCreature[0].fertility = 100000
+        testCreature[1].fertility = 100000
+        expect(testCreature[0].gestation).toBe(false)
+        creatures_CollisionWithCreatures(`x` ,  testCreature[0] , testCreature[1] )
+        expect(testCreature[0].gestation).toBe(true)})
+    })
     
 })

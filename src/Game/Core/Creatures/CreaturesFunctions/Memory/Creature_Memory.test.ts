@@ -6,7 +6,6 @@ import { item_Init } from '../../../Items/Item_Init';
 import { updateCore } from "../../../update/Update"
 import { ItemType } from "../../../Items/Item"
 import { initCore } from "../../../init/init"
-import { grassGround } from '../../../MapBlocks/MapBlocksTypes/GrassGround';
 import { worms } from '../../CreaturesTypes/Worms';
 
 const given = describe
