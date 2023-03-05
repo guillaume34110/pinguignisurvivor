@@ -2,7 +2,6 @@ import {  creaturesUpdate_ChristmasPanettone } from "../Creatures/CreaturesUpdat
 import { end } from "../End/End";
 import { timer } from "../Hud/Time/Time";
 import {itemUpdate} from "../Items/ItemUpdate";
-import {mapBlocksUpdate} from "../MapBlocks/MapBlocksUpdate";
 import {GameData} from "../StartData/StartData";
 
 export const updateCore = (gameData:GameData) => {

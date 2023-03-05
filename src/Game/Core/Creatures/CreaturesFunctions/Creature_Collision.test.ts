@@ -1,7 +1,6 @@
 import { testingCreaturesSimpleEnvironement } from "../../test/testingEnvironement"
 import { Creature } from "../Creature"
-import { creatures_CollisionWithCreatures, creature_CollisionWithSolidMapBlocks } from './Creature_Collision';
-import { rabbit } from '../CreaturesTypes/Rabbit';
+import { creature_CollisionWithSolidMapBlocks } from './Creature_Collision';
 import { spaceBorder } from '../../MapBlocks/MapBlocksTypes/SpaceBorder';
 import { dirtGround } from '../../MapBlocks/MapBlocksTypes/DirtGround';
 import { waterGround } from '../../MapBlocks/MapBlocksTypes/WaterGround';

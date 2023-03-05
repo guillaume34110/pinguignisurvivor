@@ -2,7 +2,6 @@ import {GameData} from "../Core/StartData/StartData";
 import { items_RefreshPixi} from "./Items/Items_Draw";
 import { creatures_RefreshPixi } from './Creatures/Creatures_Draw';
 import { hitBoxRefreshPixi} from "./Hitboxs/Hitbox_Draw";
-import {  lifeBarDrawPixi } from './LifeBar/LifeBar_Draw';
 import {  mapBlocksRefresh } from './MapBlocks/MapBlocks_Draw';
 import {  hud_RefreshPixi } from "./Hud/Hud";
 import * as PIXI from 'pixi.js'

@@ -1,5 +1,4 @@
 import { MapBlockType } from "../../MapBlocks/MapBlock";
-import { SensorType } from "../../StartData/StartData";
 import { Creature, CreatureSex, CreatureType } from "../Creature";
 import { CreaturesSprite } from "../CreaturesSprite";
 

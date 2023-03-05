@@ -1,4 +1,4 @@
-import { MapBlock, MapBlockType } from "../MapBlocks/MapBlock";
+import { MapBlock } from "../MapBlocks/MapBlock";
 import { GameData } from "../StartData/StartData";
 import { MapBlockBorder } from './MapBlockBorder';
 import { hitBoxMatch } from '../Utilities/HitBoxMatch';
@@ -76,7 +76,7 @@ const borderDetermination = (key : string , block : MapBlock) => {
     else return null
 }
 const directionsBorder = ['up', 'down', 'left', 'right', 'downRight', 'downLeft', "upRight", "upLeft"];
-const directionCorner = ['downRight', 'downLeft', "upRight", "upLeft"];
+//const directionCorner = ['downRight', 'downLeft', "upRight", "upLeft"];
 
 const borderDispositions = (gameData: GameData, borders: MapBlockBorderDetermination, block: MapBlock) => {
 

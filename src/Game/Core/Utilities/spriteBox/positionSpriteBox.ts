@@ -1,4 +1,4 @@
-import {SpriteAndHitBox, SpriteBoxInterface} from "../../StartData/StartData";
+import { SpriteBoxInterface} from "../../StartData/StartData";
 
 export const getCenterSpriteBox = (spriteBox:SpriteBoxInterface):{ x: number, y: number } => {
     return {

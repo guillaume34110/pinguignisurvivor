@@ -1,10 +1,8 @@
 
-import { seeds } from "../../Items/ItemsTypes/Seeds";
 import { MapBlockType } from "../../MapBlocks/MapBlock";
 import { SensorType } from "../../StartData/StartData";
 import { Creature, CreatureSex, CreatureType } from "../Creature";
 import { CreaturesSprite } from "../CreaturesSprite";
-import { basicGrass } from '../../Items/ItemsTypes/BasicGrass';
 import { ItemType } from '../../Items/Item';
 
 export const rabbit : Creature = {

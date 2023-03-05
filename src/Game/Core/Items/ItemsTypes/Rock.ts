@@ -1,7 +1,6 @@
 import { ItemSprite } from '../ItemSprite';
 import { Item, ItemType, BabyType } from '../Item';
 import { MapBlockType } from '../../MapBlocks/MapBlock';
-import { worms } from '../../Creatures/CreaturesTypes/Worms';
 import { CreatureType } from '../../Creatures/Creature';
 export const rock : Item = {
     id: 0,

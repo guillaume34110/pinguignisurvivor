@@ -1,4 +1,4 @@
-import { MapBlock, MapBlockType } from "../MapBlocks/MapBlock";
+import { MapBlock} from "../MapBlocks/MapBlock";
 import { GameData } from "../StartData/StartData";
 import { rock } from './ItemsTypes/Rock';
 import { Item, ItemType } from './Item';

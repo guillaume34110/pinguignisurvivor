@@ -1,7 +1,6 @@
 import { MapBlockType } from "../../MapBlocks/MapBlock";
 import { Item, ItemType, BabyType } from '../Item';
 import { ItemSprite } from "../ItemSprite";
-import { seeds } from './Seeds';
 
 export const seedsTree : Item = {
     id: 0,

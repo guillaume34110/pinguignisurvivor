@@ -1,5 +1,5 @@
 import { GameData } from '../../Core/StartData/StartData';
-import { animation4Frames, isOnScreen, animation4Frames32 } from '../Game';
+import {  isOnScreen } from '../Game';
 
 import * as PIXI from 'pixi.js'
 import { selectTexture } from './MapBlocksBorderSprites';

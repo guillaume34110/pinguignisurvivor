@@ -1,4 +1,4 @@
-import { GameData } from "../../StartData/StartData";
+
 import { hitBoxMatch } from "../../Utilities/HitBoxMatch";
 import { creatures_CollisionWithMapBlockMove, creatures_collisionBetweenMove, creatures_pushOtherCreature } from './Creature_Move';
 import { Creature } from "../Creature";

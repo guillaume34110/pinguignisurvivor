@@ -1,7 +1,6 @@
 import {  Item, ItemType } from '../Items/Item';
 import { MapBlock, MapBlockType } from '../MapBlocks/MapBlock';
 import {HitBox, Sensors, SensorsFlag as SensorsFlags, Sprite, SpriteBoxInterface} from "../StartData/StartData";
-import { MapBlocks } from '../MapBlocks/MapBlocks';
 
 export interface Creature {
     id: number

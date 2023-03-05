@@ -1,7 +1,5 @@
 import '../../Style/components/Hud.css'
 import { GameData } from '../../Core/StartData/StartData';
-
-import * as PIXI from 'pixi.js'
 import Time, { msToMinSec } from './Time/Time';
 
 const getHudElement = (): HTMLElement | null => document.querySelector('.hud-container')

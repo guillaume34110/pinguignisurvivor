@@ -1,4 +1,4 @@
-import {GameData, HitBox} from "../../StartData/StartData";
+import {GameData} from "../../StartData/StartData";
 
 
 export const mapBlocks_HitBox = (gameData:GameData) => {

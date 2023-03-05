@@ -1,8 +1,7 @@
-import { Creature, CreatureType } from "../Creatures/Creature";
+import { CreatureType } from "../Creatures/Creature";
 import { MapBlockType } from "../MapBlocks/MapBlock";
-import {DirectionClass, HitBox, SpriteBoxInterface, SpriteBox, GameData} from "../StartData/StartData";
+import { HitBox, SpriteBoxInterface} from "../StartData/StartData";
 import {ItemSprite} from "./ItemSprite";
-import { rock } from "./ItemsTypes/Rock";
 
 export enum ItemType { 
     Seeds = "Seeds" , Rock = "Rock" , SeedsTree ="SeedsTree" , BasicGrass = "BasicGrass"

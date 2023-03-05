@@ -1,9 +1,7 @@
 import { SensorType } from '../../StartData/StartData';
 import { Creature, CreatureSex, CreatureType } from '../Creature';
 import { CreaturesSprite } from '../CreaturesSprite';
-import { worms } from './Worms';
 import { MapBlockType } from '../../MapBlocks/MapBlock';
-import { seeds } from '../../Items/ItemsTypes/Seeds';
 import { ItemType } from '../../Items/Item';
 
 export const mouse: Creature = {
