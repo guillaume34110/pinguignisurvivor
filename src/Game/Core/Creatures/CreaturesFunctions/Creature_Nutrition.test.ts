@@ -1,9 +1,7 @@
 import { seeds } from "../../Items/ItemsTypes/Seeds";
 import { testingCreaturesSimpleEnvironement } from "../../test/testingEnvironement";
-import { Creature, CreatureSex } from "../Creature";
+import { Creature } from "../Creature";
 import { mouse } from "../CreaturesTypes/Mouse";
-import { creature_lifeDecrease } from "./Creature_lifeDecrease";
-import { creature_Fertility, creature_Gestation, creature_MakeBabyWithCreature } from "./Creature_Nursery";
 import { creature_Nutrition, creature_hungry, creature_size } from './Creature_Nutrition';
 
 const {given,when,then , creatures} = testingCreaturesSimpleEnvironement()

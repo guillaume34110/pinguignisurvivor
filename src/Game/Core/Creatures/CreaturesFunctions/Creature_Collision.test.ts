@@ -7,6 +7,7 @@ import { waterGround } from '../../MapBlocks/MapBlocksTypes/WaterGround';
 import { seedsTree } from '../../Items/ItemsTypes/SeedsTree';
 import { Item } from "../../Items/Item";
 import { seeds } from '../../Items/ItemsTypes/Seeds';
+import { mouse } from "../CreaturesTypes/Mouse";
 
 const {given,when,then , creatures} = testingCreaturesSimpleEnvironement()
 
@@ -67,11 +68,62 @@ given('an array with 4 rabbit', () => {
     when(' two rabbit is on the map ', () => {
         then('the male rabbit is in collision with a fertile female rabbit', () => {
         const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+        testCreature[0].sex = CreatureSex.Female
         testCreature[0].fertility = 100000
         testCreature[1].fertility = 100000
         expect(testCreature[0].gestation).toBe(false)
         creatures_CollisionWithCreatures(`x` ,  testCreature[0] , testCreature[1] )
         expect(testCreature[0].gestation).toBe(true)})
     })
+
+    when(' a rabbit and a mouse is on the map ', () => {
+        then('the mouse is in collision with the rabbit', () => {
+            const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+            testCreature[0].lifePoint = 10  
+            testCreature[0].weight = 0.5
+            const mickey = {...mouse}
+            mickey.spriteBox.x = 500
+            mickey.spriteBox.y = 500
+            mickey.hitBox.x = 500
+            mickey.hitBox.y = 500
+            creatures_CollisionWithCreatures(`x` ,  mickey , testCreature[0] )
+            expect(testCreature[0].lifePoint).toBe(6.8)
+        })
+    })
     
+    when(' two rabbit is on the map ', () => {
+        then('the two rabbit is in collision', () => {
+            const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+            testCreature[0].weight = 1  
+            testCreature[1].weight = 0.5
+            testCreature[0].spriteBox.x = 495
+            testCreature[0].hitBox.x = 495
+            testCreature[0].spriteBox.direction.x = 5
+            testCreature[1].spriteBox.direction.x = -5
+            creatures_CollisionWithCreatures(`x` , testCreature[1] , testCreature[0] )
+            creatures_CollisionWithCreatures(`x` , testCreature[0] , testCreature[1] )
+            expect(testCreature[0].spriteBox.x).toBe(495)
+            expect(testCreature[1].spriteBox.x).toBe(515)
+            expect(testCreature[0].spriteBox.direction.x).toBe(2.5)
+            expect(testCreature[1].spriteBox.direction.x).toBe(-5)
+        })
+    })
+
+    when(' two rabbit is on the map ', () => {
+        then('the two rabbit is in collision', () => {
+            const testCreature : Creature[] = JSON.parse(JSON.stringify(creatures))
+            testCreature[0].weight = 1  
+            testCreature[1].weight = 0.5
+            testCreature[0].spriteBox.y = 495
+            testCreature[0].hitBox.y = 495
+            testCreature[0].spriteBox.direction.y = 5
+            testCreature[1].spriteBox.direction.y = -5
+            creatures_CollisionWithCreatures(`y` , testCreature[1] , testCreature[0] )
+            creatures_CollisionWithCreatures(`y` , testCreature[0] , testCreature[1] )
+            expect(testCreature[0].spriteBox.y).toBe(495)
+            expect(testCreature[1].spriteBox.y).toBe(515)
+            expect(testCreature[0].spriteBox.direction.y).toBe(2.5)
+            expect(testCreature[1].spriteBox.direction.y).toBe(-5)
+        })
+    })
 })

@@ -1,7 +1,7 @@
 import { CreatureType, Creature } from '../Creatures/Creature';
 import { worms } from "../Creatures/CreaturesTypes/Worms"
 import { Creatures_Init } from "../Creatures/Creatures_Init"
-import { ItemType } from "../Items/Item"
+import { Item, ItemType } from "../Items/Item"
 import { item_Init } from "../Items/Item_Init"
 import { mapBlocks_Init } from "../MapBlocks/MapBlocks_Init"
 import { GameData, startData } from "../StartData/StartData"
@@ -9,6 +9,11 @@ import { initCore } from "../init/init"
 import { updateCore } from "../update/Update"
 import { rabbit } from '../Creatures/CreaturesTypes/Rabbit';
 import { creature_updateSensorsPosition } from '../Creatures/CreaturesFunctions/Creature_sensors';
+import { rock } from '../Items/ItemsTypes/Rock';
+import { seeds } from '../Items/ItemsTypes/Seeds';
+import { seedsTree } from '../Items/ItemsTypes/SeedsTree';
+import { grassGround } from '../MapBlocks/MapBlocksTypes/GrassGround';
+import { basicGrass } from '../Items/ItemsTypes/BasicGrass';
 
 const given = describe
     const when = describe
@@ -20,6 +25,20 @@ export const testingEnvironnement = () => {
 
     return {rabitte, gameData , given , when , then }
 
+}
+
+
+export const testingItemsSimpleEnvironement = () => {
+    
+    const items : Item[] = [ {...seeds} , {...rock} , {...seedsTree} , {...basicGrass} ]   
+    items.forEach(item => { 
+        item.spriteBox.x = 500
+        item.spriteBox.y = 500
+        item.hitBox.x = 500
+        item.hitBox.y = 500 
+      
+    }) 
+    return  { given , when , then ,items }
 }
 
 export const testingCreaturesSimpleEnvironement = () => {

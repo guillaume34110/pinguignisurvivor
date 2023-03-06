@@ -4,8 +4,6 @@ import { creature_lifeDecrease } from "./Creature_lifeDecrease";
 
 const {given,when,then , creatures} = testingCreaturesSimpleEnvironement()
 
-
-
 given('an array with 4 rabit', () => {
 
     when('all creature are alive  ', () => {

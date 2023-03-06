@@ -5,6 +5,6 @@ import { item_life } from "./ItemFunctions/Item_life";
 
 export const itemUpdate = (gameData:GameData) => {
     item_Spawn(gameData)
-    item_RemoveTaken(gameData)
-    item_life(gameData)
+    item_RemoveTaken(gameData.items)
+    item_life(gameData.items)
 }
